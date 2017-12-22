@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="SMPGenNHibernate"
+		                   namespace="SMPGenNHibernate.EN.SMP">
+		    
+		    
+			
+				
+<joined-subclass name="PeliculaEN" extends="SMPGenNHibernate.EN.SMP.VideoEN" table="Pelicula"> 
+	<key>
+    	
+				<column name="idVideo"/>
+		
+    	
+   	</key>
+
+			
+					
+			
+			
+		  			
+						<bag name="Comentario" cascade="delete">
+							<key>
+							
+								
+								<column name="FK_idVideo_idPelicula"/>
+					      	</key>
+							<one-to-many class="SMPGenNHibernate.EN.SMP.ComentarioEN"/>
+					    </bag>
+					
+					
+		
+ 	  
+		 </joined-subclass>
+		  
+		  <query name="PeliculaENReadAllHQL">from PeliculaEN</query>
+		</hibernate-mapping>
+	

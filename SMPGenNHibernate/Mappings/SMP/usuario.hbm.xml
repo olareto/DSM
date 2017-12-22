@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="SMPGenNHibernate"
+		                   namespace="SMPGenNHibernate.EN.SMP">
+		    
+		    
+			
+				<class name="UsuarioEN" table="usuario"> 
+						<id name="Email" column="email"/> 
+			
+					
+					<property name="Nombre" type="string"> 
+						<column name="nombre"  not-null="true"/>
+					</property>
+					<property name="Apellidos" type="string"> 
+						<column name="apellidos"  not-null="true"/>
+					</property>
+					<property name="Contrasenya" type="string"> 
+						<column name="contrasenya"  not-null="true"/>
+					</property>
+					<property name="Direccion" type="string"> 
+						<column name="direccion"  not-null="true"/>
+					</property>
+					<property name="Tarjeta" type="string"> 
+						<column name="tarjeta"  not-null="true"/>
+					</property>
+					<property name="Imagen" type="string"> 
+						<column name="imagen"  not-null="true"/>
+					</property>
+			
+			
+		  			
+					
+							   <one-to-one name="Carrito" class="SMPGenNHibernate.EN.SMP.CarritoEN" property-ref="Usuario" />							
+					 
+						
+			
+			
+			
+			
+			
+			
+			
+		  			
+						<bag name="Lista" cascade="delete">
+							<key>
+							
+								
+								<column name="FK_email_idUsuario_1"/>
+					      	</key>
+							<one-to-many class="SMPGenNHibernate.EN.SMP.ListaEN"/>
+					    </bag>
+					
+			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+		
+		 </class>	
+		  
+		  <query name="UsuarioENReadAllHQL">from UsuarioEN</query>
+		</hibernate-mapping>
+	

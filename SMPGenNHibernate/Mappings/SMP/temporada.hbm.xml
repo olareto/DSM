@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="SMPGenNHibernate"
+		                   namespace="SMPGenNHibernate.EN.SMP">
+		    
+		    
+			
+				<class name="TemporadaEN" table="Temporada"> 
+				  	
+						<id name="Id" column="idTemporada" type="integer"> 
+							<generator class="hilo"/>
+						</id>
+			
+					
+					<property name="Nombre" type="string"> 
+						<column name="nombre"  not-null="true"/>
+					</property>
+			
+			
+		  			
+						<bag name="Capitulo" cascade="delete">
+							<key>
+							
+								
+								<column name="FK_idTemporada_idTemporada"/>
+					      	</key>
+							<one-to-many class="SMPGenNHibernate.EN.SMP.CapituloEN"/>
+					    </bag>
+					
+			
+		  			
+						<many-to-one name="Serie" class="SMPGenNHibernate.EN.SMP.SerieEN" >	
+								<column name="FK_idVideo_idSerie"/> 
+						</many-to-one>
+											 					
+			
+			
+					
+					
+					
+					
+		
+		 </class>	
+		  
+		  <query name="TemporadaENReadAllHQL">from TemporadaEN</query>
+		</hibernate-mapping>
+	

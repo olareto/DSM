@@ -1,0 +1,80 @@
+﻿@model IEnumerable<DSM5.Models.Evento>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Stock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Imagen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Valoracion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Stock)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Precio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Imagen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Valoracion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
+@Html.TextArea("myTextArea", "This is value", new { @class = "form-control" })
+@Html.Label("StudentName")
+<div class="form-actions no-color">
+    <input type="submit" value="Delete" class="btn btn-default" /> |
+    @Html.ActionLink("filtroprecio", "Filtroprecio", new { min = 0, max = 200, limit = 1 })
+    @Html.ActionLink("filtronombre", "Filtronombre", new { name = "Pedro" })
+    @Html.ActionLink("filtrotipo", "Filtrotipo", new { tipo = "musical" })
+    @Html.ActionLink("filtrovalor", "Filtrovalor", new { valor = 1 })
+    @Html.ActionLink("Busqueda", "Filtrar")
+</div>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="SMPGenNHibernate"
+		                   namespace="SMPGenNHibernate.EN.SMP">
+		    
+		    
+			
+				<class name="CapituloEN" table="Capitulo"> 
+				  	
+						<id name="Id" column="idCapitulo" type="integer"> 
+							<generator class="hilo"/>
+						</id>
+			
+					
+					<property name="Nombre" type="string"> 
+						<column name="nombre"  not-null="true"/>
+					</property>
+					<property name="Fecha" type="date"> 
+						<column name="fecha"  not-null="true"/>
+					</property>
+					<property name="Descripcion" type="string"> 
+						<column name="descripcion"  not-null="true"/>
+					</property>
+					<property name="Imagen" type="string"> 
+						<column name="imagen"  not-null="true"/>
+					</property>
+			
+			
+		  			
+						<many-to-one name="Temporada" class="SMPGenNHibernate.EN.SMP.TemporadaEN" >	
+								<column name="FK_idTemporada_idTemporada"/> 
+						</many-to-one>
+											 					
+			
+			
+		  			
+						<bag name="Comentario" cascade="delete">
+							<key>
+							
+								
+								<column name="FK_idCapitulo_idCapitulo"/>
+					      	</key>
+							<one-to-many class="SMPGenNHibernate.EN.SMP.ComentarioEN"/>
+					    </bag>
+					
+			
+			
+			
+			
+					
+					
+					
+					
+					
+					
+					
+		
+		 </class>	
+		  
+		  <query name="CapituloENReadAllHQL">from CapituloEN</query>
+		</hibernate-mapping>
+	

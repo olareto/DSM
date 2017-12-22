@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="SMPGenNHibernate"
+		                   namespace="SMPGenNHibernate.EN.SMP">
+		    
+		    
+			
+				<class name="VideoEN" table="video"> 
+				  	
+						<id name="Id" column="idVideo" type="integer"> 
+							<generator class="hilo"/>
+						</id>
+			
+					
+					<property name="Valoracion" > 
+						<column name="valoracion"  not-null="true"/>
+					</property>
+					<property name="Nombre" type="string"> 
+						<column name="nombre"  not-null="true"/>
+					</property>
+			
+			
+			
+		  			
+						<bag name="Lista" table="[video_lista]"  >
+							<key>
+								
+									<column name="FK_idVideo_idVideo"/> 
+							</key>
+      						<many-to-many class="SMPGenNHibernate.EN.SMP.ListaEN">
+									<column name="FK_idLista_idLista"/> 
+      						</many-to-many>
+    					</bag>
+			
+			
+					
+					
+					
+					
+		
+		 </class>	
+		  
+		  <query name="VideoENReadAllHQL">from VideoEN</query>
+		</hibernate-mapping>
+	

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="SMPGenNHibernate"
+		                   namespace="SMPGenNHibernate.EN.SMP">
+		    
+		    
+			
+				<class name="ListaEN" table="Lista"> 
+				  	
+						<id name="Id" column="idLista" type="integer"> 
+							<generator class="hilo"/>
+						</id>
+			
+					
+					<property name="Estado" > 
+						<column name="estado"  not-null="true"/>
+					</property>
+			
+			
+			
+		  			
+						<bag name="Video" table="[video_lista]" inverse="true" >
+							<key>
+								
+									<column name="FK_idLista_idLista"/> 
+							</key>
+      						<many-to-many class="SMPGenNHibernate.EN.SMP.VideoEN">
+									<column name="FK_idVideo_idVideo"/> 
+      						</many-to-many>
+    					</bag>
+			
+			
+		  			
+						<many-to-one name="Usuario_1" class="SMPGenNHibernate.EN.SMP.UsuarioEN" >	
+								<column name="FK_email_idUsuario_1"/> 
+						</many-to-one>
+											 					
+					
+					
+					
+					
+		
+		 </class>	
+		  
+		  <query name="ListaENReadAllHQL">from ListaEN</query>
+		</hibernate-mapping>
+	

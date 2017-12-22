@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="SMPGenNHibernate"
+		                   namespace="SMPGenNHibernate.EN.SMP">
+		    
+		    
+			
+				<class name="CarritoEN" table="carrito"> 
+				  	
+						<id name="Id" column="idCarrito" type="integer"> 
+							<generator class="hilo"/>
+						</id>
+			
+					
+					<property name="Precio" type="double"> 
+						<column name="precio"  not-null="true"/>
+					</property>
+			
+			
+			
+		  			
+					
+							<many-to-one name="Usuario" class="SMPGenNHibernate.EN.SMP.UsuarioEN" >
+								<column name="FK_email_idUsuario"/> 
+        					</many-to-one>
+					 
+						
+			
+			
+		  			
+						<bag name="Lineas_pedido" cascade="delete">
+							<key>
+							
+								
+								<column name="FK_idCarrito_idCarrito"/>
+					      	</key>
+							<one-to-many class="SMPGenNHibernate.EN.SMP.Lineas_pedidoEN"/>
+					    </bag>
+					
+					
+					
+					
+					
+		
+		 </class>	
+		  
+		  <query name="CarritoENReadAllHQL">from CarritoEN</query>
+		</hibernate-mapping>
+	

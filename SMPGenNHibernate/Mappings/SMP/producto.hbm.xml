@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="SMPGenNHibernate"
+		                   namespace="SMPGenNHibernate.EN.SMP">
+		    
+		    
+			
+				
+<joined-subclass name="ProductoEN" extends="SMPGenNHibernate.EN.SMP.ArticuloEN" table="producto"> 
+	<key>
+    	
+				<column name="idArticulo"/>
+		
+    	
+   	</key>
+
+			
+					
+					<property name="Talla" type="string"> 
+						<column name="talla"  not-null="true"/>
+					</property>
+			
+			
+					
+		
+ 	  
+		 </joined-subclass>
+		  
+		  <query name="ProductoENReadAllHQL">from ProductoEN</query>
+		  <query name="ProductoENfiltronombreHQL"><![CDATA[FROM ProductoEN art where art.Nombre = :p_nombre]]></query>
+		  <query name="ProductoENfiltroprecioHQL"><![CDATA[FROM ProductoEN art where art.Precio > :p_min and art.Precio < :p_max ]]></query>
+		  <query name="ProductoENfiltrovalorHQL"><![CDATA[FROM ProductoEN art where art.Valor = :p_valor]]></query>
+		  <query name="ProductoENfiltrotallaHQL"><![CDATA[FROM ProductoEN art where art.Talla = :p_talla]]></query>
+		</hibernate-mapping>
+	
