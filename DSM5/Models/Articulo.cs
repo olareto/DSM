@@ -6,7 +6,7 @@ using System.Web;
 
 
 
-//david es puto estupido
+//german gay
 namespace DSM5.Models
 {
 
