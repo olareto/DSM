@@ -9,6 +9,8 @@ using System.Web;
 namespace DSM5.Models
 {
 
+
+
     public class Articulo
     {
         [ScaffoldColumn(false)]
