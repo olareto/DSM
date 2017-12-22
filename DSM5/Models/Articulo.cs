@@ -4,6 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
+
+
+//david es puto estupido
 namespace DSM5.Models
 {
     public class Articulo
