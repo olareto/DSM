@@ -6,13 +6,9 @@ using System.Web;
 
 
 
-
-//GERMAN ES MUY GAY
-
 namespace DSM5.Models
 {
 
-    //PUCHOLAAAAAAA
     public class Articulo
     {
         [ScaffoldColumn(false)]
