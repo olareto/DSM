@@ -109,9 +109,9 @@ public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ProductoEN> Filt
 {
         return _IProductoCAD.Filtrovalor (p_valor);
 }
-public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ProductoEN> Filtrotalla (string arg0)
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ProductoEN> Filtrotalla (string p_talla)
 {
-        return _IProductoCAD.Filtrotalla (arg0);
+        return _IProductoCAD.Filtrotalla (p_talla);
 }
 public ProductoEN ReadOID (int id
                            )

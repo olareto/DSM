@@ -328,7 +328,7 @@ public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ProductoEN> Filt
 
         return result;
 }
-public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ProductoEN> Filtrotalla (string arg0)
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ProductoEN> Filtrotalla (string p_talla)
 {
         System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ProductoEN> result;
         try
@@ -337,7 +337,7 @@ public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ProductoEN> Filt
                 //String sql = @"FROM ProductoEN self where FROM ProductoEN art where art.Talla = :p_talla";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("ProductoENfiltrotallaHQL");
-                query.SetParameter ("arg0", arg0);
+                query.SetParameter ("p_talla", p_talla);
 
                 result = query.List<SMPGenNHibernate.EN.SMP.ProductoEN>();
                 SessionCommit ();

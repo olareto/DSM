@@ -34,7 +34,7 @@ System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ProductoEN> Filtropreci
 System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ProductoEN> Filtrovalor (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum ? p_valor);
 
 
-System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ProductoEN> Filtrotalla (string arg0);
+System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ProductoEN> Filtrotalla (string p_talla);
 
 
 ProductoEN ReadOID (int id

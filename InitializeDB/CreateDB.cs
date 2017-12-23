@@ -238,7 +238,7 @@ public static void InitializeData ()
                 hola3 = productoCEN.Filtronombre ("pene");
                 hola4 = productoCEN.Filtrovalor (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco);
                 hola5 = productoCEN.Filtroprecio (50, 2222);
-                hola6 = productoCEN.Filtrotalla ("talla");
+                 hola6 = productoCEN.Filtrotalla ("talla");
 
                 #endregion
                 /*PROTECTED REGION END*/
