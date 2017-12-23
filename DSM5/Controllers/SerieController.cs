@@ -9,57 +9,53 @@ using System.Web.Mvc;
 
 namespace DSM5.Controllers
 {
-    public class PeliculaController : BasicController
+    public class SerieController : BasicController
     {
-        // GET: Pelicula
+        // GET: Articulo
         public ActionResult Index()
         {
-            PeliculaCEN cen = new PeliculaCEN();
-            IList<PeliculaEN> enlinst = cen.ReadAll(0, 6);
-            AssemblerPelicula ass = new AssemblerPelicula();
-            IList<Pelicula> listart = ass.ConvertListENToModel(enlinst);
+            SerieCEN cen = new SerieCEN();
+            IList<SerieEN> enlinst=cen.ReadAll(0, 6);
+            AssemblerSerie ass = new AssemblerSerie();
+            IList<Serie> listart = ass.ConvertListENToModel(enlinst);
 
             //articuloAsembler.covert
-            
             return View(listart);
         }
 
-        // GET: Pelicula/Details/5
+        // GET: Articulo/Details/5
         public ActionResult Details(int id)
         {
-            PeliculaCEN cen = new PeliculaCEN();
+            SerieCEN cen = new SerieCEN();
 
-            PeliculaEN en = new PeliculaEN();
-
+            SerieEN en = new SerieEN();
+            
             en = cen.ReadOID(id);
-            AssemblerPelicula ass = new AssemblerPelicula();
-            Pelicula sol = ass.ConvertENToModelUI(en);
-
+            AssemblerSerie ass = new AssemblerSerie();
+            Serie sol =ass.ConvertENToModelUI(en);
+            
             return View(sol);
-           
         }
 
-        // GET: Pelicula/Create
+        // GET: Articulo/Create
         public ActionResult Create()
         {
-            PeliculaEN en = new PeliculaEN();
-            AssemblerPelicula ass = new AssemblerPelicula();
-            Pelicula sol = ass.ConvertENToModelUI(en);
+            SerieEN en = new SerieEN();
+            AssemblerSerie ass = new AssemblerSerie();
+            Serie sol = ass.ConvertENToModelUI(en);
             return View(sol);
-           
         }
 
-        // POST: Pelicula/Create
+        // POST: Articulo/Create
         [HttpPost]
-        public ActionResult Create(Pelicula collection)
+        public ActionResult Create(Serie collection)
         {
             try
             {
                 // TODO: Add insert logic here
-                PeliculaCEN cen = new PeliculaCEN();
-
+                SerieCEN cen = new SerieCEN();
+                
                 cen.New_((SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre);
-
                 return RedirectToAction("Index");
             }
             catch
@@ -68,12 +64,13 @@ namespace DSM5.Controllers
             }
         }
 
-        // GET: Pelicula/Edit/5
+        // GET: Articulo/Edit/5
         public ActionResult Edit(int id)
         {
-            PeliculaCEN cen = new PeliculaCEN();
 
-            PeliculaEN en = new PeliculaEN();
+            SerieCEN cen = new SerieCEN();
+
+            SerieEN en = new SerieEN();
             en = cen.ReadOID(id);
 
             // SessionInitializeTransaction();
@@ -81,23 +78,21 @@ namespace DSM5.Controllers
             //IProducto productoCAD = new productoCAD(session);
 
             // ProductoEN en = new Pro;
-            AssemblerPelicula ass = new AssemblerPelicula();
-            Pelicula sol = ass.ConvertENToModelUI(en);
+            AssemblerSerie ass = new AssemblerSerie();
+            Serie sol = ass.ConvertENToModelUI(en);
             return View(sol);
         }
 
-        // POST: Pelicula/Edit/5
+        // POST: Articulo/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, Pelicula collection)
+        public ActionResult Edit(int id, Serie collection)
         {
             try
             {
-
                 // TODO: Add update logic here
-                PeliculaCEN cen = new PeliculaCEN();
-
-                cen.New_((SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre);
-
+                SerieCEN cen = new SerieCEN();
+                cen.Modify(id,(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre);
+                //cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock, collection.Talla);
                 return RedirectToAction("Index");
             }
             catch
@@ -106,29 +101,29 @@ namespace DSM5.Controllers
             }
         }
 
-        // GET: Pelicula/Delete/5
+        // GET: Articulo/Delete/5
         public ActionResult Delete(int id)
         {
-            PeliculaCEN cen = new PeliculaCEN();
 
-            PeliculaEN en = new PeliculaEN();
+            SerieCEN cen = new SerieCEN();
+
+            SerieEN en = new SerieEN();
             en = cen.ReadOID(id);
-            AssemblerPelicula ass = new AssemblerPelicula();
-            Pelicula sol = ass.ConvertENToModelUI(en);
+            AssemblerSerie ass = new AssemblerSerie();
+            Serie sol = ass.ConvertENToModelUI(en);
             return View(sol);
         }
 
-        // POST: Pelicula/Delete/5
+        // POST: Articulo/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, Pelicula collection)
+        public ActionResult Delete(int id, FormCollection collection)
         {
             try
             {
                 // TODO: Add delete logic here
-                PeliculaCEN cen = new PeliculaCEN();
+                SerieCEN cen = new SerieCEN();
 
                 cen.Destroy(id);
-
                 return RedirectToAction("Index");
             }
             catch
@@ -137,10 +132,10 @@ namespace DSM5.Controllers
             }
         }
         // GET: Articulo/Resultadobusqueda/5
-        public ActionResult Resultadobusqueda(IList<Pelicula> res)
+        public ActionResult Resultadobusqueda(IList<Serie> res)
         {
 
-
+      
             return View(res);
         }
         // GET: Articulo/Filtrar/5
@@ -149,7 +144,7 @@ namespace DSM5.Controllers
         public ActionResult Filtrar()
         {
 
-            FiltroPelicula res = new FiltroPelicula();
+            FiltroSerie res = new FiltroSerie();
 
 
             //articuloAsembler.covert
@@ -157,18 +152,18 @@ namespace DSM5.Controllers
         }
         // POST: Articulo/Filtrar/5
         [HttpPost]
-        public ActionResult Filtrar(FiltroPelicula collection)
+        public ActionResult Filtrar(FiltroSerie collection)
         {
             try
             {
-                PeliculaCEN cen = new PeliculaCEN();
-                IList<PeliculaEN> res = null, aux = null;
+                SerieCEN cen = new SerieCEN();
+                IList<SerieEN> res = null, aux = null;
                 // TODO: Add delete logic here
                 res = cen.ReadAll(0, int.MaxValue);
 
 
-                AssemblerPelicula ass = new AssemblerPelicula();
-                IList<Pelicula> listart = ass.ConvertListENToModel(res);
+                AssemblerSerie ass = new AssemblerSerie();
+                IList<Serie> listart = ass.ConvertListENToModel(res);
                 return View("Resultadobusqueda", listart);
 
             }
@@ -180,5 +175,9 @@ namespace DSM5.Controllers
 
 
         }
+
+
+
+
     }
 }

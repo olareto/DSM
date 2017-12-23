@@ -15,7 +15,7 @@ namespace DSM5.Models
 
 
 
-            [Display(Prompt = "Nombre del Evento", Description = "Nombre de la Pelicula", Name = "Nombre ")]
+            [Display(Prompt = "Nombre de la pelicula", Description = "Nombre de la Pelicula", Name = "Nombre ")]
             [Required(ErrorMessage = "Debe indicar un nombre para la Pelicula")]
             [StringLength(maximumLength: 200, ErrorMessage = "El nombre no puede tener más de 200 caracteres")]
             public string Nombre { get; set; }

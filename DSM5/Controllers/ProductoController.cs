@@ -150,30 +150,23 @@ namespace DSM5.Controllers
             //articuloAsembler.covert
             return View(res);
         }
-
         // POST: Articulo/Filtrar/5
         [HttpPost]
         public ActionResult Filtrar(FiltroProducto collection)
         {
             try
             {
-
-
-               // UsuarioCEN cen = new UsuarioCEN();
-                //UsuarioEN en = cen.ReadOID("email");
-                //CarritoEN ca = en.Carrito;
-
                 ProductoCEN cen = new ProductoCEN();
-                IList<ProductoEN> res=null,aux=null;
+                IList<ProductoEN> res = null, aux = null;
                 // TODO: Add delete logic here
-                res = cen.ReadAll(0,int.MaxValue);
-           
-                if (!(collection.Preciobol==false||collection.Preciomin <= 0 || collection.Preciomax <=0|| collection.Preciomax <= collection.Preciomin))
+                res = cen.ReadAll(0, int.MaxValue);
+
+                if (!(collection.Preciobol == false || collection.Preciomin <= 0 || collection.Preciomax <= 0 || collection.Preciomax <= collection.Preciomin))
                 {
                     aux = cen.Filtroprecio(collection.Preciomin, collection.Preciomax);
                     res = res.Intersect(aux).ToList();
                 }
-                if (collection.Nombrebol==true&&collection.Nombre != null )
+                if (collection.Nombrebol == true && collection.Nombre != null)
                 {
                     aux = cen.Filtronombre(collection.Nombre);
                     res = res.Intersect(aux).ToList();
@@ -191,144 +184,17 @@ namespace DSM5.Controllers
                 }
                 AssemblerProducto ass = new AssemblerProducto();
                 IList<Producto> listart = ass.ConvertListENToModel(res);
-                
-          
-                return View("Resultadobusqueda", listart );
+                return View("Resultadobusqueda", listart);
+
             }
             catch
             {
-                
+
                 return View();
             }
 
-        }
-        // GET: Articulo/Filtroprecio/5
-        ////////////////
-
-        public ActionResult Filtroprecio(int min,int max,int limit)
-        {
-
-            ProductoCEN cen = new ProductoCEN();
-            IList<ProductoEN> enlinst = cen.Filtroprecio(min,max);
-                
-            AssemblerProducto ass = new AssemblerProducto();
-            IList<Producto> listart = ass.ConvertListENToModel(enlinst);
-
-            //articuloAsembler.covert
-            return View(listart);
-        }
-
-        // POST: Articulo/Filtroprecio/5
-        [HttpPost]
-        public ActionResult Filtroprecio(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-                
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
 
         }
-        // GET: Articulo/Filtronombre/5
-        ////////////////
-
-        public ActionResult Filtronombre(String name)
-        {
-
-            ProductoCEN cen = new ProductoCEN();
-            IList<ProductoEN> enlinst = cen.Filtronombre(name);
-
-            AssemblerProducto ass = new AssemblerProducto();
-            IList<Producto> listart = ass.ConvertListENToModel(enlinst);
-
-            //articuloAsembler.covert
-            return View(listart);
-        }
-
-        // POST: Articulo/Filtronombre/5
-        [HttpPost]
-        public ActionResult Filtronombre(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
 
         }
-        // GET: Articulo/Filtrotalla/5
-        ////////////////
-
-        public ActionResult Filtrotalla(String talla)
-        {
-
-            ProductoCEN cen = new ProductoCEN();
-            IList<ProductoEN> enlinst = cen.Filtrotalla(talla);
-
-            AssemblerProducto ass = new AssemblerProducto();
-            IList<Producto> listart = ass.ConvertListENToModel(enlinst);
-
-            //articuloAsembler.covert
-            return View(listart);
-        }
-
-        // POST: Articulo/Filtrotalla/5
-        [HttpPost]
-        public ActionResult Filtrotalla(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-
-        }
-        // GET: Articulo/Filtrovalor/5
-        ////////////////
-
-        public ActionResult Filtrovalor(int valor)
-        {
-
-            ProductoCEN cen = new ProductoCEN();
-            IList<ProductoEN> enlinst = cen.Filtrovalor((SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)valor);
-
-            AssemblerProducto ass = new AssemblerProducto();
-            IList<Producto> listart = ass.ConvertListENToModel(enlinst);
-
-            //articuloAsembler.covert
-            return View(listart);
-        }
-
-        // POST: Articulo/Filtrotalla/5
-        [HttpPost]
-        public ActionResult Filtrovalor(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-
-        }
-    }
 }

@@ -172,6 +172,7 @@
     <Compile Include="Controllers\EventoController.cs" />
     <Compile Include="Controllers\CarritoController.cs" />
     <Compile Include="Controllers\PeliculaController.cs" />
+    <Compile Include="Controllers\SerieController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\ArticuloController.cs" />
     <Compile Include="Controllers\BasicController.cs" />
@@ -180,6 +181,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AssemblerPelicula.cs" />
+    <Compile Include="Models\AssemblerSerie.cs" />
     <Compile Include="Models\Carrito.cs" />
     <Compile Include="Models\AssemblerEvento.cs" />
     <Compile Include="Models\AssemblerCarrito.cs" />
@@ -187,8 +189,11 @@
     <Compile Include="Models\Evento.cs" />
     <Compile Include="Models\FiltroEvento.cs" />
     <Compile Include="Models\FiltroCarrito.cs" />
+    <Compile Include="Models\FiltroPelicula.cs" />
+    <Compile Include="Models\FiltroSerie.cs" />
     <Compile Include="Models\FiltroProducto.cs" />
     <Compile Include="Models\Pelicula.cs" />
+    <Compile Include="Models\Serie.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Articulo.cs" />
     <Compile Include="Models\AssemblerArticulo.cs" />
@@ -238,19 +243,11 @@
     <Content Include="Views\Producto\Create.cshtml" />
     <Content Include="Views\Producto\Edit.cshtml" />
     <Content Include="Views\Producto\Delete.cshtml" />
-    <Content Include="Views\Producto\Filtroprecio.cshtml" />
     <Content Include="Views\Evento\Details.cshtml" />
     <Content Include="Views\Evento\Create.cshtml" />
     <Content Include="Views\Evento\Edit.cshtml" />
     <Content Include="Views\Evento\Delete.cshtml" />
-    <Content Include="Views\Evento\Filtroprecio.cshtml" />
-    <Content Include="Views\Producto\Filtronombre.cshtml" />
-    <Content Include="Views\Producto\Filtrotalla.cshtml" />
-    <Content Include="Views\Producto\Filtrovalor.cshtml" />
-    <Content Include="Views\Evento\Filtronombre.cshtml" />
-    <Content Include="Views\Evento\Filtrovalor.cshtml" />
     <Content Include="Views\Evento\Index.cshtml" />
-    <Content Include="Views\Evento\Filtrotipo.cshtml" />
     <Content Include="Views\Producto\Filtrar.cshtml" />
     <Content Include="Views\Producto\Resultadobusqueda.cshtml" />
     <Content Include="Views\Carrito\Index.cshtml" />
@@ -258,6 +255,7 @@
     <Content Include="Views\Carrito\Create.cshtml" />
     <Content Include="Views\Carrito\Edit.cshtml" />
     <Content Include="Views\Carrito\Delete.cshtml" />
+    <Content Include="Views\Evento\Filtrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
