@@ -171,6 +171,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EventoController.cs" />
     <Compile Include="Controllers\CarritoController.cs" />
+    <Compile Include="Controllers\PeliculaController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\ArticuloController.cs" />
     <Compile Include="Controllers\BasicController.cs" />
@@ -178,6 +179,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AssemblerPelicula.cs" />
     <Compile Include="Models\Carrito.cs" />
     <Compile Include="Models\AssemblerEvento.cs" />
     <Compile Include="Models\AssemblerCarrito.cs" />
@@ -186,6 +188,7 @@
     <Compile Include="Models\FiltroEvento.cs" />
     <Compile Include="Models\FiltroCarrito.cs" />
     <Compile Include="Models\FiltroProducto.cs" />
+    <Compile Include="Models\Pelicula.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Articulo.cs" />
     <Compile Include="Models\AssemblerArticulo.cs" />
@@ -249,7 +252,7 @@
     <Content Include="Views\Evento\Index.cshtml" />
     <Content Include="Views\Evento\Filtrotipo.cshtml" />
     <Content Include="Views\Producto\Filtrar.cshtml" />
-   <Content Include="Views\Producto\Resultadobusqueda.cshtml" />
+    <Content Include="Views\Producto\Resultadobusqueda.cshtml" />
     <Content Include="Views\Carrito\Index.cshtml" />
     <Content Include="Views\Carrito\Details.cshtml" />
     <Content Include="Views\Carrito\Create.cshtml" />
