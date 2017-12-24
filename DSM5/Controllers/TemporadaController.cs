@@ -9,15 +9,15 @@ using System.Web.Mvc;
 
 namespace DSM5.Controllers
 {
-    public class SerieController : BasicController
+    public class TemporadaController : BasicController
     {
         // GET: Articulo
         public ActionResult Index()
         {
-            SerieCEN cen = new SerieCEN();
-            IList<SerieEN> enlinst=cen.ReadAll(0, 6);
-            AssemblerSerie ass = new AssemblerSerie();
-            IList<Serie> listart = ass.ConvertListENToModel(enlinst);
+            TemporadaCEN cen = new TemporadaCEN();
+            IList<TemporadaEN> enlinst=cen.ReadAll(0, 6);
+            AssemblerTemporada ass = new AssemblerTemporada();
+            IList<Temporada> listart = ass.ConvertListENToModel(enlinst);
 
             //articuloAsembler.covert
             return View(listart);
@@ -26,13 +26,13 @@ namespace DSM5.Controllers
         // GET: Articulo/Details/5
         public ActionResult Details(int id)
         {
-            SerieCEN cen = new SerieCEN();
+            TemporadaCEN cen = new TemporadaCEN();
 
-            SerieEN en = new SerieEN();
+            TemporadaEN en = new TemporadaEN();
             
             en = cen.ReadOID(id);
-            AssemblerSerie ass = new AssemblerSerie();
-            Serie sol =ass.ConvertENToModelUI(en);
+            AssemblerTemporada ass = new AssemblerTemporada();
+            Temporada sol =ass.ConvertENToModelUI(en);
             
             return View(sol);
         }
@@ -40,22 +40,22 @@ namespace DSM5.Controllers
         // GET: Articulo/Create
         public ActionResult Create()
         {
-            SerieEN en = new SerieEN();
-            AssemblerSerie ass = new AssemblerSerie();
-            Serie sol = ass.ConvertENToModelUI(en);
+            TemporadaEN en = new TemporadaEN();
+            AssemblerTemporada ass = new AssemblerTemporada();
+            Temporada sol = ass.ConvertENToModelUI(en);
             return View(sol);
         }
 
         // POST: Articulo/Create
         [HttpPost]
-        public ActionResult Create(Serie collection)
+        public ActionResult Create(Temporada collection)
         {
             try
             {
                 // TODO: Add insert logic here
-                SerieCEN cen = new SerieCEN();
+                TemporadaCEN cen = new TemporadaCEN();
                 
-                cen.New_((SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre);
+                cen.New_(327680,collection.Nombre);
                 return RedirectToAction("Index");
             }
             catch
@@ -63,14 +63,36 @@ namespace DSM5.Controllers
                 return View();
             }
         }
+        
+         // GET: Articulo/show/5
+        public ActionResult show()
+        {
+            
+            SerieCEN cen = new SerieCEN();
+            SerieEN en = cen.ReadOID(327680);
+           // Session session = SessionFactoryHelper.getSessionFactory().getCurrentSession();
+          
+            IList<TemporadaEN> ten = en.Temporada;
+            //if (ten == null)
+            //{
+            //  ten = new List<TemporadaEN>();
+            //}
 
+            AssemblerTemporada ass = new AssemblerTemporada();
+            IList<Temporada> sol = ass.ConvertListENToModel(ten);
+
+            return View(sol);
+
+
+         
+        }
         // GET: Articulo/Edit/5
         public ActionResult Edit(int id)
         {
 
-            SerieCEN cen = new SerieCEN();
+            TemporadaCEN cen = new TemporadaCEN();
 
-            SerieEN en = new SerieEN();
+            TemporadaEN en = new TemporadaEN();
             en = cen.ReadOID(id);
 
             // SessionInitializeTransaction();
@@ -78,20 +100,20 @@ namespace DSM5.Controllers
             //IProducto productoCAD = new productoCAD(session);
 
             // ProductoEN en = new Pro;
-            AssemblerSerie ass = new AssemblerSerie();
-            Serie sol = ass.ConvertENToModelUI(en);
+            AssemblerTemporada ass = new AssemblerTemporada();
+            Temporada sol = ass.ConvertENToModelUI(en);
             return View(sol);
         }
 
         // POST: Articulo/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, Serie collection)
+        public ActionResult Edit(int id, Temporada collection)
         {
             try
             {
                 // TODO: Add update logic here
-                SerieCEN cen = new SerieCEN();
-                cen.Modify(id,(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre);
+                TemporadaCEN cen = new TemporadaCEN();
+                cen.Modify(collection.id,collection.Nombre);
                 //cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock, collection.Talla);
                 return RedirectToAction("Index");
             }
@@ -105,12 +127,12 @@ namespace DSM5.Controllers
         public ActionResult Delete(int id)
         {
 
-            SerieCEN cen = new SerieCEN();
+            TemporadaCEN cen = new TemporadaCEN();
 
-            SerieEN en = new SerieEN();
+            TemporadaEN en = new TemporadaEN();
             en = cen.ReadOID(id);
-            AssemblerSerie ass = new AssemblerSerie();
-            Serie sol = ass.ConvertENToModelUI(en);
+            AssemblerTemporada ass = new AssemblerTemporada();
+            Temporada sol = ass.ConvertENToModelUI(en);
             return View(sol);
         }
 
@@ -121,7 +143,7 @@ namespace DSM5.Controllers
             try
             {
                 // TODO: Add delete logic here
-                SerieCEN cen = new SerieCEN();
+                TemporadaCEN cen = new TemporadaCEN();
 
                 cen.Destroy(id);
                 return RedirectToAction("Index");
@@ -132,7 +154,7 @@ namespace DSM5.Controllers
             }
         }
         // GET: Articulo/Resultadobusqueda/5
-        public ActionResult Resultadobusqueda(IList<Serie> res)
+        public ActionResult Resultadobusqueda(IList<Temporada> res)
         {
 
       
@@ -179,13 +201,18 @@ namespace DSM5.Controllers
         public ActionResult mostrar_temp(int id)
         {
             SerieCEN cen = new SerieCEN();
-            SerieEN en  = cen.ReadOID(id);
 
-            IList<TemporadaEN> ten =en.Temporada;
-   
+            SerieEN en = new SerieEN();
+            IList<TemporadaEN> ten; 
+
+            en = cen.ReadOID(id);
+            ten =en.Temporada;
+
+
             AssemblerTemporada ass = new AssemblerTemporada();
+
             IList<Temporada> sol = ass.ConvertListENToModel(ten);
-           
+
             return View(sol);
         }
 
@@ -193,6 +220,10 @@ namespace DSM5.Controllers
         public ActionResult Create_temp(int id)
         {
             TemporadaEN en = new TemporadaEN();
+            SerieCEN cens = new SerieCEN();
+
+            en.Serie = cens.ReadOID(id);
+           
             AssemblerTemporada ass = new AssemblerTemporada();
             Temporada sol = ass.ConvertENToModelUI(en);
             //sol.serie = id;
@@ -201,19 +232,22 @@ namespace DSM5.Controllers
 
         // POST: Articulo/Create_temp
         [HttpPost]
-        public ActionResult Create_temp(int id,Temporada collection)
+        public ActionResult Create_temp(Temporada collection)
         {
             try
             {
+
                 TemporadaEN en = new TemporadaEN();
+                SerieCEN cens = new SerieCEN();
+
+
                 // TODO: Add insert logic here
                 TemporadaCEN cen = new TemporadaCEN();
-                cen.New_(id, collection.Nombre);
-                //IList<int> resu = new List<int>();
-                //resu.Add(temp);
+                int temp=cen.New_(collection.id, collection.Nombre);
+                IList<int> resu = new List<int>();
+                resu.Add(temp);
                 //resu.Aggregate<int>(temp);
-                //SerieCEN cens = new SerieCEN();
-                //cens.Addtemporada(id, resu);
+                cens.Addtemporada(collection.id, resu);
 
                 return RedirectToAction("Index");
             }

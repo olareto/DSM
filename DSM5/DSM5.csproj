@@ -172,6 +172,9 @@
     <Compile Include="Controllers\EventoController.cs" />
     <Compile Include="Controllers\CarritoController.cs" />
     <Compile Include="Controllers\PeliculaController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Controllers\TemporadaController.cs" />
     <Compile Include="Controllers\SerieController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\ArticuloController.cs" />
@@ -181,6 +184,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AssemblerPelicula.cs" />
+    <Compile Include="Models\AssemblerAdmin.cs" />
+    <Compile Include="Models\AssemblerUsuario.cs" />
+    <Compile Include="Models\AssemblerTemporada.cs" />
     <Compile Include="Models\AssemblerSerie.cs" />
     <Compile Include="Models\Carrito.cs" />
     <Compile Include="Models\AssemblerEvento.cs" />
@@ -190,9 +196,14 @@
     <Compile Include="Models\FiltroEvento.cs" />
     <Compile Include="Models\FiltroCarrito.cs" />
     <Compile Include="Models\FiltroPelicula.cs" />
+    <Compile Include="Models\FiltroAdmin.cs" />
+    <Compile Include="Models\FiltroUsuario.cs" />
     <Compile Include="Models\FiltroSerie.cs" />
     <Compile Include="Models\FiltroProducto.cs" />
     <Compile Include="Models\Pelicula.cs" />
+    <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\Temporada.cs" />
     <Compile Include="Models\Serie.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Articulo.cs" />
@@ -256,6 +267,21 @@
     <Content Include="Views\Carrito\Edit.cshtml" />
     <Content Include="Views\Carrito\Delete.cshtml" />
     <Content Include="Views\Evento\Filtrar.cshtml" />
+    <Content Include="Views\Serie\Index.cshtml" />
+    <Content Include="Views\Serie\Details.cshtml" />
+    <Content Include="Views\Serie\Create.cshtml" />
+    <Content Include="Views\Serie\Edit.cshtml" />
+    <Content Include="Views\Serie\Delete.cshtml" />
+    <Content Include="Views\Serie\Resultadobusqueda.cshtml" />
+    <Content Include="Views\Serie\Filtrar.cshtml" />
+    <Content Include="Views\Serie\Create_temp.cshtml" />
+    <Content Include="Views\Serie\mostrar_temp.cshtml" />
+    <Content Include="Views\Temporada\Index.cshtml" />
+    <Content Include="Views\Temporada\Details.cshtml" />
+    <Content Include="Views\Temporada\Edit.cshtml" />
+    <Content Include="Views\Temporada\Delete.cshtml" />
+    <Content Include="Views\Temporada\Create.cshtml" />
+    <Content Include="Views\Temporada\show.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
