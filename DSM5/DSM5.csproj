@@ -300,6 +300,8 @@
     <Content Include="Views\Temporada\Delete.cshtml" />
     <Content Include="Views\Temporada\Create.cshtml" />
     <Content Include="Views\Temporada\show.cshtml" />
+    <Content Include="Views\Pelicula\Index.cshtml" />
+    <Content Include="Views\Pelicula\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
