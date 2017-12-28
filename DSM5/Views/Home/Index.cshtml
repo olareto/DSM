@@ -13,23 +13,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
+        .margin {
+            margin-bottom: 45px;
+        }
         .bg-1 {
             background-color: #1abc9c; /* Green */
             color: #ffffff;
         }
 
         .bg-2 {
-            background-color: #474e5d; /* Dark Blue */
+            background-color: #4f4f4f; /* Dark Blue */
             color: #ffffff;
         }
 
         .bg-3 {
-            background-color: #fff; /* White */
+            background-color: #4f4f4f; /* White */
             color: #555555;
         }
-        .bg-4 {
-            background-color: #2f2f2f;
-            color: #ffffff;
+        .container-fluid {
+            padding-top: 40px;
+            padding-bottom: 40px;
         }
         .container-fluid2 {
             margin: 0 auto;
@@ -39,6 +42,7 @@
         .carousel-caption{
             margin-bottom: 40px;
         }
+      
     </style>
 </head>
 <body>
@@ -111,29 +115,40 @@
     </div>
 
     <div class="container-fluid bg-2 text-center">
-        <h3>What Am I?</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <a href="#" class="btn btn-default btn-lg">
-            <span class="glyphicon glyphicon-search"></span>Search
-        </a>
-    </div>
-
-    <div class="container-fluid bg-3 text-center">
-        <h3>Where To Find Me?</h3>
+        <h2 class="margin">Peliculas Destacadas</h2>
         <div class="row">
             <div class="col-sm-4">
-                <p>Lorem ipsum..</p>
-               
+                <p>Gladiator</p>
+                <img src="~/Images/Gladiator.jpg" class="img-thumbnail img-responsive margin" alt="Cinque Terre">                        
             </div>
             <div class="col-sm-4">
-                <p>Lorem ipsum..</p>
-                
+                <p>Master and Comander</p>
+                <img src="~/Images/MasterAndComander.jpg" class="img-thumbnail img-responsive margin" alt="Cinque Terre" />
             </div>
             <div class="col-sm-4">
-                <p>Lorem ipsum..</p>
-                
+                <p>Titanic</p>
+                <img src="~/Images/Titanic.jpg" class="img-thumbnail img-responsive margin" alt="Cinque Terre">                            
             </div>
         </div>
     </div>
+
+    <div class="container-fluid bg-2 text-center">
+        <h2 class="margin">Series Destacadas</h2>
+        <div class="row">
+            <div class="col-sm-4">
+                <p>Gladiator</p>
+                <img src="~/Images/Gladiator.jpg" class="img-thumbnail img-responsive margin" alt="Cinque Terre">
+            </div>
+            <div class="col-sm-4">
+                <p>Master and Comander</p>
+                <img src="~/Images/MasterAndComander.jpg" class="img-thumbnail img-responsive margin" alt="Cinque Terre">
+            </div>
+            <div class="col-sm-4">
+                <p>Titanic</p>
+                <img src="~/Images/Titanic.jpg" class="img-thumbnail img-responsive margin" alt="Cinque Terre">
+            </div>
+        </div>
+    </div>
+   
 </body>
 </html>
