@@ -171,6 +171,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EventoController.cs" />
     <Compile Include="Controllers\CarritoController.cs" />
+    <Compile Include="Controllers\PeliculaController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Controllers\TemporadaController.cs" />
+    <Compile Include="Controllers\SerieController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\ArticuloController.cs" />
     <Compile Include="Controllers\BasicController.cs" />
@@ -178,6 +183,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AssemblerPelicula.cs" />
+    <Compile Include="Models\AssemblerAdmin.cs" />
+    <Compile Include="Models\AssemblerUsuario.cs" />
+    <Compile Include="Models\AssemblerTemporada.cs" />
+    <Compile Include="Models\AssemblerSerie.cs" />
     <Compile Include="Models\Carrito.cs" />
     <Compile Include="Models\AssemblerEvento.cs" />
     <Compile Include="Models\AssemblerCarrito.cs" />
@@ -185,27 +195,57 @@
     <Compile Include="Models\Evento.cs" />
     <Compile Include="Models\FiltroEvento.cs" />
     <Compile Include="Models\FiltroCarrito.cs" />
+    <Compile Include="Models\FiltroPelicula.cs" />
+    <Compile Include="Models\FiltroAdmin.cs" />
+    <Compile Include="Models\FiltroUsuario.cs" />
+    <Compile Include="Models\FiltroSerie.cs" />
     <Compile Include="Models\FiltroProducto.cs" />
+    <Compile Include="Models\Pelicula.cs" />
+    <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\Temporada.cs" />
+    <Compile Include="Models\Serie.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Articulo.cs" />
     <Compile Include="Models\AssemblerArticulo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Gladiator.jpg" />
+    <Content Include="Images\MasterAndComander.jpg" />
+    <Content Include="Images\peakyblinders.jpg" />
+    <Content Include="Images\starwars.jpg" />
+    <Content Include="Images\SuicideSquad.jpg" />
+    <Content Include="Images\Titanic.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.2.1.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.2.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -235,42 +275,42 @@
     <Content Include="Views\Producto\Create.cshtml" />
     <Content Include="Views\Producto\Edit.cshtml" />
     <Content Include="Views\Producto\Delete.cshtml" />
-    <Content Include="Views\Producto\Filtroprecio.cshtml" />
     <Content Include="Views\Evento\Details.cshtml" />
     <Content Include="Views\Evento\Create.cshtml" />
     <Content Include="Views\Evento\Edit.cshtml" />
     <Content Include="Views\Evento\Delete.cshtml" />
-    <Content Include="Views\Evento\Filtroprecio.cshtml" />
-    <Content Include="Views\Producto\Filtronombre.cshtml" />
-    <Content Include="Views\Producto\Filtrotalla.cshtml" />
-    <Content Include="Views\Producto\Filtrovalor.cshtml" />
-    <Content Include="Views\Evento\Filtronombre.cshtml" />
-    <Content Include="Views\Evento\Filtrovalor.cshtml" />
     <Content Include="Views\Evento\Index.cshtml" />
-    <Content Include="Views\Evento\Filtrotipo.cshtml" />
     <Content Include="Views\Producto\Filtrar.cshtml" />
-   <Content Include="Views\Producto\Resultadobusqueda.cshtml" />
+    <Content Include="Views\Producto\Resultadobusqueda.cshtml" />
     <Content Include="Views\Carrito\Index.cshtml" />
     <Content Include="Views\Carrito\Details.cshtml" />
     <Content Include="Views\Carrito\Create.cshtml" />
     <Content Include="Views\Carrito\Edit.cshtml" />
     <Content Include="Views\Carrito\Delete.cshtml" />
+    <Content Include="Views\Evento\Filtrar.cshtml" />
+    <Content Include="Views\Serie\Index.cshtml" />
+    <Content Include="Views\Serie\Details.cshtml" />
+    <Content Include="Views\Serie\Create.cshtml" />
+    <Content Include="Views\Serie\Edit.cshtml" />
+    <Content Include="Views\Serie\Delete.cshtml" />
+    <Content Include="Views\Serie\Resultadobusqueda.cshtml" />
+    <Content Include="Views\Serie\Filtrar.cshtml" />
+    <Content Include="Views\Serie\Create_temp.cshtml" />
+    <Content Include="Views\Serie\mostrar_temp.cshtml" />
+    <Content Include="Views\Temporada\Index.cshtml" />
+    <Content Include="Views\Temporada\Details.cshtml" />
+    <Content Include="Views\Temporada\Edit.cshtml" />
+    <Content Include="Views\Temporada\Delete.cshtml" />
+    <Content Include="Views\Temporada\Create.cshtml" />
+    <Content Include="Views\Temporada\show.cshtml" />
+    <Content Include="Views\Pelicula\Index.cshtml" />
+    <Content Include="Views\Pelicula\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SMPGenNHibernate\SMPGenNHibernate.csproj">

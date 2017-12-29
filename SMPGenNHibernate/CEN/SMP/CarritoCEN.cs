@@ -96,12 +96,6 @@ public System.Collections.Generic.IList<CarritoEN> ReadAll (int first, int size)
         list = _ICarritoCAD.ReadAll (first, size);
         return list;
 }
-public void Eliminarlinea (int p_carrito_OID, System.Collections.Generic.IList<int> p_lineas_pedido_OIDs)
-{
-        //Call to CarritoCAD
-
-        _ICarritoCAD.Eliminarlinea (p_carrito_OID, p_lineas_pedido_OIDs);
-}
 public void Addlinea (int p_carrito_OID, System.Collections.Generic.IList<int> p_lineas_pedido_OIDs)
 {
         //Call to CarritoCAD

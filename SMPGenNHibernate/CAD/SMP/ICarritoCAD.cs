@@ -29,8 +29,6 @@ CarritoEN ReadOID (int id
 System.Collections.Generic.IList<CarritoEN> ReadAll (int first, int size);
 
 
-void Eliminarlinea (int p_carrito_OID, System.Collections.Generic.IList<int> p_lineas_pedido_OIDs);
-
 void Addlinea (int p_carrito_OID, System.Collections.Generic.IList<int> p_lineas_pedido_OIDs);
 }
 }

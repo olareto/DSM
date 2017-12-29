@@ -242,6 +242,7 @@
 			
 			
 			
+			<Compile Include="CEN\SMP\CarritoCEN_Filtronombre.cs" />
 			
 	<Compile Include="EN\SMP\ArticuloEN.cs" />
 	<Compile Include="CEN\SMP\ArticuloCEN.cs" />
