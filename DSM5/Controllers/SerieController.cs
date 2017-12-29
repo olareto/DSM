@@ -1,4 +1,5 @@
 ﻿using DSM5.Models;
+using SMPGenNHibernate.CAD.SMP;
 using SMPGenNHibernate.CEN.SMP;
 using SMPGenNHibernate.EN.SMP;
 using System;
@@ -178,14 +179,20 @@ namespace DSM5.Controllers
         // GET: Articulo/mostrar_temp/5
         public ActionResult mostrar_temp(int id)
         {
-            SerieCEN cen = new SerieCEN();
+            //lazy-fetching = false;
+            SessionInitialize();
+            SerieCAD cad = new SerieCAD(session); 
+
+            SerieCEN cen = new SerieCEN(cad);
             SerieEN en  = cen.ReadOID(id);
 
             IList<TemporadaEN> ten =en.Temporada;
    
             AssemblerTemporada ass = new AssemblerTemporada();
             IList<Temporada> sol = ass.ConvertListENToModel(ten);
-           
+
+            SessionClose();
+
             return View(sol);
         }
 
