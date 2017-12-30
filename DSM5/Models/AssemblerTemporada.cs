@@ -12,7 +12,8 @@ namespace DSM5.Models
         {
             Temporada art = new Temporada();
             art.id = en.Id;
-           
+            if(en.Serie!=null)
+                art.serie = en.Serie.Id;
             
             art.Nombre = en.Nombre;
             

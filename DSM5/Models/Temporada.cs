@@ -13,7 +13,10 @@ namespace DSM5.Models
         [ScaffoldColumn(false)]
         public int id { get; set; }
 
-        
+
+        [ScaffoldColumn(false)]
+        public int serie { get; set; }
+
 
 
 
