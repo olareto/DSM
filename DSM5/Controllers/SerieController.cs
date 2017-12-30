@@ -192,7 +192,7 @@ namespace DSM5.Controllers
             IList<Temporada> sol = ass.ConvertListENToModel(ten);
 
             SessionClose();
-
+            ViewData["id_serie"] = id;
             return View(sol);
         }
 

@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<DSM5.Models.Temporada>
+    
 
 @{
     ViewBag.Title = "mostrar_temp";
@@ -8,7 +9,10 @@
 <h2>mostrar_temp</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+
+    
+    @Html.ActionLink("Create New", "Create", "Temporada", new { id = @ViewData["id_serie"] },null)
+    
 </p>
 <table class="table">
     <tr>
@@ -24,9 +28,11 @@
             @Html.DisplayFor(modelItem => item.Nombre)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            @Html.ActionLink("Edit", "Edit", "Temporada", new { id_s = @ViewData["id_serie"], id = item.id }, null)|
+            @Html.ActionLink("Details", "Details", "Temporada", new { id_s = @ViewData["id_serie"],id = item.id }, null)|
+            @Html.ActionLink("Delete", "Delete", "Temporada", new { id_s = @ViewData["id_serie"],id = item.id }, null)
+
+      
         </td>
     </tr>
 }

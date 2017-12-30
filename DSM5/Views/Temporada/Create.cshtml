@@ -33,7 +33,9 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "mostrar_temp", "Serie", new { id = @ViewData["id_serie"] }, null)
+
+    
 </div>
 
 @section Scripts {

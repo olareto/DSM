@@ -24,8 +24,10 @@ namespace DSM5.Controllers
         }
 
         // GET: Articulo/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int id_s,int id)
         {
+
+             
             TemporadaCEN cen = new TemporadaCEN();
 
             TemporadaEN en = new TemporadaEN();
@@ -33,16 +35,18 @@ namespace DSM5.Controllers
             en = cen.ReadOID(id);
             AssemblerTemporada ass = new AssemblerTemporada();
             Temporada sol =ass.ConvertENToModelUI(en);
-            
+            ViewData["id_serie"] = id_s;
             return View(sol);
         }
 
         // GET: Articulo/Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
             TemporadaEN en = new TemporadaEN();
             AssemblerTemporada ass = new AssemblerTemporada();
             Temporada sol = ass.ConvertENToModelUI(en);
+            ViewData["id_serie"] = id;
+
             return View(sol);
         }
 
@@ -55,8 +59,8 @@ namespace DSM5.Controllers
                 // TODO: Add insert logic here
                 TemporadaCEN cen = new TemporadaCEN();
                 
-                cen.New_(327680,collection.Nombre);
-                return RedirectToAction("Index");
+                cen.New_((int)ViewData["id_serie"], collection.Nombre);
+                return RedirectToAction("mostrar_temp", "Serie", new { id = ViewData["id_serie"] });
             }
             catch
             {
@@ -87,7 +91,7 @@ namespace DSM5.Controllers
          
         }
         // GET: Articulo/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int id_s, int id)
         {
 
             TemporadaCEN cen = new TemporadaCEN();
@@ -102,6 +106,7 @@ namespace DSM5.Controllers
             // ProductoEN en = new Pro;
             AssemblerTemporada ass = new AssemblerTemporada();
             Temporada sol = ass.ConvertENToModelUI(en);
+            ViewData["id_serie"] = id_s;
             return View(sol);
         }
 
@@ -115,7 +120,10 @@ namespace DSM5.Controllers
                 TemporadaCEN cen = new TemporadaCEN();
                 cen.Modify(collection.id,collection.Nombre);
                 //cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock, collection.Talla);
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                int idbueno = (int)ViewData["id_serie"];
+                return RedirectToAction("mostrar_temp", "Serie", ViewData["id_serie"] );
+                
             }
             catch
             {
@@ -124,7 +132,7 @@ namespace DSM5.Controllers
         }
 
         // GET: Articulo/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int id_s, int id)
         {
 
             TemporadaCEN cen = new TemporadaCEN();
@@ -133,6 +141,7 @@ namespace DSM5.Controllers
             en = cen.ReadOID(id);
             AssemblerTemporada ass = new AssemblerTemporada();
             Temporada sol = ass.ConvertENToModelUI(en);
+            ViewData["id_serie"] = id_s;
             return View(sol);
         }
 
@@ -146,7 +155,7 @@ namespace DSM5.Controllers
                 TemporadaCEN cen = new TemporadaCEN();
 
                 cen.Destroy(id);
-                return RedirectToAction("Index");
+                return RedirectToAction("mostrar_temp","Serie", new { id = ViewData["id_serie"] });
             }
             catch
             {
