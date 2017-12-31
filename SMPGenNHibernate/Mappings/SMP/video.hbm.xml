@@ -18,6 +18,9 @@
 					<property name="Nombre" type="string"> 
 						<column name="nombre"  not-null="true"/>
 					</property>
+					<property name="Imagen" type="string"> 
+						<column name="imagen"  not-null="true"/>
+					</property>
 			
 			
 			
@@ -33,6 +36,8 @@
     					</bag>
 			
 			
+			
+					
 					
 					
 					

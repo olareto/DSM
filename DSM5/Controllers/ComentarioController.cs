@@ -43,25 +43,32 @@ namespace DSM5.Controllers
         // GET: Articulo/Create
         public ActionResult Create(int id)
         {
-            CapituloEN en = new CapituloEN();
-            AssemblerCapitulo ass = new AssemblerCapitulo();
-            Capitulo sol = ass.ConvertENToModelUI(en);
+            ComentarioEN en = new ComentarioEN();
+            AssemblerComentario ass = new AssemblerComentario();
+            Comentario sol = ass.ConvertENToModelUI(en);
             ViewData["id_serie"] = id;
+            ViewData["controller"] = "Capitulo";
+            ViewData["action"] = "Details";
             sol.id = id;
             return View(sol);
         }
 
         // POST: Articulo/Create
         [HttpPost]
-        public ActionResult Create(int id, Capitulo collection)
+        public ActionResult Create(int id, Comentario collection)
         {
             try
             {
                 // TODO: Add insert logic here
-                CapituloCEN cen = new CapituloCEN();
+                ComentarioCEN cen = new ComentarioCEN();
                 
-                cen.New_(id, collection.Nombre,(DateTime) collection.fecha, collection.descripcion, collection.imagen);
-                return RedirectToAction("mostrar_cap", "Temporada", new { id = id });
+
+               int e= cen.New_(collection.comentario, collection.autor, new DateTime(collection.fecha.Year, collection.fecha.Month, collection.fecha.Day));
+                ComentarioEN en = new ComentarioEN();
+                en = cen.ReadOID(e);
+                AssemblerComentario ass = new AssemblerComentario();
+                Comentario sol = ass.ConvertENToModelUI(en);
+                return RedirectToAction("Details", sol.controller, new { id = id });
             }
             catch
             {
@@ -75,9 +82,9 @@ namespace DSM5.Controllers
         public ActionResult Edit( int id)
         {
 
-            CapituloCEN cen = new CapituloCEN();
+            ComentarioCEN cen = new ComentarioCEN();
 
-            CapituloEN en = new CapituloEN();
+            ComentarioEN en = new ComentarioEN();
             en = cen.ReadOID(id);
 
             // SessionInitializeTransaction();
@@ -85,32 +92,32 @@ namespace DSM5.Controllers
             //IProducto productoCAD = new productoCAD(session);
 
             // ProductoEN en = new Pro;
-            AssemblerCapitulo ass = new AssemblerCapitulo();
-            Capitulo sol = ass.ConvertENToModelUI(en);
+            AssemblerComentario ass = new AssemblerComentario();
+            Comentario sol = ass.ConvertENToModelUI(en);
            
             return View(sol);
         }
 
         // POST: Articulo/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, Capitulo collection)
+        public ActionResult Edit(int id, Comentario collection)
         {
             try
             {
                 // TODO: Add update logic here
 
-                CapituloCEN cen = new CapituloCEN();
+                ComentarioCEN cen = new ComentarioCEN();
 
-                CapituloEN en = new CapituloEN();
+                ComentarioEN en = new ComentarioEN();
                 en = cen.ReadOID(id);
-                AssemblerCapitulo ass = new AssemblerCapitulo();
-                Capitulo sol = ass.ConvertENToModelUI(en);
-                cen.Modify(collection.id, collection.Nombre, collection.fecha, collection.descripcion, collection.imagen);
+                AssemblerComentario ass = new AssemblerComentario();
+                Comentario sol = ass.ConvertENToModelUI(en);
+                cen.Modify(collection.id, collection.comentario, collection.autor,new DateTime(collection.fecha.Year, collection.fecha.Month, collection.fecha.Day));
                 //cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock, collection.Talla);
                 //return RedirectToAction("Index");
-                int idbueno = sol.serie;
+               // int idbueno = sol.serie;
                 
-                return RedirectToAction("mostrar_cap", "Temporada", new {id= idbueno } );
+                return RedirectToAction("mostrar_cap", "Temporada" );
                 
             }
             catch
@@ -123,12 +130,12 @@ namespace DSM5.Controllers
         public ActionResult Delete(int id)
         {
 
-            CapituloCEN cen = new CapituloCEN();
+            ComentarioCEN cen = new ComentarioCEN();
 
-            CapituloEN en = new CapituloEN();
+            ComentarioEN en = new ComentarioEN();
             en = cen.ReadOID(id);
-            AssemblerCapitulo ass = new AssemblerCapitulo();
-            Capitulo sol = ass.ConvertENToModelUI(en);
+            AssemblerComentario ass = new AssemblerComentario();
+            Comentario sol = ass.ConvertENToModelUI(en);
             
             return View(sol);
         }
@@ -140,14 +147,14 @@ namespace DSM5.Controllers
             try
             {
                 // TODO: Add delete logic here
-                CapituloCEN cen = new CapituloCEN();
-                CapituloEN en = new CapituloEN();
+                ComentarioCEN cen = new ComentarioCEN();
+                ComentarioEN en = new ComentarioEN();
                 en = cen.ReadOID(id);
-                AssemblerCapitulo ass = new AssemblerCapitulo();
-                Capitulo sol = ass.ConvertENToModelUI(en);
-                int idbueno = sol.serie;
+                AssemblerComentario ass = new AssemblerComentario();
+                Comentario sol = ass.ConvertENToModelUI(en);
+               // int idbueno = sol.serie;
                 cen.Destroy(id);
-                return RedirectToAction("mostrar_cap", "Temporada", new { id = idbueno });
+                return RedirectToAction("mostrar_cap", "Temporada");
             }
             catch
             {
@@ -156,25 +163,7 @@ namespace DSM5.Controllers
         }
 
 
-        // GET: Articulo/mostrar_cap/5
-        public ActionResult mostrar_cap(int id)
-        {
-            //lazy-fetching = false;
-            SessionInitialize();
-            TemporadaCAD cad = new TemporadaCAD(session);
-
-            TemporadaCEN cen = new TemporadaCEN(cad);
-            TemporadaEN en = cen.ReadOID(id);
-
-            IList<CapituloEN> ten = en.Capitulo;
-
-            AssemblerCapitulo ass = new AssemblerCapitulo();
-            IList<Capitulo> sol = ass.ConvertListENToModel(ten);
-
-            SessionClose();
-            ViewData["id_serie"] = id;
-            return View(sol);
-        }
+       
 
       
 

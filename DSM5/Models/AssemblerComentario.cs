@@ -12,18 +12,44 @@ namespace DSM5.Models
         {
             Comentario art = new Comentario();
 
-
+            
             art.autor = en.Autor;
             art.comentario = en.Comentario;
-            art.fecha = (DateTime)en.Fecha;
+            if (en.Fecha != null)
+                art.fecha = (DateTime)en.Fecha;
+            else
+                art.fecha = DateTime.Today;
             art.id = en.Id;
 
-            if(en.Capitulo != null)
-                art.idsup =en.Capitulo.Id;
+
+
+            if (en.Capitulo != null)
+            {
+                art.idsup = en.Capitulo.Id;
+                art.controller = "Capitulo";
+                art.action = "";
+
+            }
+
+
             if (en.Articulo != null)
+            {
                 art.idsup = en.Articulo.Id;
+                art.controller = "Capitulo";
+                art.action = "";
+
+            }
+            
+
+
             if (en.Pelicula != null)
-                art.idsup = en.Pelicula.Id;
+            {
+                art.idsup = en.Articulo.Id;
+                art.controller = "Capitulo";
+                art.action = "";
+
+            }
+            
 
 
 

@@ -33,6 +33,13 @@ private string nombre;
 
 
 
+/**
+ *	Atributo imagen
+ */
+private string imagen;
+
+
+
 
 
 
@@ -60,6 +67,12 @@ public virtual string Nombre {
 
 
 
+public virtual string Imagen {
+        get { return imagen; } set { imagen = value;  }
+}
+
+
+
 
 
 public VideoEN()
@@ -69,20 +82,20 @@ public VideoEN()
 
 
 
-public VideoEN(int id, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre
+public VideoEN(int id, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen
                )
 {
-        this.init (Id, lista, valoracion, nombre);
+        this.init (Id, lista, valoracion, nombre, imagen);
 }
 
 
 public VideoEN(VideoEN video)
 {
-        this.init (Id, video.Lista, video.Valoracion, video.Nombre);
+        this.init (Id, video.Lista, video.Valoracion, video.Nombre, video.Imagen);
 }
 
 private void init (int id
-                   , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre)
+                   , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen)
 {
         this.Id = id;
 
@@ -92,6 +105,8 @@ private void init (int id
         this.Valoracion = valoracion;
 
         this.Nombre = nombre;
+
+        this.Imagen = imagen;
 }
 
 public override bool Equals (object obj)

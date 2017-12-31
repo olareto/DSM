@@ -33,20 +33,20 @@ public PeliculaEN() : base ()
 
 
 public PeliculaEN(int id, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario
-                  , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre
+                  , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen
                   )
 {
-        this.init (Id, comentario, lista, valoracion, nombre);
+        this.init (Id, comentario, lista, valoracion, nombre, imagen);
 }
 
 
 public PeliculaEN(PeliculaEN pelicula)
 {
-        this.init (Id, pelicula.Comentario, pelicula.Lista, pelicula.Valoracion, pelicula.Nombre);
+        this.init (Id, pelicula.Comentario, pelicula.Lista, pelicula.Valoracion, pelicula.Nombre, pelicula.Imagen);
 }
 
 private void init (int id
-                   , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre)
+                   , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen)
 {
         this.Id = id;
 
@@ -58,6 +58,8 @@ private void init (int id
         this.Valoracion = valoracion;
 
         this.Nombre = nombre;
+
+        this.Imagen = imagen;
 }
 
 public override bool Equals (object obj)

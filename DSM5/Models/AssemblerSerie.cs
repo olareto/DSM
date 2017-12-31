@@ -16,7 +16,7 @@ namespace DSM5.Models
             art.Valoracion =(int) en.Valoracion;
          
             return art;
-
+            
 
         }
         public IList<Serie> ConvertListENToModel (IList<SerieEN> ens){
