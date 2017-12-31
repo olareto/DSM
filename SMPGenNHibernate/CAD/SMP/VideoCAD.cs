@@ -97,6 +97,9 @@ public void ModifyDefault (VideoEN video)
 
                 videoEN.Nombre = video.Nombre;
 
+
+                videoEN.Imagen = video.Imagen;
+
                 session.Update (videoEN);
                 SessionCommit ();
         }
@@ -153,6 +156,9 @@ public void Modify (VideoEN video)
 
 
                 videoEN.Nombre = video.Nombre;
+
+
+                videoEN.Imagen = video.Imagen;
 
                 session.Update (videoEN);
                 SessionCommit ();

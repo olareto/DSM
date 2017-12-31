@@ -38,7 +38,7 @@ public IPeliculaCAD get_IPeliculaCAD ()
         return this._IPeliculaCAD;
 }
 
-public int New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, string p_nombre)
+public int New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, string p_nombre, string p_imagen)
 {
         PeliculaEN peliculaEN = null;
         int oid;
@@ -49,13 +49,15 @@ public int New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, st
 
         peliculaEN.Nombre = p_nombre;
 
+        peliculaEN.Imagen = p_imagen;
+
         //Call to PeliculaCAD
 
         oid = _IPeliculaCAD.New_ (peliculaEN);
         return oid;
 }
 
-public void Modify (int p_Pelicula_OID, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, string p_nombre)
+public void Modify (int p_Pelicula_OID, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, string p_nombre, string p_imagen)
 {
         PeliculaEN peliculaEN = null;
 
@@ -64,6 +66,7 @@ public void Modify (int p_Pelicula_OID, SMPGenNHibernate.Enumerated.SMP.Valoraci
         peliculaEN.Id = p_Pelicula_OID;
         peliculaEN.Valoracion = p_valoracion;
         peliculaEN.Nombre = p_nombre;
+        peliculaEN.Imagen = p_imagen;
         //Call to PeliculaCAD
 
         _IPeliculaCAD.Modify (peliculaEN);
