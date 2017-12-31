@@ -60,7 +60,9 @@ namespace DSM5.Controllers
                 // TODO: Add insert logic here
                 CapituloCEN cen = new CapituloCEN();
                 
-                cen.New_(id, collection.Nombre,(DateTime) collection.fecha, collection.descripcion, collection.imagen);
+        
+
+                cen.New_(id, collection.Nombre,new DateTime (collection.fecha.Year, collection.fecha.Month, collection.fecha.Day), collection.descripcion, collection.imagen);
                 return RedirectToAction("mostrar_cap", "Temporada", new { id = id });
             }
             catch

@@ -32,12 +32,15 @@ namespace DSM5.Models
 
         [Display(Prompt = "fecha del Capitulo", Description = "fecha del Capitulo", Name = "fecha ")]
         [Required(ErrorMessage = "Debe indicar un fecha para el Capitulo")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         public DateTime fecha { get; set; }
 
 
         [Display(Prompt = "descripcion del Capitulo", Description = "descripcion del Capitulo", Name = "descripcion ")]
         [Required(ErrorMessage = "Debe indicar una descripcion para el Capitulo")]
         [StringLength(maximumLength: 200, ErrorMessage = "El nombre no puede tener más de 200 caracteres")]
+        
         public string descripcion { get; set; }
 
         [Display(Prompt = "imagen del Capitulo", Description = "imagen del Capitulo", Name = "imagen ")]
