@@ -12,10 +12,13 @@ namespace DSM5.Models
         {
             Comentario art = new Comentario();
 
-
+            
             art.autor = en.Autor;
             art.comentario = en.Comentario;
-            art.fecha = (DateTime)en.Fecha;
+            if (en.Fecha != null)
+                art.fecha = (DateTime)en.Fecha;
+            else
+                art.fecha = DateTime.Today;
             art.id = en.Id;
 
 

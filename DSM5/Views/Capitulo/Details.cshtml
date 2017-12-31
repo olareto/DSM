@@ -48,4 +48,5 @@
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
     @Html.ActionLink("Back to List", "mostrar_cap", "Temporada", new { id = Model.temporada }, null)|
+    @Html.Partial("_Comentario", (IEnumerable<DSM5.Models.Comentario>)ViewBag.coment);
 </p>

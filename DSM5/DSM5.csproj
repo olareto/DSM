@@ -315,6 +315,12 @@
     <Content Include="Views\Capitulo\Edit.cshtml" />
     <Content Include="Views\Capitulo\Delete.cshtml" />
     <Content Include="Views\Temporada\mostrar_cap.cshtml" />
+    <Content Include="Views\Comentario\Details.cshtml" />
+    <Content Include="Views\Comentario\Create.cshtml" />
+    <Content Include="Views\Comentario\Edit.cshtml" />
+    <Content Include="Views\Comentario\Delete.cshtml" />
+    <Content Include="Views\Capitulo\_Comentario.cshtml" />
+    <Content Include="Views\Comentario\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

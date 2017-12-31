@@ -47,6 +47,8 @@ namespace DSM5.Controllers
             AssemblerComentario ass = new AssemblerComentario();
             Comentario sol = ass.ConvertENToModelUI(en);
             ViewData["id_serie"] = id;
+            ViewData["controller"] = "Capitulo";
+            ViewData["action"] = "Details";
             sol.id = id;
             return View(sol);
         }
@@ -60,8 +62,13 @@ namespace DSM5.Controllers
                 // TODO: Add insert logic here
                 ComentarioCEN cen = new ComentarioCEN();
                 
-                cen.New_(collection.comentario, collection.autor, collection.fecha);
-                return RedirectToAction("mostrar_cap", "Temporada", new { id = id });
+
+               int e= cen.New_(collection.comentario, collection.autor, new DateTime(collection.fecha.Year, collection.fecha.Month, collection.fecha.Day));
+                ComentarioEN en = new ComentarioEN();
+                en = cen.ReadOID(e);
+                AssemblerComentario ass = new AssemblerComentario();
+                Comentario sol = ass.ConvertENToModelUI(en);
+                return RedirectToAction("Details", sol.controller, new { id = id });
             }
             catch
             {
@@ -105,7 +112,7 @@ namespace DSM5.Controllers
                 en = cen.ReadOID(id);
                 AssemblerComentario ass = new AssemblerComentario();
                 Comentario sol = ass.ConvertENToModelUI(en);
-                //cen.Modify(collection.id, collection.Nombre, collection.fecha, collection.descripcion, collection.imagen);
+                cen.Modify(collection.id, collection.comentario, collection.autor,new DateTime(collection.fecha.Year, collection.fecha.Month, collection.fecha.Day));
                 //cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock, collection.Talla);
                 //return RedirectToAction("Index");
                // int idbueno = sol.serie;

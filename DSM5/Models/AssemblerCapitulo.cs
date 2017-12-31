@@ -15,15 +15,18 @@ namespace DSM5.Models
             if (en.Temporada != null)
             {
                 art.temporada = en.Temporada.Id;
-                art.serie = en.Temporada.Serie.Id;
+               
             }
-                
-            
+         
+
+
             art.Nombre = en.Nombre;
             if (en.Fecha != null)
                 art.fecha = (DateTime)en.Fecha;
             else
                 art.fecha = DateTime.Today;
+
+
             art.descripcion = en.Descripcion;
             art.imagen = en.Imagen;
             

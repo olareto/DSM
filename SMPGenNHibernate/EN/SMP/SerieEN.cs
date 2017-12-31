@@ -33,20 +33,20 @@ public SerieEN() : base ()
 
 
 public SerieEN(int id, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.TemporadaEN> temporada
-               , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre
+               , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen
                )
 {
-        this.init (Id, temporada, lista, valoracion, nombre);
+        this.init (Id, temporada, lista, valoracion, nombre, imagen);
 }
 
 
 public SerieEN(SerieEN serie)
 {
-        this.init (Id, serie.Temporada, serie.Lista, serie.Valoracion, serie.Nombre);
+        this.init (Id, serie.Temporada, serie.Lista, serie.Valoracion, serie.Nombre, serie.Imagen);
 }
 
 private void init (int id
-                   , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.TemporadaEN> temporada, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre)
+                   , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.TemporadaEN> temporada, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen)
 {
         this.Id = id;
 
@@ -58,6 +58,8 @@ private void init (int id
         this.Valoracion = valoracion;
 
         this.Nombre = nombre;
+
+        this.Imagen = imagen;
 }
 
 public override bool Equals (object obj)

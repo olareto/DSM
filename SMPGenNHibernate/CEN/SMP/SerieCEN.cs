@@ -38,7 +38,7 @@ public ISerieCAD get_ISerieCAD ()
         return this._ISerieCAD;
 }
 
-public int New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, string p_nombre)
+public int New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, string p_nombre, string p_imagen)
 {
         SerieEN serieEN = null;
         int oid;
@@ -49,13 +49,15 @@ public int New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, st
 
         serieEN.Nombre = p_nombre;
 
+        serieEN.Imagen = p_imagen;
+
         //Call to SerieCAD
 
         oid = _ISerieCAD.New_ (serieEN);
         return oid;
 }
 
-public void Modify (int p_Serie_OID, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, string p_nombre)
+public void Modify (int p_Serie_OID, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, string p_nombre, string p_imagen)
 {
         SerieEN serieEN = null;
 
@@ -64,6 +66,7 @@ public void Modify (int p_Serie_OID, SMPGenNHibernate.Enumerated.SMP.ValoracionE
         serieEN.Id = p_Serie_OID;
         serieEN.Valoracion = p_valoracion;
         serieEN.Nombre = p_nombre;
+        serieEN.Imagen = p_imagen;
         //Call to SerieCAD
 
         _ISerieCAD.Modify (serieEN);

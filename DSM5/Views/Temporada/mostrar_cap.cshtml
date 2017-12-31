@@ -42,9 +42,11 @@
             @Html.DisplayFor(modelItem => item.imagen)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", "Capitulo", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", "Capitulo", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", "Capitulo", new { id=item.id })
+            
+
+            @Html.ActionLink("Edit", "Edit", "Capitulo", new { id=item.id }, null) |
+            @Html.ActionLink("Details", "Details", "Capitulo", new { id=item.id }, null) |
+            @Html.ActionLink("Delete", "Delete", "Capitulo", new { id=item.id }, null)
         </td>
     </tr>
 }

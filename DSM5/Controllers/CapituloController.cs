@@ -29,14 +29,38 @@ namespace DSM5.Controllers
         {
 
 
-            CapituloCEN cen = new CapituloCEN();
 
-            CapituloEN en = new CapituloEN();
-            
-            en = cen.ReadOID(id);
+
+            SessionInitialize();
+            CapituloCAD cad = new CapituloCAD(session);
+
+            CapituloCEN cen = new CapituloCEN(cad);
+            CapituloEN en = cen.ReadOID(id);
+
             AssemblerCapitulo ass = new AssemblerCapitulo();
-            Capitulo sol =ass.ConvertENToModelUI(en);
-           
+            Capitulo sol = ass.ConvertENToModelUI(en);
+
+
+            IList<ComentarioEN> ten = en.Comentario;
+
+            AssemblerComentario assc = new AssemblerComentario();
+            IList<Comentario> solc = assc.ConvertListENToModel(ten);
+
+            SessionClose();
+            ViewData["id_serie"] = id;
+            ViewBag.coment = solc;
+
+
+
+
+
+
+
+
+
+
+
+
             return View(sol);
         }
 
@@ -109,7 +133,7 @@ namespace DSM5.Controllers
                 en = cen.ReadOID(id);
                 AssemblerCapitulo ass = new AssemblerCapitulo();
                 Capitulo sol = ass.ConvertENToModelUI(en);
-                cen.Modify(collection.id, collection.Nombre, (DateTime?)collection.fecha, collection.descripcion, collection.imagen);
+                cen.Modify(collection.id, collection.Nombre, new DateTime(collection.fecha.Year, collection.fecha.Month, collection.fecha.Day), collection.descripcion, collection.imagen);
                 //cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock, collection.Talla);
                 //return RedirectToAction("Index");
                 int idbueno = sol.serie;
@@ -161,19 +185,19 @@ namespace DSM5.Controllers
 
 
         // GET: Articulo/mostrar_cap/5
-        public ActionResult mostrar_cap(int id)
+        public ActionResult mostrar_com(int id)
         {
             //lazy-fetching = false;
             SessionInitialize();
-            TemporadaCAD cad = new TemporadaCAD(session);
+            CapituloCAD cad = new CapituloCAD(session);
 
-            TemporadaCEN cen = new TemporadaCEN(cad);
-            TemporadaEN en = cen.ReadOID(id);
+            CapituloCEN cen = new CapituloCEN(cad);
+            CapituloEN en = cen.ReadOID(id);
 
-            IList<CapituloEN> ten = en.Capitulo;
+            IList<ComentarioEN> ten = en.Comentario;
 
-            AssemblerCapitulo ass = new AssemblerCapitulo();
-            IList<Capitulo> sol = ass.ConvertListENToModel(ten);
+            AssemblerComentario ass = new AssemblerComentario();
+            IList<Comentario> sol = ass.ConvertListENToModel(ten);
 
             SessionClose();
             ViewData["id_serie"] = id;
