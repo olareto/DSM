@@ -58,7 +58,7 @@ namespace DSM5.Controllers
                 // TODO: Add insert logic here
                 PeliculaCEN cen = new PeliculaCEN();
 
-                cen.New_((SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre, collection.Imagen);
+                cen.New_((SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre);
 
                 return RedirectToAction("Index");
             }
@@ -96,7 +96,7 @@ namespace DSM5.Controllers
                 // TODO: Add update logic here
                 PeliculaCEN cen = new PeliculaCEN();
 
-                cen.New_((SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre,collection.Imagen);
+                cen.New_((SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre);
 
                 return RedirectToAction("Index");
             }

@@ -14,7 +14,6 @@ namespace DSM5.Models
             art.id = en.Id;
             art.Nombre = en.Nombre;
             art.Valoracion =(int) en.Valoracion;
-            art.Imagen = en.Imagen;
          
             return art;
             

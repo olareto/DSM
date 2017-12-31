@@ -56,7 +56,7 @@ namespace DSM5.Controllers
                 // TODO: Add insert logic here
                 SerieCEN cen = new SerieCEN();
                 
-                cen.New_((SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre, collection.Imagen);
+                cen.New_((SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre);
                 return RedirectToAction("Index");
             }
             catch
@@ -92,7 +92,7 @@ namespace DSM5.Controllers
             {
                 // TODO: Add update logic here
                 SerieCEN cen = new SerieCEN();
-                cen.Modify(id,(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre,collection.Imagen);
+                cen.Modify(id,(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre);
                 //cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock, collection.Talla);
                 return RedirectToAction("Index");
             }
