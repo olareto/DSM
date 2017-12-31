@@ -10,15 +10,15 @@ using System.Web.Mvc;
 
 namespace DSM5.Controllers
 {
-    public class TemporadaController : BasicController
+    public class CapituloController : BasicController
     {
         // GET: Articulo
         public ActionResult Index()
         {
-            TemporadaCEN cen = new TemporadaCEN();
-            IList<TemporadaEN> enlinst=cen.ReadAll(0, 6);
-            AssemblerTemporada ass = new AssemblerTemporada();
-            IList<Temporada> listart = ass.ConvertListENToModel(enlinst);
+            CapituloCEN cen = new CapituloCEN();
+            IList<CapituloEN> enlinst=cen.ReadAll(0, 6);
+            AssemblerCapitulo ass = new AssemblerCapitulo();
+            IList<Capitulo> listart = ass.ConvertListENToModel(enlinst);
 
             //articuloAsembler.covert
             return View(listart);
@@ -28,39 +28,40 @@ namespace DSM5.Controllers
         public ActionResult Details(int id)
         {
 
-             
-            TemporadaCEN cen = new TemporadaCEN();
 
-            TemporadaEN en = new TemporadaEN();
+            CapituloCEN cen = new CapituloCEN();
+
+            CapituloEN en = new CapituloEN();
             
             en = cen.ReadOID(id);
-            AssemblerTemporada ass = new AssemblerTemporada();
-            Temporada sol =ass.ConvertENToModelUI(en);
-            
+            AssemblerCapitulo ass = new AssemblerCapitulo();
+            Capitulo sol =ass.ConvertENToModelUI(en);
+           
             return View(sol);
         }
 
         // GET: Articulo/Create
         public ActionResult Create(int id)
         {
-            TemporadaEN en = new TemporadaEN();
-            AssemblerTemporada ass = new AssemblerTemporada();
-            Temporada sol = ass.ConvertENToModelUI(en);
+            CapituloEN en = new CapituloEN();
+            AssemblerCapitulo ass = new AssemblerCapitulo();
+            Capitulo sol = ass.ConvertENToModelUI(en);
             ViewData["id_serie"] = id;
+            sol.id = id;
             return View(sol);
         }
 
         // POST: Articulo/Create
         [HttpPost]
-        public ActionResult Create(int id,Temporada collection)
+        public ActionResult Create(int id, Capitulo collection)
         {
             try
             {
                 // TODO: Add insert logic here
-                TemporadaCEN cen = new TemporadaCEN();
+                CapituloCEN cen = new CapituloCEN();
                 
-                cen.New_(id, collection.Nombre);
-                return RedirectToAction("mostrar_temp", "Serie", new { id = id });
+                cen.New_(id, collection.Nombre,(DateTime) collection.fecha, collection.descripcion, collection.imagen);
+                return RedirectToAction("mostrar_cap", "Temporada", new { id = id });
             }
             catch
             {
@@ -74,9 +75,9 @@ namespace DSM5.Controllers
         public ActionResult Edit( int id)
         {
 
-            TemporadaCEN cen = new TemporadaCEN();
+            CapituloCEN cen = new CapituloCEN();
 
-            TemporadaEN en = new TemporadaEN();
+            CapituloEN en = new CapituloEN();
             en = cen.ReadOID(id);
 
             // SessionInitializeTransaction();
@@ -84,31 +85,32 @@ namespace DSM5.Controllers
             //IProducto productoCAD = new productoCAD(session);
 
             // ProductoEN en = new Pro;
-            AssemblerTemporada ass = new AssemblerTemporada();
-            Temporada sol = ass.ConvertENToModelUI(en);
+            AssemblerCapitulo ass = new AssemblerCapitulo();
+            Capitulo sol = ass.ConvertENToModelUI(en);
            
             return View(sol);
         }
 
         // POST: Articulo/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, Temporada collection)
+        public ActionResult Edit(int id, Capitulo collection)
         {
             try
             {
                 // TODO: Add update logic here
 
-                TemporadaCEN cen = new TemporadaCEN();
+                CapituloCEN cen = new CapituloCEN();
 
-                TemporadaEN en = new TemporadaEN();
+                CapituloEN en = new CapituloEN();
                 en = cen.ReadOID(id);
-                AssemblerTemporada ass = new AssemblerTemporada();
-                Temporada sol = ass.ConvertENToModelUI(en);
-                cen.Modify(collection.id,collection.Nombre);
+                AssemblerCapitulo ass = new AssemblerCapitulo();
+                Capitulo sol = ass.ConvertENToModelUI(en);
+                cen.Modify(collection.id, collection.Nombre, collection.fecha, collection.descripcion, collection.imagen);
                 //cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock, collection.Talla);
                 //return RedirectToAction("Index");
                 int idbueno = sol.serie;
-                return RedirectToAction("mostrar_temp", "Serie", new {id= idbueno } );
+                
+                return RedirectToAction("mostrar_cap", "Temporada", new {id= idbueno } );
                 
             }
             catch
@@ -121,13 +123,13 @@ namespace DSM5.Controllers
         public ActionResult Delete(int id)
         {
 
-            TemporadaCEN cen = new TemporadaCEN();
+            CapituloCEN cen = new CapituloCEN();
 
-            TemporadaEN en = new TemporadaEN();
+            CapituloEN en = new CapituloEN();
             en = cen.ReadOID(id);
-            AssemblerTemporada ass = new AssemblerTemporada();
-            Temporada sol = ass.ConvertENToModelUI(en);
-           
+            AssemblerCapitulo ass = new AssemblerCapitulo();
+            Capitulo sol = ass.ConvertENToModelUI(en);
+            
             return View(sol);
         }
 
@@ -138,14 +140,14 @@ namespace DSM5.Controllers
             try
             {
                 // TODO: Add delete logic here
-                TemporadaCEN cen = new TemporadaCEN();
-                TemporadaEN en = new TemporadaEN();
+                CapituloCEN cen = new CapituloCEN();
+                CapituloEN en = new CapituloEN();
                 en = cen.ReadOID(id);
-                AssemblerTemporada ass = new AssemblerTemporada();
-                Temporada sol = ass.ConvertENToModelUI(en);
+                AssemblerCapitulo ass = new AssemblerCapitulo();
+                Capitulo sol = ass.ConvertENToModelUI(en);
                 int idbueno = sol.serie;
                 cen.Destroy(id);
-                return RedirectToAction("mostrar_temp","Serie", new { id = idbueno });
+                return RedirectToAction("mostrar_cap", "Temporada", new { id = idbueno });
             }
             catch
             {

@@ -173,6 +173,7 @@
     <Compile Include="Controllers\CarritoController.cs" />
     <Compile Include="Controllers\PeliculaController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CapituloController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\TemporadaController.cs" />
     <Compile Include="Controllers\SerieController.cs" />
@@ -185,6 +186,7 @@
     </Compile>
     <Compile Include="Models\AssemblerPelicula.cs" />
     <Compile Include="Models\AssemblerAdmin.cs" />
+    <Compile Include="Models\AssemblerCapitulo.cs" />
     <Compile Include="Models\AssemblerUsuario.cs" />
     <Compile Include="Models\AssemblerTemporada.cs" />
     <Compile Include="Models\AssemblerSerie.cs" />
@@ -202,6 +204,7 @@
     <Compile Include="Models\FiltroProducto.cs" />
     <Compile Include="Models\Pelicula.cs" />
     <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\Capitulo.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Temporada.cs" />
     <Compile Include="Models\Serie.cs" />
@@ -295,16 +298,20 @@
     <Content Include="Views\Serie\Delete.cshtml" />
     <Content Include="Views\Serie\Resultadobusqueda.cshtml" />
     <Content Include="Views\Serie\Filtrar.cshtml" />
-    <Content Include="Views\Serie\Create_temp.cshtml" />
     <Content Include="Views\Serie\mostrar_temp.cshtml" />
     <Content Include="Views\Temporada\Index.cshtml" />
     <Content Include="Views\Temporada\Details.cshtml" />
     <Content Include="Views\Temporada\Delete.cshtml" />
     <Content Include="Views\Temporada\Create.cshtml" />
-    <Content Include="Views\Temporada\show.cshtml" />
     <Content Include="Views\Pelicula\Index.cshtml" />
     <Content Include="Views\Pelicula\Create.cshtml" />
     <Content Include="Views\Temporada\Edit.cshtml" />
+    <Content Include="Views\Serie\Create_temp.cshtml" />
+    <Content Include="Views\Capitulo\Details.cshtml" />
+    <Content Include="Views\Capitulo\Create.cshtml" />
+    <Content Include="Views\Capitulo\Edit.cshtml" />
+    <Content Include="Views\Capitulo\Delete.cshtml" />
+    <Content Include="Views\Temporada\mostrar_cap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

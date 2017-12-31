@@ -22,7 +22,8 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id_s = @ViewData["id_serie"], id = Model.id }) |
-    @Html.ActionLink("Back to List", "mostrar_temp", "Serie", new { id = @ViewData["id_serie"] }, null)
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "mostrar_temp", "Serie", new { id = Model.serie }, null)|
+    @Html.ActionLink("Show temps", "mostrar_cap", new { id = Model.id })
     
 </p>

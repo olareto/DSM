@@ -1,0 +1,52 @@
+﻿@model IEnumerable<DSM5.Models.Capitulo>
+
+@{
+    ViewBag.Title = "mostrar_cap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>mostrar_cap</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create" ,"Capitulo",new { id = @ViewData["id_serie"] }, null)
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.imagen)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.imagen)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", "Capitulo", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", "Capitulo", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", "Capitulo", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

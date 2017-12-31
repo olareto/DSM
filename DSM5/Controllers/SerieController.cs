@@ -203,6 +203,7 @@ namespace DSM5.Controllers
             AssemblerTemporada ass = new AssemblerTemporada();
             Temporada sol = ass.ConvertENToModelUI(en);
             //sol.serie = id;
+            ViewData["id_serie"] = id;
             return View(sol);
         }
 
@@ -222,7 +223,7 @@ namespace DSM5.Controllers
                 //SerieCEN cens = new SerieCEN();
                 //cens.Addtemporada(id, resu);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("mostrar_temp", "Serie", new { id = id });
             }
             catch
             {

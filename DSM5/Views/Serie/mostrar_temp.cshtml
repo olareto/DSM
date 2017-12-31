@@ -28,9 +28,9 @@
             @Html.DisplayFor(modelItem => item.Nombre)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", "Temporada", new { id_s = @ViewData["id_serie"], id = item.id }, null)|
-            @Html.ActionLink("Details", "Details", "Temporada", new { id_s = @ViewData["id_serie"],id = item.id }, null)|
-            @Html.ActionLink("Delete", "Delete", "Temporada", new { id_s = @ViewData["id_serie"],id = item.id }, null)
+            @Html.ActionLink("Edit", "Edit", "Temporada", new {  id = item.id }, null)|
+            @Html.ActionLink("Details", "Details", "Temporada", new { id = item.id }, null)|
+            @Html.ActionLink("Delete", "Delete", "Temporada", new { id = item.id }, null)
 
       
         </td>
