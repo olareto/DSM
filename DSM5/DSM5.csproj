@@ -325,6 +325,7 @@
     <Content Include="Views\Pelicula\Details.cshtml" />
     <Content Include="Views\Pelicula\Edit.cshtml" />
     <Content Include="Views\Pelicula\Delete.cshtml" />
+    <Content Include="Views\Serie\Index_Usu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
