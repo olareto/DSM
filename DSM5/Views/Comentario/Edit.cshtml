@@ -49,7 +49,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Details", (string)@ViewData["controller"], new { id = @ViewData["id_serie"] }, null)|
 </div>
 
 @section Scripts {

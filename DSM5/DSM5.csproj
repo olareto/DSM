@@ -320,9 +320,11 @@
     <Content Include="Views\Comentario\Create.cshtml" />
     <Content Include="Views\Comentario\Edit.cshtml" />
     <Content Include="Views\Comentario\Delete.cshtml" />
-    <Content Include="Views\Capitulo\_Comentario.cshtml" />
+    <Content Include="Views\Shared\_Comentario.cshtml" />
     <Content Include="Views\Comentario\Index.cshtml" />
-
+    <Content Include="Views\Pelicula\Details.cshtml" />
+    <Content Include="Views\Pelicula\Edit.cshtml" />
+    <Content Include="Views\Pelicula\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -25,7 +25,7 @@ namespace DSM5.Controllers
         }
 
         // GET: Articulo/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int id, string tipo)
         {
 
 
@@ -36,7 +36,8 @@ namespace DSM5.Controllers
             en = cen.ReadOID(id);
             AssemblerComentario ass = new AssemblerComentario();
             Comentario sol =ass.ConvertENToModelUI(en);
-           
+            ViewData["controller"] = tipo;
+            ViewData["id_serie"] = sol.idsup;
             return View(sol);
         }
 
@@ -48,7 +49,7 @@ namespace DSM5.Controllers
             Comentario sol = ass.ConvertENToModelUI(en);
             ViewData["id_serie"] = id;
             ViewData["controller"] = tipo;
-            ViewData["action"] = "Details";
+            //ViewData["action"] = "Details";
             sol.id = id;
             return View(sol);
         }
@@ -61,14 +62,35 @@ namespace DSM5.Controllers
             {
                 // TODO: Add insert logic here
                 ComentarioCEN cen = new ComentarioCEN();
-                CapituloCEN ccen = new CapituloCEN();
+                
 
 
                 int e= cen.New_(collection.comentario, collection.autor, new DateTime(collection.fecha.Year, collection.fecha.Month, collection.fecha.Day));
                 List<int> es=new List<int>();
                 es.Add(e);
-                ccen.Addcomentario(id,es);
-                
+                if (tipo == "Capitulo")
+                {
+                    CapituloCEN ccen = new CapituloCEN();
+                    ccen.Addcomentario(id, es);
+                    cen.Addcap(e,id);
+                }
+                else if (tipo == "Pelicula")
+                {
+                    PeliculaCEN ccen = new PeliculaCEN();
+
+                    ccen.Addcomentario(id, es);
+                    cen.Addpel(e,id);
+                }
+                else if (tipo == "Producto"|| tipo == "Evento")
+                {
+                    ArticuloCEN ccen = new ArticuloCEN();
+
+                    ccen.Addcomentario(id, es);
+                    cen.Addpel(e, id);
+                }
+
+
+
                 return RedirectToAction("Details", tipo, new { id = id });
             }
             catch
@@ -80,7 +102,7 @@ namespace DSM5.Controllers
         
         
         // GET: Articulo/Edit/5
-        public ActionResult Edit( int id)
+        public ActionResult Edit( int id, string tipo)
         {
 
             ComentarioCEN cen = new ComentarioCEN();
@@ -95,13 +117,20 @@ namespace DSM5.Controllers
             // ProductoEN en = new Pro;
             AssemblerComentario ass = new AssemblerComentario();
             Comentario sol = ass.ConvertENToModelUI(en);
-           
+            ViewData["controller"] = tipo;
+
+
+
+
+
+
+            ViewData["id_serie"] = sol.idsup;
             return View(sol);
         }
 
         // POST: Articulo/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, Comentario collection)
+        public ActionResult Edit(int id, string tipo, Comentario collection)
         {
             try
             {
@@ -113,13 +142,16 @@ namespace DSM5.Controllers
                 en = cen.ReadOID(id);
                 AssemblerComentario ass = new AssemblerComentario();
                 Comentario sol = ass.ConvertENToModelUI(en);
+
+
+
                 cen.Modify(collection.id, collection.comentario, collection.autor,new DateTime(collection.fecha.Year, collection.fecha.Month, collection.fecha.Day));
                 //cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock, collection.Talla);
                 //return RedirectToAction("Index");
-               // int idbueno = sol.serie;
-                
-                return RedirectToAction("mostrar_cap", "Temporada" );
-                
+                // int idbueno = sol.serie;
+
+                return RedirectToAction("Details", tipo, new { id = sol.idsup });
+
             }
             catch
             {
@@ -128,7 +160,7 @@ namespace DSM5.Controllers
         }
 
         // GET: Articulo/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int id, string tipo)
         {
 
             ComentarioCEN cen = new ComentarioCEN();
@@ -137,13 +169,14 @@ namespace DSM5.Controllers
             en = cen.ReadOID(id);
             AssemblerComentario ass = new AssemblerComentario();
             Comentario sol = ass.ConvertENToModelUI(en);
-            
+            ViewData["controller"] = tipo;
+            ViewData["id_serie"] = sol.idsup;
             return View(sol);
         }
 
         // POST: Articulo/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, string tipo, FormCollection collection)
         {
             try
             {
@@ -155,7 +188,7 @@ namespace DSM5.Controllers
                 Comentario sol = ass.ConvertENToModelUI(en);
                // int idbueno = sol.serie;
                 cen.Destroy(id);
-                return RedirectToAction("mostrar_cap", "Temporada");
+                return RedirectToAction("Details", tipo, new { id = sol.idsup });
             }
             catch
             {

@@ -48,6 +48,9 @@ namespace DSM5.Controllers
 
             SessionClose();
             ViewData["id_serie"] = id;
+            
+            ViewData["controller"] = "Capitulo";
+           // ViewData["action"] = "Details";
             ViewBag.coment = solc;
 
 

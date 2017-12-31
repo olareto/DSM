@@ -2,7 +2,7 @@
 
 <p>
     
-    @Html.ActionLink("nuevo", "Create", "Comentario", new { id = @ViewData["id_serie"] }, null)
+    @Html.ActionLink("nuevo", "Create", "Comentario", new { id = @ViewData["id_serie"],tipo= @ViewData["controller"] }, null)
 </p>
 <table class="table">
     <tr>
@@ -30,9 +30,10 @@
             @Html.DisplayFor(modelItem => item.fecha)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            @Html.ActionLink("Edit", "Edit", "Comentario", new { id = item.id, tipo = @ViewData["controller"] }, null)
+            @Html.ActionLink("Details", "Details", "Comentario", new { id = item.id, tipo = @ViewData["controller"] }, null)
+            @Html.ActionLink("Delete", "Delete", "Comentario", new { id = item.id, tipo = @ViewData["controller"] }, null)
+           
         </td>
     </tr>
 }

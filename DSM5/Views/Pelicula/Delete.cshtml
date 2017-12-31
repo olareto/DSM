@@ -1,4 +1,4 @@
-﻿@model DSM5.Models.Comentario
+﻿@model DSM5.Models.Pelicula
 
 @{
     ViewBag.Title = "Delete";
@@ -9,31 +9,31 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Comentario</h4>
+    <h4>Pelicula</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.autor)
+            @Html.DisplayNameFor(model => model.Nombre)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.autor)
+            @Html.DisplayFor(model => model.Nombre)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.comentario)
+            @Html.DisplayNameFor(model => model.Valoracion)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.comentario)
+            @Html.DisplayFor(model => model.Valoracion)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.fecha)
+            @Html.DisplayNameFor(model => model.Imagen)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.fecha)
+            @Html.DisplayFor(model => model.Imagen)
         </dd>
 
     </dl>
@@ -43,7 +43,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Details", (string)@ViewData["controller"], new { id = @ViewData["id_serie"] }, null)|
+            @Html.ActionLink("Back to List", "Index")
         </div>
     }
 </div>

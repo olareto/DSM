@@ -1,4 +1,5 @@
 ﻿using DSM5.Models;
+using SMPGenNHibernate.CAD.SMP;
 using SMPGenNHibernate.CEN.SMP;
 using SMPGenNHibernate.EN.SMP;
 using System;
@@ -26,14 +27,27 @@ namespace DSM5.Controllers
         // GET: Articulo/Details/5
         public ActionResult Details(int id)
         {
-            ProductoCEN cen = new ProductoCEN();
+            SessionInitialize();
+            ProductoCAD cad = new ProductoCAD(session);
 
-            ProductoEN en = new ProductoEN();
-            
-            en = cen.ReadOID(id);
+            ProductoCEN cen = new ProductoCEN(cad);
+            ProductoEN en = cen.ReadOID(id);
+
             AssemblerProducto ass = new AssemblerProducto();
-            Producto sol=ass.ConvertENToModelUI(en);
-            
+            Producto sol = ass.ConvertENToModelUI(en);
+
+
+            IList<ComentarioEN> ten = en.Comentario;
+
+            AssemblerComentario assc = new AssemblerComentario();
+            IList<Comentario> solc = assc.ConvertListENToModel(ten);
+
+            SessionClose();
+            ViewData["id_serie"] = id;
+
+            ViewData["controller"] = "Producto";
+            // ViewData["action"] = "Details";
+            ViewBag.coment = solc;
             return View(sol);
         }
 

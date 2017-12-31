@@ -1,4 +1,5 @@
 ﻿using DSM5.Models;
+using SMPGenNHibernate.CAD.SMP;
 using SMPGenNHibernate.CEN.SMP;
 using SMPGenNHibernate.EN.SMP;
 using System;
@@ -27,16 +28,30 @@ namespace DSM5.Controllers
         // GET: Pelicula/Details/5
         public ActionResult Details(int id)
         {
-            PeliculaCEN cen = new PeliculaCEN();
 
-            PeliculaEN en = new PeliculaEN();
+            SessionInitialize();
+            PeliculaCAD cad = new PeliculaCAD(session);
 
-            en = cen.ReadOID(id);
+            PeliculaCEN cen = new PeliculaCEN(cad);
+            PeliculaEN en = cen.ReadOID(id);
+
             AssemblerPelicula ass = new AssemblerPelicula();
             Pelicula sol = ass.ConvertENToModelUI(en);
 
+
+            IList<ComentarioEN> ten = en.Comentario;
+
+            AssemblerComentario assc = new AssemblerComentario();
+            IList<Comentario> solc = assc.ConvertListENToModel(ten);
+
+            SessionClose();
+            ViewData["id_serie"] = id;
+
+            ViewData["controller"] = "Pelicula";
+            // ViewData["action"] = "Details";
+            ViewBag.coment = solc;
             return View(sol);
-           
+
         }
 
         // GET: Pelicula/Create

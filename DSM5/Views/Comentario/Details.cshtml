@@ -38,6 +38,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id, tipo= @ViewData["controller"] }) |
+    @Html.ActionLink("Back to List", "Details", (string)@ViewData["controller"], new { id = @ViewData["id_serie"] }, null)|
 </p>
