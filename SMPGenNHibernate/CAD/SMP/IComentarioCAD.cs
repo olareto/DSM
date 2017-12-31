@@ -27,5 +27,12 @@ ComentarioEN ReadOID (int id
 
 
 System.Collections.Generic.IList<ComentarioEN> ReadAll (int first, int size);
+
+
+void Addcap (int p_Comentario_OID, int p_capitulo_OID);
+
+void Addpel (int p_Comentario_OID, int p_pelicula_OID);
+
+void Addart (int p_Comentario_OID, int p_articulo_OID);
 }
 }

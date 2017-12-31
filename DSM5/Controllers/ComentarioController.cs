@@ -41,13 +41,13 @@ namespace DSM5.Controllers
         }
 
         // GET: Articulo/Create
-        public ActionResult Create(int id)
+        public ActionResult Create(int id,string tipo)
         {
             ComentarioEN en = new ComentarioEN();
             AssemblerComentario ass = new AssemblerComentario();
             Comentario sol = ass.ConvertENToModelUI(en);
             ViewData["id_serie"] = id;
-            ViewData["controller"] = "Capitulo";
+            ViewData["controller"] = tipo;
             ViewData["action"] = "Details";
             sol.id = id;
             return View(sol);
@@ -55,20 +55,21 @@ namespace DSM5.Controllers
 
         // POST: Articulo/Create
         [HttpPost]
-        public ActionResult Create(int id, Comentario collection)
+        public ActionResult Create(int id, string tipo,Comentario collection)
         {
             try
             {
                 // TODO: Add insert logic here
                 ComentarioCEN cen = new ComentarioCEN();
-                
+                CapituloCEN ccen = new CapituloCEN();
 
-               int e= cen.New_(collection.comentario, collection.autor, new DateTime(collection.fecha.Year, collection.fecha.Month, collection.fecha.Day));
-                ComentarioEN en = new ComentarioEN();
-                en = cen.ReadOID(e);
-                AssemblerComentario ass = new AssemblerComentario();
-                Comentario sol = ass.ConvertENToModelUI(en);
-                return RedirectToAction("Details", sol.controller, new { id = id });
+
+                int e= cen.New_(collection.comentario, collection.autor, new DateTime(collection.fecha.Year, collection.fecha.Month, collection.fecha.Day));
+                List<int> es=new List<int>();
+                es.Add(e);
+                ccen.Addcomentario(id,es);
+                
+                return RedirectToAction("Details", tipo, new { id = id });
             }
             catch
             {

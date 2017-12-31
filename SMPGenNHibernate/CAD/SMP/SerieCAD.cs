@@ -148,9 +148,6 @@ public void Modify (SerieEN serie)
 
                 serieEN.Nombre = serie.Nombre;
 
-
-                serieEN.Imagen = serie.Imagen;
-
                 session.Update (serieEN);
                 SessionCommit ();
         }

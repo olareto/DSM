@@ -148,9 +148,6 @@ public void Modify (PeliculaEN pelicula)
 
                 peliculaEN.Nombre = pelicula.Nombre;
 
-
-                peliculaEN.Imagen = pelicula.Imagen;
-
                 session.Update (peliculaEN);
                 SessionCommit ();
         }

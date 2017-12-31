@@ -263,5 +263,98 @@ public System.Collections.Generic.IList<ComentarioEN> ReadAll (int first, int si
 
         return result;
 }
+
+public void Addcap (int p_Comentario_OID, int p_capitulo_OID)
+{
+        SMPGenNHibernate.EN.SMP.ComentarioEN comentarioEN = null;
+        try
+        {
+                SessionInitializeTransaction ();
+                comentarioEN = (ComentarioEN)session.Load (typeof(ComentarioEN), p_Comentario_OID);
+                comentarioEN.Capitulo = (SMPGenNHibernate.EN.SMP.CapituloEN)session.Load (typeof(SMPGenNHibernate.EN.SMP.CapituloEN), p_capitulo_OID);
+
+                comentarioEN.Capitulo.Comentario.Add (comentarioEN);
+
+
+
+                session.Update (comentarioEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is SMPGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in ComentarioCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+}
+
+public void Addpel (int p_Comentario_OID, int p_pelicula_OID)
+{
+        SMPGenNHibernate.EN.SMP.ComentarioEN comentarioEN = null;
+        try
+        {
+                SessionInitializeTransaction ();
+                comentarioEN = (ComentarioEN)session.Load (typeof(ComentarioEN), p_Comentario_OID);
+                comentarioEN.Pelicula = (SMPGenNHibernate.EN.SMP.PeliculaEN)session.Load (typeof(SMPGenNHibernate.EN.SMP.PeliculaEN), p_pelicula_OID);
+
+                comentarioEN.Pelicula.Comentario.Add (comentarioEN);
+
+
+
+                session.Update (comentarioEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is SMPGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in ComentarioCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+}
+
+public void Addart (int p_Comentario_OID, int p_articulo_OID)
+{
+        SMPGenNHibernate.EN.SMP.ComentarioEN comentarioEN = null;
+        try
+        {
+                SessionInitializeTransaction ();
+                comentarioEN = (ComentarioEN)session.Load (typeof(ComentarioEN), p_Comentario_OID);
+                comentarioEN.Articulo = (SMPGenNHibernate.EN.SMP.ArticuloEN)session.Load (typeof(SMPGenNHibernate.EN.SMP.ArticuloEN), p_articulo_OID);
+
+                comentarioEN.Articulo.Comentario.Add (comentarioEN);
+
+
+
+                session.Update (comentarioEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is SMPGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in ComentarioCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+}
 }
 }

@@ -94,5 +94,23 @@ public System.Collections.Generic.IList<ComentarioEN> ReadAll (int first, int si
         list = _IComentarioCAD.ReadAll (first, size);
         return list;
 }
+public void Addcap (int p_Comentario_OID, int p_capitulo_OID)
+{
+        //Call to ComentarioCAD
+
+        _IComentarioCAD.Addcap (p_Comentario_OID, p_capitulo_OID);
+}
+public void Addpel (int p_Comentario_OID, int p_pelicula_OID)
+{
+        //Call to ComentarioCAD
+
+        _IComentarioCAD.Addpel (p_Comentario_OID, p_pelicula_OID);
+}
+public void Addart (int p_Comentario_OID, int p_articulo_OID)
+{
+        //Call to ComentarioCAD
+
+        _IComentarioCAD.Addart (p_Comentario_OID, p_articulo_OID);
+}
 }
 }
