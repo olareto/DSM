@@ -86,7 +86,7 @@ namespace DSM5.Controllers
                     ArticuloCEN ccen = new ArticuloCEN();
 
                     ccen.Addcomentario(id, es);
-                    cen.Addpel(e, id);
+                    cen.Addart(e, id);
                 }
 
 

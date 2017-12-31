@@ -35,11 +35,15 @@ namespace DSM5.Models
             if (en.Articulo != null)
             {
                 art.idsup = en.Articulo.Id;
-                //if (en.Articulo.)
-                //{
-
-               // }
-                art.controller = "Articulo";
+                if (en.Articulo is ProductoEN)
+                {
+                    art.controller = "Articulo";
+                }
+                else
+                {
+                    art.controller = "Evento";
+                }
+                
                 art.action = "";
 
             }

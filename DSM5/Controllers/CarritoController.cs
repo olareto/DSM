@@ -31,9 +31,10 @@ namespace DSM5.Controllers
             CarritoEN en = new CarritoEN();
             
             en = cen.ReadOID(id);
+
             AssemblerCarrito ass = new AssemblerCarrito();
             Carrito sol=ass.ConvertENToModelUI(en);
-            
+            ViewData["id_us"] = sol.Usuario;
             return View(sol);
         }
 
@@ -80,6 +81,7 @@ namespace DSM5.Controllers
             // ProductoEN en = new Pro;
             AssemblerCarrito ass = new AssemblerCarrito();
             Carrito sol = ass.ConvertENToModelUI(en);
+            ViewData["id_us"] = sol.Usuario;
             return View(sol);
         }
 
@@ -93,7 +95,8 @@ namespace DSM5.Controllers
                 CarritoCEN cen = new CarritoCEN();
                 cen.Modify(id, collection.Precio);
                 //cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock, collection.Talla);
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                return RedirectToAction("Details", "Carrito", new { id = id });
             }
             catch
             {

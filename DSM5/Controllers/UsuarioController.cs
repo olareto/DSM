@@ -31,9 +31,15 @@ namespace DSM5.Controllers
             UsuarioEN en = new UsuarioEN();
             
             en = cen.ReadOID(id);
+
+           // CarritoCEN cenc = new CarritoCEN();
+            //CarritoEN enc = new CarritoEN();
+            //enc = en.Carrito;
+
             AssemblerUsuario ass = new AssemblerUsuario();
             Usuario sol =ass.ConvertENToModelUI(en);
             
+
             return View(sol);
         }
 

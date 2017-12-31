@@ -13,9 +13,7 @@ namespace DSM5.Models
             Carrito art = new Carrito();
             art.id = en.Id;
             art.Precio = en.Precio;
-            if (en.Usuario == null)
-                art.Usuario = null;
-            else
+            if (en.Usuario != null)
                 art.Usuario = en.Usuario.Email;
 
             return art;

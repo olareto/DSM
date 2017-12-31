@@ -20,6 +20,8 @@ namespace DSM5.Models
             art.Direccion = en.Direccion;
             art.Tarjeta = en.Tarjeta;
             art.Imagen = en.Imagen;
+            if (en.Carrito != null)
+                art.carrito = en.Carrito.Id;
            
             return art;
 
