@@ -26,8 +26,12 @@ namespace DSM5.Models
             [Range(minimum: 1, maximum: 5, ErrorMessage = "El valoración debe ser mayor que cero y menor de 5")]
             public int Valoracion { get; set; }
 
+            [Display(Prompt = "Imagen de la Pelicula", Description = "Imagen de la Pelicula", Name = "Imagen")]
+            [Required(ErrorMessage = "Debe indicar una imagen para la Pelicula")]
+            public string Imagen { get; set; }
 
-  
-        
+
+
+
     }
 }

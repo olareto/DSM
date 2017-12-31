@@ -15,7 +15,8 @@ namespace DSM5.Models
             pel.id = en.Id;
             pel.Nombre = en.Nombre;
             pel.Valoracion = (int)en.Valoracion;
-      
+            pel.Imagen = en.Imagen;
+
             return pel;
 
 
