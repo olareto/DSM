@@ -26,6 +26,25 @@
                     <li>@Html.ActionLink("Peliculas", "Index", "Pelicula")</li>
                     <li>@Html.ActionLink("Productos", "Index", "Producto")</li>
                     <li>@Html.ActionLink("Eventos", "Index", "Evento")</li>
+                    <li>
+
+                        <a href='@Url.Action("Index", "Carrito")'>
+                            <span class="glyphicon glyphicon-shopping-cart"> </span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href='@Url.Action("Index", "Usuario")'>
+                            <span class="glyphicon glyphicon-user"> </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href='@Url.Action("Index", "Buscar")'>
+                            <span class="glyphicon glyphicon-search"> </span>
+                        </a>
+                    </li>
+
                 </ul>
             </div>
         </div>
