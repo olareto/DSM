@@ -169,6 +169,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ComentarioController.cs" />
     <Compile Include="Controllers\EventoController.cs" />
     <Compile Include="Controllers\CarritoController.cs" />
     <Compile Include="Controllers\PeliculaController.cs" />
@@ -187,6 +188,7 @@
     <Compile Include="Models\AssemblerPelicula.cs" />
     <Compile Include="Models\AssemblerAdmin.cs" />
     <Compile Include="Models\AssemblerCapitulo.cs" />
+    <Compile Include="Models\AssemblerComentario.cs" />
     <Compile Include="Models\AssemblerUsuario.cs" />
     <Compile Include="Models\AssemblerTemporada.cs" />
     <Compile Include="Models\AssemblerSerie.cs" />
@@ -205,6 +207,7 @@
     <Compile Include="Models\Pelicula.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Capitulo.cs" />
+    <Compile Include="Models\Comentario.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Temporada.cs" />
     <Compile Include="Models\Serie.cs" />

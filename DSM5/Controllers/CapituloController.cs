@@ -60,7 +60,7 @@ namespace DSM5.Controllers
                 // TODO: Add insert logic here
                 CapituloCEN cen = new CapituloCEN();
                 
-                cen.New_(id, collection.Nombre,(DateTime) collection.fecha, collection.descripcion, collection.imagen);
+                cen.New_(id, collection.Nombre, (DateTime?)collection.fecha, collection.descripcion, collection.imagen);
                 return RedirectToAction("mostrar_cap", "Temporada", new { id = id });
             }
             catch
@@ -105,7 +105,7 @@ namespace DSM5.Controllers
                 en = cen.ReadOID(id);
                 AssemblerCapitulo ass = new AssemblerCapitulo();
                 Capitulo sol = ass.ConvertENToModelUI(en);
-                cen.Modify(collection.id, collection.Nombre, collection.fecha, collection.descripcion, collection.imagen);
+                cen.Modify(collection.id, collection.Nombre, (DateTime?)collection.fecha, collection.descripcion, collection.imagen);
                 //cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock, collection.Talla);
                 //return RedirectToAction("Index");
                 int idbueno = sol.serie;
