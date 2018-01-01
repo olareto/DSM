@@ -1,32 +1,46 @@
 ﻿@model IEnumerable<DSM5.Models.Pelicula>
 
 @{
-    ViewBag.Title = "Películas";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container-fluid bg-2 text-center">
-    <h2 class="margin">Películas</h2>
+<h2>Index</h2>
 
-    <p>
-        @Html.ActionLink("Añadir película", "Create")
-    </p>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Valoracion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Imagen)
+        </th>
+        <th></th>
+    </tr>
 
-    @foreach (var item in Model)
-    {
-        <div class="col-md-2">
-            <div class="col">
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </div>
-            <div class="col">
-                @Html.DisplayFor(modelItem => item.Valoracion)
-            </div>
-            <div class="col">
-                <a href='@Url.Action("Details", "Pelicula", item.id)'>
-                    <img src='@Html.DisplayFor(modelItem => item.Valoracion)'/>
-                </a>
-            </div>
-        </div>
-    }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Valoracion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Imagen)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
 
-</div>
+</table>
