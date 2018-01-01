@@ -5,37 +5,21 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>Pelicula</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Valoracion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Valoracion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Imagen)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Imagen)
-        </dd>
-
-    </dl>
+<div class="container">
+    <h4>@Html.DisplayFor(model => model.Nombre)</h4>
+    <img class="cartelera col-md-3" src='~/Images/cartelera/@Html.DisplayFor(modelItem => modelItem.Imagen)' />
+    <p class="col-md-6">A más de diez años después de los acontecimientos de la primera película, cuatro estudiantes de preparatoria son castigados para limpiar el sótano de su escuela, durante su detención, descubren una vieja consola donde insertan un videojuego de la versión del juego de mesa, Jumanji, que los absorberá en un mundo virtual en la selva (en donde quedó atrapado Alan Parrish) asumiendo la forma de su avatar y la única salida es jugar y terminarlo.</p>
+    <div class="dropdown col-md-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Opciones
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Seguir</a>
+            <a class="dropdown-item" href="#">Vista</a>
+            <a class="dropdown-item" href="#">Borrar</a>
+            <a class="dropdown-item" href='@Url.Action("Edit", "Pelicula", new { id = Model.id })'>Editar</a>
+        </div>
+    </div>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
