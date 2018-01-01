@@ -169,6 +169,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CarritoLineas_pedido.cs" />
     <Compile Include="Controllers\ComentarioController.cs" />
     <Compile Include="Controllers\EventoController.cs" />
     <Compile Include="Controllers\CarritoController.cs" />
@@ -185,6 +186,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AssemblerLineas_pedido.cs" />
     <Compile Include="Models\AssemblerPelicula.cs" />
     <Compile Include="Models\AssemblerAdmin.cs" />
     <Compile Include="Models\AssemblerCapitulo.cs" />
@@ -192,6 +194,7 @@
     <Compile Include="Models\AssemblerUsuario.cs" />
     <Compile Include="Models\AssemblerTemporada.cs" />
     <Compile Include="Models\AssemblerSerie.cs" />
+    <Compile Include="Models\Lineas_pedido.cs" />
     <Compile Include="Models\Carrito.cs" />
     <Compile Include="Models\AssemblerEvento.cs" />
     <Compile Include="Models\AssemblerCarrito.cs" />
