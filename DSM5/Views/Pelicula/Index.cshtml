@@ -22,8 +22,8 @@
                 @Html.DisplayFor(modelItem => item.Valoracion)
             </div>
             <div class="col">
-                <a href='@Url.Action("Details", "Pelicula", item.id)'>
-                    <img src='@Html.DisplayFor(modelItem => item.Valoracion)'/>
+                <a href='@Url.Action("Details", "Pelicula", new { id = item.id })'>
+                    <img src='~/Images/@Html.DisplayFor(modelItem => item.Imagen)'/>
                 </a>
             </div>
         </div>
