@@ -231,9 +231,12 @@
     <Content Include="Images\Gladiator.jpg" />
     <Content Include="Images\MasterAndComander.jpg" />
     <Content Include="Images\peakyblinders.jpg" />
+    <Content Include="Images\PeakyBlinders.png" />
     <Content Include="Images\starwars.jpg" />
     <Content Include="Images\SuicideSquad.jpg" />
     <Content Include="Images\Titanic.jpg" />
+    <Content Include="Images\TrueDetective.jpg" />
+    <Content Include="Images\WestWorld.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -247,6 +250,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="fonts\Vintage Avalanche.otf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
@@ -332,6 +336,8 @@
     <Content Include="Views\Usuario\Edit.cshtml" />
     <Content Include="Views\Usuario\Delete.cshtml" />
     <Content Include="Views\Usuario\Details.cshtml" />
+    <Content Include="Views\Serie\Index_Usu.cshtml" />
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

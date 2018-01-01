@@ -20,8 +20,21 @@ namespace DSM5.Controllers
             AssemblerSerie ass = new AssemblerSerie();
             IList<Serie> listart = ass.ConvertListENToModel(enlinst);
 
-            //articuloAsembler.covert
-            return View(listart);
+
+                return View(listart);
+
+        }
+
+        public ActionResult Index_Usu()
+        {
+            SerieCEN cen = new SerieCEN();
+            IList<SerieEN> enlinst = cen.ReadAll(0, 6);
+            AssemblerSerie ass = new AssemblerSerie();
+            IList<Serie> listart = ass.ConvertListENToModel(enlinst);
+
+
+                return View(listart);
+
         }
 
         // GET: Articulo/Details/5

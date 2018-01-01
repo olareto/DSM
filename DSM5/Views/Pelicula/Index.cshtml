@@ -1,46 +1,41 @@
 ﻿@model IEnumerable<DSM5.Models.Pelicula>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Películas";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<style>
+    .cartelera{
+        width:60%;
+        height:80%;
+        margin-bottom:50px;
+    }
+</style>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Valoracion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Imagen)
-        </th>
-        <th></th>
-    </tr>
+<div class="container-fluid bg-2 text-center">
+    <h2 class="margin">Películas</h2>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Valoracion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Imagen)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
+    <p>
+        @Html.ActionLink("Añadir película", "Create")
+    </p>
 
-</table>
+    @foreach (var item in Model)
+    {
+        <div class="col-md-2">
+            <div class="col">
+                <p>@Html.DisplayFor(modelItem => item.Nombre)</p>
+            </div>
+            <div class="col">
+                <p>Valoración: @Html.DisplayFor(modelItem => item.Valoracion)</p>
+            </div>
+            <div class="col">
+                <a href='@Url.Action("Details", "Pelicula", new { id = item.id })'>
+                    <!--Ruta simple: sw8.jpg-->
+                    <img class="cartelera" src='~/Images/cartelera/@Html.DisplayFor(modelItem => item.Imagen)'/>
+                </a>
+            </div>
+        </div>
+    }
+
+</div>
