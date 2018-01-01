@@ -5,6 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<style>
+    .cartelera{
+        width:60%;
+        height:80%;
+        margin-bottom:50px;
+    }
+</style>
+
 <div class="container-fluid bg-2 text-center">
     <h2 class="margin">Películas</h2>
 
@@ -16,14 +24,15 @@
     {
         <div class="col-md-2">
             <div class="col">
-                @Html.DisplayFor(modelItem => item.Nombre)
+                <p>@Html.DisplayFor(modelItem => item.Nombre)</p>
             </div>
             <div class="col">
-                @Html.DisplayFor(modelItem => item.Valoracion)
+                <p>Valoración: @Html.DisplayFor(modelItem => item.Valoracion)</p>
             </div>
             <div class="col">
                 <a href='@Url.Action("Details", "Pelicula", new { id = item.id })'>
-                    <img src='~/Images/@Html.DisplayFor(modelItem => item.Imagen)'/>
+                    <!--Ruta simple: sw8.jpg-->
+                    <img class="cartelera" src='~/Images/cartelera/@Html.DisplayFor(modelItem => item.Imagen)'/>
                 </a>
             </div>
         </div>
