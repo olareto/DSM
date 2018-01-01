@@ -50,7 +50,7 @@
 
 <div>
     
-    @Html.ActionLink("Back to List", "Details", (string)@ViewData["controller"], new { id = @ViewData["id_serie"] }, null)|
+    @Html.ActionLink("Back", @ViewData["action"] as string, @ViewData["controller"] as string, @ViewData["arg"], null)|
    
 
 

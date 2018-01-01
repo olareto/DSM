@@ -20,6 +20,10 @@ namespace DSM5.Controllers
             AssemblerTemporada ass = new AssemblerTemporada();
             IList<Temporada> listart = ass.ConvertListENToModel(enlinst);
 
+            System.Web.HttpContext.Current.Session["controller"] = "Temporada";
+            System.Web.HttpContext.Current.Session["action"] = "Index";
+            System.Web.HttpContext.Current.Session["arg"] = null;
+
             //articuloAsembler.covert
             return View(listart);
         }
@@ -36,7 +40,11 @@ namespace DSM5.Controllers
             en = cen.ReadOID(id);
             AssemblerTemporada ass = new AssemblerTemporada();
             Temporada sol =ass.ConvertENToModelUI(en);
-            
+
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+
             return View(sol);
         }
 
@@ -47,6 +55,9 @@ namespace DSM5.Controllers
             AssemblerTemporada ass = new AssemblerTemporada();
             Temporada sol = ass.ConvertENToModelUI(en);
             ViewData["id_serie"] = id;
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
             return View(sol);
         }
 
@@ -60,7 +71,12 @@ namespace DSM5.Controllers
                 TemporadaCEN cen = new TemporadaCEN();
                 
                 cen.New_(id, collection.Nombre);
-                return RedirectToAction("mostrar_temp", "Serie", new { id = id });
+                string action = System.Web.HttpContext.Current.Session["action"] as String;
+                string controller = System.Web.HttpContext.Current.Session["controller"] as String;
+                Object arg = System.Web.HttpContext.Current.Session["arg"];
+
+
+                return RedirectToAction(action, controller, arg);
             }
             catch
             {
@@ -86,7 +102,9 @@ namespace DSM5.Controllers
             // ProductoEN en = new Pro;
             AssemblerTemporada ass = new AssemblerTemporada();
             Temporada sol = ass.ConvertENToModelUI(en);
-           
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
             return View(sol);
         }
 
@@ -100,16 +118,20 @@ namespace DSM5.Controllers
 
                 TemporadaCEN cen = new TemporadaCEN();
 
-                TemporadaEN en = new TemporadaEN();
-                en = cen.ReadOID(id);
-                AssemblerTemporada ass = new AssemblerTemporada();
-                Temporada sol = ass.ConvertENToModelUI(en);
+               
+                
+                
                 cen.Modify(collection.id,collection.Nombre);
                 //cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock, collection.Talla);
                 //return RedirectToAction("Index");
-                int idbueno = sol.serie;
-                return RedirectToAction("mostrar_temp", "Serie", new {id= idbueno } );
                 
+                string action = System.Web.HttpContext.Current.Session["action"] as String;
+                string controller = System.Web.HttpContext.Current.Session["controller"] as String;
+                Object arg = System.Web.HttpContext.Current.Session["arg"];
+
+
+                return RedirectToAction(action, controller, arg);
+
             }
             catch
             {
@@ -127,7 +149,9 @@ namespace DSM5.Controllers
             en = cen.ReadOID(id);
             AssemblerTemporada ass = new AssemblerTemporada();
             Temporada sol = ass.ConvertENToModelUI(en);
-           
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
             return View(sol);
         }
 
@@ -139,13 +163,14 @@ namespace DSM5.Controllers
             {
                 // TODO: Add delete logic here
                 TemporadaCEN cen = new TemporadaCEN();
-                TemporadaEN en = new TemporadaEN();
-                en = cen.ReadOID(id);
-                AssemblerTemporada ass = new AssemblerTemporada();
-                Temporada sol = ass.ConvertENToModelUI(en);
-                int idbueno = sol.serie;
+               
                 cen.Destroy(id);
-                return RedirectToAction("mostrar_temp","Serie", new { id = idbueno });
+                string action = System.Web.HttpContext.Current.Session["action"] as String;
+                string controller = System.Web.HttpContext.Current.Session["controller"] as String;
+                Object arg = System.Web.HttpContext.Current.Session["arg"];
+
+
+                return RedirectToAction(action, controller, arg);
             }
             catch
             {
@@ -171,6 +196,12 @@ namespace DSM5.Controllers
 
             SessionClose();
             ViewData["id_serie"] = id;
+
+            System.Web.HttpContext.Current.Session["controller"] = "Temporada";
+            System.Web.HttpContext.Current.Session["action"] = "mostrar_cap";
+            System.Web.HttpContext.Current.Session["arg"] = new {id=id };
+
+
             return View(sol);
         }
 

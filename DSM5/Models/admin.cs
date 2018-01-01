@@ -51,13 +51,9 @@ namespace DSM5.Models
         [StringLength(maximumLength: 200, ErrorMessage = "El Imagen no puede tener más de 200 caracteres")]
         public string Imagen { get; set; }
 
-
-
-
-        
-
-        
-
-
+        public static implicit operator Admin(Usuario v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

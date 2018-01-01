@@ -19,9 +19,13 @@ namespace DSM5.Controllers
             IList<SerieEN> enlinst=cen.ReadAll(0, 6);
             AssemblerSerie ass = new AssemblerSerie();
             IList<Serie> listart = ass.ConvertListENToModel(enlinst);
+            
 
+            System.Web.HttpContext.Current.Session["controller"] = "Serie";
+            System.Web.HttpContext.Current.Session["action"] = "Index";
+            System.Web.HttpContext.Current.Session["arg"] = null;
 
-                return View(listart);
+            return View(listart);
 
         }
 
@@ -47,7 +51,12 @@ namespace DSM5.Controllers
             en = cen.ReadOID(id);
             AssemblerSerie ass = new AssemblerSerie();
             Serie sol =ass.ConvertENToModelUI(en);
-            
+
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+           
+
             return View(sol);
         }
 
@@ -57,6 +66,9 @@ namespace DSM5.Controllers
             SerieEN en = new SerieEN();
             AssemblerSerie ass = new AssemblerSerie();
             Serie sol = ass.ConvertENToModelUI(en);
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
             return View(sol);
         }
 
@@ -70,7 +82,12 @@ namespace DSM5.Controllers
                 SerieCEN cen = new SerieCEN();
                 
                 cen.New_((SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre, collection.Imagen);
-                return RedirectToAction("Index");
+                string action = System.Web.HttpContext.Current.Session["action"] as String;
+                string controller = System.Web.HttpContext.Current.Session["controller"] as String;
+                Object arg = System.Web.HttpContext.Current.Session["arg"];
+
+
+                return RedirectToAction(action, controller, arg);
             }
             catch
             {
@@ -94,6 +111,9 @@ namespace DSM5.Controllers
             // ProductoEN en = new Pro;
             AssemblerSerie ass = new AssemblerSerie();
             Serie sol = ass.ConvertENToModelUI(en);
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
             return View(sol);
         }
 
@@ -107,7 +127,12 @@ namespace DSM5.Controllers
                 SerieCEN cen = new SerieCEN();
                 cen.Modify(id,(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre, collection.Imagen);
                 //cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock, collection.Talla);
-                return RedirectToAction("Index");
+                string action = System.Web.HttpContext.Current.Session["action"] as String;
+                string controller = System.Web.HttpContext.Current.Session["controller"] as String;
+                Object arg = System.Web.HttpContext.Current.Session["arg"];
+
+
+                return RedirectToAction(action, controller, arg);
             }
             catch
             {
@@ -125,6 +150,9 @@ namespace DSM5.Controllers
             en = cen.ReadOID(id);
             AssemblerSerie ass = new AssemblerSerie();
             Serie sol = ass.ConvertENToModelUI(en);
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
             return View(sol);
         }
 
@@ -138,7 +166,12 @@ namespace DSM5.Controllers
                 SerieCEN cen = new SerieCEN();
 
                 cen.Destroy(id);
-                return RedirectToAction("Index");
+                string action = System.Web.HttpContext.Current.Session["action"] as String;
+                string controller = System.Web.HttpContext.Current.Session["controller"] as String;
+                Object arg = System.Web.HttpContext.Current.Session["arg"];
+
+
+                return RedirectToAction(action, controller, arg);
             }
             catch
             {
@@ -206,6 +239,9 @@ namespace DSM5.Controllers
 
             SessionClose();
             ViewData["id_serie"] = id;
+            System.Web.HttpContext.Current.Session["controller"] = "Serie";
+            System.Web.HttpContext.Current.Session["action"] = "mostrar_temp";
+            System.Web.HttpContext.Current.Session["arg"] = new {id=id };
             return View(sol);
         }
 

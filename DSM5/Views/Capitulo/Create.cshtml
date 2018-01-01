@@ -57,7 +57,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "mostrar_cap", "Temporada", new { id = @ViewData["id_serie"] }, null)|
+    @Html.ActionLink("Back", @ViewData["action"] as string, @ViewData["controller"] as string, @ViewData["arg"], null)|
 </div>
 
 @section Scripts {

@@ -27,7 +27,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "mostrar_temp", "Serie", new { id = Model.serie }, null)
+            @Html.ActionLink("Back", @ViewData["action"] as string, @ViewData["controller"] as string, @ViewData["arg"], null)|
         </div>
     }
 </div>

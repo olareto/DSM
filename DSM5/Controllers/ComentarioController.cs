@@ -15,6 +15,17 @@ namespace DSM5.Controllers
         // GET: Articulo
         public ActionResult Index()
         {
+
+
+
+
+
+
+            System.Web.HttpContext.Current.Session["controller"] = "Comentario";
+            System.Web.HttpContext.Current.Session["action"] = "Index";
+            System.Web.HttpContext.Current.Session["arg"] = null;
+
+
             ComentarioCEN cen = new ComentarioCEN();
             IList<ComentarioEN> enlinst=cen.ReadAll(0, 6);
             AssemblerComentario ass = new AssemblerComentario();
@@ -25,7 +36,7 @@ namespace DSM5.Controllers
         }
 
         // GET: Articulo/Details/5
-        public ActionResult Details(int id, string tipo)
+        public ActionResult Details(int id)
         {
 
 
@@ -36,19 +47,24 @@ namespace DSM5.Controllers
             en = cen.ReadOID(id);
             AssemblerComentario ass = new AssemblerComentario();
             Comentario sol =ass.ConvertENToModelUI(en);
-            ViewData["controller"] = tipo;
-            ViewData["id_serie"] = sol.idsup;
+          
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+
             return View(sol);
         }
 
         // GET: Articulo/Create
-        public ActionResult Create(int id,string tipo)
+        public ActionResult Create(int id)
         {
             ComentarioEN en = new ComentarioEN();
             AssemblerComentario ass = new AssemblerComentario();
             Comentario sol = ass.ConvertENToModelUI(en);
-            ViewData["id_serie"] = id;
-            ViewData["controller"] = tipo;
+
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
             //ViewData["action"] = "Details";
             sol.id = id;
             return View(sol);
@@ -56,14 +72,14 @@ namespace DSM5.Controllers
 
         // POST: Articulo/Create
         [HttpPost]
-        public ActionResult Create(int id, string tipo,Comentario collection)
+        public ActionResult Create(int id,Comentario collection)
         {
             try
             {
                 // TODO: Add insert logic here
                 ComentarioCEN cen = new ComentarioCEN();
                 
-
+                string tipo= System.Web.HttpContext.Current.Session["controller"] as String;
 
                 int e= cen.New_(collection.comentario, collection.autor, new DateTime(collection.fecha.Year, collection.fecha.Month, collection.fecha.Day));
                 List<int> es=new List<int>();
@@ -89,9 +105,12 @@ namespace DSM5.Controllers
                     cen.Addart(e, id);
                 }
 
+                string action = System.Web.HttpContext.Current.Session["action"] as String;
+                string controller = System.Web.HttpContext.Current.Session["controller"] as String;
+                Object arg = System.Web.HttpContext.Current.Session["arg"];
 
 
-                return RedirectToAction("Details", tipo, new { id = id });
+                return RedirectToAction(action, controller, arg);
             }
             catch
             {
@@ -102,7 +121,7 @@ namespace DSM5.Controllers
         
         
         // GET: Articulo/Edit/5
-        public ActionResult Edit( int id, string tipo)
+        public ActionResult Edit( int id)
         {
 
             ComentarioCEN cen = new ComentarioCEN();
@@ -117,20 +136,22 @@ namespace DSM5.Controllers
             // ProductoEN en = new Pro;
             AssemblerComentario ass = new AssemblerComentario();
             Comentario sol = ass.ConvertENToModelUI(en);
-            ViewData["controller"] = tipo;
+
+
+
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
 
 
 
 
-
-
-            ViewData["id_serie"] = sol.idsup;
             return View(sol);
         }
 
         // POST: Articulo/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, string tipo, Comentario collection)
+        public ActionResult Edit(int id, Comentario collection)
         {
             try
             {
@@ -138,10 +159,7 @@ namespace DSM5.Controllers
 
                 ComentarioCEN cen = new ComentarioCEN();
 
-                ComentarioEN en = new ComentarioEN();
-                en = cen.ReadOID(id);
-                AssemblerComentario ass = new AssemblerComentario();
-                Comentario sol = ass.ConvertENToModelUI(en);
+                
 
 
 
@@ -150,7 +168,12 @@ namespace DSM5.Controllers
                 //return RedirectToAction("Index");
                 // int idbueno = sol.serie;
 
-                return RedirectToAction("Details", tipo, new { id = sol.idsup });
+                string action = System.Web.HttpContext.Current.Session["action"] as String;
+                string controller = System.Web.HttpContext.Current.Session["controller"] as String;
+                Object arg = System.Web.HttpContext.Current.Session["arg"];
+
+
+                return RedirectToAction(action, controller, arg);
 
             }
             catch
@@ -160,8 +183,13 @@ namespace DSM5.Controllers
         }
 
         // GET: Articulo/Delete/5
-        public ActionResult Delete(int id, string tipo)
+        public ActionResult Delete(int id)
         {
+
+
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
 
             ComentarioCEN cen = new ComentarioCEN();
 
@@ -169,26 +197,28 @@ namespace DSM5.Controllers
             en = cen.ReadOID(id);
             AssemblerComentario ass = new AssemblerComentario();
             Comentario sol = ass.ConvertENToModelUI(en);
-            ViewData["controller"] = tipo;
-            ViewData["id_serie"] = sol.idsup;
+            
+            
             return View(sol);
         }
 
         // POST: Articulo/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, string tipo, FormCollection collection)
+        public ActionResult Delete(int id, FormCollection collection)
         {
             try
             {
                 // TODO: Add delete logic here
                 ComentarioCEN cen = new ComentarioCEN();
-                ComentarioEN en = new ComentarioEN();
-                en = cen.ReadOID(id);
-                AssemblerComentario ass = new AssemblerComentario();
-                Comentario sol = ass.ConvertENToModelUI(en);
-               // int idbueno = sol.serie;
+               
+              
                 cen.Destroy(id);
-                return RedirectToAction("Details", tipo, new { id = sol.idsup });
+                string action = System.Web.HttpContext.Current.Session["action"] as String;
+                string controller = System.Web.HttpContext.Current.Session["controller"] as String;
+                Object arg = System.Web.HttpContext.Current.Session["arg"];
+
+
+                return RedirectToAction(action, controller, arg);
             }
             catch
             {

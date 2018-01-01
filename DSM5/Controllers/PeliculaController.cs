@@ -20,8 +20,11 @@ namespace DSM5.Controllers
             AssemblerPelicula ass = new AssemblerPelicula();
             IList<Pelicula> listart = ass.ConvertListENToModel(enlinst);
 
+            System.Web.HttpContext.Current.Session["controller"] = "Pelicula";
+            System.Web.HttpContext.Current.Session["action"] = "Index";
+            System.Web.HttpContext.Current.Session["arg"] = null;
             //articuloAsembler.covert
-            
+
             return View(listart);
         }
 
@@ -45,9 +48,10 @@ namespace DSM5.Controllers
             IList<Comentario> solc = assc.ConvertListENToModel(ten);
 
             SessionClose();
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
             ViewData["id_serie"] = id;
-
-            ViewData["controller"] = "Pelicula";
             // ViewData["action"] = "Details";
             ViewBag.coment = solc;
             return View(sol);
@@ -60,6 +64,9 @@ namespace DSM5.Controllers
             PeliculaEN en = new PeliculaEN();
             AssemblerPelicula ass = new AssemblerPelicula();
             Pelicula sol = ass.ConvertENToModelUI(en);
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
             return View(sol);
            
         }
@@ -75,7 +82,12 @@ namespace DSM5.Controllers
 
                 cen.New_((SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre, collection.Imagen);
 
-                return RedirectToAction("Index");
+                string action = System.Web.HttpContext.Current.Session["action"] as String;
+                string controller = System.Web.HttpContext.Current.Session["controller"] as String;
+                Object arg = System.Web.HttpContext.Current.Session["arg"];
+
+
+                return RedirectToAction(action, controller, arg);
             }
             catch
             {
@@ -98,6 +110,9 @@ namespace DSM5.Controllers
             // ProductoEN en = new Pro;
             AssemblerPelicula ass = new AssemblerPelicula();
             Pelicula sol = ass.ConvertENToModelUI(en);
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
             return View(sol);
         }
 
@@ -113,7 +128,12 @@ namespace DSM5.Controllers
 
                 cen.New_((SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre, collection.Imagen);
 
-                return RedirectToAction("Index");
+                string action = System.Web.HttpContext.Current.Session["action"] as String;
+                string controller = System.Web.HttpContext.Current.Session["controller"] as String;
+                Object arg = System.Web.HttpContext.Current.Session["arg"];
+
+
+                return RedirectToAction(action, controller, arg);
             }
             catch
             {
@@ -130,6 +150,9 @@ namespace DSM5.Controllers
             en = cen.ReadOID(id);
             AssemblerPelicula ass = new AssemblerPelicula();
             Pelicula sol = ass.ConvertENToModelUI(en);
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
             return View(sol);
         }
 
@@ -144,7 +167,12 @@ namespace DSM5.Controllers
 
                 cen.Destroy(id);
 
-                return RedirectToAction("Index");
+                string action = System.Web.HttpContext.Current.Session["action"] as String;
+                string controller = System.Web.HttpContext.Current.Session["controller"] as String;
+                Object arg = System.Web.HttpContext.Current.Session["arg"];
+
+
+                return RedirectToAction(action, controller, arg);
             }
             catch
             {
