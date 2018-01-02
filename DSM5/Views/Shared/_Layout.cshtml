@@ -1,72 +1,113 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - COKE & POPCORNS</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
-        p, a, h2, h3{
+        p, a, h2, h3 {
             font-family: 'Vintage Avalanche';
         }
-        .admin{
-            color:red;
+
+        .admin {
+            color: red;
         }
+
+        .margin {
+            margin-bottom: 45px;
+        }
+
+        .bg-1 {
+            background-color: #1abc9c; /* Green */
+            color: #ffffff;
+        }
+
+        .bg-2 {
+            background-color: #4f4f4f; /* Dark Blue */
+            color: #ffffff;
+        }
+
+        .bg-3 {
+            background-color: #4f4f4f; /* White */
+            color: #555555;
+        }
+
+        .container-fluid {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .container-fluid2 {
+            margin: 0 auto;
+            width: 100%;
+            margin-top: -80px;
+        }
+
+        .carousel-caption {
+            margin-bottom: 40px;
+        }
+
+
     </style>
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("COKE&POPCORNS", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <!--HTML, MetodoControlador, NombreControlador-->
-                    <li>@Html.ActionLink("Series", "Index_Usu", "Serie")</li>
-                    <li>@Html.ActionLink("Peliculas", "Index", "Pelicula")</li>
-                    <li>@Html.ActionLink("Productos", "Index", "Producto")</li>
-                    <li>@Html.ActionLink("Eventos", "Index", "Evento")</li>
-                    <li>
 
-                        <a href='@Url.Action("Index", "Carrito")'>
-                            <span class="glyphicon glyphicon-shopping-cart"> </span>
-                        </a>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("COKE&POPCORNS", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <!--HTML, MetodoControlador, NombreControlador-->
+                        <li>@Html.ActionLink("Series", "Index_Usu", "Serie")</li>
+                        <li>@Html.ActionLink("Peliculas", "Index", "Pelicula")</li>
+                        <li>@Html.ActionLink("Productos", "Index", "Producto")</li>
+                        <li>@Html.ActionLink("Eventos", "Index", "Evento")</li>
+                        <li>
 
-                    </li>
-                    <li>
-                        <a href='@Url.Action("Index", "Usuario")'>
-                            <span class="glyphicon glyphicon-user"> </span>
-                        </a>
-                    </li>
+                            <a href='@Url.Action("Index", "Carrito")'>
+                                <span class="glyphicon glyphicon-shopping-cart"> </span>
+                            </a>
 
-                    <li>
-                        <a href='@Url.Action("Index", "Buscar")'>
-                            <span class="glyphicon glyphicon-search"> </span>
-                        </a>
-                    </li>
+                        </li>
+                        <li>
+                            <a href='@Url.Action("Index", "Usuario")'>
+                                <span class="glyphicon glyphicon-user"> </span>
+                            </a>
+                        </li>
 
-                </ul>
+                        <li>
+                            <a href='@Url.Action("Index", "Buscar")'>
+                                <span class="glyphicon glyphicon-search"> </span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    <div>
-        @RenderBody()
-        <hr />
-        <footer class="text-center">
-            <p>&copy; @DateTime.Now.Year - COKE & POPCORNS</p>
-        </footer>
-    </div>
+        <div>
+            @RenderBody()
+            <hr />
+            <footer class="text-center">
+                <p>&copy; @DateTime.Now.Year - COKE & POPCORNS</p>
+            </footer>
+        </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-</body>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
 </html>
