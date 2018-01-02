@@ -1,19 +1,18 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>@ViewBag.Title - COKE & POPCORNS</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <style>
-        p, a, h2, h3{
-            font-family: 'Vintage Avalanche';
-        }
-        .admin{
-            color:red;
-        }
+        
     </style>
 </head>
 <body>
@@ -57,13 +56,36 @@
             </div>
         </div>
     </div>
-    <div>
-        @RenderBody()
-        <hr />
-        <footer class="text-center">
-            <p>&copy; @DateTime.Now.Year - COKE & POPCORNS</p>
-        </footer>
-    </div>
+    @RenderBody()
+    <hr />
+    <footer class="text-center">
+        <div class="bg-dark text-white">
+            <div class="container">
+                <div class="row">
+                    <div class="p-4 col-md-6">
+                        <h4 class="mb-4 text-secondary">COKE&POPCORNS</h4>
+                        <p class="text-white">Pelis, series, productos, eventos y lo que quieras tt.</p>
+                    </div>
+                    <div class="p-4 col-md-6">
+                        <h4 class="mb-4">Contacto</h4>
+                        <p>
+                            <a href="tel:+36 542 550 546" class="text-white"><i class="fa d-inline mr-3 text-secondary fa-phone"></i>+36 - 542 550 542</a>
+                        </p>
+                        <p>
+                            <a href="mailto:info@pingendo.com" class="text-white"><i class="fa d-inline mr-3 text-secondary fa-envelope-o"></i>info@coka.com</a>
+                        </p>
+                        <p>
+                            <a href="https://goo.gl/maps/AUq7b9W7yYJ2" class="text-white" target="_blank"><i class="fa d-inline mr-3 fa-map-marker text-secondary"></i>36 Uni Alicante, ALC</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+        <p>&copy; @DateTime.Now.Year - COKE & POPCORNS</p>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
