@@ -40,7 +40,7 @@ namespace DSM5.Models
 
         [Display(Prompt = "fecha de la Comentario", Description = "fecha de la Comentario", Name = "fecha ")]
         [Required(ErrorMessage = "Debe indicar un fecha para la Comentario")]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:t}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         public DateTime fecha { get; set; }
 
