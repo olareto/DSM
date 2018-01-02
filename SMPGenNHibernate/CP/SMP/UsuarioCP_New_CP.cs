@@ -41,6 +41,9 @@ public SMPGenNHibernate.EN.SMP.UsuarioEN New_CP (string p_nombre, string p_apell
                 ListaCEN listaCEN = new ListaCEN (listaCAD);
 
 
+                CarritoCAD CarritoCAD = new CarritoCAD(session);
+                CarritoCEN CarritoCEN = new CarritoCEN(CarritoCAD);
+
                 string p_oid;
                 //Initialized UsuarioEN
                 UsuarioEN usuarioEN;
@@ -66,6 +69,8 @@ public SMPGenNHibernate.EN.SMP.UsuarioEN New_CP (string p_nombre, string p_apell
                 int id = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.siguiendo, p_oid);
                 int id2 = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.visto, p_oid);
                 int id3 = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.favorito, p_oid);
+              
+
 
                 IList<int> listas = new List<int>();
                 listas.Add (id);

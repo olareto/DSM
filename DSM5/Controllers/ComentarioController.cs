@@ -47,10 +47,19 @@ namespace DSM5.Controllers
             en = cen.ReadOID(id);
             AssemblerComentario ass = new AssemblerComentario();
             Comentario sol =ass.ConvertENToModelUI(en);
-          
-            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
-            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
-            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+            if(sol.tipo== "Serie")
+            {
+                ViewData["action"] = "mostrar_cap";
+                ViewData["controller"] = "Temporada";
+                ViewData["arg"] = System.Web.HttpContext.Current.Session["idtemp"];
+            }
+            else
+            {
+                ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+                ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+                ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+            }
+           
 
             return View(sol);
         }
@@ -62,9 +71,18 @@ namespace DSM5.Controllers
             AssemblerComentario ass = new AssemblerComentario();
             Comentario sol = ass.ConvertENToModelUI(en);
 
-            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
-            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
-            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+            if (sol.tipo == "Serie")
+            {
+                ViewData["action"] = "mostrar_cap";
+                ViewData["controller"] = "Temporada";
+                ViewData["arg"] = System.Web.HttpContext.Current.Session["idtemp"];
+            }
+            else
+            {
+                ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+                ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+                ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+            }
             //ViewData["action"] = "Details";
             sol.id = id;
             return View(sol);
@@ -84,7 +102,7 @@ namespace DSM5.Controllers
                 int e= cen.New_(collection.comentario, collection.autor, new DateTime(collection.fecha.Year, collection.fecha.Month, collection.fecha.Day));
                 List<int> es=new List<int>();
                 es.Add(e);
-                if (tipo == "Capitulo")
+                if (tipo == "Serie")
                 {
                     CapituloCEN ccen = new CapituloCEN();
                     ccen.Addcomentario(id, es);
@@ -105,9 +123,25 @@ namespace DSM5.Controllers
                     cen.Addart(e, id);
                 }
 
-                string action = System.Web.HttpContext.Current.Session["action"] as String;
-                string controller = System.Web.HttpContext.Current.Session["controller"] as String;
-                Object arg = System.Web.HttpContext.Current.Session["arg"];
+
+
+                string action ;
+                string controller ;
+                Object arg ;
+                if (tipo == "Serie")
+                {
+                   
+                    action = "mostrar_cap";
+                    controller = "Temporada";
+                    arg = System.Web.HttpContext.Current.Session["idtemp"];
+                }
+                else
+                {
+                    action = System.Web.HttpContext.Current.Session["action"] as String;
+                    controller = System.Web.HttpContext.Current.Session["controller"] as String;
+                    arg = System.Web.HttpContext.Current.Session["arg"];
+                }
+                
 
 
                 return RedirectToAction(action, controller, arg);
@@ -129,19 +163,24 @@ namespace DSM5.Controllers
             ComentarioEN en = new ComentarioEN();
             en = cen.ReadOID(id);
 
-            // SessionInitializeTransaction();
-
-            //IProducto productoCAD = new productoCAD(session);
-
-            // ProductoEN en = new Pro;
+         
             AssemblerComentario ass = new AssemblerComentario();
             Comentario sol = ass.ConvertENToModelUI(en);
 
 
 
-            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
-            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
-            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+            if (sol.tipo == "Serie")
+            {
+                ViewData["action"] = "mostrar_cap";
+                ViewData["controller"] = "Temporada";
+                ViewData["arg"] = System.Web.HttpContext.Current.Session["idtemp"];
+            }
+            else
+            {
+                ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+                ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+                ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+            }
 
 
 
@@ -164,13 +203,30 @@ namespace DSM5.Controllers
 
 
                 cen.Modify(collection.id, collection.comentario, collection.autor,new DateTime(collection.fecha.Year, collection.fecha.Month, collection.fecha.Day));
-                //cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock, collection.Talla);
-                //return RedirectToAction("Index");
-                // int idbueno = sol.serie;
+                ComentarioEN en = new ComentarioEN();
+                en = cen.ReadOID(id);
 
-                string action = System.Web.HttpContext.Current.Session["action"] as String;
-                string controller = System.Web.HttpContext.Current.Session["controller"] as String;
-                Object arg = System.Web.HttpContext.Current.Session["arg"];
+
+                AssemblerComentario ass = new AssemblerComentario();
+                Comentario sol = ass.ConvertENToModelUI(en);
+
+                string action;
+                string controller;
+                Object arg;
+                if (sol.tipo == "Serie")
+                {
+
+                    action = "mostrar_cap";
+                    controller = "Temporada";
+                    arg = System.Web.HttpContext.Current.Session["idtemp"];
+                }
+                else
+                {
+                    action = System.Web.HttpContext.Current.Session["action"] as String;
+                    controller = System.Web.HttpContext.Current.Session["controller"] as String;
+                    arg = System.Web.HttpContext.Current.Session["arg"];
+                }
+              
 
 
                 return RedirectToAction(action, controller, arg);
@@ -187,9 +243,7 @@ namespace DSM5.Controllers
         {
 
 
-            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
-            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
-            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+           
 
             ComentarioCEN cen = new ComentarioCEN();
 
@@ -197,8 +251,19 @@ namespace DSM5.Controllers
             en = cen.ReadOID(id);
             AssemblerComentario ass = new AssemblerComentario();
             Comentario sol = ass.ConvertENToModelUI(en);
-            
-            
+
+            if (sol.tipo == "Serie")
+            {
+                ViewData["action"] = "mostrar_cap";
+                ViewData["controller"] = "Temporada";
+                ViewData["arg"] = System.Web.HttpContext.Current.Session["idtemp"];
+            }
+            else
+            {
+                ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+                ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+                ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+            }
             return View(sol);
         }
 
@@ -210,12 +275,37 @@ namespace DSM5.Controllers
             {
                 // TODO: Add delete logic here
                 ComentarioCEN cen = new ComentarioCEN();
-               
-              
+
+
+                ComentarioEN en = new ComentarioEN();
+                en = cen.ReadOID(id);
+
+
+                AssemblerComentario ass = new AssemblerComentario();
+                Comentario sol = ass.ConvertENToModelUI(en);
+
+                string action;
+                string controller;
+                Object arg;
+                if (sol.tipo == "Serie")
+                {
+
+                    action = "mostrar_cap";
+                    controller = "Temporada";
+                    arg = System.Web.HttpContext.Current.Session["idtemp"];
+                }
+                else
+                {
+                    action = System.Web.HttpContext.Current.Session["action"] as String;
+                    controller = System.Web.HttpContext.Current.Session["controller"] as String;
+                    arg = System.Web.HttpContext.Current.Session["arg"];
+                }
+
+
+
+
                 cen.Destroy(id);
-                string action = System.Web.HttpContext.Current.Session["action"] as String;
-                string controller = System.Web.HttpContext.Current.Session["controller"] as String;
-                Object arg = System.Web.HttpContext.Current.Session["arg"];
+               
 
 
                 return RedirectToAction(action, controller, arg);

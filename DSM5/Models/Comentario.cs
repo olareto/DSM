@@ -18,10 +18,9 @@ namespace DSM5.Models
         public int idsup { get; set; }
 
         [ScaffoldColumn(false)]
-        public string controller { get; set; }
+        public string tipo { get; set; }
 
-        [ScaffoldColumn(false)]
-        public string action { get; set; }
+       
 
 
 

@@ -1,5 +1,6 @@
 ﻿using DSM5.Models;
 using SMPGenNHibernate.CEN.SMP;
+using SMPGenNHibernate.CP.SMP;
 using SMPGenNHibernate.EN.SMP;
 using System;
 using System.Collections.Generic;
@@ -18,8 +19,21 @@ namespace DSM5.Controllers
           
             if(System.Web.HttpContext.Current.Session["log"]!=null && (Boolean)System.Web.HttpContext.Current.Session["log"])
             {
-                Usuario hola= System.Web.HttpContext.Current.Session["usuario"]as Usuario;
-                return RedirectToAction("Details", "Usuario", new { id=hola.Email });
+                //Usuario hola= System.Web.HttpContext.Current.Session["usuario"]as Usuario;
+                String hola = System.Web.HttpContext.Current.Session["correo"] as String;
+
+
+                System.Web.HttpContext.Current.Session["usuario"] = null;
+               // System.Web.HttpContext.Current.Session["correo"] = ad.Email;
+                System.Web.HttpContext.Current.Session["log"] = false;
+                System.Web.HttpContext.Current.Session["admin"] = false;
+
+                ViewData["correo"] = System.Web.HttpContext.Current.Session["correo"] as string;
+                ViewData["log"] = (Boolean)System.Web.HttpContext.Current.Session["log"];
+                ViewData["admin"] = (Boolean)System.Web.HttpContext.Current.Session["admin"];
+
+
+                return RedirectToAction("Details", "Usuario", new { id=hola });
             }
             UsuarioCEN cen = new UsuarioCEN();
             IList<UsuarioEN> enlinst=cen.ReadAll(0, 6);
@@ -39,10 +53,10 @@ namespace DSM5.Controllers
             
             en = cen.ReadOID(id);
 
-           // CarritoCEN cenc = new CarritoCEN();
+            // CarritoCEN cenc = new CarritoCEN();
             //CarritoEN enc = new CarritoEN();
             //enc = en.Carrito;
-
+           
             AssemblerUsuario ass = new AssemblerUsuario();
             Usuario sol =ass.ConvertENToModelUI(en);
             
@@ -67,7 +81,13 @@ namespace DSM5.Controllers
             {
                 // TODO: Add insert logic here
                 UsuarioCEN cen = new UsuarioCEN();
-                cen.New_( collection.Nombre, collection.Apellidos, collection.Password, collection.Email, collection.Direccion, collection.Tarjeta, collection.Imagen);
+                UsuarioCP cp = new UsuarioCP();
+                string id=cp.New_CP( collection.Nombre, collection.Apellidos, collection.Password, collection.Email, collection.Direccion, collection.Tarjeta, collection.Imagen).Email;
+               
+              
+                CarritoCEN CarritoCEN = new CarritoCEN();
+                int id4 = CarritoCEN.New_(id, 0);
+
                 return RedirectToAction("Index");
             }
             catch
@@ -92,6 +112,7 @@ namespace DSM5.Controllers
             // ProductoEN en = new Pro;
             AssemblerUsuario ass = new AssemblerUsuario();
             Usuario sol = ass.ConvertENToModelUI(en);
+           
             return View(sol);
         }
 
@@ -229,9 +250,10 @@ namespace DSM5.Controllers
                 if (cen.Login(collection.email, collection.Password)){
                     en = cen.ReadOID(collection.email);
                     us = ass.ConvertENToModelUI(en);
-                  
+
 
                     System.Web.HttpContext.Current.Session["usuario"] = us;
+                    System.Web.HttpContext.Current.Session["correo"] = us.Email;
                     System.Web.HttpContext.Current.Session["log"] = true;
                     System.Web.HttpContext.Current.Session["admin"] = false;
 
@@ -245,6 +267,7 @@ namespace DSM5.Controllers
                     ad = assa.ConvertENToModelUI(ena);
 
                     System.Web.HttpContext.Current.Session["usuario"] = ad;
+                    System.Web.HttpContext.Current.Session["correo"] = ad.Email;
                     System.Web.HttpContext.Current.Session["log"] = true;
                     System.Web.HttpContext.Current.Session["admin"] = true;
 
@@ -253,6 +276,7 @@ namespace DSM5.Controllers
                 else
                 {
                     System.Web.HttpContext.Current.Session["usuario"] = null;
+                    System.Web.HttpContext.Current.Session["correo"] = null;
                     System.Web.HttpContext.Current.Session["log"] = false;
                     System.Web.HttpContext.Current.Session["admin"] = false;
                     return RedirectToAction("log", "Usuario");
