@@ -239,9 +239,8 @@ namespace DSM5.Controllers
 
             SessionClose();
             ViewData["id_serie"] = id;
-            System.Web.HttpContext.Current.Session["controller"] = "Serie";
-            System.Web.HttpContext.Current.Session["action"] = "mostrar_temp";
-            System.Web.HttpContext.Current.Session["arg"] = new {id=id };
+       
+            System.Web.HttpContext.Current.Session["idserie"] = new { id = id };
             return View(sol);
         }
 

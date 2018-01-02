@@ -45,9 +45,7 @@ namespace DSM5.Controllers
             IList<Lineas_pedido> solc = assc.ConvertListENToModel(ten);
 
             SessionClose();
-            ViewData["id_serie"] = id;
-
-            ViewData["controller"] = "Capitulo";
+            ViewData["correo"] = System.Web.HttpContext.Current.Session["correo"] as string;
             // ViewData["action"] = "Details";
             ViewBag.coment = solc;
 
@@ -97,7 +95,8 @@ namespace DSM5.Controllers
             // ProductoEN en = new Pro;
             AssemblerCarrito ass = new AssemblerCarrito();
             Carrito sol = ass.ConvertENToModelUI(en);
-            ViewData["id_us"] = sol.Usuario;
+         
+            ViewData["correo"] = System.Web.HttpContext.Current.Session["correo"] as string;
             return View(sol);
         }
 
