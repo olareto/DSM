@@ -30,7 +30,7 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Details", "Usuario", new { id = @ViewData["id_us"] }, null)
+    @Html.ActionLink("Back to List", "Details", "Usuario", new { id = @ViewData["correo"] }, null)
     @Html.Partial("_Lineapedido", (IEnumerable<DSM5.Models.Lineas_pedido>)ViewBag.coment)
 
 

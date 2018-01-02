@@ -26,8 +26,7 @@ namespace DSM5.Models
             if (en.Capitulo != null)
             {
                 art.idsup = en.Capitulo.Id;
-                art.controller = "Capitulo";
-                art.action = "";
+                art.tipo = "Serie";
 
             }
 
@@ -37,14 +36,14 @@ namespace DSM5.Models
                 art.idsup = en.Articulo.Id;
                 if (en.Articulo is ProductoEN)
                 {
-                    art.controller = "Articulo";
+                    art.tipo = "Articulo";
                 }
                 else
                 {
-                    art.controller = "Evento";
+                    art.tipo = "Evento";
                 }
                 
-                art.action = "";
+                
 
             }
             
@@ -53,8 +52,8 @@ namespace DSM5.Models
             if (en.Pelicula != null)
             {
                 art.idsup = en.Pelicula.Id;
-                art.controller = "Pelicula";
-                art.action = "";
+                art.tipo = "Pelicula";
+              
 
             }
             
