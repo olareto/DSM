@@ -346,6 +346,8 @@
     <Content Include="Views\Lineas_pedido\Edit.cshtml" />
     <Content Include="Views\Lineas_pedido\Delete.cshtml" />
     <Content Include="Views\Usuario\log.cshtml" />
+    <Content Include="Views\Pelicula\Reproducir.cshtml" />
+    <Content Include="Views\Serie\Reproducir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

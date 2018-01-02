@@ -43,8 +43,18 @@ p, a, h2, h3 {
 .admin {
     color: red;
 }
+.admin a{
+    color: red;
+    text-decoration:none;
+}
 .cartelera {
     width: 60%;
     height: 80%;
     margin-bottom: 50px;
+}
+.cartelera:hover{
+    opacity:0.8;
+}
+.reproductor{
+    height:1000px;
 }

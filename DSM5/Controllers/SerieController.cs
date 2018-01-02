@@ -279,7 +279,23 @@ namespace DSM5.Controllers
                 return View();
             }
         }
+        public ActionResult Reproducir(int id)
+        {
+            SerieCEN cen = new SerieCEN();
 
+            SerieEN en = new SerieEN();
+
+            en = cen.ReadOID(id);
+            AssemblerSerie ass = new AssemblerSerie();
+            Serie sol = ass.ConvertENToModelUI(en);
+
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+
+
+            return View(sol);
+        }
 
     }
 }

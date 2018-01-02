@@ -173,9 +173,22 @@ public static void InitializeData ()
                 int idproducto = productoCEN.New_ ("producto", 69, "descripcion", "imagen", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 999, "talla");
                 int idlista = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.visto, idUsuario);
                 int idcomentario = comentarioCEN.New_ ("comentario", "autor", new DateTime (1993, 12, 3));
-                int idpelicula = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "nombre", "hola");
+                int idpelicula = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Star Wars 8", "i5.jpg");
+                int idpelicula2 = peliculaCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Jumanji", "i2.jpg");
+                int idpelicula3 = peliculaCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, "COCO", "i7.jpg");
+                int idpelicula4 = peliculaCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Perfectos desconocidos", "i3.jpg");
+                int idpelicula5 = peliculaCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Noseq la nota final", "i4.jpg");
+                int idpelicula6 = peliculaCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Ferdinand", "i6.jpg");
+                int idpelicula7 = peliculaCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Algo de una ventana", "i8.jpg");
                 int idvideo = videoCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "nombre", "hola");
-                int idserie = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "nombre", "hola");
+                int idserie = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Las Vegas", "s1.jpg");
+                int idserie2 = serieCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Happy", "s2.jpg");
+                int idserie3 = serieCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "The Miniaturist", "s3.jpg");
+                int idserie4 = serieCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Damnation", "s4.jpg");
+                int idserie5 = serieCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Van Helsing", "s5.jpg");
+                int idserie6 = serieCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Runaways", "s6.jpg");
+                int idserie7 = serieCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Accidente", "s7.jpg");
+
                 int idtemporada = temporadaCEN.New_ (idserie, "nombre");
                 int idcapitulo = capituloCEN.New_ (idtemporada, "nombre", new DateTime (1993, 12, 3), "descripccion", "imagen");
 

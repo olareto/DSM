@@ -5,34 +5,24 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>Serie</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Valoracion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Valoracion)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back", @ViewData["action"] as string, @ViewData["controller"] as string, @ViewData["arg"], null)| |
-    @Html.ActionLink("Show temps", "mostrar_temp", new { id = Model.id })
-
+<div class="container">
+    <h3>@Html.DisplayFor(model => model.Nombre)</h3>
+    <img class="cartelera col-md-3" src='~/Images/cartelera/@Html.DisplayFor(modelItem => modelItem.Imagen)' />
     
-</p>
+    <div class="col-md-6">
+        <p>A más de diez años después de los acontecimientos de la primera película, cuatro estudiantes de preparatoria son castigados para limpiar el sótano de su escuela, durante su detención, descubren una vieja consola donde insertan un videojuego de la versión del juego de mesa, Jumanji, que los absorberá en un mundo virtual en la selva (en donde quedó atrapado Alan Parrish) asumiendo la forma de su avatar y la única salida es jugar y terminarlo.</p>
+        
+    </div>
+
+    <div class="dropdown col-md-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Opciones
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Seguir</a>
+            <a class="dropdown-item" href="#">Vista</a>
+            <a class="dropdown-item admin" href='@Url.Action("Delete", "Serie", new { id = Model.id })'>Borrar</a>
+            <a class="dropdown-item admin" href='@Url.Action("Edit", "Serie", new { id = Model.id })'>Editar</a>
+        </div>
+    </div>
+</div>
