@@ -21,6 +21,12 @@ namespace DSM5.Controllers
             IList<Producto> listart = ass.ConvertListENToModel(enlinst);
 
             //articuloAsembler.covert
+
+            System.Web.HttpContext.Current.Session["controller"] = "Producto";
+            System.Web.HttpContext.Current.Session["action"] = "Index";
+            System.Web.HttpContext.Current.Session["arg"] = null;
+
+
             return View(listart);
         }
 
@@ -43,9 +49,19 @@ namespace DSM5.Controllers
             IList<Comentario> solc = assc.ConvertListENToModel(ten);
 
             SessionClose();
+
+
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
             ViewData["id_serie"] = id;
 
-            ViewData["controller"] = "Producto";
+
+
+
+
+
+
             // ViewData["action"] = "Details";
             ViewBag.coment = solc;
             return View(sol);
@@ -57,6 +73,9 @@ namespace DSM5.Controllers
             ProductoEN en = new ProductoEN();
             AssemblerProducto ass = new AssemblerProducto();
             Producto sol = ass.ConvertENToModelUI(en);
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
             return View(sol);
         }
 
@@ -70,7 +89,19 @@ namespace DSM5.Controllers
                 ProductoCEN cen = new ProductoCEN();
                 
                 cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Stock, collection.Talla);
-                return RedirectToAction("Index");
+
+
+                
+
+
+                string action = System.Web.HttpContext.Current.Session["action"] as String;
+                string controller = System.Web.HttpContext.Current.Session["controller"] as String;
+                Object arg = System.Web.HttpContext.Current.Session["arg"];
+
+          
+                return RedirectToAction(action, controller, arg);
+
+
             }
             catch
             {
@@ -94,6 +125,15 @@ namespace DSM5.Controllers
             // ProductoEN en = new Pro;
             AssemblerProducto ass = new AssemblerProducto();
             Producto sol = ass.ConvertENToModelUI(en);
+
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+
+            
+
+
+
             return View(sol);
         }
 
@@ -103,11 +143,17 @@ namespace DSM5.Controllers
         {
             try
             {
+
+                string action = System.Web.HttpContext.Current.Session["action"] as String;
+                string controller = System.Web.HttpContext.Current.Session["controller"] as String;
+                Object arg = System.Web.HttpContext.Current.Session["arg"];
+
                 // TODO: Add update logic here
                 ProductoCEN cen = new ProductoCEN();
                 cen.Modify(id, collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Stock, collection.Talla);
                 //cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock, collection.Talla);
-                return RedirectToAction("Index");
+                
+                return RedirectToAction(action,controller, arg);
             }
             catch
             {
@@ -125,6 +171,11 @@ namespace DSM5.Controllers
             en = cen.ReadOID(id);
             AssemblerProducto ass = new AssemblerProducto();
             Producto sol = ass.ConvertENToModelUI(en);
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+
+           
             return View(sol);
         }
 
@@ -134,11 +185,17 @@ namespace DSM5.Controllers
         {
             try
             {
+                string action = System.Web.HttpContext.Current.Session["action"] as String;
+                string controller = System.Web.HttpContext.Current.Session["controller"] as String;
+                Object arg = System.Web.HttpContext.Current.Session["arg"];
+
+
                 // TODO: Add delete logic here
                 ProductoCEN cen = new ProductoCEN();
 
                 cen.Destroy(id);
-                return RedirectToAction("Index");
+                return RedirectToAction(action, controller, arg);
+                //return RedirectToAction("Index");
             }
             catch
             {
@@ -146,10 +203,21 @@ namespace DSM5.Controllers
             }
         }
         // GET: Articulo/Resultadobusqueda/5
-        public ActionResult Resultadobusqueda(IList<Producto> res)
+        public ActionResult Resultadobusqueda()
         {
+            System.Web.HttpContext.Current.Session["controller"] = "Producto";
+            System.Web.HttpContext.Current.Session["action"] = "Resultadobusqueda";
+            System.Web.HttpContext.Current.Session["arg"] = null;
 
-      
+            IList<Producto> res = System.Web.HttpContext.Current.Session["resu"] as IList<Producto>;
+            if (res == null)
+            {
+                res = new List<Producto>();
+            }
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+
             return View(res);
         }
         // GET: Articulo/Filtrar/5
@@ -159,8 +227,10 @@ namespace DSM5.Controllers
         {
 
             FiltroProducto res = new FiltroProducto();
-            
 
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
             //articuloAsembler.covert
             return View(res);
         }
@@ -198,7 +268,13 @@ namespace DSM5.Controllers
                 }
                 AssemblerProducto ass = new AssemblerProducto();
                 IList<Producto> listart = ass.ConvertListENToModel(res);
-                return View("Resultadobusqueda", listart);
+
+
+                System.Web.HttpContext.Current.Session["resu"] = listart;
+
+                return RedirectToAction("Resultadobusqueda", "Producto",null);
+               
+               // return View("Resultadobusqueda", listart);
 
             }
             catch

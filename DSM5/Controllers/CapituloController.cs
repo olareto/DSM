@@ -20,6 +20,12 @@ namespace DSM5.Controllers
             AssemblerCapitulo ass = new AssemblerCapitulo();
             IList<Capitulo> listart = ass.ConvertListENToModel(enlinst);
 
+
+
+            System.Web.HttpContext.Current.Session["controller"] = "Capitulo";
+            System.Web.HttpContext.Current.Session["action"] = "Index";
+            System.Web.HttpContext.Current.Session["arg"] = null;
+
             //articuloAsembler.covert
             return View(listart);
         }
@@ -48,9 +54,10 @@ namespace DSM5.Controllers
 
             SessionClose();
             ViewData["id_serie"] = id;
-            
-            ViewData["controller"] = "Capitulo";
-           // ViewData["action"] = "Details";
+
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
             ViewBag.coment = solc;
 
 
@@ -73,7 +80,10 @@ namespace DSM5.Controllers
             CapituloEN en = new CapituloEN();
             AssemblerCapitulo ass = new AssemblerCapitulo();
             Capitulo sol = ass.ConvertENToModelUI(en);
-            ViewData["id_serie"] = id;
+           
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
             sol.id = id;
             return View(sol);
         }
@@ -92,7 +102,12 @@ namespace DSM5.Controllers
 
                 cen.New_(id, collection.Nombre,new DateTime (collection.fecha.Year, collection.fecha.Month, collection.fecha.Day), collection.descripcion, collection.imagen);
 
-                return RedirectToAction("mostrar_cap", "Temporada", new { id = id });
+                string action = System.Web.HttpContext.Current.Session["action"] as String;
+                string controller = System.Web.HttpContext.Current.Session["controller"] as String;
+                Object arg = System.Web.HttpContext.Current.Session["arg"];
+
+
+                return RedirectToAction(action, controller, arg);
             }
             catch
             {
@@ -118,7 +133,10 @@ namespace DSM5.Controllers
             // ProductoEN en = new Pro;
             AssemblerCapitulo ass = new AssemblerCapitulo();
             Capitulo sol = ass.ConvertENToModelUI(en);
-           
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+
             return View(sol);
         }
 
@@ -132,17 +150,19 @@ namespace DSM5.Controllers
 
                 CapituloCEN cen = new CapituloCEN();
 
-                CapituloEN en = new CapituloEN();
-                en = cen.ReadOID(id);
-                AssemblerCapitulo ass = new AssemblerCapitulo();
-                Capitulo sol = ass.ConvertENToModelUI(en);
+            
                 cen.Modify(collection.id, collection.Nombre, new DateTime(collection.fecha.Year, collection.fecha.Month, collection.fecha.Day), collection.descripcion, collection.imagen);
                 //cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock, collection.Talla);
                 //return RedirectToAction("Index");
-                int idbueno = sol.serie;
                 
-                return RedirectToAction("mostrar_cap", "Temporada", new {id= idbueno } );
-                
+
+                string action = System.Web.HttpContext.Current.Session["action"] as String;
+                string controller = System.Web.HttpContext.Current.Session["controller"] as String;
+                Object arg = System.Web.HttpContext.Current.Session["arg"];
+
+
+                return RedirectToAction(action, controller, arg);
+
             }
             catch
             {
@@ -160,7 +180,9 @@ namespace DSM5.Controllers
             en = cen.ReadOID(id);
             AssemblerCapitulo ass = new AssemblerCapitulo();
             Capitulo sol = ass.ConvertENToModelUI(en);
-            
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
             return View(sol);
         }
 
@@ -172,13 +194,14 @@ namespace DSM5.Controllers
             {
                 // TODO: Add delete logic here
                 CapituloCEN cen = new CapituloCEN();
-                CapituloEN en = new CapituloEN();
-                en = cen.ReadOID(id);
-                AssemblerCapitulo ass = new AssemblerCapitulo();
-                Capitulo sol = ass.ConvertENToModelUI(en);
-                int idbueno = sol.serie;
+               
                 cen.Destroy(id);
-                return RedirectToAction("mostrar_cap", "Temporada", new { id = idbueno });
+                string action = System.Web.HttpContext.Current.Session["action"] as String;
+                string controller = System.Web.HttpContext.Current.Session["controller"] as String;
+                Object arg = System.Web.HttpContext.Current.Session["arg"];
+
+
+                return RedirectToAction(action, controller, arg);
             }
             catch
             {
@@ -187,25 +210,6 @@ namespace DSM5.Controllers
         }
 
 
-        // GET: Articulo/mostrar_cap/5
-        public ActionResult mostrar_com(int id)
-        {
-            //lazy-fetching = false;
-            SessionInitialize();
-            CapituloCAD cad = new CapituloCAD(session);
-
-            CapituloCEN cen = new CapituloCEN(cad);
-            CapituloEN en = cen.ReadOID(id);
-
-            IList<ComentarioEN> ten = en.Comentario;
-
-            AssemblerComentario ass = new AssemblerComentario();
-            IList<Comentario> sol = ass.ConvertListENToModel(ten);
-
-            SessionClose();
-            ViewData["id_serie"] = id;
-            return View(sol);
-        }
 
       
 

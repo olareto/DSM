@@ -169,13 +169,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CarritoLineas_pedido.cs" />
+    <Compile Include="Controllers\Lineas_pedidoController.cs" />
     <Compile Include="Controllers\ComentarioController.cs" />
     <Compile Include="Controllers\EventoController.cs" />
     <Compile Include="Controllers\CarritoController.cs" />
     <Compile Include="Controllers\PeliculaController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CapituloController.cs" />
+    <Compile Include="Controllers\RegistroController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\TemporadaController.cs" />
     <Compile Include="Controllers\SerieController.cs" />
@@ -211,6 +212,7 @@
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Capitulo.cs" />
     <Compile Include="Models\Comentario.cs" />
+    <Compile Include="Models\Registro.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Temporada.cs" />
     <Compile Include="Models\Serie.cs" />
@@ -316,7 +318,6 @@
     <Content Include="Views\Pelicula\Index.cshtml" />
     <Content Include="Views\Pelicula\Create.cshtml" />
     <Content Include="Views\Temporada\Edit.cshtml" />
-    <Content Include="Views\Serie\Create_temp.cshtml" />
     <Content Include="Views\Capitulo\Details.cshtml" />
     <Content Include="Views\Capitulo\Create.cshtml" />
     <Content Include="Views\Capitulo\Edit.cshtml" />
@@ -337,7 +338,13 @@
     <Content Include="Views\Usuario\Delete.cshtml" />
     <Content Include="Views\Usuario\Details.cshtml" />
     <Content Include="Views\Serie\Index_Usu.cshtml" />
-
+    <Content Include="Views\Carrito\_Lineapedido.cshtml" />
+    <Content Include="Views\Lineas_pedido\Index.cshtml" />
+    <Content Include="Views\Lineas_pedido\Details.cshtml" />
+    <Content Include="Views\Lineas_pedido\Create.cshtml" />
+    <Content Include="Views\Lineas_pedido\Edit.cshtml" />
+    <Content Include="Views\Lineas_pedido\Delete.cshtml" />
+    <Content Include="Views\Usuario\log.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

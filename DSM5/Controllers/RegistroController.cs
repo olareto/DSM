@@ -9,18 +9,11 @@ using System.Web.Mvc;
 
 namespace DSM5.Controllers
 {
-    public class UsuarioController : BasicController
+    public class RegistroController : BasicController
     {
         // GET: Articulo
         public ActionResult Index()
         {
-
-          
-            if(System.Web.HttpContext.Current.Session["log"]!=null && (Boolean)System.Web.HttpContext.Current.Session["log"])
-            {
-                Usuario hola= System.Web.HttpContext.Current.Session["usuario"]as Usuario;
-                return RedirectToAction("Details", "Usuario", new { id=hola.Email });
-            }
             UsuarioCEN cen = new UsuarioCEN();
             IList<UsuarioEN> enlinst=cen.ReadAll(0, 6);
             AssemblerUsuario ass = new AssemblerUsuario();
@@ -195,81 +188,5 @@ namespace DSM5.Controllers
 
         }
 
-        public ActionResult deslog()
-        {
-            System.Web.HttpContext.Current.Session["usuario"] = null;
-            System.Web.HttpContext.Current.Session["log"] = false;
-            System.Web.HttpContext.Current.Session["admin"] = false;
-            return RedirectToAction("Index", "Usuario");
         }
-        public ActionResult log()
-        {
-
-            Registro sol = new Registro();
-            return View(sol);
-        }
-
-        // POST: Articulo/Create
-        [HttpPost]
-        public ActionResult log(Registro collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-                UsuarioCEN cen = new UsuarioCEN();
-                UsuarioEN en = new UsuarioEN();
-                AssemblerUsuario ass = new AssemblerUsuario();
-                Usuario us;
-
-                AdminCEN cena = new AdminCEN();
-                AdminEN ena = new AdminEN();
-                AssemblerAdmin assa = new AssemblerAdmin();
-                Admin ad;
-
-                if (cen.Login(collection.email, collection.Password)){
-                    en = cen.ReadOID(collection.email);
-                    us = ass.ConvertENToModelUI(en);
-                  
-
-                    System.Web.HttpContext.Current.Session["usuario"] = us;
-                    System.Web.HttpContext.Current.Session["log"] = true;
-                    System.Web.HttpContext.Current.Session["admin"] = false;
-
-
-                    return RedirectToAction("Details", "Usuario", new { id = collection.Password});
-
-                }
-                else if(cena.Login(collection.email, collection.Password))
-                {
-                    ena = cena.ReadOID(collection.email);
-                    ad = assa.ConvertENToModelUI(ena);
-
-                    System.Web.HttpContext.Current.Session["usuario"] = ad;
-                    System.Web.HttpContext.Current.Session["log"] = true;
-                    System.Web.HttpContext.Current.Session["admin"] = true;
-
-                    return RedirectToAction("Details", "Usuario", new { id = collection.Password });
-                }
-                else
-                {
-                    System.Web.HttpContext.Current.Session["usuario"] = null;
-                    System.Web.HttpContext.Current.Session["log"] = false;
-                    System.Web.HttpContext.Current.Session["admin"] = false;
-                    return RedirectToAction("log", "Usuario");
-                }
-
-
-
-
-               // return RedirectToAction("Index");
-                
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-
-    }
 }

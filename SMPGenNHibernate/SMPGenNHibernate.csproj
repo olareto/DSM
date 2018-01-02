@@ -206,6 +206,8 @@
 			
 			
 			
+			<Compile Include="CEN\SMP\AdminCEN_Login.cs" />
+			
 	<Compile Include="EN\SMP\ProductoEN.cs" />
 	<Compile Include="CEN\SMP\ProductoCEN.cs" />
 	<Compile Include="CAD\SMP\IProductoCAD.cs" />

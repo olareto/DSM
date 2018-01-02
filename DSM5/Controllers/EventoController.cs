@@ -21,6 +21,10 @@ namespace DSM5.Controllers
             IList<Evento> listart = ass.ConvertListENToModel(enlinst);
 
             //articuloAsembler.covert
+
+            System.Web.HttpContext.Current.Session["controller"] = "Evento";
+            System.Web.HttpContext.Current.Session["action"] = "Index";
+            System.Web.HttpContext.Current.Session["arg"] = null;
             return View(listart);
         }
 
@@ -43,11 +47,16 @@ namespace DSM5.Controllers
             IList<Comentario> solc = assc.ConvertListENToModel(ten);
 
             SessionClose();
-            ViewData["id_serie"] = id;
-
-            ViewData["controller"] = "Evento";
+         
             // ViewData["action"] = "Details";
             ViewBag.coment = solc;
+
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+            ViewData["id_serie"] = id;
+
+
             return View(sol);
         }
 
@@ -57,6 +66,12 @@ namespace DSM5.Controllers
             EventoEN en = new EventoEN();
             AssemblerEvento ass = new AssemblerEvento();
             Evento sol = ass.ConvertENToModelUI(en);
+
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+
+
             return View(sol);
         }
 
@@ -70,7 +85,12 @@ namespace DSM5.Controllers
                 EventoCEN cen = new EventoCEN();
                 
                 cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Stock, collection.Tipo);
-                return RedirectToAction("Index");
+                string action = System.Web.HttpContext.Current.Session["action"] as String;
+                string controller = System.Web.HttpContext.Current.Session["controller"] as String;
+                Object arg = System.Web.HttpContext.Current.Session["arg"];
+
+
+                return RedirectToAction(action, controller, arg);
             }
             catch
             {
@@ -94,6 +114,12 @@ namespace DSM5.Controllers
             // ProductoEN en = new Pro;
             AssemblerEvento ass = new AssemblerEvento();
             Evento sol = ass.ConvertENToModelUI(en);
+
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+
+
             return View(sol);
         }
 
@@ -107,7 +133,12 @@ namespace DSM5.Controllers
                 EventoCEN cen = new EventoCEN();
                 cen.Modify(id, collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Stock, collection.Tipo);
                 //cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock, collection.Talla);
-                return RedirectToAction("Index");
+                string action = System.Web.HttpContext.Current.Session["action"] as String;
+                string controller = System.Web.HttpContext.Current.Session["controller"] as String;
+                Object arg = System.Web.HttpContext.Current.Session["arg"];
+
+
+                return RedirectToAction(action, controller, arg);
             }
             catch
             {
@@ -125,6 +156,10 @@ namespace DSM5.Controllers
             en = cen.ReadOID(id);
             AssemblerEvento ass = new AssemblerEvento();
             Evento sol = ass.ConvertENToModelUI(en);
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+
             return View(sol);
         }
 
@@ -138,7 +173,12 @@ namespace DSM5.Controllers
                 EventoCEN cen = new EventoCEN();
 
                 cen.Destroy(id);
-                return RedirectToAction("Index");
+                string action = System.Web.HttpContext.Current.Session["action"] as String;
+                string controller = System.Web.HttpContext.Current.Session["controller"] as String;
+                Object arg = System.Web.HttpContext.Current.Session["arg"];
+
+
+                return RedirectToAction(action, controller, arg);
             }
             catch
             {
@@ -146,11 +186,22 @@ namespace DSM5.Controllers
             }
         }
         // GET: Articulo/Resultadobusqueda/5
-        public ActionResult Resultadobusqueda(IList<Evento> res)
+        public ActionResult Resultadobusqueda()
         {
-         
-           
-            
+
+            System.Web.HttpContext.Current.Session["controller"] = "Evento";
+            System.Web.HttpContext.Current.Session["action"] = "Resultadobusqueda";
+            System.Web.HttpContext.Current.Session["arg"] = null;
+
+            IList<Evento> res = System.Web.HttpContext.Current.Session["resu"] as IList<Evento>;
+            if (res == null)
+            {
+                res = new List<Evento>();
+            }
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+
             return View(res);
         }
         // GET: Articulo/Filtrar/5
@@ -163,6 +214,9 @@ namespace DSM5.Controllers
 
 
             //articuloAsembler.covert
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
             return View(res);
         }
 
@@ -200,8 +254,11 @@ namespace DSM5.Controllers
                 }
                 AssemblerEvento ass = new AssemblerEvento();
                 IList<Evento> listart = ass.ConvertListENToModel(res);
-                return View("Resultadobusqueda", listart );
-             
+
+                System.Web.HttpContext.Current.Session["resu"] = listart;
+                return RedirectToAction("Resultadobusqueda", "Evento", null);
+
+
             }
             catch
             {

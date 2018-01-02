@@ -1,4 +1,5 @@
 ﻿using DSM5.Models;
+using SMPGenNHibernate.CAD.SMP;
 using SMPGenNHibernate.CEN.SMP;
 using SMPGenNHibernate.EN.SMP;
 using System;
@@ -26,15 +27,30 @@ namespace DSM5.Controllers
         // GET: Articulo/Details/5
         public ActionResult Details(int id)
         {
-            CarritoCEN cen = new CarritoCEN();
 
-            CarritoEN en = new CarritoEN();
-            
-            en = cen.ReadOID(id);
+
+            SessionInitialize();
+            CarritoCAD cad = new CarritoCAD(session);
+
+            CarritoCEN cen = new CarritoCEN(cad);
+            CarritoEN en = cen.ReadOID(id);
 
             AssemblerCarrito ass = new AssemblerCarrito();
-            Carrito sol=ass.ConvertENToModelUI(en);
-            ViewData["id_us"] = sol.Usuario;
+            Carrito sol = ass.ConvertENToModelUI(en);
+
+
+            IList<Lineas_pedidoEN> ten = en.Lineas_pedido;
+
+            AssemblerLineas_pedido assc = new AssemblerLineas_pedido();
+            IList<Lineas_pedido> solc = assc.ConvertListENToModel(ten);
+
+            SessionClose();
+            ViewData["id_serie"] = id;
+
+            ViewData["controller"] = "Capitulo";
+            // ViewData["action"] = "Details";
+            ViewBag.coment = solc;
+
             return View(sol);
         }
 
@@ -134,6 +150,10 @@ namespace DSM5.Controllers
                 return View();
             }
         }
+
+
+        // GET: Articulo/mostrar_cap/5
+        
 
     }
 }
