@@ -33,12 +33,14 @@ namespace DSM5.Controllers
 
                 return RedirectToAction("Details", "Usuario", new { id=hola });
             }
+            return RedirectToAction("log", "Usuario",null);
             /*
             UsuarioCEN cen = new UsuarioCEN(cad);
             UsuarioEN en = cen.ReadOID(idus);
             AssemblerUsuario ass = new AssemblerUsuario();
             Usuario sol = ass.ConvertENToModelUI(en);
             **/
+            /**
             SessionInitialize();
             UsuarioCAD cad = new UsuarioCAD(session);
 
@@ -48,8 +50,9 @@ namespace DSM5.Controllers
             IList<Usuario> listart = ass.ConvertListENToModel(enlinst);
            
             SessionClose();
+    */
             //articuloAsembler.covert
-            return View(listart);
+            //return View(listart);
         }
 
         // GET: Articulo/Details/5
@@ -244,7 +247,10 @@ namespace DSM5.Controllers
 
         public ActionResult addcarr(string idus,int idpro)
         {
-
+            if (idus == null)
+            {
+                return RedirectToAction("log", "Usuario", null);
+            }
             SessionInitialize();
             UsuarioCAD cad = new UsuarioCAD(session);
             
@@ -270,7 +276,9 @@ namespace DSM5.Controllers
 
            
             IList<Pelicula> listappp = null;
+            IList<Serie> listasss = null;
             AssemblerPelicula assp = new AssemblerPelicula();
+            AssemblerSerie asss = new AssemblerSerie();
 
 
             Usuario sol = ass.ConvertENToModelUI(en);
@@ -296,16 +304,73 @@ namespace DSM5.Controllers
                 listas = en.Lista.ElementAt(2).Serie;
             }
             listappp = assp.ConvertListENToModel(listap) ;
-            
+            listasss = asss.ConvertListENToModel(listas);
 
-
+            ViewBag.peli = listappp;
+            ViewBag.serie = listasss;
+            ViewData["correo"] = System.Web.HttpContext.Current.Session["correo"];
             SessionClose();
-            return View(listappp);
+            return View();
         }
 
-
-        public ActionResult addlist(string idus, int idpro,string lista)
+        public ActionResult dellist(string idus, int idpro, string tipo, string t)
         {
+
+            ListaCEN cenl = new ListaCEN();
+            SessionInitialize();
+            UsuarioCAD cad = new UsuarioCAD(session);
+            UsuarioCEN cen = new UsuarioCEN(cad);
+            UsuarioEN en = cen.ReadOID(idus);
+
+            AssemblerUsuario ass = new AssemblerUsuario();
+            Usuario us = ass.ConvertENToModelUI(en);
+
+            IList<int> vamos = new List<int>();
+            vamos.Add(idpro);
+
+            if (t == "peli")
+            {
+                if (tipo == "sig")
+                {
+                    cenl.Delpel(us.siguiendo,vamos);
+                }
+                else if (tipo == "fav")
+                {
+                    cenl.Delpel(us.favorito, vamos);
+                }
+                else if (tipo == "visto")
+                {
+                    cenl.Delpel(us.visto, vamos);
+                }
+            }
+            else
+            {
+                if (tipo == "sig")
+                {
+                    cenl.Delserie(us.siguiendo, vamos);
+                }
+                else if (tipo == "fav")
+                {
+                    cenl.Delserie(us.favorito, vamos);
+                }
+                else if (tipo == "visto")
+                {
+                    cenl.Delserie(us.visto, vamos);
+                }
+            }
+
+            SessionClose();
+
+
+
+            return RedirectToAction("mostrarlista", "Usuario", new { idus=idus,tipo=tipo});
+        }
+            public ActionResult addlist(string idus, int idpro,string lista)
+        {
+            if (idus == null)
+            {
+                return RedirectToAction("log", "Usuario", null);
+            }
             SessionInitialize();
             UsuarioCAD cad = new UsuarioCAD(session);
 
@@ -392,7 +457,7 @@ namespace DSM5.Controllers
                 else
                 {
                     vamos.Add(idpro);
-                    cenl.Addpel(idlist, vamos);
+                    cenl.Addserie(idlist, vamos);
                     tipo = "Serie";
                 }
                

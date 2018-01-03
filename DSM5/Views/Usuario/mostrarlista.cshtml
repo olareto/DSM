@@ -1,39 +1,20 @@
-﻿@model IEnumerable<DSM5.Models.Pelicula>
+﻿
+
+
 
 <p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Valoracion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Imagen)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Valoracion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Imagen)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
+  @{
+      ViewBag.Title = "mostrarlista";
+      Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-</table>
+    @Html.ActionLink("Back", "Details", "Usuario", new { id= (string)@ViewData["correo"] }, null)|
+    @Html.Partial("_Pelicula", (IEnumerable<DSM5.Models.Pelicula>)ViewBag.peli)
+    @Html.Partial("_Serie", (IEnumerable<DSM5.Models.Serie>)ViewBag.serie)
+
+    
+</p>
+
+<h2>mostrarlista</h2>
+

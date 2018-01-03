@@ -59,18 +59,6 @@ namespace DSM5.Controllers
             ViewData["action"] = "mostrar_cap";
             ViewData["arg"] = System.Web.HttpContext.Current.Session["idtemp"];
             ViewBag.coment = solc;
-
-
-
-
-
-
-
-
-
-
-
-
             return View(sol);
         }
 
