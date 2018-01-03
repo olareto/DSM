@@ -192,9 +192,9 @@ public static void InitializeData ()
                 int idserie7 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Accidente", "s7.jpg");
 
                 int idtemporada = temporadaCEN.New_ (idserie, "nombre");
-               // int idtemporada2 = temporadaCEN.New_(idserie2, "nombre");
+                int idtemporada2 = temporadaCEN.New_(idserie2, "nombre");
                 int idcapitulo = capituloCEN.New_ (idtemporada, "nombre", new DateTime (1993, 12, 3), "descripccion", "imagen");
-               // int idcapitulo2 = capituloCEN.New_(idtemporada2, "nombre", new DateTime(1993, 12, 3), "descripccion", "imagen");
+                int idcapitulo2 = capituloCEN.New_(idtemporada2, "nombre", new DateTime(1993, 12, 3), "descripccion", "imagen");
                 #endregion
 
 
