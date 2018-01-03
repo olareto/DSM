@@ -29,9 +29,9 @@
             @Html.DisplayFor(modelItem => item.Imagen)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            
+            @Html.ActionLink("delete", "dellist", "Usuario", new { idus = (string)@ViewData["correo"], idpro = item.id, tipo = (string)@ViewData["type"], t = "peli" }, null)|
             @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
         </td>
     </tr>
 }

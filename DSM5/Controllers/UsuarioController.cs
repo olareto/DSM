@@ -309,6 +309,7 @@ namespace DSM5.Controllers
             ViewBag.peli = listappp;
             ViewBag.serie = listasss;
             ViewData["correo"] = System.Web.HttpContext.Current.Session["correo"];
+            ViewData["type"] = tipo;
             SessionClose();
             return View();
         }
