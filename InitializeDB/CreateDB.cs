@@ -172,7 +172,7 @@ public static void InitializeData ()
                 int idoferta = ofertaCEN.New_ (idArticulo, new DateTime (1993, 12, 3), new DateTime (1993, 12, 3), 99);
 
                 int idproducto = productoCEN.New_ ("producto", 69, "descripcion", "imagen", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 999, "talla");
-                lineas_pedidoCEN.Addproducto (idlineas_pedido, idproducto);
+               
                 int idlista = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.visto, idUsuario);
                 int idcomentario = comentarioCEN.New_ ("comentario", "autor", new DateTime (1993, 12, 3));
                 int idpelicula = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Star Wars 8", "i5.jpg");
