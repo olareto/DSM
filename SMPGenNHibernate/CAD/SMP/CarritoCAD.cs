@@ -296,5 +296,44 @@ public void Addlinea (int p_carrito_OID, System.Collections.Generic.IList<int> p
                 SessionClose ();
         }
 }
+
+public void Dellinea (int p_carrito_OID, System.Collections.Generic.IList<int> p_lineas_pedido_OIDs)
+{
+        try
+        {
+                SessionInitializeTransaction ();
+                SMPGenNHibernate.EN.SMP.CarritoEN carritoEN = null;
+                carritoEN = (CarritoEN)session.Load (typeof(CarritoEN), p_carrito_OID);
+
+                SMPGenNHibernate.EN.SMP.Lineas_pedidoEN lineas_pedidoENAux = null;
+                if (carritoEN.Lineas_pedido != null) {
+                        foreach (int item in p_lineas_pedido_OIDs) {
+                                lineas_pedidoENAux = (SMPGenNHibernate.EN.SMP.Lineas_pedidoEN)session.Load (typeof(SMPGenNHibernate.EN.SMP.Lineas_pedidoEN), item);
+                                if (carritoEN.Lineas_pedido.Contains (lineas_pedidoENAux) == true) {
+                                        carritoEN.Lineas_pedido.Remove (lineas_pedidoENAux);
+                                        lineas_pedidoENAux.Carrito = null;
+                                }
+                                else
+                                        throw new ModelException ("The identifier " + item + " in p_lineas_pedido_OIDs you are trying to unrelationer, doesn't exist in CarritoEN");
+                        }
+                }
+
+                session.Update (carritoEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is SMPGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in CarritoCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+}
 }
 }

@@ -30,5 +30,8 @@ System.Collections.Generic.IList<CarritoEN> ReadAll (int first, int size);
 
 
 void Addlinea (int p_carrito_OID, System.Collections.Generic.IList<int> p_lineas_pedido_OIDs);
+
+
+void Dellinea (int p_carrito_OID, System.Collections.Generic.IList<int> p_lineas_pedido_OIDs);
 }
 }

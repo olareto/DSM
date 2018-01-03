@@ -46,6 +46,7 @@ namespace DSM5.Controllers
 
             SessionClose();
             ViewData["correo"] = System.Web.HttpContext.Current.Session["correo"] as string;
+            ViewData["carrito"] = id;
             // ViewData["action"] = "Details";
             ViewBag.coment = solc;
 
@@ -122,6 +123,68 @@ namespace DSM5.Controllers
             return RedirectToAction("Details", tipo,new { id= idpro });
 
            
+        }
+        public ActionResult delllinea(int id, int idpro)
+        {
+
+
+            SessionInitialize();
+            CarritoCAD cad = new CarritoCAD(session);
+
+            CarritoCEN cen = new CarritoCEN(cad);
+            CarritoEN en = cen.ReadOID(id);
+
+            EventoCEN cene = new EventoCEN();
+            EventoEN ene = cene.ReadOID(idpro);
+            ProductoCEN cenp = new ProductoCEN();
+            ProductoEN enp = cenp.ReadOID(idpro);
+
+
+            AssemblerCarrito ass = new AssemblerCarrito();
+            Carrito sol = ass.ConvertENToModelUI(en);
+
+
+            IList<Lineas_pedidoEN> ten = en.Lineas_pedido;
+
+            AssemblerLineas_pedido assc = new AssemblerLineas_pedido();
+            IList<Lineas_pedido> solc = assc.ConvertListENToModel(ten);
+
+            Lineas_pedidoCEN den = new Lineas_pedidoCEN();
+            IList<int> vamos = new List<int>();
+            vamos.Add(idpro);
+            int cantidad=1;
+            foreach (Lineas_pedido linea in solc)
+            {
+                if (linea.id == idpro)
+                {
+                    cantidad = linea.cantidad;
+                        
+                    
+                    //den.Modify(linea.id, (linea.cantidad - 1));
+                    
+                }
+            }
+
+           
+
+            SessionClose();
+            //cen.Dellinea(id, vamos);
+            if (cantidad == 1)
+            {
+                den.Destroy(idpro);
+
+            }
+            else
+            {
+                cantidad = cantidad - 1;
+                den.Modify(idpro, cantidad);
+            }
+
+            ViewData["correo"] = System.Web.HttpContext.Current.Session["correo"] as string;
+            // ViewData["action"] = "Details";
+            return RedirectToAction("Details", "Carrito", new { id = id });
+
+
         }
 
         // GET: Articulo/Create

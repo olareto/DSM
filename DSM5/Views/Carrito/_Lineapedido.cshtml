@@ -20,6 +20,9 @@
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
             @Html.ActionLink("Details", "Details", new { id=item.id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.id })
+
+            
+            @Html.ActionLink("eliminar uno", "delllinea", "Carrito", new { id = @ViewData["carrito"],idpro=item.id }, null)
         </td>
     </tr>
 }

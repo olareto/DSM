@@ -264,6 +264,9 @@ namespace DSM5.Controllers
             return RedirectToAction("addlinea", "Carrito", new { id=sol.carrito,idpro=idpro });
             //return View(sol);
         }
+
+       
+
         public ActionResult mostrarlista(string idus,string tipo)
         {
             SessionInitialize();
@@ -366,7 +369,7 @@ namespace DSM5.Controllers
 
             return RedirectToAction("mostrarlista", "Usuario", new { idus=idus,tipo=tipo});
         }
-            public ActionResult addlist(string idus, int idpro,string lista)
+        public ActionResult addlist(string idus, int idpro,string lista)
         {
             if (idus == null)
             {
