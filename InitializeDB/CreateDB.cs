@@ -175,7 +175,7 @@ public static void InitializeData ()
 
                 int idlista = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.visto, idUsuario);
                 int idcomentario = comentarioCEN.New_ ("comentario", "autor", new DateTime (1993, 12, 3));
-                int idpelicula = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Star Wars 8", "i5.jpg");
+                int idpelicula = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Star Wars 8","i5.jpg");
                 int idpelicula2 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Jumanji", "i2.jpg");
                 int idpelicula3 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, "COCO", "i7.jpg");
                 int idpelicula4 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Perfectos desconocidos", "i3.jpg");
@@ -192,8 +192,9 @@ public static void InitializeData ()
                 int idserie7 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Accidente", "s7.jpg");
 
                 int idtemporada = temporadaCEN.New_ (idserie, "nombre");
+                int idtemporada2 = temporadaCEN.New_(idserie2, "nombre");
                 int idcapitulo = capituloCEN.New_ (idtemporada, "nombre", new DateTime (1993, 12, 3), "descripccion", "imagen");
-
+                int idcapitulo2 = capituloCEN.New_(idtemporada2, "nombre", new DateTime(1993, 12, 3), "descripccion", "imagen");
                 #endregion
 
 
