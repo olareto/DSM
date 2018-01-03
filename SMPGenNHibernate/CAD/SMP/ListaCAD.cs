@@ -95,6 +95,7 @@ public void ModifyDefault (ListaEN lista)
 
 
 
+
                 session.Update (listaEN);
                 SessionCommit ();
         }
@@ -258,24 +259,24 @@ public System.Collections.Generic.IList<ListaEN> ReadAll (int first, int size)
         return result;
 }
 
-public void Addvideo (int p_Lista_OID, System.Collections.Generic.IList<int> p_video_OIDs)
+public void Addserie (int p_Lista_OID, System.Collections.Generic.IList<int> p_serie_OIDs)
 {
         SMPGenNHibernate.EN.SMP.ListaEN listaEN = null;
         try
         {
                 SessionInitializeTransaction ();
                 listaEN = (ListaEN)session.Load (typeof(ListaEN), p_Lista_OID);
-                SMPGenNHibernate.EN.SMP.VideoEN videoENAux = null;
-                if (listaEN.Video == null) {
-                        listaEN.Video = new System.Collections.Generic.List<SMPGenNHibernate.EN.SMP.VideoEN>();
+                SMPGenNHibernate.EN.SMP.SerieEN serieENAux = null;
+                if (listaEN.Serie == null) {
+                        listaEN.Serie = new System.Collections.Generic.List<SMPGenNHibernate.EN.SMP.SerieEN>();
                 }
 
-                foreach (int item in p_video_OIDs) {
-                        videoENAux = new SMPGenNHibernate.EN.SMP.VideoEN ();
-                        videoENAux = (SMPGenNHibernate.EN.SMP.VideoEN)session.Load (typeof(SMPGenNHibernate.EN.SMP.VideoEN), item);
-                        videoENAux.Lista.Add (listaEN);
+                foreach (int item in p_serie_OIDs) {
+                        serieENAux = new SMPGenNHibernate.EN.SMP.SerieEN ();
+                        serieENAux = (SMPGenNHibernate.EN.SMP.SerieEN)session.Load (typeof(SMPGenNHibernate.EN.SMP.SerieEN), item);
+                        serieENAux.Lista.Add (listaEN);
 
-                        listaEN.Video.Add (videoENAux);
+                        listaEN.Serie.Add (serieENAux);
                 }
 
 
@@ -297,7 +298,7 @@ public void Addvideo (int p_Lista_OID, System.Collections.Generic.IList<int> p_v
         }
 }
 
-public void Eliminarvideo (int p_Lista_OID, System.Collections.Generic.IList<int> p_video_OIDs)
+public void Delserie (int p_Lista_OID, System.Collections.Generic.IList<int> p_serie_OIDs)
 {
         try
         {
@@ -305,16 +306,93 @@ public void Eliminarvideo (int p_Lista_OID, System.Collections.Generic.IList<int
                 SMPGenNHibernate.EN.SMP.ListaEN listaEN = null;
                 listaEN = (ListaEN)session.Load (typeof(ListaEN), p_Lista_OID);
 
-                SMPGenNHibernate.EN.SMP.VideoEN videoENAux = null;
-                if (listaEN.Video != null) {
-                        foreach (int item in p_video_OIDs) {
-                                videoENAux = (SMPGenNHibernate.EN.SMP.VideoEN)session.Load (typeof(SMPGenNHibernate.EN.SMP.VideoEN), item);
-                                if (listaEN.Video.Contains (videoENAux) == true) {
-                                        listaEN.Video.Remove (videoENAux);
-                                        videoENAux.Lista.Remove (listaEN);
+                SMPGenNHibernate.EN.SMP.SerieEN serieENAux = null;
+                if (listaEN.Serie != null) {
+                        foreach (int item in p_serie_OIDs) {
+                                serieENAux = (SMPGenNHibernate.EN.SMP.SerieEN)session.Load (typeof(SMPGenNHibernate.EN.SMP.SerieEN), item);
+                                if (listaEN.Serie.Contains (serieENAux) == true) {
+                                        listaEN.Serie.Remove (serieENAux);
+                                        serieENAux.Lista.Remove (listaEN);
                                 }
                                 else
-                                        throw new ModelException ("The identifier " + item + " in p_video_OIDs you are trying to unrelationer, doesn't exist in ListaEN");
+                                        throw new ModelException ("The identifier " + item + " in p_serie_OIDs you are trying to unrelationer, doesn't exist in ListaEN");
+                        }
+                }
+
+                session.Update (listaEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is SMPGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in ListaCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+}
+public void Addpel (int p_Lista_OID, System.Collections.Generic.IList<int> p_pelicula_OIDs)
+{
+        SMPGenNHibernate.EN.SMP.ListaEN listaEN = null;
+        try
+        {
+                SessionInitializeTransaction ();
+                listaEN = (ListaEN)session.Load (typeof(ListaEN), p_Lista_OID);
+                SMPGenNHibernate.EN.SMP.PeliculaEN peliculaENAux = null;
+                if (listaEN.Pelicula == null) {
+                        listaEN.Pelicula = new System.Collections.Generic.List<SMPGenNHibernate.EN.SMP.PeliculaEN>();
+                }
+
+                foreach (int item in p_pelicula_OIDs) {
+                        peliculaENAux = new SMPGenNHibernate.EN.SMP.PeliculaEN ();
+                        peliculaENAux = (SMPGenNHibernate.EN.SMP.PeliculaEN)session.Load (typeof(SMPGenNHibernate.EN.SMP.PeliculaEN), item);
+                        peliculaENAux.Lista_0.Add (listaEN);
+
+                        listaEN.Pelicula.Add (peliculaENAux);
+                }
+
+
+                session.Update (listaEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is SMPGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in ListaCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+}
+
+public void Delpel (int p_Lista_OID, System.Collections.Generic.IList<int> p_pelicula_OIDs)
+{
+        try
+        {
+                SessionInitializeTransaction ();
+                SMPGenNHibernate.EN.SMP.ListaEN listaEN = null;
+                listaEN = (ListaEN)session.Load (typeof(ListaEN), p_Lista_OID);
+
+                SMPGenNHibernate.EN.SMP.PeliculaEN peliculaENAux = null;
+                if (listaEN.Pelicula != null) {
+                        foreach (int item in p_pelicula_OIDs) {
+                                peliculaENAux = (SMPGenNHibernate.EN.SMP.PeliculaEN)session.Load (typeof(SMPGenNHibernate.EN.SMP.PeliculaEN), item);
+                                if (listaEN.Pelicula.Contains (peliculaENAux) == true) {
+                                        listaEN.Pelicula.Remove (peliculaENAux);
+                                        peliculaENAux.Lista_0.Remove (listaEN);
+                                }
+                                else
+                                        throw new ModelException ("The identifier " + item + " in p_pelicula_OIDs you are trying to unrelationer, doesn't exist in ListaEN");
                         }
                 }
 

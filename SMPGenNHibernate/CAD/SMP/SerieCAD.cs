@@ -91,6 +91,7 @@ public void ModifyDefault (SerieEN serie)
                 SessionInitializeTransaction ();
                 SerieEN serieEN = (SerieEN)session.Load (typeof(SerieEN), serie.Id);
 
+
                 session.Update (serieEN);
                 SessionCommit ();
         }

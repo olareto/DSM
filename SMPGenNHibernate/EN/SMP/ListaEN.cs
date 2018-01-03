@@ -13,13 +13,6 @@ private SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum estado;
 
 
 /**
- *	Atributo video
- */
-private System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.VideoEN> video;
-
-
-
-/**
  *	Atributo id
  */
 private int id;
@@ -33,17 +26,25 @@ private SMPGenNHibernate.EN.SMP.UsuarioEN usuario_1;
 
 
 
+/**
+ *	Atributo serie
+ */
+private System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.SerieEN> serie;
+
+
+
+/**
+ *	Atributo pelicula
+ */
+private System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> pelicula;
+
+
+
 
 
 
 public virtual SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum Estado {
         get { return estado; } set { estado = value;  }
-}
-
-
-
-public virtual System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.VideoEN> Video {
-        get { return video; } set { video = value;  }
 }
 
 
@@ -60,38 +61,53 @@ public virtual SMPGenNHibernate.EN.SMP.UsuarioEN Usuario_1 {
 
 
 
-
-
-public ListaEN()
-{
-        video = new System.Collections.Generic.List<SMPGenNHibernate.EN.SMP.VideoEN>();
+public virtual System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.SerieEN> Serie {
+        get { return serie; } set { serie = value;  }
 }
 
 
 
-public ListaEN(int id, SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum estado, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.VideoEN> video, SMPGenNHibernate.EN.SMP.UsuarioEN usuario_1
+public virtual System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> Pelicula {
+        get { return pelicula; } set { pelicula = value;  }
+}
+
+
+
+
+
+public ListaEN()
+{
+        serie = new System.Collections.Generic.List<SMPGenNHibernate.EN.SMP.SerieEN>();
+        pelicula = new System.Collections.Generic.List<SMPGenNHibernate.EN.SMP.PeliculaEN>();
+}
+
+
+
+public ListaEN(int id, SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum estado, SMPGenNHibernate.EN.SMP.UsuarioEN usuario_1, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.SerieEN> serie, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> pelicula
                )
 {
-        this.init (Id, estado, video, usuario_1);
+        this.init (Id, estado, usuario_1, serie, pelicula);
 }
 
 
 public ListaEN(ListaEN lista)
 {
-        this.init (Id, lista.Estado, lista.Video, lista.Usuario_1);
+        this.init (Id, lista.Estado, lista.Usuario_1, lista.Serie, lista.Pelicula);
 }
 
 private void init (int id
-                   , SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum estado, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.VideoEN> video, SMPGenNHibernate.EN.SMP.UsuarioEN usuario_1)
+                   , SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum estado, SMPGenNHibernate.EN.SMP.UsuarioEN usuario_1, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.SerieEN> serie, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> pelicula)
 {
         this.Id = id;
 
 
         this.Estado = estado;
 
-        this.Video = video;
-
         this.Usuario_1 = usuario_1;
+
+        this.Serie = serie;
+
+        this.Pelicula = pelicula;
 }
 
 public override bool Equals (object obj)

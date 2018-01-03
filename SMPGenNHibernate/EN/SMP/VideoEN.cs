@@ -13,13 +13,6 @@ private int id;
 
 
 /**
- *	Atributo lista
- */
-private System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista;
-
-
-
-/**
  *	Atributo valoracion
  */
 private SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion;
@@ -49,12 +42,6 @@ public virtual int Id {
 
 
 
-public virtual System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> Lista {
-        get { return lista; } set { lista = value;  }
-}
-
-
-
 public virtual SMPGenNHibernate.Enumerated.SMP.ValoracionEnum Valoracion {
         get { return valoracion; } set { valoracion = value;  }
 }
@@ -77,30 +64,27 @@ public virtual string Imagen {
 
 public VideoEN()
 {
-        lista = new System.Collections.Generic.List<SMPGenNHibernate.EN.SMP.ListaEN>();
 }
 
 
 
-public VideoEN(int id, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen
+public VideoEN(int id, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen
                )
 {
-        this.init (Id, lista, valoracion, nombre, imagen);
+        this.init (Id, valoracion, nombre, imagen);
 }
 
 
 public VideoEN(VideoEN video)
 {
-        this.init (Id, video.Lista, video.Valoracion, video.Nombre, video.Imagen);
+        this.init (Id, video.Valoracion, video.Nombre, video.Imagen);
 }
 
 private void init (int id
-                   , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen)
+                   , SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen)
 {
         this.Id = id;
 
-
-        this.Lista = lista;
 
         this.Valoracion = valoracion;
 

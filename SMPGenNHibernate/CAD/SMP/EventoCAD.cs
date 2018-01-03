@@ -93,6 +93,7 @@ public void ModifyDefault (EventoEN evento)
 
                 eventoEN.Tipo = evento.Tipo;
 
+
                 session.Update (eventoEN);
                 SessionCommit ();
         }

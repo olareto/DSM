@@ -14,6 +14,13 @@ private string tipo;
 
 
 
+/**
+ *	Atributo lineas_pedido
+ */
+private System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.Lineas_pedidoEN> lineas_pedido;
+
+
+
 
 
 
@@ -23,34 +30,43 @@ public virtual string Tipo {
 
 
 
-
-
-public EventoEN() : base ()
-{
+public virtual System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.Lineas_pedidoEN> Lineas_pedido {
+        get { return lineas_pedido; } set { lineas_pedido = value;  }
 }
 
 
 
-public EventoEN(int id, string tipo
-                , string nombre, double precio, string descripcion, string imagen, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valor, SMPGenNHibernate.EN.SMP.Lineas_pedidoEN lineas_pedido, int stock, SMPGenNHibernate.EN.SMP.OfertaEN oferta
+
+
+public EventoEN() : base ()
+{
+        lineas_pedido = new System.Collections.Generic.List<SMPGenNHibernate.EN.SMP.Lineas_pedidoEN>();
+}
+
+
+
+public EventoEN(int id, string tipo, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.Lineas_pedidoEN> lineas_pedido
+                , string nombre, double precio, string descripcion, string imagen, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valor, int stock, SMPGenNHibernate.EN.SMP.OfertaEN oferta
                 )
 {
-        this.init (Id, tipo, nombre, precio, descripcion, imagen, comentario, valor, lineas_pedido, stock, oferta);
+        this.init (Id, tipo, lineas_pedido, nombre, precio, descripcion, imagen, comentario, valor, stock, oferta);
 }
 
 
 public EventoEN(EventoEN evento)
 {
-        this.init (Id, evento.Tipo, evento.Nombre, evento.Precio, evento.Descripcion, evento.Imagen, evento.Comentario, evento.Valor, evento.Lineas_pedido, evento.Stock, evento.Oferta);
+        this.init (Id, evento.Tipo, evento.Lineas_pedido, evento.Nombre, evento.Precio, evento.Descripcion, evento.Imagen, evento.Comentario, evento.Valor, evento.Stock, evento.Oferta);
 }
 
 private void init (int id
-                   , string tipo, string nombre, double precio, string descripcion, string imagen, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valor, SMPGenNHibernate.EN.SMP.Lineas_pedidoEN lineas_pedido, int stock, SMPGenNHibernate.EN.SMP.OfertaEN oferta)
+                   , string tipo, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.Lineas_pedidoEN> lineas_pedido, string nombre, double precio, string descripcion, string imagen, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valor, int stock, SMPGenNHibernate.EN.SMP.OfertaEN oferta)
 {
         this.Id = id;
 
 
         this.Tipo = tipo;
+
+        this.Lineas_pedido = lineas_pedido;
 
         this.Nombre = nombre;
 
@@ -63,8 +79,6 @@ private void init (int id
         this.Comentario = comentario;
 
         this.Valor = valor;
-
-        this.Lineas_pedido = lineas_pedido;
 
         this.Stock = stock;
 

@@ -14,6 +14,13 @@ private System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> c
 
 
 
+/**
+ *	Atributo lista_0
+ */
+private System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista_0;
+
+
+
 
 
 
@@ -23,37 +30,44 @@ public virtual System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.Comentar
 
 
 
+public virtual System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> Lista_0 {
+        get { return lista_0; } set { lista_0 = value;  }
+}
+
+
+
 
 
 public PeliculaEN() : base ()
 {
         comentario = new System.Collections.Generic.List<SMPGenNHibernate.EN.SMP.ComentarioEN>();
+        lista_0 = new System.Collections.Generic.List<SMPGenNHibernate.EN.SMP.ListaEN>();
 }
 
 
 
-public PeliculaEN(int id, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario
-                  , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen
+public PeliculaEN(int id, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista_0
+                  , SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen
                   )
 {
-        this.init (Id, comentario, lista, valoracion, nombre, imagen);
+        this.init (Id, comentario, lista_0, valoracion, nombre, imagen);
 }
 
 
 public PeliculaEN(PeliculaEN pelicula)
 {
-        this.init (Id, pelicula.Comentario, pelicula.Lista, pelicula.Valoracion, pelicula.Nombre, pelicula.Imagen);
+        this.init (Id, pelicula.Comentario, pelicula.Lista_0, pelicula.Valoracion, pelicula.Nombre, pelicula.Imagen);
 }
 
 private void init (int id
-                   , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen)
+                   , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista_0, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen)
 {
         this.Id = id;
 
 
         this.Comentario = comentario;
 
-        this.Lista = lista;
+        this.Lista_0 = lista_0;
 
         this.Valoracion = valoracion;
 

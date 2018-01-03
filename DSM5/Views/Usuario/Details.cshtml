@@ -73,5 +73,8 @@
     @Html.ActionLink("Edit", "Edit", new { id = Model.Email }) |
     @Html.ActionLink("Back to List(pruebas)", "Index")
     @Html.ActionLink("ver carrito", "Details", "Carrito", new { id =  Model.carrito }, null)
+    @Html.ActionLink("sig", "mostrarlista", "Usuario", new { idus = Model.Email,tipo="sig" }, null)
+    @Html.ActionLink("fav", "mostrarlista", "Usuario", new { idus = Model.Email, tipo = "fav" }, null)
+    @Html.ActionLink("visto", "mostrarlista", "Usuario", new { idus = Model.Email, tipo = "visto" }, null)
     @Html.ActionLink("deslog", "deslog", "Usuario", null, null)
 </p>

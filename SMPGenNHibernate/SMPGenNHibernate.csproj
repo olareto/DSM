@@ -274,15 +274,17 @@
 			
 			
 			
-			<Compile Include="CEN\SMP\Lineas_pedidoCEN_Anyadirarticulo.cs" />
 			
-			<Compile Include="CEN\SMP\Lineas_pedidoCEN_Eliminararticulo.cs" />
+			
+			
 			
 	<Compile Include="EN\SMP\ListaEN.cs" />
 	<Compile Include="CEN\SMP\ListaCEN.cs" />
 	<Compile Include="CAD\SMP\IListaCAD.cs" />
 	<Compile Include="CAD\SMP\ListaCAD.cs" />
 	<Compile Include="CP\SMP\ListaCP.cs" />
+			
+			
 			
 			
 			

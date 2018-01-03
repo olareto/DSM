@@ -28,6 +28,18 @@
 							<one-to-many class="SMPGenNHibernate.EN.SMP.ComentarioEN"/>
 					    </bag>
 					
+			
+		  			
+						<bag name="Lista_0" table="[pelicula_lista_0]"  >
+							<key>
+								
+									<column name="FK_idVideo_idPelicula"/> 
+							</key>
+      						<many-to-many class="SMPGenNHibernate.EN.SMP.ListaEN">
+									<column name="FK_idLista_idLista_0"/> 
+      						</many-to-many>
+    					</bag>
+					
 					
 		
  	  

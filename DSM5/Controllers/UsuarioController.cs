@@ -1,4 +1,5 @@
 ﻿using DSM5.Models;
+using SMPGenNHibernate.CAD.SMP;
 using SMPGenNHibernate.CEN.SMP;
 using SMPGenNHibernate.CP.SMP;
 using SMPGenNHibernate.EN.SMP;
@@ -23,10 +24,7 @@ namespace DSM5.Controllers
                 String hola = System.Web.HttpContext.Current.Session["correo"] as String;
 
 
-                System.Web.HttpContext.Current.Session["usuario"] = null;
-               // System.Web.HttpContext.Current.Session["correo"] = ad.Email;
-                System.Web.HttpContext.Current.Session["log"] = false;
-                System.Web.HttpContext.Current.Session["admin"] = false;
+                
 
                 ViewData["correo"] = System.Web.HttpContext.Current.Session["correo"] as string;
                 ViewData["log"] = (Boolean)System.Web.HttpContext.Current.Session["log"];
@@ -35,11 +33,21 @@ namespace DSM5.Controllers
 
                 return RedirectToAction("Details", "Usuario", new { id=hola });
             }
-            UsuarioCEN cen = new UsuarioCEN();
+            /*
+            UsuarioCEN cen = new UsuarioCEN(cad);
+            UsuarioEN en = cen.ReadOID(idus);
+            AssemblerUsuario ass = new AssemblerUsuario();
+            Usuario sol = ass.ConvertENToModelUI(en);
+            **/
+            SessionInitialize();
+            UsuarioCAD cad = new UsuarioCAD(session);
+
+            UsuarioCEN cen = new UsuarioCEN(cad);
             IList<UsuarioEN> enlinst=cen.ReadAll(0, 6);
             AssemblerUsuario ass = new AssemblerUsuario();
             IList<Usuario> listart = ass.ConvertListENToModel(enlinst);
-
+           
+            SessionClose();
             //articuloAsembler.covert
             return View(listart);
         }
@@ -47,8 +55,12 @@ namespace DSM5.Controllers
         // GET: Articulo/Details/5
         public ActionResult Details(string id)
         {
-            UsuarioCEN cen = new UsuarioCEN();
 
+
+            SessionInitialize();
+            UsuarioCAD cad = new UsuarioCAD(session);
+            UsuarioCEN cen = new UsuarioCEN(cad);
+            
             UsuarioEN en = new UsuarioEN();
             
             en = cen.ReadOID(id);
@@ -60,16 +72,15 @@ namespace DSM5.Controllers
             AssemblerUsuario ass = new AssemblerUsuario();
             Usuario sol =ass.ConvertENToModelUI(en);
             
-
+            SessionClose();
             return View(sol);
         }
 
         // GET: Articulo/Create
         public ActionResult Create()
         {
-            UsuarioEN en = new UsuarioEN();
-            AssemblerUsuario ass = new AssemblerUsuario();
-            Usuario sol = ass.ConvertENToModelUI(en);
+            
+            Usuario sol = new Usuario();
             return View(sol);
         }
 
@@ -99,8 +110,11 @@ namespace DSM5.Controllers
         // GET: Articulo/Edit/5
         public ActionResult Edit(string id)
         {
+            SessionInitialize();
+            UsuarioCAD cad = new UsuarioCAD(session);
+            
 
-            UsuarioCEN cen = new UsuarioCEN();
+            UsuarioCEN cen = new UsuarioCEN(cad);
 
             UsuarioEN en = new UsuarioEN();
             en = cen.ReadOID(id);
@@ -112,7 +126,7 @@ namespace DSM5.Controllers
             // ProductoEN en = new Pro;
             AssemblerUsuario ass = new AssemblerUsuario();
             Usuario sol = ass.ConvertENToModelUI(en);
-           
+            SessionClose();
             return View(sol);
         }
 
@@ -138,13 +152,17 @@ namespace DSM5.Controllers
         // GET: Articulo/Delete/5
         public ActionResult Delete(string id)
         {
+            SessionInitialize();
+            UsuarioCAD cad = new UsuarioCAD(session);
+            
 
-            UsuarioCEN cen = new UsuarioCEN();
+            UsuarioCEN cen = new UsuarioCEN(cad);
 
             UsuarioEN en = new UsuarioEN();
             en = cen.ReadOID(id);
             AssemblerUsuario ass = new AssemblerUsuario();
             Usuario sol = ass.ConvertENToModelUI(en);
+            SessionClose();
             return View(sol);
         }
 
@@ -223,6 +241,172 @@ namespace DSM5.Controllers
             System.Web.HttpContext.Current.Session["admin"] = false;
             return RedirectToAction("Index", "Usuario");
         }
+
+        public ActionResult addcarr(string idus,int idpro)
+        {
+
+            SessionInitialize();
+            UsuarioCAD cad = new UsuarioCAD(session);
+            
+
+
+            UsuarioCEN cen = new UsuarioCEN(cad);
+            UsuarioEN en = cen.ReadOID(idus);
+            AssemblerUsuario ass = new AssemblerUsuario();
+            Usuario sol = ass.ConvertENToModelUI(en);
+            SessionClose();
+            return RedirectToAction("addlinea", "Carrito", new { id=sol.carrito,idpro=idpro });
+            //return View(sol);
+        }
+        public ActionResult mostrarlista(string idus,string tipo)
+        {
+            SessionInitialize();
+            UsuarioCAD cad = new UsuarioCAD(session);
+
+            UsuarioCEN cen = new UsuarioCEN(cad);
+            UsuarioEN en = cen.ReadOID(idus);
+            AssemblerUsuario ass = new AssemblerUsuario();
+
+
+           
+            IList<Pelicula> listappp = null;
+            AssemblerPelicula assp = new AssemblerPelicula();
+
+
+            Usuario sol = ass.ConvertENToModelUI(en);
+            int idlist = -1;
+            IList<PeliculaEN> listap = null;
+            IList<SerieEN> listas = null;
+            if (tipo == "sig")
+            {
+                idlist = sol.siguiendo;
+                listap = en.Lista.ElementAt(0).Pelicula;
+                listas = en.Lista.ElementAt(0).Serie;
+            }
+            else if (tipo == "fav")
+            {
+                idlist = sol.favorito;
+                listap = en.Lista.ElementAt(1).Pelicula;
+                listas = en.Lista.ElementAt(1).Serie;
+            }
+            else if (tipo == "visto")
+            {
+                idlist = sol.visto;
+                listap = en.Lista.ElementAt(2).Pelicula;
+                listas = en.Lista.ElementAt(2).Serie;
+            }
+            listappp = assp.ConvertListENToModel(listap) ;
+            
+
+
+            SessionClose();
+            return View(listappp);
+        }
+
+
+        public ActionResult addlist(string idus, int idpro,string lista)
+        {
+            SessionInitialize();
+            UsuarioCAD cad = new UsuarioCAD(session);
+
+            UsuarioCEN cen = new UsuarioCEN(cad);
+            UsuarioEN en = cen.ReadOID(idus);
+            AssemblerUsuario ass = new AssemblerUsuario();
+            Usuario sol = ass.ConvertENToModelUI(en);
+            int idlist=-1;
+            IList<PeliculaEN> listap=null;
+            IList<SerieEN> listas=null;
+            if (lista== "sig")
+            {
+                idlist = sol.siguiendo;
+                listap = en.Lista.ElementAt(0).Pelicula;
+                listas=en.Lista.ElementAt(0).Serie;
+            }
+            else if(lista=="fav"){
+                idlist = sol.favorito;
+                listap = en.Lista.ElementAt(1).Pelicula;
+                listas = en.Lista.ElementAt(1).Serie;
+            }
+            else if(lista == "visto")
+            {
+                idlist = sol.visto;
+                listap = en.Lista.ElementAt(2).Pelicula;
+                listas = en.Lista.ElementAt(2).Serie;
+            }
+
+
+
+
+            ListaCEN cenl = new ListaCEN();
+
+            PeliculaCEN cenp = new PeliculaCEN();
+            PeliculaEN enp = cenp.ReadOID(idpro);
+            SerieCEN cens = new SerieCEN();
+            SerieEN ens = cens.ReadOID(idpro);
+
+
+
+
+
+
+
+            AssemblerSerie asss = new AssemblerSerie();
+            IList<Serie> sols = asss.ConvertListENToModel( listas);
+
+
+            AssemblerPelicula assp = new AssemblerPelicula();
+            IList<Pelicula> solp = assp.ConvertListENToModel(listap);
+            
+
+
+
+            string tipo = null;
+            Boolean si = false;
+            foreach (Serie linea in sols)
+            {
+                if (linea.id == idpro)
+                {
+                    return RedirectToAction("Details", "Serie", new { id =  idpro });
+                 
+                }
+            }
+            foreach (Pelicula linea in solp)
+            {
+                if (linea.id == idpro)
+                {
+                    return RedirectToAction("Details", "Pelicula", new { id = idpro });
+
+                }
+            }
+
+            if (si == false)
+            {
+
+                IList<int> vamos = new List<int>();
+                if (enp != null)
+                {
+                    vamos.Add(idpro);
+                    cenl.Addpel(idlist, vamos);
+                    tipo = "Pelicula";
+                }
+                else
+                {
+                    vamos.Add(idpro);
+                    cenl.Addpel(idlist, vamos);
+                    tipo = "Serie";
+                }
+               
+            }
+
+            SessionClose();
+
+
+
+
+            return RedirectToAction("Details", tipo, new { id = idpro });
+            //return View(sol);
+        }
+
         public ActionResult log()
         {
 
@@ -236,8 +420,11 @@ namespace DSM5.Controllers
         {
             try
             {
+                SessionInitialize();
+                UsuarioCAD cad = new UsuarioCAD(session);
+                
                 // TODO: Add insert logic here
-                UsuarioCEN cen = new UsuarioCEN();
+                UsuarioCEN cen = new UsuarioCEN(cad);
                 UsuarioEN en = new UsuarioEN();
                 AssemblerUsuario ass = new AssemblerUsuario();
                 Usuario us;
@@ -257,7 +444,7 @@ namespace DSM5.Controllers
                     System.Web.HttpContext.Current.Session["log"] = true;
                     System.Web.HttpContext.Current.Session["admin"] = false;
 
-
+                    SessionClose();
                     return RedirectToAction("Details", "Usuario", new { id = collection.Password});
 
                 }
@@ -270,7 +457,7 @@ namespace DSM5.Controllers
                     System.Web.HttpContext.Current.Session["correo"] = ad.Email;
                     System.Web.HttpContext.Current.Session["log"] = true;
                     System.Web.HttpContext.Current.Session["admin"] = true;
-
+                    SessionClose();
                     return RedirectToAction("Details", "Usuario", new { id = collection.Password });
                 }
                 else
@@ -279,6 +466,7 @@ namespace DSM5.Controllers
                     System.Web.HttpContext.Current.Session["correo"] = null;
                     System.Web.HttpContext.Current.Session["log"] = false;
                     System.Web.HttpContext.Current.Session["admin"] = false;
+                    SessionClose();
                     return RedirectToAction("log", "Usuario");
                 }
 

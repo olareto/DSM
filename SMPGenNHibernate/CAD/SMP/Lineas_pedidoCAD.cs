@@ -95,6 +95,7 @@ public void ModifyDefault (Lineas_pedidoEN lineas_pedido)
                 lineas_pedidoEN.Cantidad = lineas_pedido.Cantidad;
 
 
+
                 session.Update (lineas_pedidoEN);
                 SessionCommit ();
         }
@@ -125,13 +126,6 @@ public int New_ (Lineas_pedidoEN lineas_pedido)
 
                         lineas_pedido.Carrito.Lineas_pedido
                         .Add (lineas_pedido);
-                }
-                if (lineas_pedido.Articulo_0 != null) {
-                        // Argumento OID y no colección.
-                        lineas_pedido.Articulo_0 = (SMPGenNHibernate.EN.SMP.ArticuloEN)session.Load (typeof(SMPGenNHibernate.EN.SMP.ArticuloEN), lineas_pedido.Articulo_0.Id);
-
-                        lineas_pedido.Articulo_0.Lineas_pedido
-                                = lineas_pedido;
                 }
 
                 session.Save (lineas_pedido);
@@ -263,6 +257,131 @@ public System.Collections.Generic.IList<Lineas_pedidoEN> ReadAll (int first, int
         }
 
         return result;
+}
+
+public void Addevento (int p_lineas_pedido_OID, int p_evento_OID)
+{
+        SMPGenNHibernate.EN.SMP.Lineas_pedidoEN lineas_pedidoEN = null;
+        try
+        {
+                SessionInitializeTransaction ();
+                lineas_pedidoEN = (Lineas_pedidoEN)session.Load (typeof(Lineas_pedidoEN), p_lineas_pedido_OID);
+                lineas_pedidoEN.Evento = (SMPGenNHibernate.EN.SMP.EventoEN)session.Load (typeof(SMPGenNHibernate.EN.SMP.EventoEN), p_evento_OID);
+
+                lineas_pedidoEN.Evento.Lineas_pedido.Add (lineas_pedidoEN);
+
+
+
+                session.Update (lineas_pedidoEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is SMPGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in Lineas_pedidoCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+}
+
+public void Delevento (int p_lineas_pedido_OID, int p_evento_OID)
+{
+        try
+        {
+                SessionInitializeTransaction ();
+                SMPGenNHibernate.EN.SMP.Lineas_pedidoEN lineas_pedidoEN = null;
+                lineas_pedidoEN = (Lineas_pedidoEN)session.Load (typeof(Lineas_pedidoEN), p_lineas_pedido_OID);
+
+                if (lineas_pedidoEN.Evento.Id == p_evento_OID) {
+                        lineas_pedidoEN.Evento = null;
+                }
+                else
+                        throw new ModelException ("The identifier " + p_evento_OID + " in p_evento_OID you are trying to unrelationer, doesn't exist in Lineas_pedidoEN");
+
+                session.Update (lineas_pedidoEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is SMPGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in Lineas_pedidoCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+}
+public void Addproducto (int p_lineas_pedido_OID, int p_producto_OID)
+{
+        SMPGenNHibernate.EN.SMP.Lineas_pedidoEN lineas_pedidoEN = null;
+        try
+        {
+                SessionInitializeTransaction ();
+                lineas_pedidoEN = (Lineas_pedidoEN)session.Load (typeof(Lineas_pedidoEN), p_lineas_pedido_OID);
+                lineas_pedidoEN.Producto = (SMPGenNHibernate.EN.SMP.ProductoEN)session.Load (typeof(SMPGenNHibernate.EN.SMP.ProductoEN), p_producto_OID);
+
+                lineas_pedidoEN.Producto.Lineas_pedido_0.Add (lineas_pedidoEN);
+
+
+
+                session.Update (lineas_pedidoEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is SMPGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in Lineas_pedidoCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+}
+
+public void Delproducto (int p_lineas_pedido_OID, int p_producto_OID)
+{
+        try
+        {
+                SessionInitializeTransaction ();
+                SMPGenNHibernate.EN.SMP.Lineas_pedidoEN lineas_pedidoEN = null;
+                lineas_pedidoEN = (Lineas_pedidoEN)session.Load (typeof(Lineas_pedidoEN), p_lineas_pedido_OID);
+
+                if (lineas_pedidoEN.Producto.Id == p_producto_OID) {
+                        lineas_pedidoEN.Producto = null;
+                }
+                else
+                        throw new ModelException ("The identifier " + p_producto_OID + " in p_producto_OID you are trying to unrelationer, doesn't exist in Lineas_pedidoEN");
+
+                session.Update (lineas_pedidoEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is SMPGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in Lineas_pedidoCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
 }
 }
 }

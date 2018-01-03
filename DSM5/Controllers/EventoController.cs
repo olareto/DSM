@@ -55,6 +55,7 @@ namespace DSM5.Controllers
             ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
             ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
             ViewData["id_serie"] = id;
+            ViewData["correo"] = System.Web.HttpContext.Current.Session["correo"] as String;
 
 
             return View(sol);

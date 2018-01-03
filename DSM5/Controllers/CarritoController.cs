@@ -52,6 +52,78 @@ namespace DSM5.Controllers
             return View(sol);
         }
 
+
+        public ActionResult addlinea(int id,int idpro)
+        {
+
+
+            SessionInitialize();
+            CarritoCAD cad = new CarritoCAD(session);
+
+            CarritoCEN cen = new CarritoCEN(cad);
+            CarritoEN en = cen.ReadOID(id);
+
+            EventoCEN cene = new EventoCEN();
+            EventoEN ene = cene.ReadOID(idpro);
+            ProductoCEN cenp = new ProductoCEN();
+            ProductoEN enp = cenp.ReadOID(idpro);
+
+
+            AssemblerCarrito ass = new AssemblerCarrito();
+            Carrito sol = ass.ConvertENToModelUI(en);
+
+            
+            IList<Lineas_pedidoEN> ten = en.Lineas_pedido;
+
+            AssemblerLineas_pedido assc = new AssemblerLineas_pedido();
+            IList<Lineas_pedido> solc = assc.ConvertListENToModel(ten);
+            
+            Lineas_pedidoCEN den = new Lineas_pedidoCEN();
+            string tipo=null;
+            Boolean si = false;
+            foreach (Lineas_pedido linea in solc)
+            {
+                if (linea.articulo== idpro)
+                {
+                    si = true;
+                    den.Modify(linea.id,(linea.cantidad+1));
+                    tipo = linea.tipo;
+                }
+            }
+
+            if (si == false)
+            {
+                int h = den.New_(id, 1);
+
+                if (ene != null)
+                {
+                    den.Addevento(h, idpro);
+                    tipo = "Evento";
+                }
+                else
+                {
+                    den.Addproducto(h, idpro);
+                    tipo = "Producto";
+                }
+                List<int> lista = new List<int>();
+                lista.Add(h);
+                cen.Addlinea(id, lista);
+            }
+
+            SessionClose();
+
+
+
+
+
+
+            ViewData["correo"] = System.Web.HttpContext.Current.Session["correo"] as string;
+            // ViewData["action"] = "Details";
+            return RedirectToAction("Details", tipo,new { id= idpro });
+
+           
+        }
+
         // GET: Articulo/Create
         public ActionResult Create()
         {

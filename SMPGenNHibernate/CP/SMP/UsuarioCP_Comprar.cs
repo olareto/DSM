@@ -50,7 +50,7 @@ public void Comprar (string p_oid)
                 IList<Lineas_pedidoEN> listas = new List<Lineas_pedidoEN>();
                 listas = carritoEN.Lineas_pedido;
                 foreach (Lineas_pedidoEN aux in listas) {
-                        aux.Articulo_0.Stock = aux.Articulo_0.Stock - aux.Cantidad;
+                        // aux.Articulo_0.Stock = aux.Articulo_0.Stock - aux.Cantidad;
                         listaCEN.Destroy (aux.Id);
                 }
                 SessionCommit ();

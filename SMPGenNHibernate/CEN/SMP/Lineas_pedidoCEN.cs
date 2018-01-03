@@ -38,7 +38,7 @@ public ILineas_pedidoCAD get_ILineas_pedidoCAD ()
         return this._ILineas_pedidoCAD;
 }
 
-public int New_ (int p_carrito, int p_cantidad, int p_articulo_0)
+public int New_ (int p_carrito, int p_cantidad)
 {
         Lineas_pedidoEN lineas_pedidoEN = null;
         int oid;
@@ -54,14 +54,6 @@ public int New_ (int p_carrito, int p_cantidad, int p_articulo_0)
         }
 
         lineas_pedidoEN.Cantidad = p_cantidad;
-
-
-        if (p_articulo_0 != -1) {
-                // El argumento p_articulo_0 -> Property articulo_0 es oid = false
-                // Lista de oids id
-                lineas_pedidoEN.Articulo_0 = new SMPGenNHibernate.EN.SMP.ArticuloEN ();
-                lineas_pedidoEN.Articulo_0.Id = p_articulo_0;
-        }
 
         //Call to Lineas_pedidoCAD
 
@@ -103,6 +95,30 @@ public System.Collections.Generic.IList<Lineas_pedidoEN> ReadAll (int first, int
 
         list = _ILineas_pedidoCAD.ReadAll (first, size);
         return list;
+}
+public void Addevento (int p_lineas_pedido_OID, int p_evento_OID)
+{
+        //Call to Lineas_pedidoCAD
+
+        _ILineas_pedidoCAD.Addevento (p_lineas_pedido_OID, p_evento_OID);
+}
+public void Delevento (int p_lineas_pedido_OID, int p_evento_OID)
+{
+        //Call to Lineas_pedidoCAD
+
+        _ILineas_pedidoCAD.Delevento (p_lineas_pedido_OID, p_evento_OID);
+}
+public void Addproducto (int p_lineas_pedido_OID, int p_producto_OID)
+{
+        //Call to Lineas_pedidoCAD
+
+        _ILineas_pedidoCAD.Addproducto (p_lineas_pedido_OID, p_producto_OID);
+}
+public void Delproducto (int p_lineas_pedido_OID, int p_producto_OID)
+{
+        //Call to Lineas_pedidoCAD
+
+        _ILineas_pedidoCAD.Delproducto (p_lineas_pedido_OID, p_producto_OID);
 }
 }
 }

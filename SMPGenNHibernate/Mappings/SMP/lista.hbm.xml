@@ -18,23 +18,35 @@
 			
 			
 			
-		  			
-						<bag name="Video" table="[video_lista]" inverse="true" >
-							<key>
-								
-									<column name="FK_idLista_idLista"/> 
-							</key>
-      						<many-to-many class="SMPGenNHibernate.EN.SMP.VideoEN">
-									<column name="FK_idVideo_idVideo"/> 
-      						</many-to-many>
-    					</bag>
-			
 			
 		  			
 						<many-to-one name="Usuario_1" class="SMPGenNHibernate.EN.SMP.UsuarioEN" >	
 								<column name="FK_email_idUsuario_1"/> 
 						</many-to-one>
 											 					
+			
+		  			
+						<bag name="Serie" table="[serie_lista]" inverse="true" >
+							<key>
+								
+									<column name="FK_idLista_idLista"/> 
+							</key>
+      						<many-to-many class="SMPGenNHibernate.EN.SMP.SerieEN">
+									<column name="FK_idVideo_idSerie"/> 
+      						</many-to-many>
+    					</bag>
+			
+		  			
+						<bag name="Pelicula" table="[pelicula_lista_0]" inverse="true" >
+							<key>
+								
+									<column name="FK_idLista_idLista_0"/> 
+							</key>
+      						<many-to-many class="SMPGenNHibernate.EN.SMP.PeliculaEN">
+									<column name="FK_idVideo_idPelicula"/> 
+      						</many-to-many>
+    					</bag>
+					
 					
 					
 					

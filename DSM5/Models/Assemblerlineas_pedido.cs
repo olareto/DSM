@@ -17,9 +17,15 @@ namespace DSM5.Models
             {
                 art.carrito = en.Carrito.Id;
             }
-            if (en.Articulo_0 != null)
+            if (en.Producto != null)
             {
-                art.articulo = en.Articulo_0.Id;
+                art.articulo = en.Producto.Id;
+                art.tipo = "Producto";
+            }
+            if (en.Evento != null)
+            {
+                art.articulo = en.Evento.Id;
+                art.tipo = "Evento";
             }
 
             return art;

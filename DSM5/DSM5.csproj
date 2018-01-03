@@ -348,6 +348,7 @@
     <Content Include="Views\Usuario\log.cshtml" />
     <Content Include="Views\Pelicula\Reproducir.cshtml" />
     <Content Include="Views\Serie\Reproducir.cshtml" />
+    <Content Include="Views\Usuario\mostrarlista.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

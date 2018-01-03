@@ -14,6 +14,14 @@ namespace DSM5.Models
         [ScaffoldColumn(false)]
         public int carrito { get; set; }
 
+        [ScaffoldColumn(false)]
+        public int siguiendo { get; set; }
+
+        [ScaffoldColumn(false)]
+        public int favorito { get; set; }
+
+        [ScaffoldColumn(false)]
+        public int visto { get; set; }
 
         [Display(Prompt = "Nombre del usuario", Description = "Nombre del usuario", Name = "Nombre ")]
         [Required(ErrorMessage = "Debe indicar un nombre para el producto")]

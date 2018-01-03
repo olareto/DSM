@@ -93,6 +93,7 @@ public void ModifyDefault (ProductoEN producto)
 
                 productoEN.Talla = producto.Talla;
 
+
                 session.Update (productoEN);
                 SessionCommit ();
         }

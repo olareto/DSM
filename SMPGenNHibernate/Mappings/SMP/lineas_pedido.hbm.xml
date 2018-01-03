@@ -26,12 +26,17 @@
 			
 			
 		  			
+						<many-to-one name="Evento" class="SMPGenNHibernate.EN.SMP.EventoEN" >	
+								<column name="FK_idArticulo_idEvento"/> 
+						</many-to-one>
+											 					
+			
+		  			
+						<many-to-one name="Producto" class="SMPGenNHibernate.EN.SMP.ProductoEN" >	
+								<column name="FK_idArticulo_idProducto"/> 
+						</many-to-one>
+											 					
 					
-							<many-to-one name="Articulo_0" class="SMPGenNHibernate.EN.SMP.ArticuloEN" >
-								<column name="FK_idArticulo_idArticulo_0"/> 
-        					</many-to-one>
-					 
-						
 					
 					
 					

@@ -91,6 +91,7 @@ public void ModifyDefault (PeliculaEN pelicula)
                 SessionInitializeTransaction ();
                 PeliculaEN peliculaEN = (PeliculaEN)session.Load (typeof(PeliculaEN), pelicula.Id);
 
+
                 session.Update (peliculaEN);
                 SessionCommit ();
         }

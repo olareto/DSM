@@ -27,9 +27,16 @@ private int cantidad;
 
 
 /**
- *	Atributo articulo_0
+ *	Atributo evento
  */
-private SMPGenNHibernate.EN.SMP.ArticuloEN articulo_0;
+private SMPGenNHibernate.EN.SMP.EventoEN evento;
+
+
+
+/**
+ *	Atributo producto
+ */
+private SMPGenNHibernate.EN.SMP.ProductoEN producto;
 
 
 
@@ -54,8 +61,14 @@ public virtual int Cantidad {
 
 
 
-public virtual SMPGenNHibernate.EN.SMP.ArticuloEN Articulo_0 {
-        get { return articulo_0; } set { articulo_0 = value;  }
+public virtual SMPGenNHibernate.EN.SMP.EventoEN Evento {
+        get { return evento; } set { evento = value;  }
+}
+
+
+
+public virtual SMPGenNHibernate.EN.SMP.ProductoEN Producto {
+        get { return producto; } set { producto = value;  }
 }
 
 
@@ -68,20 +81,20 @@ public Lineas_pedidoEN()
 
 
 
-public Lineas_pedidoEN(int id, SMPGenNHibernate.EN.SMP.CarritoEN carrito, int cantidad, SMPGenNHibernate.EN.SMP.ArticuloEN articulo_0
+public Lineas_pedidoEN(int id, SMPGenNHibernate.EN.SMP.CarritoEN carrito, int cantidad, SMPGenNHibernate.EN.SMP.EventoEN evento, SMPGenNHibernate.EN.SMP.ProductoEN producto
                        )
 {
-        this.init (Id, carrito, cantidad, articulo_0);
+        this.init (Id, carrito, cantidad, evento, producto);
 }
 
 
 public Lineas_pedidoEN(Lineas_pedidoEN lineas_pedido)
 {
-        this.init (Id, lineas_pedido.Carrito, lineas_pedido.Cantidad, lineas_pedido.Articulo_0);
+        this.init (Id, lineas_pedido.Carrito, lineas_pedido.Cantidad, lineas_pedido.Evento, lineas_pedido.Producto);
 }
 
 private void init (int id
-                   , SMPGenNHibernate.EN.SMP.CarritoEN carrito, int cantidad, SMPGenNHibernate.EN.SMP.ArticuloEN articulo_0)
+                   , SMPGenNHibernate.EN.SMP.CarritoEN carrito, int cantidad, SMPGenNHibernate.EN.SMP.EventoEN evento, SMPGenNHibernate.EN.SMP.ProductoEN producto)
 {
         this.Id = id;
 
@@ -90,7 +103,9 @@ private void init (int id
 
         this.Cantidad = cantidad;
 
-        this.Articulo_0 = articulo_0;
+        this.Evento = evento;
+
+        this.Producto = producto;
 }
 
 public override bool Equals (object obj)

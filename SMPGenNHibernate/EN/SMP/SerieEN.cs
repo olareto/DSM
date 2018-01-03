@@ -14,6 +14,13 @@ private System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.TemporadaEN> te
 
 
 
+/**
+ *	Atributo lista
+ */
+private System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista;
+
+
+
 
 
 
@@ -23,17 +30,24 @@ public virtual System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.Temporad
 
 
 
+public virtual System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> Lista {
+        get { return lista; } set { lista = value;  }
+}
+
+
+
 
 
 public SerieEN() : base ()
 {
         temporada = new System.Collections.Generic.List<SMPGenNHibernate.EN.SMP.TemporadaEN>();
+        lista = new System.Collections.Generic.List<SMPGenNHibernate.EN.SMP.ListaEN>();
 }
 
 
 
-public SerieEN(int id, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.TemporadaEN> temporada
-               , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen
+public SerieEN(int id, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.TemporadaEN> temporada, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista
+               , SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen
                )
 {
         this.init (Id, temporada, lista, valoracion, nombre, imagen);

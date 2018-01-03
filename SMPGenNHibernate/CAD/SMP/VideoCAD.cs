@@ -91,7 +91,6 @@ public void ModifyDefault (VideoEN video)
                 SessionInitializeTransaction ();
                 VideoEN videoEN = (VideoEN)session.Load (typeof(VideoEN), video.Id);
 
-
                 videoEN.Valoracion = video.Valoracion;
 
 

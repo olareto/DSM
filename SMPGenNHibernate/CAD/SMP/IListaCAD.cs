@@ -29,8 +29,12 @@ ListaEN ReadOID (int id
 System.Collections.Generic.IList<ListaEN> ReadAll (int first, int size);
 
 
-void Addvideo (int p_Lista_OID, System.Collections.Generic.IList<int> p_video_OIDs);
+void Addserie (int p_Lista_OID, System.Collections.Generic.IList<int> p_serie_OIDs);
 
-void Eliminarvideo (int p_Lista_OID, System.Collections.Generic.IList<int> p_video_OIDs);
+void Delserie (int p_Lista_OID, System.Collections.Generic.IList<int> p_serie_OIDs);
+
+void Addpel (int p_Lista_OID, System.Collections.Generic.IList<int> p_pelicula_OIDs);
+
+void Delpel (int p_Lista_OID, System.Collections.Generic.IList<int> p_pelicula_OIDs);
 }
 }

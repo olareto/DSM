@@ -21,6 +21,18 @@
 					</property>
 			
 			
+			
+		  			
+						<bag name="Lineas_pedido_0" >
+							<key>
+							
+								
+								<column name="FK_idArticulo_idProducto"/>
+					      	</key>
+							<one-to-many class="SMPGenNHibernate.EN.SMP.Lineas_pedidoEN"/>
+					    </bag>
+					
+					
 					
 		
  	  

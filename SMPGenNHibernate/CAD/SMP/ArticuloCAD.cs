@@ -107,7 +107,6 @@ public void ModifyDefault (ArticuloEN articulo)
                 articuloEN.Valor = articulo.Valor;
 
 
-
                 articuloEN.Stock = articulo.Stock;
 
 

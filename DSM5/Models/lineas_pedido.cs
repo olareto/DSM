@@ -17,6 +17,9 @@ namespace DSM5.Models
         [ScaffoldColumn(false)]
         public int carrito { get; set; }
 
+        [ScaffoldColumn(false)]
+        public string tipo { get; set; }
+
 
 
 

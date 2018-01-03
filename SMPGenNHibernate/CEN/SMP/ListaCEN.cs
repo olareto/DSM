@@ -96,17 +96,29 @@ public System.Collections.Generic.IList<ListaEN> ReadAll (int first, int size)
         list = _IListaCAD.ReadAll (first, size);
         return list;
 }
-public void Addvideo (int p_Lista_OID, System.Collections.Generic.IList<int> p_video_OIDs)
+public void Addserie (int p_Lista_OID, System.Collections.Generic.IList<int> p_serie_OIDs)
 {
         //Call to ListaCAD
 
-        _IListaCAD.Addvideo (p_Lista_OID, p_video_OIDs);
+        _IListaCAD.Addserie (p_Lista_OID, p_serie_OIDs);
 }
-public void Eliminarvideo (int p_Lista_OID, System.Collections.Generic.IList<int> p_video_OIDs)
+public void Delserie (int p_Lista_OID, System.Collections.Generic.IList<int> p_serie_OIDs)
 {
         //Call to ListaCAD
 
-        _IListaCAD.Eliminarvideo (p_Lista_OID, p_video_OIDs);
+        _IListaCAD.Delserie (p_Lista_OID, p_serie_OIDs);
+}
+public void Addpel (int p_Lista_OID, System.Collections.Generic.IList<int> p_pelicula_OIDs)
+{
+        //Call to ListaCAD
+
+        _IListaCAD.Addpel (p_Lista_OID, p_pelicula_OIDs);
+}
+public void Delpel (int p_Lista_OID, System.Collections.Generic.IList<int> p_pelicula_OIDs)
+{
+        //Call to ListaCAD
+
+        _IListaCAD.Delpel (p_Lista_OID, p_pelicula_OIDs);
 }
 }
 }
