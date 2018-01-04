@@ -5,12 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Details - @Html.DisplayFor(model => model.Nombre)</h2>
 
 <div>
-    <h4>Producto</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dd>
+            <img src="~/Images/@Html.DisplayFor(model => model.Imagen)" width="300px" height="300px" />
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Stock)
         </dt>
