@@ -170,6 +170,28 @@ public static void InitializeData ()
                 string dwoman = "Una princesa de Amazon llega al mundo del Hombre para convertirse en la más grande de los superhéroes femeninos.";
                 string dhday = "Una estudiante universitaria revive el día de su asesinato una y otra vez mientras trata de descubrir la identidad de su asesino. ";
                 string dgru = "Gru y su esposa Lucy deben evitar que la ex estrella infantil de los 80, Balthazar Bratt, alcance la dominación mundial.";
+                string dhrr1 = "Harry, Ron y Hermione se alejan de su último año en Hogwarts para encontrar y destruir los Horcruxes restantes, poniendo fin a la apuesta de Voldemort por la inmortalidad. Pero con el amado Dumbledore de Harry muerto y los inescrupulosos Mortífagos de Voldemort suelto, el mundo es más peligroso que nunca.";
+                string dhrr2 = "Harry, Ron y Hermione continúan su búsqueda para vencer al malvado Voldemort de una vez por todas. Justo cuando las cosas comienzan a parecer desesperanzadas para los jóvenes magos, Harry descubre un trío de objetos mágicos que le otorgan poderes para competir con las formidables habilidades de Voldemort.";
+                string dblad = "Treinta años después de los acontecimientos de la primera película, un nuevo corredor de cuchillas, el oficial K de LAPD, descubre un secreto oculto desde hace mucho tiempo que tiene el potencial de sumergir lo que queda de la sociedad en el caos. El descubrimiento de K lo lleva en una búsqueda para encontrar a Rick Deckard, un ex corredor de armas de LAPD que ha estado desaparecido durante 30 años.";
+                string dbay = "El salvavidas devoto, Mitch Buchannon, golpea la cabeza con un nuevo recluta temerario. Juntos, descubren un complot criminal local que amenaza el futuro de la Bahía.";
+
+
+                string dluci = "Lucifer, el ángel caído original, está aburrido e infeliz en el infierno y decide retirarse a Los Ángeles y abrir una discoteca de lujo. Después de que se produce un asesinato fuera de su club, conoce a una intrigante detective de homicidios llamada Chloe, y se asocia con ella para resolver casos.";
+                string dvegas = "Situado en el vuelo de la noche del viernes desde LAX a Las Vegas y el vuelo de regreso el domingo, un grupo de marginados que intentan encontrar su lugar en el mundo, todos comparten el mismo objetivo: volver a ser un ganador en el casino de la vida. ";
+                string dhappy = "Nick Sax es un ex policía borracho y corrupto que se convierte en un sicario, y que está a la deriva en un mundo de asesinatos casuales, sexo desalmado y traición. Después de que un trabajo falla, su vida ebria es cambiada para siempre por un caballo alado pequeño, implacablemente positivo e imaginario llamado Happy.";
+                string ddam = "Seth Davenport parece ser un pequeño predicador de la ciudad de Iowa, pero tiene ambiciones de comenzar una insurrección en toda regla contra el status quo. Pero él no sabe que un magnate industrial ha contratado a un rompehuelgas profesional mortal llamado Creeley Turner para detener esa insurrección por cualquier medio necesario. Y desconocido para quienes los rodean, estos dos hombres comparten un pasado sangriento secreto.";
+                string dvh = "Vanessa Helsing, pariente lejana del famoso cazador de vampiros Abraham Van Helsing, es resucitada solo para descubrir que los vampiros se han adueñado del mundo.";
+                string drw = "Después de descubrir que sus padres son súper villanos disfrazados, un grupo de adolescentes se junta para huir de sus hogares a fin de expiar las acciones de sus padres y descubrir los secretos de sus orígenes.";
+                string dgot = "Siete familias nobles luchan por el control de la tierra mítica de Poniente. La fricción entre las casas conduce a una guerra a gran escala. Todo mientras un mal muy antiguo despierta en el extremo norte. En medio de la guerra, una orden militar descuidada de inadaptados, la Guardia de la Noche, es todo lo que se interpone entre los reinos de los hombres y los helados horrores más allá.";
+                string dbgbg = "¿Qué sucede cuando los compañeros de cuarto hiperinteligentes Sheldon y Leonard conocen a Penny, una belleza de espíritu libre que se mueve en la casa de al lado, y se dan cuenta de que no saben casi nada sobre la vida fuera del laboratorio. Completan la tripulación el fanático Wolowitz, que piensa que es tan sexy como él, y Koothrappali, que no puede hablar en presencia de una mujer.";
+                string dhimym = "El año es 2030. Ted Mosby transmite la historia de cómo conoció a su esposa a su hija e hijo. La historia comienza en el año 2005, cuando el entonces arquitecto Ted, de veintisiete años, se animó a querer casarse después de sus mejores amigos de Wesleyan, el abogado Marshall Eriksen, que era su compañero de habitación en ese momento y maestro de jardín de infantes. Lily Aldrin, se comprometió después de nueve años de salir juntos.";
+                string d13 = "Sigue al adolescente Clay Jensen, en su búsqueda para descubrir la historia detrás de su compañera de clase y enamoramiento, Hannah, y su decisión de poner fin a su vida.";
+                string dst = "Cuando un niño desaparece, su madre, un jefe de policía y sus amigos deben enfrentar fuerzas terroríficas para recuperarlo.";
+                string dRYM = "Una serie animada que sigue las hazañas de un súper científico y su nieto no tan brillante. ";
+                string dysh = "La vida temprana del niño genio Sheldon Cooper, más tarde visto en The Big Bang Theory (2007).";
+                string dbmir = "Una serie de antología de televisión que muestra el lado oscuro de la vida y la tecnología.";
+                string dvik = "Vikingos sigue las aventuras de Ragnar Lothbrok, el más grande héroe de su edad. La serie cuenta las sagas de la banda de hermanos vikingos de Ragnar y su familia, mientras se eleva para convertirse en rey de las tribus vikingas. Además de ser un valiente guerrero, Ragnar encarna las tradiciones nórdicas de devoción a los dioses, según la leyenda, él era un descendiente directo de Odín, el dios de la guerra y los guerreros.";
+                string dmrr = "El Sr. Robot sigue a Elliot, un joven programador que trabaja de ingeniero de ciberseguridad de día y un hacker vigilante por la noche. Elliot se encuentra en una encrucijada cuando el misterioso líder de un grupo clandestino de hackers lo recluta para destruir la corporación a la que se le paga por proteger.";
 
                 //string idUsuario = usuarioCEN.New_("usuario", "apellidos", "contrasenya", "correo", "direcccion", "pago", "imagen");
                 //adminCEN.New_ ("usuario", "apellidos", "contrasenya", "correo", "direcccion", "pago", "imagen"));
@@ -199,14 +221,30 @@ public static void InitializeData ()
                 int idpelicula10 = peliculaCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "it", "it.jpg");
                 int idpelicula11 = peliculaCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "feliz dia de tu muerte", "hday.jpg");
                 int idpelicula12 = peliculaCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, "Despicable Me 3", "gru.jpg");
+                int idpelicula13 = peliculaCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Harry Potter y las reliquias de la muerte: Parte 1", "hrr1.jpg");
+                int idpelicula14 = peliculaCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Harry Potter y las reliquias de la muerte: Parte 2", "hrr2.jpg");
+                int idpelicula15 = peliculaCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Blade Runner 2049 ", "blad.jpg");
+                int idpelicula16 = peliculaCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Baywatch ", "bay.jpg");
+
                 int idvideo = videoCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "nombre", "hola");
-                int idserie = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Las Vegas", "s1.jpg");
-                int idserie2 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Happy", "s2.jpg");
-                int idserie3 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "The Miniaturist", "s3.jpg");
-                int idserie4 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Damnation", "s4.jpg");
-                int idserie5 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Van Helsing", "s5.jpg");
-                int idserie6 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Runaways", "s6.jpg");
-                int idserie7 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Accidente", "s7.jpg");
+
+                int idserie = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, "La To Vegas", "s1.jpg");
+                int idserie2 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Happy", "s2.jpg");
+                int idserie3 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Lucifer", "luci.jpg");
+                int idserie4 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Damnation", "s4.jpg");
+                int idserie5 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Van Helsing", "vh.jpg");
+                int idserie6 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Runaways", "rwa.jpg");
+                int idserie7 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "The Big Bang", "bigbang.jpg");
+                int idserie8 = serieCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Game of Thrones", "got.jpg");
+                int idserie9 = serieCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "HowIMeetYourMother", "himym.jpg");
+                int idserie10 = serieCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "13 Reason Why", "reason.jpg");
+                int idserie11 = serieCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Stranger Things", "st.jpg");
+                int idserie12 = serieCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Rick y Morty", "RYM.jpg");
+                int idserie13 = serieCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Young Sheldon", "ysh.jpg");
+                int idserie14 = serieCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Black Mirror", "bmir.jpg");
+                int idserie15 = serieCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Vikings", "vik.jpg");
+                int idserie16 = serieCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Mr.Robot", "mrr.jpg");
+
 
                 int idtemporada = temporadaCEN.New_ (idserie, "nombre");
                 int idtemporada2 = temporadaCEN.New_(idserie2, "nombre");
