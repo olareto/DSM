@@ -242,6 +242,7 @@ namespace DSM5.Controllers
             System.Web.HttpContext.Current.Session["usuario"] = null;
             System.Web.HttpContext.Current.Session["log"] = false;
             System.Web.HttpContext.Current.Session["admin"] = false;
+            System.Web.HttpContext.Current.Session["correo"] = null;
             return RedirectToAction("Index", "Usuario");
         }
 
@@ -514,7 +515,7 @@ namespace DSM5.Controllers
                     System.Web.HttpContext.Current.Session["admin"] = false;
 
                     SessionClose();
-                    return RedirectToAction("Details", "Usuario", new { id = collection.Password});
+                    return RedirectToAction("Details", "Usuario", new { id = collection.email});
 
                 }
                 else if(cena.Login(collection.email, collection.Password))
@@ -527,7 +528,7 @@ namespace DSM5.Controllers
                     System.Web.HttpContext.Current.Session["log"] = true;
                     System.Web.HttpContext.Current.Session["admin"] = true;
                     SessionClose();
-                    return RedirectToAction("Details", "Usuario", new { id = collection.Password });
+                    return RedirectToAction("Details", "Usuario", new { id = collection.email });
                 }
                 else
                 {
