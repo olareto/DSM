@@ -158,7 +158,18 @@ public static void InitializeData ()
                 UsuarioEN usuarioEN = usuarioCP.New_CP ("usuario", "apellidos", "contrasenya", "correo", "direcccion", "pago", "imagen");
 
                 string idUsuario = usuarioEN.Email;
-                string descripcion = "Tras los acontecimientos del Capitán América: Guerra civil, Peter Parker, con la ayuda de su mentor Tony Stark, intenta equilibrar su vida como un estudiante normal de secundaria en Queens, Nueva York, con la lucha contra el crimen como su superhéroe alter ego Spider- El hombre como una nueva amenaza, el Buitre, emerge.";
+                string dstw = "Treinta años después de derrotar al Imperio Galáctico, Han Solo y sus aliados enfrentan una nueva amenaza del malvado Kylo Ren y su ejército de Stormtroopers.";
+                string despider = "Tras los acontecimientos del Capitán América: Guerra civil, Peter Parker, con la ayuda de su mentor Tony Stark, intenta equilibrar su vida como un estudiante normal de secundaria en Queens, Nueva York, con la lucha contra el crimen como su superhéroe alter ego Spider- El hombre como una nueva amenaza, el Buitre, emerge.";
+                string djumanji = "Las tornas se vuelven cuando cuatro adolescentes son absorbidos por el mundo de Jumanji: enfrentado a rinocerontes, mambas negras y una interminable variedad de trampas y acertijos de la jungla. Para sobrevivir, jugarán como personajes del juego.";
+                string dcoco = "A pesar de la desconcertante prohibición de la generación de música de su familia, Miguel sueña con convertirse en un músico consumado como su ídolo, Ernesto de la Cruz. Desesperado por demostrar su talento, Miguel se encuentra en la deslumbrante y colorida Tierra de los Muertos siguiendo una misteriosa cadena de eventos. En el camino, se encuentra con el encantador tramposo Héctor, y juntos, partieron en un viaje extraordinario para descubrir la historia real detrás de la historia familiar de Miguel.";
+                string dperfdesc = "La historia se desarrolla a lo largo de una noche, durante un eclipse lunar, en el hogar de Alfonso y Eva, una pareja profesional bien curada preocupada por su hija adolescente y por la monotonía de sus vidas. A ellos se unen cinco invitados: Eduardo y Blanco, Antonio y Ana y Pepe. Es una cena como cualquier otra, hasta que alguien tenga una idea intrigante: ¿y si ponen sus teléfonos móviles a disposición del grupo, dejándolos en el medio de la mesa para que todos los vean?";
+                string ddandonota = "Después de ganar los campeonatos del mundo, los Bellas se dividen y descubren que no hay perspectivas de trabajo para hacer música con la boca. Pero cuando tengan la oportunidad de reunirse para una gira USO en el extranjero, este grupo de genios increíbles se unirán para hacer algo de música, y algunas decisiones cuestionables, una última vez.";
+                string dferdi = "Ferdinand, un pequeño toro, prefiere sentarse tranquilamente bajo un árbol de corcho oliendo las flores, saltando, resoplando y golpeándose la cabeza con otros toros. A medida que Ferdinand crece grande y fuerte, su temperamento se mantiene suave, pero un día cinco hombres vienen a elegir el toro más grande, más rápido y más rudo para las corridas de toros en Madrid y Fernando es elegido por error. Basado en el clásico libro infantil de 1936 de Munro Leaf.";
+                string dww = "La historia de cuatro personajes cuyas vidas se entrelazan en medio del ajetreo y el bullicio del parque de atracciones Coney Island en la década de 1950: Ginny, una ex actriz emocionalmente volátil que ahora trabaja como camarera en una casa de almejas; Humpty, el operador operador de carrusel de Ginny; Mickey, un joven y guapo socorrista que sueña con convertirse en dramaturgo; y Carolina, la hija de Humpty que estuvo lejos, que ahora se esconde de los mafiosos en el departamento de su padre.";
+                string dit = "En una pequeña ciudad de Maine, siete niños conocidos como The Losers Club se enfrentan cara a cara con problemas de la vida, matones y un monstruo que toma la forma de un payaso llamado Pennywise.";
+                string dwoman = "Una princesa de Amazon llega al mundo del Hombre para convertirse en la más grande de los superhéroes femeninos.";
+                string dhday = "Una estudiante universitaria revive el día de su asesinato una y otra vez mientras trata de descubrir la identidad de su asesino. ";
+                string dgru = "Gru y su esposa Lucy deben evitar que la ex estrella infantil de los 80, Balthazar Bratt, alcance la dominación mundial.";
 
                 //string idUsuario = usuarioCEN.New_("usuario", "apellidos", "contrasenya", "correo", "direcccion", "pago", "imagen");
                 //adminCEN.New_ ("usuario", "apellidos", "contrasenya", "correo", "direcccion", "pago", "imagen"));
@@ -176,14 +187,18 @@ public static void InitializeData ()
 
                 int idlista = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.visto, idUsuario);
                 int idcomentario = comentarioCEN.New_ ("comentario", "autor", new DateTime (1993, 12, 3));
-                int idpelicula = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Star Wars VII","i5.jpg");
+                int idpelicula = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Star Wars:Episodio VII", "i5.jpg");
                 int idpelicula2 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Jumanji", "i2.jpg");
-                int idpelicula3 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, "COCO", "i7.jpg");
+                int idpelicula3 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "COCO", "i7.jpg");
                 int idpelicula4 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Perfectos desconocidos", "i3.jpg");
-                int idpelicula5 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Noseq la nota final", "i4.jpg");
-                int idpelicula6 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Ferdinand", "i6.jpg");
-                int idpelicula7 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Algo de una ventana", "i8.jpg");
-                int idpelicula8 = peliculaCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Spider-Man: Homecoming", "spider");
+                int idpelicula5 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Dando la nota 3", "i4.jpg");
+                int idpelicula6 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Ferdinand", "ferdi.jpg");
+                int idpelicula7 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Wonder Wheel", "i8.jpg");
+                int idpelicula8 = peliculaCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Spider-Man: Homecoming", "spider.jpg");
+                int idpelicula9 = peliculaCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Wonder Woman", "ww.jpg");
+                int idpelicula10 = peliculaCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "it", "it.jpg");
+                int idpelicula11 = peliculaCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "feliz dia de tu muerte", "hday.jpg");
+                int idpelicula12 = peliculaCEN.New_(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, "Despicable Me 3", "gru.jpg");
                 int idvideo = videoCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "nombre", "hola");
                 int idserie = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Las Vegas", "s1.jpg");
                 int idserie2 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Happy", "s2.jpg");
