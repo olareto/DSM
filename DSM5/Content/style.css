@@ -58,3 +58,10 @@ p, a, h2, h3 {
 .reproductor{
     height:1000px;
 }
+.gp {
+    padding-left: 100px;
+}
+.btn-mostaza {
+    background: #e09e04;
+    color: #e09e04;
+}
