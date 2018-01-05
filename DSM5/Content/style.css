@@ -69,3 +69,17 @@ p, a, h2, h3 {
     background: #e09e04;
     color: #e09e04;
 }
+.gercaja {
+    float: left;
+    width: 300px;
+    height: 250px;
+    text-align: center;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    margin-left: 80px;
+    margin-top: 80px;
+}
+.gerMargenLetras {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
