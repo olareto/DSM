@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Eventos</h2>
+<h2 class="text-center">Eventos</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -25,6 +25,11 @@
                 <img class="centrarResponsive img-responsive imagenesDetailsProductos" src="~/Images/Eventos/@Html.DisplayFor(model => item.Imagen)" />
             </div>
             <div class="col-sm-4 margenDescripcionesEventos">
+
+                <p>
+                    
+                </p>
+               
                 <p>
                     @Html.DisplayFor(model => item.Descripcion)  
                 </p>
