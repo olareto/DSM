@@ -22,10 +22,10 @@
 						<column name="imagen"  not-null="true"/>
 					</property>
 					<property name="Descriplarga" type="string"> 
-						<column name="descriplarga"  not-null="true"/>
+						<column name="descriplarga" length="60000" not-null="true"/>
 					</property>
 					<property name="Descripcion" type="string"> 
-						<column name="descripcion"  not-null="true"/>
+						<column name="descripcion" length="60000" not-null="true"/>
 					</property>
 					<property name="Genero" type="string"> 
 						<column name="genero"  not-null="true"/>
