@@ -178,6 +178,10 @@ public static void InitializeData ()
 
        
                 string dluci = "Lucifer, el ángel caído original, está aburrido e infeliz en el infierno y decide retirarse a Los Ángeles y abrir una discoteca de lujo. Después de que se produce un asesinato fuera de su club, conoce a una intrigante detective de homicidios llamada Chloe, y se asocia con ella para resolver casos.";
+<<<<<<< HEAD
+=======
+
+>>>>>>> fd194db19c2824d7272865ed49a5a5fc5dfd8602
                 string dvegas = "Situado en el vuelo de la noche del viernes desde LAX a Las Vegas y el vuelo de regreso el domingo, un grupo de marginados que intentan encontrar su lugar en el mundo, todos comparten el mismo objetivo: volver a ser un ganador en el casino de la vida. ";
                 string dhappy = "Nick Sax es un ex policï¿½a borracho y corrupto que se convierte en un sicario, y que estï¿½ a la deriva en un mundo de asesinatos casuales, sexo desalmado y traiciï¿½n. Despuï¿½s de que un trabajo falla, su vida ebria es cambiada para siempre por un caballo alado pequeï¿½o, implacablemente positivo e imaginario llamado Happy.";
                 string ddam = "Seth Davenport parece ser un pequeï¿½o predicador de la ciudad de Iowa, pero tiene ambiciones de comenzar una insurrecciï¿½n en toda regla contra el status quo. Pero ï¿½l no sabe que un magnate industrial ha contratado a un rompehuelgas profesional mortal llamado Creeley Turner para detener esa insurrecciï¿½n por cualquier medio necesario. Y desconocido para quienes los rodean, estos dos hombres comparten un pasado sangriento secreto.";
