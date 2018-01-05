@@ -14,12 +14,12 @@ namespace DSM5.Models
 
         [Display(Prompt = "imagen grande del producto", Description = "imagen grande del producto", Name = "imagen grande ")]
         [Required(ErrorMessage = "Debe indicar un imagen grande para el producto")]
-        [StringLength(maximumLength: 200, ErrorMessage = "El imagen grande no puede tener más de 200 caracteres")]
+        [StringLength(maximumLength: 3000, ErrorMessage = "La imagen grande no puede tener más de 3000 caracteres")]
         public string imagran { get; set; }
 
         [Display(Prompt = "descricion larga del producto", Description = "descricion larga del producto", Name = "descricion larga ")]
         [Required(ErrorMessage = "Debe indicar un descricion larga para el producto")]
-        [StringLength(maximumLength: 200, ErrorMessage = "El descricion larga no puede tener más de 200 caracteres")]
+        [StringLength(maximumLength: 3000, ErrorMessage = "El descricion larga no puede tener más de 3000 caracteres")]
         public string descriplarga { get; set; }
 
    
@@ -54,7 +54,7 @@ namespace DSM5.Models
 
         [Display(Prompt = "Descripción del Evento", Description = "Descripción del Evento", Name = "Descripción ")]
         [Required(ErrorMessage = "Debe indicar un nombre para el Evento")]
-        [StringLength(maximumLength: 200, ErrorMessage = "El nombre no puede tener más de 200 caracteres")]
+        [StringLength(maximumLength: 1000, ErrorMessage = "El nombre no puede tener más de 1000 caracteres")]
         public string Descripcion { get; set; }
 
 

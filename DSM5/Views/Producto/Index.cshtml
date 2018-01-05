@@ -39,7 +39,7 @@
         {
             <div class="gercaja">
                 <p class="gerMargenLetras">@Html.DisplayFor(modelItem => item.Nombre)</p>
-                <img src="~/Images/Productos/@item.Imagen" width="100px" height="100px" />
+                <img class="imagenesIndexProductos" src="~/Images/Productos/@item.Imagen"/>
                 <p class="gerMargenLetras">@Html.DisplayFor(modelItem => item.Precio)</p>
                 <p>
                 <button type="button" class="btn ">@Html.ActionLink("Edit", "Edit", new { id = item.id })</button>               

@@ -5,8 +5,66 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
 
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4 text-center">
+            <h2>@Html.DisplayFor(model => model.Nombre)</h2>
+            <img class="centrarResponsive img-responsive imagenesDetailsEventos" src="~/Images/Eventos/@Html.DisplayFor(model => model.Imagen)" />
+        </div>
+        <div class="col-sm-3">
+            <p>
+                @Html.DisplayNameFor(model => model.Tipo)
+            </p>
+            <p>
+                @Html.DisplayFor(model => model.Tipo)
+            </p>
+
+            <p>
+                @Html.DisplayNameFor(model => model.Stock)
+            </p>
+            <p>
+                @Html.DisplayFor(model => model.Stock)
+            </p>
+
+            <p>
+                @Html.DisplayNameFor(model => model.Precio)
+            </p>
+            <p>
+                @Html.DisplayFor(model => model.Precio)
+            </p>
+
+            <p>
+                @Html.DisplayNameFor(model => model.Valoracion)
+            </p>
+            <p>
+                @Html.DisplayFor(model => model.Valoracion)
+            </p>
+       
+            <p>
+                <button type="button" class="btn ">@Html.ActionLink("Edit", "Edit", new { id = Model.id }) </button>
+                <button type="button" class="btn ">@Html.ActionLink("Back", @ViewData["action"] as string, @ViewData["controller"] as string, @ViewData["arg"], null)</button>
+                <button type="button" class="btn btn-mostaza">@Html.ActionLink("add to cart", "addcarr", "Usuario", new { idus = @ViewData["correo"] as string, idpro = Model.id }, null)</button>
+            </p>
+        </div>
+        <div class="col-sm-5">
+            <p>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </p>
+            <p>
+                @Html.DisplayFor(model => model.descriplarga)
+            </p>
+        </div>
+    </div>
+
+
+</div>
+
+<p>
+    @Html.Partial("_Comentario", (IEnumerable<DSM5.Models.Comentario>)ViewBag.coment)
+</p>
+
+@*
 <div>
     <h4>Evento</h4>
     <hr />
@@ -69,9 +127,7 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back", @ViewData["action"] as string, @ViewData["controller"] as string, @ViewData["arg"], null)|
-    @Html.ActionLink("add to cart", "addcarr", "Usuario", new { idus = @ViewData["correo"] as string, idpro = Model.id }, null)|
-    @Html.Partial("_Comentario", (IEnumerable<DSM5.Models.Comentario>)ViewBag.coment)
-</p>
+*@
+
+
+

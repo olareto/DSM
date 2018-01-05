@@ -5,73 +5,83 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Eventos</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Busqueda", "Filtrar")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Stock)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Precio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Imagen)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Valoracion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tipo)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
+   
+@foreach (var item in Model)
+{
+
+
+<hr />
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4 text-center">
+                <h2>@Html.DisplayFor(model => item.Nombre)</h2>
+                <img class="centrarResponsive img-responsive imagenesDetailsProductos" src="~/Images/Eventos/@Html.DisplayFor(model => item.Imagen)" />
+            </div>
+            <div class="col-sm-4 margenDescripcionesEventos">
+                <p>
+                    @Html.DisplayFor(model => item.Descripcion)  
+                </p>
+
+                <p>
+                    @Html.DisplayFor(model => item.Precio)
+                </p>
+
+                <p>
+                    @Html.DisplayFor(model => item.Valoracion)
+                </p>        
+                <p>
+                    <button type="button" class="btn ">@Html.ActionLink("Edit", "Edit", new { id = item.id })</button>
+                    <button type="button" class="btn ">@Html.ActionLink("Detalles", "Details", new { id = item.id })</button>
+                    <button type="button" class="btn ">@Html.ActionLink("Delete", "Delete", new { id = item.id })</button> 
+                    <button type="button" class="btn btn-mostaza">@Html.ActionLink("add to cart", "addcarr", "Usuario", new { idus = @ViewData["correo"] as string, idpro = item.id }, null)</button>
+                </p>
+            </div>
+            <div class="col-sm-4">
+
+            </div>
+        </div>
+    </div>
+<hr />
+
+
+
+
+
+    @*
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Stock)
+            <img class="imagenesIndexProductos" src="~/Images/Productos/@item.Imagen" />
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Nombre)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Precio)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Descripcion)
-        </td>
+        </td>       
         <td>
-            @Html.DisplayFor(modelItem => item.Imagen)
-        </td>
+            @Html.DisplayFor(modelItem => item.Precio)
+        </td>       
         <td>
             @Html.DisplayFor(modelItem => item.Valoracion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tipo)
-        </td>
+        </td>       
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
             @Html.ActionLink("Details", "Details", new { id=item.id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.id })
         </td>
     </tr>
+    *@
+
+
+
+
 }
 
-</table>
-@Html.TextArea("myTextArea", "This is value", new { @class = "form-control" })
-@Html.Label("StudentName")
-<div class="form-actions no-color">
-    <input type="submit" value="Delete" class="btn btn-default" /> |
-   
-    @Html.ActionLink("Busqueda", "Filtrar")
-</div>
+
