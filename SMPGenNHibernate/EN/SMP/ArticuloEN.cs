@@ -68,6 +68,20 @@ private SMPGenNHibernate.EN.SMP.OfertaEN oferta;
 
 
 
+/**
+ *	Atributo descriplarga
+ */
+private string descriplarga;
+
+
+
+/**
+ *	Atributo imagran
+ */
+private string imagran;
+
+
+
 
 
 
@@ -125,6 +139,18 @@ public virtual SMPGenNHibernate.EN.SMP.OfertaEN Oferta {
 
 
 
+public virtual string Descriplarga {
+        get { return descriplarga; } set { descriplarga = value;  }
+}
+
+
+
+public virtual string Imagran {
+        get { return imagran; } set { imagran = value;  }
+}
+
+
+
 
 
 public ArticuloEN()
@@ -134,20 +160,20 @@ public ArticuloEN()
 
 
 
-public ArticuloEN(int id, string nombre, double precio, string descripcion, string imagen, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valor, int stock, SMPGenNHibernate.EN.SMP.OfertaEN oferta
+public ArticuloEN(int id, string nombre, double precio, string descripcion, string imagen, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valor, int stock, SMPGenNHibernate.EN.SMP.OfertaEN oferta, string descriplarga, string imagran
                   )
 {
-        this.init (Id, nombre, precio, descripcion, imagen, comentario, valor, stock, oferta);
+        this.init (Id, nombre, precio, descripcion, imagen, comentario, valor, stock, oferta, descriplarga, imagran);
 }
 
 
 public ArticuloEN(ArticuloEN articulo)
 {
-        this.init (Id, articulo.Nombre, articulo.Precio, articulo.Descripcion, articulo.Imagen, articulo.Comentario, articulo.Valor, articulo.Stock, articulo.Oferta);
+        this.init (Id, articulo.Nombre, articulo.Precio, articulo.Descripcion, articulo.Imagen, articulo.Comentario, articulo.Valor, articulo.Stock, articulo.Oferta, articulo.Descriplarga, articulo.Imagran);
 }
 
 private void init (int id
-                   , string nombre, double precio, string descripcion, string imagen, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valor, int stock, SMPGenNHibernate.EN.SMP.OfertaEN oferta)
+                   , string nombre, double precio, string descripcion, string imagen, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valor, int stock, SMPGenNHibernate.EN.SMP.OfertaEN oferta, string descriplarga, string imagran)
 {
         this.Id = id;
 
@@ -167,6 +193,10 @@ private void init (int id
         this.Stock = stock;
 
         this.Oferta = oferta;
+
+        this.Descriplarga = descriplarga;
+
+        this.Imagran = imagran;
 }
 
 public override bool Equals (object obj)

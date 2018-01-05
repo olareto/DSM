@@ -152,6 +152,21 @@ public void Modify (PeliculaEN pelicula)
 
                 peliculaEN.Imagen = pelicula.Imagen;
 
+
+                peliculaEN.Descriplarga = pelicula.Descriplarga;
+
+
+                peliculaEN.Descripcion = pelicula.Descripcion;
+
+
+                peliculaEN.Genero = pelicula.Genero;
+
+
+                peliculaEN.Anyo = pelicula.Anyo;
+
+
+                peliculaEN.Imagran = pelicula.Imagran;
+
                 session.Update (peliculaEN);
                 SessionCommit ();
         }

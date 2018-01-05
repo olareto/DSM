@@ -38,7 +38,7 @@ public IProductoCAD get_IProductoCAD ()
         return this._IProductoCAD;
 }
 
-public int New_ (string p_nombre, double p_precio, string p_descripcion, string p_imagen, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valor, int p_stock, string p_talla)
+public int New_ (string p_nombre, double p_precio, string p_descripcion, string p_imagen, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valor, int p_stock, string p_descriplarga, string p_imagran, string p_talla)
 {
         ProductoEN productoEN = null;
         int oid;
@@ -57,6 +57,10 @@ public int New_ (string p_nombre, double p_precio, string p_descripcion, string 
 
         productoEN.Stock = p_stock;
 
+        productoEN.Descriplarga = p_descriplarga;
+
+        productoEN.Imagran = p_imagran;
+
         productoEN.Talla = p_talla;
 
         //Call to ProductoCAD
@@ -65,7 +69,7 @@ public int New_ (string p_nombre, double p_precio, string p_descripcion, string 
         return oid;
 }
 
-public void Modify (int p_producto_OID, string p_nombre, double p_precio, string p_descripcion, string p_imagen, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valor, int p_stock, string p_talla)
+public void Modify (int p_producto_OID, string p_nombre, double p_precio, string p_descripcion, string p_imagen, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valor, int p_stock, string p_descriplarga, string p_imagran, string p_talla)
 {
         ProductoEN productoEN = null;
 
@@ -78,6 +82,8 @@ public void Modify (int p_producto_OID, string p_nombre, double p_precio, string
         productoEN.Imagen = p_imagen;
         productoEN.Valor = p_valor;
         productoEN.Stock = p_stock;
+        productoEN.Descriplarga = p_descriplarga;
+        productoEN.Imagran = p_imagran;
         productoEN.Talla = p_talla;
         //Call to ProductoCAD
 

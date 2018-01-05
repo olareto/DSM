@@ -110,6 +110,12 @@ public void ModifyDefault (ArticuloEN articulo)
                 articuloEN.Stock = articulo.Stock;
 
 
+
+                articuloEN.Descriplarga = articulo.Descriplarga;
+
+
+                articuloEN.Imagran = articulo.Imagran;
+
                 session.Update (articuloEN);
                 SessionCommit ();
         }
@@ -178,6 +184,12 @@ public void Modify (ArticuloEN articulo)
 
 
                 articuloEN.Stock = articulo.Stock;
+
+
+                articuloEN.Descriplarga = articulo.Descriplarga;
+
+
+                articuloEN.Imagran = articulo.Imagran;
 
                 session.Update (articuloEN);
                 SessionCommit ();

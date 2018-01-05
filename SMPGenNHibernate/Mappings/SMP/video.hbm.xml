@@ -21,11 +21,36 @@
 					<property name="Imagen" type="string"> 
 						<column name="imagen"  not-null="true"/>
 					</property>
+					<property name="Descriplarga" type="string"> 
+						<column name="descriplarga"  not-null="true"/>
+					</property>
+					<property name="Descripcion" type="string"> 
+						<column name="descripcion"  not-null="true"/>
+					</property>
+					<property name="Genero" type="string"> 
+						<column name="genero"  not-null="true"/>
+					</property>
+					<property name="Anyo" type="date"> 
+						<column name="anyo"  not-null="true"/>
+					</property>
+					<property name="Imagran" type="string"> 
+						<column name="imagran"  not-null="true"/>
+					</property>
 			
 			
 			
 			
 			
+			
+			
+			
+			
+			
+					
+					
+					
+					
+					
 					
 					
 					

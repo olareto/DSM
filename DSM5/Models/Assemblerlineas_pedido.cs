@@ -21,11 +21,15 @@ namespace DSM5.Models
             {
                 art.articulo = en.Producto.Id;
                 art.tipo = "Producto";
+                art.stock = en.Producto.Stock;
+                art.precio = en.Producto.Precio;
             }
             if (en.Evento != null)
             {
                 art.articulo = en.Evento.Id;
                 art.tipo = "Evento";
+                art.stock = en.Evento.Stock;
+                art.precio = en.Evento.Precio;
             }
 
             return art;

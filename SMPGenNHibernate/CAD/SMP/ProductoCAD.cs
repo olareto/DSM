@@ -164,6 +164,12 @@ public void Modify (ProductoEN producto)
                 productoEN.Stock = producto.Stock;
 
 
+                productoEN.Descriplarga = producto.Descriplarga;
+
+
+                productoEN.Imagran = producto.Imagran;
+
+
                 productoEN.Talla = producto.Talla;
 
                 session.Update (productoEN);

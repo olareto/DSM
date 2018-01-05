@@ -33,6 +33,41 @@ private string imagen;
 
 
 
+/**
+ *	Atributo descriplarga
+ */
+private string descriplarga;
+
+
+
+/**
+ *	Atributo descripcion
+ */
+private string descripcion;
+
+
+
+/**
+ *	Atributo genero
+ */
+private string genero;
+
+
+
+/**
+ *	Atributo anyo
+ */
+private Nullable<DateTime> anyo;
+
+
+
+/**
+ *	Atributo imagran
+ */
+private string imagran;
+
+
+
 
 
 
@@ -60,6 +95,36 @@ public virtual string Imagen {
 
 
 
+public virtual string Descriplarga {
+        get { return descriplarga; } set { descriplarga = value;  }
+}
+
+
+
+public virtual string Descripcion {
+        get { return descripcion; } set { descripcion = value;  }
+}
+
+
+
+public virtual string Genero {
+        get { return genero; } set { genero = value;  }
+}
+
+
+
+public virtual Nullable<DateTime> Anyo {
+        get { return anyo; } set { anyo = value;  }
+}
+
+
+
+public virtual string Imagran {
+        get { return imagran; } set { imagran = value;  }
+}
+
+
+
 
 
 public VideoEN()
@@ -68,20 +133,20 @@ public VideoEN()
 
 
 
-public VideoEN(int id, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen
+public VideoEN(int id, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen, string descriplarga, string descripcion, string genero, Nullable<DateTime> anyo, string imagran
                )
 {
-        this.init (Id, valoracion, nombre, imagen);
+        this.init (Id, valoracion, nombre, imagen, descriplarga, descripcion, genero, anyo, imagran);
 }
 
 
 public VideoEN(VideoEN video)
 {
-        this.init (Id, video.Valoracion, video.Nombre, video.Imagen);
+        this.init (Id, video.Valoracion, video.Nombre, video.Imagen, video.Descriplarga, video.Descripcion, video.Genero, video.Anyo, video.Imagran);
 }
 
 private void init (int id
-                   , SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen)
+                   , SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen, string descriplarga, string descripcion, string genero, Nullable<DateTime> anyo, string imagran)
 {
         this.Id = id;
 
@@ -91,6 +156,16 @@ private void init (int id
         this.Nombre = nombre;
 
         this.Imagen = imagen;
+
+        this.Descriplarga = descriplarga;
+
+        this.Descripcion = descripcion;
+
+        this.Genero = genero;
+
+        this.Anyo = anyo;
+
+        this.Imagran = imagran;
 }
 
 public override bool Equals (object obj)

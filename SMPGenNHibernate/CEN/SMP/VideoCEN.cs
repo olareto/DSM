@@ -38,7 +38,7 @@ public IVideoCAD get_IVideoCAD ()
         return this._IVideoCAD;
 }
 
-public int New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, string p_nombre, string p_imagen)
+public int New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, string p_nombre, string p_imagen, string p_descriplarga, string p_descripcion, string p_genero, Nullable<DateTime> p_anyo, string p_imagran)
 {
         VideoEN videoEN = null;
         int oid;
@@ -51,13 +51,23 @@ public int New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, st
 
         videoEN.Imagen = p_imagen;
 
+        videoEN.Descriplarga = p_descriplarga;
+
+        videoEN.Descripcion = p_descripcion;
+
+        videoEN.Genero = p_genero;
+
+        videoEN.Anyo = p_anyo;
+
+        videoEN.Imagran = p_imagran;
+
         //Call to VideoCAD
 
         oid = _IVideoCAD.New_ (videoEN);
         return oid;
 }
 
-public void Modify (int p_video_OID, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, string p_nombre, string p_imagen)
+public void Modify (int p_video_OID, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, string p_nombre, string p_imagen, string p_descriplarga, string p_descripcion, string p_genero, Nullable<DateTime> p_anyo, string p_imagran)
 {
         VideoEN videoEN = null;
 
@@ -67,6 +77,11 @@ public void Modify (int p_video_OID, SMPGenNHibernate.Enumerated.SMP.ValoracionE
         videoEN.Valoracion = p_valoracion;
         videoEN.Nombre = p_nombre;
         videoEN.Imagen = p_imagen;
+        videoEN.Descriplarga = p_descriplarga;
+        videoEN.Descripcion = p_descripcion;
+        videoEN.Genero = p_genero;
+        videoEN.Anyo = p_anyo;
+        videoEN.Imagran = p_imagran;
         //Call to VideoCAD
 
         _IVideoCAD.Modify (videoEN);

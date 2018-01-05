@@ -11,9 +11,29 @@ namespace DSM5.Models
         [ScaffoldColumn(false)]
         public int id { get; set; }
 
-        
+
+        [Display(Prompt = "imagen grande del producto", Description = "imagen grande del producto", Name = "imagen grande ")]
+        [Required(ErrorMessage = "Debe indicar un imagen grande para el producto")]
+        [StringLength(maximumLength: 200, ErrorMessage = "El imagen grande no puede tener más de 200 caracteres")]
+        public string imagran { get; set; }
+
+        [Display(Prompt = "descricion larga del producto", Description = "descricion larga del producto", Name = "descricion larga ")]
+        [Required(ErrorMessage = "Debe indicar un descricion larga para el producto")]
+        [StringLength(maximumLength: 200, ErrorMessage = "El descricion larga no puede tener más de 200 caracteres")]
+        public string descriplarga { get; set; }
 
    
+
+
+
+
+        ///
+
+
+
+       
+
+
 
         [Display(Prompt = "Stock del Evento", Description = "Stock del Evento", Name = "Stock ")]
         [Required(ErrorMessage = "Debe indicar un Stock para el Evento")]

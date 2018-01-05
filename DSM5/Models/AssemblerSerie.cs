@@ -15,7 +15,15 @@ namespace DSM5.Models
             art.Nombre = en.Nombre;
             art.Valoracion =(int) en.Valoracion;
             art.Imagen = en.Imagen;
-         
+            art.descripcion = en.Descripcion;
+            art.desclar = en.Descriplarga;
+            if (en.Anyo != null)
+                art.fecha = (DateTime)en.Anyo;
+            else
+                art.fecha = DateTime.Today;
+            art.genero = en.Genero;
+            art.imagran = en.Imagran;
+
             return art;
             
 

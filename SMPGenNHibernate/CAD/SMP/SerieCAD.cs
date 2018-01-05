@@ -152,6 +152,21 @@ public void Modify (SerieEN serie)
 
                 serieEN.Imagen = serie.Imagen;
 
+
+                serieEN.Descriplarga = serie.Descriplarga;
+
+
+                serieEN.Descripcion = serie.Descripcion;
+
+
+                serieEN.Genero = serie.Genero;
+
+
+                serieEN.Anyo = serie.Anyo;
+
+
+                serieEN.Imagran = serie.Imagran;
+
                 session.Update (serieEN);
                 SessionCommit ();
         }

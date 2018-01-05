@@ -45,7 +45,7 @@ namespace DSM5.Controllers
             {
                 // TODO: Add insert logic here
                 ArticuloCEN cen = new ArticuloCEN();
-                cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock);
+               // cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock);
                 return RedirectToAction("Index");
             }
             catch

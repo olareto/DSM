@@ -81,7 +81,9 @@ namespace DSM5.Controllers
                 // TODO: Add insert logic here
                 PeliculaCEN cen = new PeliculaCEN();
 
-                cen.New_((SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre, collection.Imagen);
+
+                cen.New_((SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre, collection.Imagen, collection.desclar, collection.descripcion, collection.genero, new DateTime(collection.fecha.Year, collection.fecha.Month, collection.fecha.Day), collection.imagran);
+
 
                 string action = System.Web.HttpContext.Current.Session["action"] as String;
                 string controller = System.Web.HttpContext.Current.Session["controller"] as String;
@@ -126,8 +128,8 @@ namespace DSM5.Controllers
 
                 // TODO: Add update logic here
                 PeliculaCEN cen = new PeliculaCEN();
+                cen.Modify(id, (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre, collection.Imagen, collection.desclar, collection.descripcion, collection.genero, new DateTime(collection.fecha.Year, collection.fecha.Month, collection.fecha.Day), collection.imagran);
 
-                cen.New_((SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre, collection.Imagen);
 
                 string action = System.Web.HttpContext.Current.Session["action"] as String;
                 string controller = System.Web.HttpContext.Current.Session["controller"] as String;

@@ -19,6 +19,8 @@ namespace DSM5.Models
             art.Valoracion =(int) en.Valor;
             art.Tipo = en.Tipo;
             art.Stock = en.Stock;
+            art.descriplarga = en.Descriplarga;
+            art.imagran = en.Imagran;
             return art;
 
 

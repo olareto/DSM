@@ -10,10 +10,14 @@ namespace DSM5.Models
     {
         [ScaffoldColumn(false)]
         public int id { get; set; }
+        /*
+        descrip
+        descriplarga
+        genero
+        anyo
+        imagran
 
-        
-
-   
+   */
 
         [Display(Prompt = "Stock del producto", Description = "Stock del producto", Name = "Stock ")]
         [Required(ErrorMessage = "Debe indicar un Stock para el producto")]
@@ -25,6 +29,33 @@ namespace DSM5.Models
         [Required(ErrorMessage = "Debe indicar un nombre para el producto")]
         [StringLength(maximumLength: 200, ErrorMessage = "El nombre no puede tener más de 200 caracteres")]
         public string Nombre { get; set; }
+
+
+        ///
+
+
+        [Display(Prompt = "imagen grande del producto", Description = "imagen grande del producto", Name = "imagen grande ")]
+        [Required(ErrorMessage = "Debe indicar un imagen grande para el producto")]
+        [StringLength(maximumLength: 200, ErrorMessage = "El imagen grande no puede tener más de 200 caracteres")]
+        public string imagran { get; set; }
+
+        [Display(Prompt = "descricion larga del producto", Description = "descricion larga del producto", Name = "descricion larga ")]
+        [Required(ErrorMessage = "Debe indicar un descricion larga para el producto")]
+        [StringLength(maximumLength: 200, ErrorMessage = "El descricion larga no puede tener más de 200 caracteres")]
+        public string descriplarga { get; set; }
+
+        
+
+
+
+        ///
+
+
+
+        
+
+
+
 
         [Display(Prompt = "Precio del producto", Description = "Precio del producto", Name = "Precio ")]
         [Required(ErrorMessage = "Debe indicar un precio para el producto")]

@@ -305,6 +305,7 @@
 			
 	<Compile Include="Enumerated\SMP\ValoracionEnum.cs" />
 	<Compile Include="Enumerated\SMP\Estado_videoEnum.cs" />
+	<Compile Include="Enumerated\SMP\GeneroEnum.cs" />
 	
 	
 

@@ -47,20 +47,20 @@ public PeliculaEN() : base ()
 
 
 public PeliculaEN(int id, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista_0
-                  , SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen
+                  , SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen, string descriplarga, string descripcion, string genero, Nullable<DateTime> anyo, string imagran
                   )
 {
-        this.init (Id, comentario, lista_0, valoracion, nombre, imagen);
+        this.init (Id, comentario, lista_0, valoracion, nombre, imagen, descriplarga, descripcion, genero, anyo, imagran);
 }
 
 
 public PeliculaEN(PeliculaEN pelicula)
 {
-        this.init (Id, pelicula.Comentario, pelicula.Lista_0, pelicula.Valoracion, pelicula.Nombre, pelicula.Imagen);
+        this.init (Id, pelicula.Comentario, pelicula.Lista_0, pelicula.Valoracion, pelicula.Nombre, pelicula.Imagen, pelicula.Descriplarga, pelicula.Descripcion, pelicula.Genero, pelicula.Anyo, pelicula.Imagran);
 }
 
 private void init (int id
-                   , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista_0, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen)
+                   , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista_0, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen, string descriplarga, string descripcion, string genero, Nullable<DateTime> anyo, string imagran)
 {
         this.Id = id;
 
@@ -74,6 +74,16 @@ private void init (int id
         this.Nombre = nombre;
 
         this.Imagen = imagen;
+
+        this.Descriplarga = descriplarga;
+
+        this.Descripcion = descripcion;
+
+        this.Genero = genero;
+
+        this.Anyo = anyo;
+
+        this.Imagran = imagran;
 }
 
 public override bool Equals (object obj)

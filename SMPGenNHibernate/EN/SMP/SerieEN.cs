@@ -47,20 +47,20 @@ public SerieEN() : base ()
 
 
 public SerieEN(int id, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.TemporadaEN> temporada, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista
-               , SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen
+               , SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen, string descriplarga, string descripcion, string genero, Nullable<DateTime> anyo, string imagran
                )
 {
-        this.init (Id, temporada, lista, valoracion, nombre, imagen);
+        this.init (Id, temporada, lista, valoracion, nombre, imagen, descriplarga, descripcion, genero, anyo, imagran);
 }
 
 
 public SerieEN(SerieEN serie)
 {
-        this.init (Id, serie.Temporada, serie.Lista, serie.Valoracion, serie.Nombre, serie.Imagen);
+        this.init (Id, serie.Temporada, serie.Lista, serie.Valoracion, serie.Nombre, serie.Imagen, serie.Descriplarga, serie.Descripcion, serie.Genero, serie.Anyo, serie.Imagran);
 }
 
 private void init (int id
-                   , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.TemporadaEN> temporada, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen)
+                   , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.TemporadaEN> temporada, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen, string descriplarga, string descripcion, string genero, Nullable<DateTime> anyo, string imagran)
 {
         this.Id = id;
 
@@ -74,6 +74,16 @@ private void init (int id
         this.Nombre = nombre;
 
         this.Imagen = imagen;
+
+        this.Descriplarga = descriplarga;
+
+        this.Descripcion = descripcion;
+
+        this.Genero = genero;
+
+        this.Anyo = anyo;
+
+        this.Imagran = imagran;
 }
 
 public override bool Equals (object obj)

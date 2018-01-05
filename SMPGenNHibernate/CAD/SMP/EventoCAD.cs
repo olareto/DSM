@@ -164,6 +164,12 @@ public void Modify (EventoEN evento)
                 eventoEN.Stock = evento.Stock;
 
 
+                eventoEN.Descriplarga = evento.Descriplarga;
+
+
+                eventoEN.Imagran = evento.Imagran;
+
+
                 eventoEN.Tipo = evento.Tipo;
 
                 session.Update (eventoEN);

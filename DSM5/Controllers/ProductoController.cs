@@ -88,8 +88,9 @@ namespace DSM5.Controllers
             {
                 // TODO: Add insert logic here
                 ProductoCEN cen = new ProductoCEN();
-                
-                cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Stock, collection.Talla);
+
+                cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Stock, collection.descriplarga, collection.imagran, collection.Talla);
+
 
 
                 
@@ -151,7 +152,8 @@ namespace DSM5.Controllers
 
                 // TODO: Add update logic here
                 ProductoCEN cen = new ProductoCEN();
-                cen.Modify(id, collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Stock, collection.Talla);
+                cen.Modify(id,collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Stock, collection.descriplarga, collection.imagran, collection.Talla);
+
                 //cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock, collection.Talla);
                 
                 return RedirectToAction(action,controller, arg);

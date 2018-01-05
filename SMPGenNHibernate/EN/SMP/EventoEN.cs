@@ -46,20 +46,20 @@ public EventoEN() : base ()
 
 
 public EventoEN(int id, string tipo, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.Lineas_pedidoEN> lineas_pedido
-                , string nombre, double precio, string descripcion, string imagen, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valor, int stock, SMPGenNHibernate.EN.SMP.OfertaEN oferta
+                , string nombre, double precio, string descripcion, string imagen, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valor, int stock, SMPGenNHibernate.EN.SMP.OfertaEN oferta, string descriplarga, string imagran
                 )
 {
-        this.init (Id, tipo, lineas_pedido, nombre, precio, descripcion, imagen, comentario, valor, stock, oferta);
+        this.init (Id, tipo, lineas_pedido, nombre, precio, descripcion, imagen, comentario, valor, stock, oferta, descriplarga, imagran);
 }
 
 
 public EventoEN(EventoEN evento)
 {
-        this.init (Id, evento.Tipo, evento.Lineas_pedido, evento.Nombre, evento.Precio, evento.Descripcion, evento.Imagen, evento.Comentario, evento.Valor, evento.Stock, evento.Oferta);
+        this.init (Id, evento.Tipo, evento.Lineas_pedido, evento.Nombre, evento.Precio, evento.Descripcion, evento.Imagen, evento.Comentario, evento.Valor, evento.Stock, evento.Oferta, evento.Descriplarga, evento.Imagran);
 }
 
 private void init (int id
-                   , string tipo, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.Lineas_pedidoEN> lineas_pedido, string nombre, double precio, string descripcion, string imagen, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valor, int stock, SMPGenNHibernate.EN.SMP.OfertaEN oferta)
+                   , string tipo, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.Lineas_pedidoEN> lineas_pedido, string nombre, double precio, string descripcion, string imagen, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valor, int stock, SMPGenNHibernate.EN.SMP.OfertaEN oferta, string descriplarga, string imagran)
 {
         this.Id = id;
 
@@ -83,6 +83,10 @@ private void init (int id
         this.Stock = stock;
 
         this.Oferta = oferta;
+
+        this.Descriplarga = descriplarga;
+
+        this.Imagran = imagran;
 }
 
 public override bool Equals (object obj)

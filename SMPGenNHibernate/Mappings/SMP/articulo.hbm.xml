@@ -30,6 +30,12 @@
 					<property name="Stock" type="integer"> 
 						<column name="stock"  not-null="true"/>
 					</property>
+					<property name="Descriplarga" type="string"> 
+						<column name="descriplarga"  not-null="true"/>
+					</property>
+					<property name="Imagran" type="string"> 
+						<column name="imagran"  not-null="true"/>
+					</property>
 			
 			
 			
@@ -57,6 +63,10 @@
         					</many-to-one>
 					 
 						
+			
+			
+					
+					
 					
 					
 					

@@ -38,7 +38,7 @@ public IEventoCAD get_IEventoCAD ()
         return this._IEventoCAD;
 }
 
-public int New_ (string p_nombre, double p_precio, string p_descripcion, string p_imagen, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valor, int p_stock, string p_tipo)
+public int New_ (string p_nombre, double p_precio, string p_descripcion, string p_imagen, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valor, int p_stock, string p_descriplarga, string p_imagran, string p_tipo)
 {
         EventoEN eventoEN = null;
         int oid;
@@ -57,6 +57,10 @@ public int New_ (string p_nombre, double p_precio, string p_descripcion, string 
 
         eventoEN.Stock = p_stock;
 
+        eventoEN.Descriplarga = p_descriplarga;
+
+        eventoEN.Imagran = p_imagran;
+
         eventoEN.Tipo = p_tipo;
 
         //Call to EventoCAD
@@ -65,7 +69,7 @@ public int New_ (string p_nombre, double p_precio, string p_descripcion, string 
         return oid;
 }
 
-public void Modify (int p_evento_OID, string p_nombre, double p_precio, string p_descripcion, string p_imagen, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valor, int p_stock, string p_tipo)
+public void Modify (int p_evento_OID, string p_nombre, double p_precio, string p_descripcion, string p_imagen, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valor, int p_stock, string p_descriplarga, string p_imagran, string p_tipo)
 {
         EventoEN eventoEN = null;
 
@@ -78,6 +82,8 @@ public void Modify (int p_evento_OID, string p_nombre, double p_precio, string p
         eventoEN.Imagen = p_imagen;
         eventoEN.Valor = p_valor;
         eventoEN.Stock = p_stock;
+        eventoEN.Descriplarga = p_descriplarga;
+        eventoEN.Imagran = p_imagran;
         eventoEN.Tipo = p_tipo;
         //Call to EventoCAD
 

@@ -16,6 +16,14 @@ namespace DSM5.Models
             pel.Nombre = en.Nombre;
             pel.Valoracion = (int)en.Valoracion;
             pel.Imagen = en.Imagen;
+            pel.descripcion = en.Descripcion;
+            pel.desclar = en.Descriplarga;
+            if (en.Anyo != null)
+                pel.fecha = (DateTime)en.Anyo;
+            else
+                pel.fecha = DateTime.Today;
+            pel.genero = en.Genero;
+            pel.imagran = en.Imagran;
       
             return pel;
 

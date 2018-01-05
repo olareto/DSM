@@ -20,6 +20,14 @@ namespace DSM5.Models
         [ScaffoldColumn(false)]
         public string tipo { get; set; }
 
+        [ScaffoldColumn(false)]
+        public int stock { get; set; }
+
+        [ScaffoldColumn(false)]
+        public double precio { get; set; }
+
+
+
 
 
 

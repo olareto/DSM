@@ -30,5 +30,28 @@ namespace DSM5.Models
         public string Imagen { get; set; }
 
 
+        [Display(Prompt = "Imagen de la Serie", Description = "Imagen de la Serie", Name = "descripcion ")]
+        [Required(ErrorMessage = "Debe indicar una imagen para la Serie")]
+        public string descripcion { get; set; }
+
+        [Display(Prompt = "Imagen de la Serie", Description = "Imagen de la Serie", Name = "desclar ")]
+        [Required(ErrorMessage = "Debe indicar una imagen para la Serie")]
+        public string desclar { get; set; }
+
+        [Display(Prompt = "Imagen de la Serie", Description = "Imagen de la Serie", Name = "genero ")]
+        [Required(ErrorMessage = "Debe indicar una imagen para la Serie")]
+        public string genero { get; set; }
+
+        [Display(Prompt = "Imagen de la Serie", Description = "Imagen de la Serie", Name = "imagran ")]
+        [Required(ErrorMessage = "Debe indicar una imagen para la Serie")]
+        public string imagran { get; set; }
+
+        [Display(Prompt = "fecha de la Comentario", Description = "fecha de la Comentario", Name = "fecha ")]
+        [Required(ErrorMessage = "Debe indicar un fecha para la Comentario")]
+        [DisplayFormat(DataFormatString = "{0:t}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
+        public DateTime fecha { get; set; }
+
+
     }
 }

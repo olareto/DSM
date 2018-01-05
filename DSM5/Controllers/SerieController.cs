@@ -81,7 +81,7 @@ namespace DSM5.Controllers
                 // TODO: Add insert logic here
                 SerieCEN cen = new SerieCEN();
                 
-                cen.New_((SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre, collection.Imagen);
+                cen.New_((SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre, collection.Imagen, collection.desclar, collection.descripcion, collection.genero, new DateTime(collection.fecha.Year, collection.fecha.Month, collection.fecha.Day), collection.imagran);
                 string action = System.Web.HttpContext.Current.Session["action"] as String;
                 string controller = System.Web.HttpContext.Current.Session["controller"] as String;
                 Object arg = System.Web.HttpContext.Current.Session["arg"];
@@ -125,7 +125,8 @@ namespace DSM5.Controllers
             {
                 // TODO: Add update logic here
                 SerieCEN cen = new SerieCEN();
-                cen.Modify(id,(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre, collection.Imagen);
+                cen.Modify(id,(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre, collection.Imagen, collection.desclar, collection.descripcion, collection.genero, new DateTime(collection.fecha.Year, collection.fecha.Month, collection.fecha.Day), collection.imagran);
+
                 //cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock, collection.Talla);
                 string action = System.Web.HttpContext.Current.Session["action"] as String;
                 string controller = System.Web.HttpContext.Current.Session["controller"] as String;

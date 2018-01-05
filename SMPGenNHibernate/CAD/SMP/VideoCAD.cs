@@ -99,6 +99,21 @@ public void ModifyDefault (VideoEN video)
 
                 videoEN.Imagen = video.Imagen;
 
+
+                videoEN.Descriplarga = video.Descriplarga;
+
+
+                videoEN.Descripcion = video.Descripcion;
+
+
+                videoEN.Genero = video.Genero;
+
+
+                videoEN.Anyo = video.Anyo;
+
+
+                videoEN.Imagran = video.Imagran;
+
                 session.Update (videoEN);
                 SessionCommit ();
         }
@@ -158,6 +173,21 @@ public void Modify (VideoEN video)
 
 
                 videoEN.Imagen = video.Imagen;
+
+
+                videoEN.Descriplarga = video.Descriplarga;
+
+
+                videoEN.Descripcion = video.Descripcion;
+
+
+                videoEN.Genero = video.Genero;
+
+
+                videoEN.Anyo = video.Anyo;
+
+
+                videoEN.Imagran = video.Imagran;
 
                 session.Update (videoEN);
                 SessionCommit ();
