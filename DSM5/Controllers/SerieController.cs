@@ -16,7 +16,7 @@ namespace DSM5.Controllers
         public ActionResult Index()
         {
             SerieCEN cen = new SerieCEN();
-            IList<SerieEN> enlinst=cen.ReadAll(0, 6);
+            IList<SerieEN> enlinst=cen.ReadAll(0, 16);
             AssemblerSerie ass = new AssemblerSerie();
             IList<Serie> listart = ass.ConvertListENToModel(enlinst);
             
@@ -32,7 +32,7 @@ namespace DSM5.Controllers
         public ActionResult Index_Usu()
         {
             SerieCEN cen = new SerieCEN();
-            IList<SerieEN> enlinst = cen.ReadAll(0, 6);
+            IList<SerieEN> enlinst = cen.ReadAll(0, 16);
             AssemblerSerie ass = new AssemblerSerie();
             IList<Serie> listart = ass.ConvertListENToModel(enlinst);
 

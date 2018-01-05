@@ -16,7 +16,7 @@ namespace DSM5.Controllers
         public ActionResult Index()
         {
             PeliculaCEN cen = new PeliculaCEN();
-            IList<PeliculaEN> enlinst = cen.ReadAll(0, 12);
+            IList<PeliculaEN> enlinst = cen.ReadAll(0, 16);
             AssemblerPelicula ass = new AssemblerPelicula();
             IList<Pelicula> listart = ass.ConvertListENToModel(enlinst);
 

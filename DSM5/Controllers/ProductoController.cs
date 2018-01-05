@@ -16,7 +16,7 @@ namespace DSM5.Controllers
         public ActionResult Index()
         {
             ProductoCEN cen = new ProductoCEN();
-            IList<ProductoEN> enlinst=cen.ReadAll(0, 6);
+            IList<ProductoEN> enlinst=cen.ReadAll(0, 33);
             AssemblerProducto ass = new AssemblerProducto();
             IList<Producto> listart = ass.ConvertListENToModel(enlinst);
 

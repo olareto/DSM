@@ -5,74 +5,145 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>Producto</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Stock)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Stock)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4 text-center">           
+                <h2>@Html.DisplayFor(model => model.Nombre)</h2>                                 
+            <img class="centrarResponsive img-responsive" src="~/Images/Productos/@Html.DisplayFor(model => model.Imagen)" width="300px" height="300px" />
+        </div>
+        <div class="col-sm-4">
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Precio)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Precio)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Descripcion)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Talla)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Imagen)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Talla)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Imagen)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Stock)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Valoracion)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Stock)
+            </dd>
+          
+            <dt>
+                @Html.DisplayNameFor(model => model.Precio)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Valoracion)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Precio)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Talla)
-        </dt>
+            
+            <dt>
+                @Html.DisplayNameFor(model => model.Valoracion)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Talla)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Valoracion)
+            </dd>
 
-    </dl>
+            
+            <p>
+                <button type="button" class="btn ">@Html.ActionLink("Edit", "Edit", new { id = Model.id }) </button>
+                <button type="button" class="btn ">@Html.ActionLink("Back", @ViewData["action"] as string, @ViewData["controller"] as string, @ViewData["arg"], null)</button>
+                <button type="button" class="btn btn-mostaza">@Html.ActionLink("add to cart", "addcarr", "Usuario", new { idus = @ViewData["correo"] as string, idpro = Model.id }, null)</button>                 
+            </p>
+        </div>
+        <div class="col-sm-4">
+            
+        </div>
+    </div>
 </div>
+
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back", @ViewData["action"]as string, @ViewData["controller"] as string, @ViewData["arg"], null)|
-    @Html.ActionLink("add to cart", "addcarr", "Usuario", new {idus= @ViewData["correo"] as string,idpro=Model.id },null)|
-    
     @Html.Partial("_Comentario", (IEnumerable<DSM5.Models.Comentario>)ViewBag.coment)
 </p>
+
+@*
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dd>
+                <img src="~/Images/@Html.DisplayFor(model => model.Imagen)" width="300px" height="300px" />
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Stock)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Stock)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Precio)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Precio)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Descripcion)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Valoracion)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Valoracion)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Talla)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Talla)
+            </dd>
+
+        </dl>
+    </div>
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Back", @ViewData["action"]as string, @ViewData["controller"] as string, @ViewData["arg"], null)|
+        @Html.ActionLink("add to cart", "addcarr", "Usuario", new {idus= @ViewData["correo"] as string,idpro=Model.id },null)|
+
+        @Html.Partial("_Comentario", (IEnumerable<DSM5.Models.Comentario>)ViewBag.coment)
+    </p>
+*@
