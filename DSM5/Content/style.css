@@ -1,9 +1,6 @@
 ﻿/*
     Nuestro style que nosotros queramos modificar. Si queremos modificar clases del bootstrap, modificarlas en bootstrap.css
 */
-div.card {
-    box-shadow: 10px 10px 5px grey;
-}
 
 .margin {
     margin-bottom: 45px;

@@ -9,39 +9,30 @@
     <div class="row">
         <img class="col-md-12" src='~/Images/cabecera/@Html.DisplayFor(model => model.imagran)' />
     </div>
+    
     <div class="row">
-        <h3>@Html.DisplayFor(model => model.Nombre)</h3>
-        <h3>@Html.DisplayFor(model => model.genero)</h3>
-        <img class="cartelera col-md-3" src='~/Images/cartelera/@Html.DisplayFor(modelItem => modelItem.Imagen)' />
+        <img class="cartelera col-md-3 gerMargenLetras" src='~/Images/cartelera/@Html.DisplayFor(modelItem => modelItem.Imagen)' />
 
-        <div class="col-md-6">
+        <div class="col-md-6 gerMargenLetras">
+            <h4><strong>Título: </strong>@Html.DisplayFor(model => model.Nombre)</h4>
+            <h4><strong>Género: </strong>@Html.DisplayFor(model => model.genero)</h4>
             <h>@Html.DisplayFor(model => model.descripcion)</h>
-
         </div>
 
-        <div class="row">
-            <img class="cartelera col-md-3" src='~/Images/cartelera/@Html.DisplayFor(modelItem => modelItem.Imagen)' />
-
-            <div class="col-md-6">
-                <h4><strong>Título: </strong>@Html.DisplayFor(model => model.Nombre)</h4>
-                <h4><strong>Género: </strong>@Html.DisplayFor(model => model.genero)</h4>
-                <h>@Html.DisplayFor(model => model.descripcion)</h>
-            </div>
-
-            <div class="dropdown col-md-3">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Opciones
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Seguir</a>
-                    <a class="dropdown-item" href="#">Vista</a>
-                    <a class="dropdown-item admin" href='@Url.Action("Delete", "Serie", new { id = Model.id })'>Borrar</a>
-                    <a class="dropdown-item admin" href='@Url.Action("Edit", "Serie", new { id = Model.id })'>Editar</a>
-                    <a class="dropdown-item admin" href='@Url.Action("addlist", "Usuario", new { idus= @ViewData["correo"] as string, idpro=Model.id, lista="sig"  })'>siguiendo</a>
-                    <a class="dropdown-item admin" href='@Url.Action("addlist", "Usuario", new { idus= @ViewData["correo"] as string, idpro=Model.id, lista="fav"  })'>favoritos</a>
-                    <a class="dropdown-item admin" href='@Url.Action("addlist", "Usuario", new { idus= @ViewData["correo"] as string, idpro=Model.id, lista="visto"  })'>visto</a>
-                </div>
+        <div class="dropdown col-md-3 gerMargenLetras">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Opciones
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Vista</a>
+                <a class="dropdown-item admin" href='@Url.Action("Delete", "Pelicula", new { id = Model.id })'>Borrar</a>
+                <a class="dropdown-item admin" href='@Url.Action("Edit", "Pelicula", new { id = Model.id })'>Editar</a>
+                <a class="dropdown-item admin" href='@Url.Action("addlist", "Usuario", new { idus= @ViewData["correo"] as string, idpro=Model.id, lista="sig"  })'>siguiendo</a>
+                <a class="dropdown-item admin" href='@Url.Action("addlist", "Usuario", new { idus= @ViewData["correo"] as string, idpro=Model.id, lista="fav"  })'>favoritos</a>
+                <a class="dropdown-item admin" href='@Url.Action("addlist", "Usuario", new { idus= @ViewData["correo"] as string, idpro=Model.id, lista="visto"  })'>visto</a>
             </div>
         </div>
+
     </div>
+    
 </div>
