@@ -11,7 +11,7 @@
     <img class="cartelera col-md-3" src='~/Images/cartelera/@Html.DisplayFor(modelItem => modelItem.Imagen)' />
     
     <div class="col-md-6">
-        <h4>@Html.DisplayFor(model => model.descripcion)</h4>
+        <h>@Html.DisplayFor(model => model.descripcion)</h>
         <a class="btn btn-primary center-block" href='@Url.Action("Reproducir", "Pelicula", new { id = Model.id })'>Reproducir pelicula</a>
     </div>
     
