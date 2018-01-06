@@ -16,6 +16,12 @@
 
 			
 					
+					<property name="Anyofin" type="integer"> 
+						<column name="anyofin"  not-null="true"/>
+					</property>
+					<property name="Finalizada" type="boolean"> 
+						<column name="finalizada"  not-null="true"/>
+					</property>
 			
 			
 		  			
@@ -39,6 +45,10 @@
 									<column name="FK_idLista_idLista"/> 
       						</many-to-many>
     					</bag>
+			
+			
+					
+					
 					
 					
 		

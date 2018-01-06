@@ -57,7 +57,7 @@ private string genero;
 /**
  *	Atributo anyo
  */
-private Nullable<DateTime> anyo;
+private int anyo;
 
 
 
@@ -113,7 +113,7 @@ public virtual string Genero {
 
 
 
-public virtual Nullable<DateTime> Anyo {
+public virtual int Anyo {
         get { return anyo; } set { anyo = value;  }
 }
 
@@ -133,7 +133,7 @@ public VideoEN()
 
 
 
-public VideoEN(int id, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen, string descriplarga, string descripcion, string genero, Nullable<DateTime> anyo, string imagran
+public VideoEN(int id, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen, string descriplarga, string descripcion, string genero, int anyo, string imagran
                )
 {
         this.init (Id, valoracion, nombre, imagen, descriplarga, descripcion, genero, anyo, imagran);
@@ -146,7 +146,7 @@ public VideoEN(VideoEN video)
 }
 
 private void init (int id
-                   , SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen, string descriplarga, string descripcion, string genero, Nullable<DateTime> anyo, string imagran)
+                   , SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen, string descriplarga, string descripcion, string genero, int anyo, string imagran)
 {
         this.Id = id;
 

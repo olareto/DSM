@@ -21,6 +21,20 @@ private System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista;
 
 
 
+/**
+ *	Atributo anyofin
+ */
+private int anyofin;
+
+
+
+/**
+ *	Atributo finalizada
+ */
+private bool finalizada;
+
+
+
 
 
 
@@ -36,6 +50,18 @@ public virtual System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN>
 
 
 
+public virtual int Anyofin {
+        get { return anyofin; } set { anyofin = value;  }
+}
+
+
+
+public virtual bool Finalizada {
+        get { return finalizada; } set { finalizada = value;  }
+}
+
+
+
 
 
 public SerieEN() : base ()
@@ -46,21 +72,21 @@ public SerieEN() : base ()
 
 
 
-public SerieEN(int id, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.TemporadaEN> temporada, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista
-               , SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen, string descriplarga, string descripcion, string genero, Nullable<DateTime> anyo, string imagran
+public SerieEN(int id, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.TemporadaEN> temporada, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, int anyofin, bool finalizada
+               , SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen, string descriplarga, string descripcion, string genero, int anyo, string imagran
                )
 {
-        this.init (Id, temporada, lista, valoracion, nombre, imagen, descriplarga, descripcion, genero, anyo, imagran);
+        this.init (Id, temporada, lista, anyofin, finalizada, valoracion, nombre, imagen, descriplarga, descripcion, genero, anyo, imagran);
 }
 
 
 public SerieEN(SerieEN serie)
 {
-        this.init (Id, serie.Temporada, serie.Lista, serie.Valoracion, serie.Nombre, serie.Imagen, serie.Descriplarga, serie.Descripcion, serie.Genero, serie.Anyo, serie.Imagran);
+        this.init (Id, serie.Temporada, serie.Lista, serie.Anyofin, serie.Finalizada, serie.Valoracion, serie.Nombre, serie.Imagen, serie.Descriplarga, serie.Descripcion, serie.Genero, serie.Anyo, serie.Imagran);
 }
 
 private void init (int id
-                   , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.TemporadaEN> temporada, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen, string descriplarga, string descripcion, string genero, Nullable<DateTime> anyo, string imagran)
+                   , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.TemporadaEN> temporada, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, int anyofin, bool finalizada, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen, string descriplarga, string descripcion, string genero, int anyo, string imagran)
 {
         this.Id = id;
 
@@ -68,6 +94,10 @@ private void init (int id
         this.Temporada = temporada;
 
         this.Lista = lista;
+
+        this.Anyofin = anyofin;
+
+        this.Finalizada = finalizada;
 
         this.Valoracion = valoracion;
 

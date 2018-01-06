@@ -17,12 +17,11 @@ namespace DSM5.Models
             art.Imagen = en.Imagen;
             art.descripcion = en.Descripcion;
             art.desclar = en.Descriplarga;
-            if (en.Anyo != null)
-                art.fecha = (DateTime)en.Anyo;
-            else
-                art.fecha = DateTime.Today;
+            art.fecha = en.Anyo;
             art.genero = en.Genero;
             art.imagran = en.Imagran;
+            art.fechafin = en.Anyofin;
+            art.finalizada = en.Finalizada;
 
             return art;
             

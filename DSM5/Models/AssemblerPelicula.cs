@@ -18,10 +18,7 @@ namespace DSM5.Models
             pel.Imagen = en.Imagen;
             pel.descripcion = en.Descripcion;
             pel.desclar = en.Descriplarga;
-            if (en.Anyo != null)
-                pel.fecha = (DateTime)en.Anyo;
-            else
-                pel.fecha = DateTime.Today;
+            pel.fecha = en.Anyo;
             pel.genero = en.Genero;
             pel.imagran = en.Imagran;
             pel.link = en.Link;

@@ -51,12 +51,10 @@ namespace DSM5.Models
 
             [Display(Prompt = "fecha de la Comentario", Description = "fecha de la Comentario", Name = "fecha ")]
             [Required(ErrorMessage = "Debe indicar un fecha para la Comentario")]
-            [DisplayFormat(DataFormatString = "{0:t}", ApplyFormatInEditMode = true)]
-            [DataType(DataType.Date)]
-            public DateTime fecha { get; set; }
+            [Range(minimum: 1, maximum: 5, ErrorMessage = "El valoración debe ser mayor que cero y menor de 5")]
+            public int fecha { get; set; }
 
-
-
+        
 
 
 

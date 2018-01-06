@@ -92,6 +92,12 @@ public void ModifyDefault (SerieEN serie)
                 SerieEN serieEN = (SerieEN)session.Load (typeof(SerieEN), serie.Id);
 
 
+
+                serieEN.Anyofin = serie.Anyofin;
+
+
+                serieEN.Finalizada = serie.Finalizada;
+
                 session.Update (serieEN);
                 SessionCommit ();
         }
@@ -166,6 +172,12 @@ public void Modify (SerieEN serie)
 
 
                 serieEN.Imagran = serie.Imagran;
+
+
+                serieEN.Anyofin = serie.Anyofin;
+
+
+                serieEN.Finalizada = serie.Finalizada;
 
                 session.Update (serieEN);
                 SessionCommit ();

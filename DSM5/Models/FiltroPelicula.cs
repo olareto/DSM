@@ -29,7 +29,20 @@ namespace DSM5.Models
         [Range(minimum: 1, maximum: 5, ErrorMessage = "El valoración debe ser mayor que cero y menor de 5")]
         public int Valoracion { get; set; }
 
+
+        [Display(Prompt = "Filtrar por anyo", Description = "Filtrar por Valoracion", Name = "Filtrar por anyo ")]
+        public bool anyobol { get; set; }
+
+        [Display(Prompt = "Valoracion de la Pelicula", Description = "Valoracion de la Pelicula", Name = "anyo ")]
+        [Range(minimum: 1900, maximum: 2018, ErrorMessage = "El valoración debe ser mayor que 1900 y menor de 2018")]
+        public int anyomin { get; set; }
+
+        [Display(Prompt = "Valoracion de la Pelicula", Description = "Valoracion de la Pelicula", Name = "anyo ")]
+        [Range(minimum: 1900, maximum: 2018, ErrorMessage = "El valoración debe ser mayor que 1900 y menor de 2018")]
+        public int anyomax { get; set; }
         
+
+
 
 
     }

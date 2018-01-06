@@ -30,7 +30,7 @@
 					<property name="Genero" type="string"> 
 						<column name="genero"  not-null="true"/>
 					</property>
-					<property name="Anyo" type="date"> 
+					<property name="Anyo" type="integer"> 
 						<column name="anyo"  not-null="true"/>
 					</property>
 					<property name="Imagran" type="string"> 

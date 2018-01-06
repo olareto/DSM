@@ -38,7 +38,7 @@ public ISerieCAD get_ISerieCAD ()
         return this._ISerieCAD;
 }
 
-public int New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, string p_nombre, string p_imagen, string p_descriplarga, string p_descripcion, string p_genero, Nullable<DateTime> p_anyo, string p_imagran)
+public int New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, string p_nombre, string p_imagen, string p_descriplarga, string p_descripcion, string p_genero, int p_anyo, string p_imagran, int p_anyofin, bool p_finalizada)
 {
         SerieEN serieEN = null;
         int oid;
@@ -61,13 +61,17 @@ public int New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, st
 
         serieEN.Imagran = p_imagran;
 
+        serieEN.Anyofin = p_anyofin;
+
+        serieEN.Finalizada = p_finalizada;
+
         //Call to SerieCAD
 
         oid = _ISerieCAD.New_ (serieEN);
         return oid;
 }
 
-public void Modify (int p_Serie_OID, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, string p_nombre, string p_imagen, string p_descriplarga, string p_descripcion, string p_genero, Nullable<DateTime> p_anyo, string p_imagran)
+public void Modify (int p_Serie_OID, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, string p_nombre, string p_imagen, string p_descriplarga, string p_descripcion, string p_genero, int p_anyo, string p_imagran, int p_anyofin, bool p_finalizada)
 {
         SerieEN serieEN = null;
 
@@ -82,6 +86,8 @@ public void Modify (int p_Serie_OID, SMPGenNHibernate.Enumerated.SMP.ValoracionE
         serieEN.Genero = p_genero;
         serieEN.Anyo = p_anyo;
         serieEN.Imagran = p_imagran;
+        serieEN.Anyofin = p_anyofin;
+        serieEN.Finalizada = p_finalizada;
         //Call to SerieCAD
 
         _ISerieCAD.Modify (serieEN);
