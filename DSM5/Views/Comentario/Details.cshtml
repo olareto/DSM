@@ -39,5 +39,5 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.id}) |
-    @Html.ActionLink("Back", @ViewData["action"] as string, @ViewData["controller"] as string, @ViewData["arg"], null)|
+    @Html.ActionLink("Back", @Session["action"] as string, @Session["controller"] as string, @Session["arg"], null)|
 </p>

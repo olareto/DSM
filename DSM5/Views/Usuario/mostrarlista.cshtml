@@ -9,7 +9,7 @@
       Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-    @Html.ActionLink("Back", "Details", "Usuario", new { id= (string)@ViewData["correo"] }, null)|
+    @Html.ActionLink("Back", "Details", "Usuario", new { id= (string)@Session["correo"] }, null)|
     @Html.Partial("_Pelicula", (IEnumerable<DSM5.Models.Pelicula>)ViewBag.peli)
     @Html.Partial("_Serie", (IEnumerable<DSM5.Models.Serie>)ViewBag.serie)
 

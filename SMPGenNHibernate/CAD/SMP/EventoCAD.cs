@@ -310,7 +310,7 @@ public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.EventoEN> Filtro
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM EventoEN self where FROM EventoEN art where art.Precio > :p_min and art.Precio < :p_max";
+                //String sql = @"FROM EventoEN self where FROM EventoEN art where art.Precio >= :p_min and art.Precio <= :p_max";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("EventoENfiltroprecioHQL");
                 query.SetParameter ("p_min", p_min);

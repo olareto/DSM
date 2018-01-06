@@ -22,7 +22,7 @@
             @Html.ActionLink("Delete", "Delete", new { id=item.id })
 
             
-            @Html.ActionLink("eliminar uno", "delllinea", "Carrito", new { id = @ViewData["carrito"],idpro=item.id }, null)
+            @Html.ActionLink("eliminar uno", "delllinea", "Carrito", new { id = @Session["carrito"],idpro=item.id }, null)
         </td>
     </tr>
 }

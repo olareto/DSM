@@ -115,11 +115,19 @@
 			
 			
 			
+			
+			
+			
+			
 	<Compile Include="EN\SMP\PeliculaEN.cs" />
 	<Compile Include="CEN\SMP\PeliculaCEN.cs" />
 	<Compile Include="CAD\SMP\IPeliculaCAD.cs" />
 	<Compile Include="CAD\SMP\PeliculaCAD.cs" />
 	<Compile Include="CP\SMP\PeliculaCP.cs" />
+			
+			
+			
+			
 			
 			
 			

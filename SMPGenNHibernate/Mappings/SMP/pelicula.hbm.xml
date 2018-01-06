@@ -51,5 +51,9 @@
 		 </joined-subclass>
 		  
 		  <query name="PeliculaENReadAllHQL">from PeliculaEN</query>
+		  <query name="PeliculaENfiltronombreHQL"><![CDATA[FROM PeliculaEN art where art.Nombre = :p_nombre]]></query>
+		  <query name="PeliculaENfiltroanyoHQL"><![CDATA[FROM PeliculaEN art where art.Anyo >= :p_min and art.Anyo <= :p_max]]></query>
+		  <query name="PeliculaENfiltrovalorHQL"><![CDATA[FROM PeliculaEN art where art.Valoracion = :p_valor]]></query>
+		  <query name="PeliculaENfiltrogeneroHQL"><![CDATA[FROM PeliculaEN art where art.Genero = :p_genero]]></query>
 		</hibernate-mapping>
 	

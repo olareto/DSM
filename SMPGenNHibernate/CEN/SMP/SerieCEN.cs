@@ -127,5 +127,21 @@ public void Addtemporada (int p_Serie_OID, System.Collections.Generic.IList<int>
 
         _ISerieCAD.Addtemporada (p_Serie_OID, p_temporada_OIDs);
 }
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.SerieEN> Filtronombre (string p_nombre)
+{
+        return _ISerieCAD.Filtronombre (p_nombre);
+}
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.SerieEN> Filtrovalor (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum ? p_valor)
+{
+        return _ISerieCAD.Filtrovalor (p_valor);
+}
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.SerieEN> Filtroanyo (int? p_min, int ? p_max)
+{
+        return _ISerieCAD.Filtroanyo (p_min, p_max);
+}
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.SerieEN> Filtrogenero (string p_genero)
+{
+        return _ISerieCAD.Filtrogenero (p_genero);
+}
 }
 }

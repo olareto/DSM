@@ -369,6 +369,8 @@
     <Content Include="Views\Usuario\_Pelicula.cshtml" />
     <Content Include="Views\Shared\_Temporada.cshtml" />
     <Content Include="Views\Shared\_Capitulo.cshtml" />
+    <Content Include="Views\Pelicula\Filtrar.cshtml" />
+    <Content Include="Views\Pelicula\Resultadobusqueda.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

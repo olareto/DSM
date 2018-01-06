@@ -59,11 +59,8 @@ namespace DSM5.Controllers
             IList<Temporada> solc = assc.ConvertListENToModel(ten);
 
             SessionClose();
-            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
-            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
-            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
-            ViewData["correo"] = System.Web.HttpContext.Current.Session["correo"];
 
+            System.Web.HttpContext.Current.Session["id_serie"] = id;
             ViewBag.temp = solc;
 
             return View(sol);
@@ -75,9 +72,7 @@ namespace DSM5.Controllers
             SerieEN en = new SerieEN();
             AssemblerSerie ass = new AssemblerSerie();
             Serie sol = ass.ConvertENToModelUI(en);
-            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
-            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
-            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+            
             return View(sol);
         }
 
@@ -120,9 +115,7 @@ namespace DSM5.Controllers
             // ProductoEN en = new Pro;
             AssemblerSerie ass = new AssemblerSerie();
             Serie sol = ass.ConvertENToModelUI(en);
-            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
-            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
-            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+           
             return View(sol);
         }
 
@@ -160,9 +153,7 @@ namespace DSM5.Controllers
             en = cen.ReadOID(id);
             AssemblerSerie ass = new AssemblerSerie();
             Serie sol = ass.ConvertENToModelUI(en);
-            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
-            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
-            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+           
             return View(sol);
         }
 
@@ -248,7 +239,6 @@ namespace DSM5.Controllers
             IList<Temporada> sol = ass.ConvertListENToModel(ten);
 
             SessionClose();
-            ViewData["id_serie"] = id;
        
             System.Web.HttpContext.Current.Session["idserie"] = new { id = id };
             return View(sol);
@@ -261,7 +251,6 @@ namespace DSM5.Controllers
             AssemblerTemporada ass = new AssemblerTemporada();
             Temporada sol = ass.ConvertENToModelUI(en);
             //sol.serie = id;
-            ViewData["id_serie"] = id;
             return View(sol);
         }
 
@@ -298,9 +287,7 @@ namespace DSM5.Controllers
             AssemblerSerie ass = new AssemblerSerie();
             Serie sol = ass.ConvertENToModelUI(en);
 
-            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
-            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
-            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+            
 
 
             return View(sol);

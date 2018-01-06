@@ -22,9 +22,9 @@ namespace DSM5.Controllers
 
 
 
-            System.Web.HttpContext.Current.Session["controller"] = "Capitulo";
-            System.Web.HttpContext.Current.Session["action"] = "Index";
-            System.Web.HttpContext.Current.Session["arg"] = null;
+            System.Web.HttpContext.Current.Session["controller2"] = "Capitulo";
+            System.Web.HttpContext.Current.Session["action2"] = "Index";
+            System.Web.HttpContext.Current.Session["arg2"] = null;
 
             //articuloAsembler.covert
             return View(listart);
@@ -35,7 +35,7 @@ namespace DSM5.Controllers
         {
 
 
-
+            System.Web.HttpContext.Current.Session["id_cap"] = id;
 
             SessionInitialize();
             CapituloCAD cad = new CapituloCAD(session);
@@ -53,11 +53,7 @@ namespace DSM5.Controllers
             IList<Comentario> solc = assc.ConvertListENToModel(ten);
 
             SessionClose();
-            ViewData["id_serie"] = id;
-
-            ViewData["controller"] = "Temporada";
-            ViewData["action"] = "mostrar_cap";
-            ViewData["arg"] = System.Web.HttpContext.Current.Session["idtemp"];
+           
             ViewBag.coment = solc;
             return View(sol);
         }
@@ -69,9 +65,7 @@ namespace DSM5.Controllers
             AssemblerCapitulo ass = new AssemblerCapitulo();
             Capitulo sol = ass.ConvertENToModelUI(en);
 
-            ViewData["controller"] = "Temporada";
-            ViewData["action"] = "mostrar_cap";
-            ViewData["arg"] = System.Web.HttpContext.Current.Session["idtemp"];
+           
             sol.id = id;
             return View(sol);
         }
@@ -121,9 +115,7 @@ namespace DSM5.Controllers
             // ProductoEN en = new Pro;
             AssemblerCapitulo ass = new AssemblerCapitulo();
             Capitulo sol = ass.ConvertENToModelUI(en);
-            ViewData["controller"] = "Temporada";
-            ViewData["action"] = "mostrar_cap";
-            ViewData["arg"] = System.Web.HttpContext.Current.Session["idtemp"];
+            
 
             return View(sol);
         }
@@ -168,9 +160,7 @@ namespace DSM5.Controllers
             en = cen.ReadOID(id);
             AssemblerCapitulo ass = new AssemblerCapitulo();
             Capitulo sol = ass.ConvertENToModelUI(en);
-            ViewData["controller"] = "Temporada";
-            ViewData["action"] = "mostrar_cap";
-            ViewData["arg"] = System.Web.HttpContext.Current.Session["idtemp"];
+           
             return View(sol);
         }
 

@@ -183,9 +183,20 @@ namespace DSM5.Controllers
             }
         }
         // GET: Articulo/Resultadobusqueda/5
-        public ActionResult Resultadobusqueda(IList<Pelicula> res)
+        public ActionResult Resultadobusqueda()
         {
+            System.Web.HttpContext.Current.Session["controller"] = "Producto";
+            System.Web.HttpContext.Current.Session["action"] = "Resultadobusqueda";
+            System.Web.HttpContext.Current.Session["arg"] = null;
 
+            IList<Pelicula> res = System.Web.HttpContext.Current.Session["resu"] as IList<Pelicula>;
+            if (res == null)
+            {
+                res = new List<Pelicula>();
+            }
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
 
             return View(res);
         }
@@ -213,9 +224,41 @@ namespace DSM5.Controllers
                 res = cen.ReadAll(0, int.MaxValue);
 
 
+                if (!(collection.anyobol == false || collection.anyomin <= 0 || collection.anyomax <= 0 || collection.anyomax <= collection.anyomin))
+                {
+                    aux = cen.Filtroanyo(collection.anyomin, collection.anyomax);
+                    res = res.Intersect(aux).ToList();
+                }
+                if (collection.Nombrebol == true && collection.Nombre != null)
+                {
+                    aux = cen.Filtronombre(collection.Nombre);
+                    res = res.Intersect(aux).ToList();
+                }
+                if (collection.generobol == true && collection.genero != null)
+                {
+                    aux = cen.Filtrogenero(collection.genero);
+                    res = res.Intersect(aux).ToList();
+                }
+
+                if (collection.Valoracionbol == true && collection.Valoracion > 0 && collection.Valoracion < 6)
+                {
+                    aux = cen.Filtrovalor((SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion);
+                    res = res.Intersect(aux).ToList();
+                }
+
+
+
+
+
+
+
+
                 AssemblerPelicula ass = new AssemblerPelicula();
                 IList<Pelicula> listart = ass.ConvertListENToModel(res);
-                return View("Resultadobusqueda", listart);
+
+                System.Web.HttpContext.Current.Session["resu"] = listart;
+
+                return RedirectToAction("Resultadobusqueda", "Pelicula", null);
 
             }
             catch

@@ -33,9 +33,9 @@
                 <a class="dropdown-item" href="#">Vista</a>
                 <a class="dropdown-item admin" href='@Url.Action("Delete", "Serie", new { id = Model.id })'>Borrar</a>
                 <a class="dropdown-item admin" href='@Url.Action("Edit", "Serie", new { id = Model.id })'>Editar</a>
-                <a class="dropdown-item" href='@Url.Action("addlist", "Usuario", new { idus= @ViewData["correo"] as string, idpro=Model.id, lista="sig"  })'>siguiendo</a>
-                <a class="dropdown-item" href='@Url.Action("addlist", "Usuario", new { idus= @ViewData["correo"] as string, idpro=Model.id, lista="fav"  })'>favoritos</a>
-                <a class="dropdown-item" href='@Url.Action("addlist", "Usuario", new { idus= @ViewData["correo"] as string, idpro=Model.id, lista="visto"  })'>visto</a>
+                <a class="dropdown-item" href='@Url.Action("addlist", "Usuario", new { idus= @Session["correo"] as string, idpro=Model.id, lista="sig"  })'>siguiendo</a>
+                <a class="dropdown-item" href='@Url.Action("addlist", "Usuario", new { idus= @Session["correo"] as string, idpro=Model.id, lista="fav"  })'>favoritos</a>
+                <a class="dropdown-item" href='@Url.Action("addlist", "Usuario", new { idus= @Session["correo"] as string, idpro=Model.id, lista="visto"  })'>visto</a>
             </div>
         </div>
 

@@ -124,5 +124,21 @@ public void Addcomentario (int p_Pelicula_OID, System.Collections.Generic.IList<
 
         _IPeliculaCAD.Addcomentario (p_Pelicula_OID, p_comentario_OIDs);
 }
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> Filtronombre (string p_nombre)
+{
+        return _IPeliculaCAD.Filtronombre (p_nombre);
+}
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> Filtroanyo (int? p_min, int ? p_max)
+{
+        return _IPeliculaCAD.Filtroanyo (p_min, p_max);
+}
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> Filtrovalor (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum ? p_valor)
+{
+        return _IPeliculaCAD.Filtrovalor (p_valor);
+}
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> Filtrogenero (string p_genero)
+{
+        return _IPeliculaCAD.Filtrogenero (p_genero);
+}
 }
 }

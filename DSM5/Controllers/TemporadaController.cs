@@ -20,9 +20,9 @@ namespace DSM5.Controllers
             AssemblerTemporada ass = new AssemblerTemporada();
             IList<Temporada> listart = ass.ConvertListENToModel(enlinst);
 
-            System.Web.HttpContext.Current.Session["controller"] = "Temporada";
-            System.Web.HttpContext.Current.Session["action"] = "Index";
-            System.Web.HttpContext.Current.Session["arg"] = null;
+            System.Web.HttpContext.Current.Session["controller2"] = "Temporada";
+            System.Web.HttpContext.Current.Session["action2"] = "Index";
+            System.Web.HttpContext.Current.Session["arg2"] = null;
 
             //articuloAsembler.covert
             return View(listart);
@@ -41,9 +41,7 @@ namespace DSM5.Controllers
             AssemblerTemporada ass = new AssemblerTemporada();
             Temporada sol =ass.ConvertENToModelUI(en);
 
-            ViewData["controller"] = "Serie";
-            ViewData["action"] = "mostrar_temp";
-            ViewData["arg"] = System.Web.HttpContext.Current.Session["idserie"];
+            
 
             return View(sol);
         }
@@ -54,10 +52,7 @@ namespace DSM5.Controllers
             TemporadaEN en = new TemporadaEN();
             AssemblerTemporada ass = new AssemblerTemporada();
             Temporada sol = ass.ConvertENToModelUI(en);
-            ViewData["id_serie"] = id;
-            ViewData["controller"] = "Serie";
-            ViewData["action"] = "mostrar_temp";
-            ViewData["arg"] = System.Web.HttpContext.Current.Session["idserie"];
+           
             return View(sol);
         }
 
@@ -102,9 +97,7 @@ namespace DSM5.Controllers
             // ProductoEN en = new Pro;
             AssemblerTemporada ass = new AssemblerTemporada();
             Temporada sol = ass.ConvertENToModelUI(en);
-            ViewData["controller"] = "Serie";
-            ViewData["action"] = "mostrar_temp";
-            ViewData["arg"] = System.Web.HttpContext.Current.Session["idserie"];
+            
             return View(sol);
         }
 
@@ -149,9 +142,7 @@ namespace DSM5.Controllers
             en = cen.ReadOID(id);
             AssemblerTemporada ass = new AssemblerTemporada();
             Temporada sol = ass.ConvertENToModelUI(en);
-            ViewData["controller"] = "Serie";
-            ViewData["action"] = "mostrar_temp";
-            ViewData["arg"] = System.Web.HttpContext.Current.Session["idserie"];
+           
             return View(sol);
         }
 
@@ -195,9 +186,9 @@ namespace DSM5.Controllers
             IList<Capitulo> sol = ass.ConvertListENToModel(ten);
 
             SessionClose();
-            ViewData["id_serie"] = id;
+           
 
-            System.Web.HttpContext.Current.Session["idtemp"] = new {id=id };
+            System.Web.HttpContext.Current.Session["idtemp"] = id;
 
 
             return View(sol);

@@ -56,5 +56,9 @@
 		 </joined-subclass>
 		  
 		  <query name="SerieENReadAllHQL">from SerieEN</query>
+		  <query name="SerieENfiltronombreHQL"><![CDATA[FROM SerieEN art where art.Nombre = :p_nombre]]></query>
+		  <query name="SerieENfiltrovalorHQL"><![CDATA[FROM SerieEN art where art.Valoracion = :p_valor]]></query>
+		  <query name="SerieENfiltroanyoHQL"><![CDATA[FROM SerieEN art where art.Anyo >= :p_min and art.Anyo <= :p_max]]></query>
+		  <query name="SerieENfiltrogeneroHQL"><![CDATA[FROM SerieEN art where art.Genero = :p_genero]]></query>
 		</hibernate-mapping>
 	

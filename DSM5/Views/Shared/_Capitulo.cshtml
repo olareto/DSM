@@ -8,8 +8,8 @@
     {
         <div class="col-md-9">
             
-            @Html.ActionLink("Edit", "Edit", "Capitulo", new { id = item.id, tipo = @ViewData["controller"] }, null)
-            @Html.ActionLink("Delete", "Delete", "Capitulo", new { id = item.id, tipo = @ViewData["controller"] }, null)
+            @Html.ActionLink("Edit", "Edit", "Capitulo", new { id = item.id, tipo = @Session["controller"] }, null)
+            @Html.ActionLink("Delete", "Delete", "Capitulo", new { id = item.id, tipo = @Session["controller"] }, null)
             <hr />
         </div>
     }

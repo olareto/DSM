@@ -40,7 +40,7 @@
 		  
 		  <query name="ProductoENReadAllHQL">from ProductoEN</query>
 		  <query name="ProductoENfiltronombreHQL"><![CDATA[FROM ProductoEN art where art.Nombre = :p_nombre]]></query>
-		  <query name="ProductoENfiltroprecioHQL"><![CDATA[FROM ProductoEN art where art.Precio > :p_min and art.Precio < :p_max ]]></query>
+		  <query name="ProductoENfiltroprecioHQL"><![CDATA[FROM ProductoEN art where art.Precio >= :p_min and art.Precio <= :p_max ]]></query>
 		  <query name="ProductoENfiltrovalorHQL"><![CDATA[FROM ProductoEN art where art.Valor = :p_valor]]></query>
 		  <query name="ProductoENfiltrotallaHQL"><![CDATA[FROM ProductoEN art where art.Talla = :p_talla]]></query>
 		</hibernate-mapping>

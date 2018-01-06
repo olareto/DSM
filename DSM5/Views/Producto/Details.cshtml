@@ -68,8 +68,8 @@
             
             <p>
                 <button type="button" class="btn ">@Html.ActionLink("Edit", "Edit", new { id = Model.id }) </button>
-                <button type="button" class="btn ">@Html.ActionLink("Back", @ViewData["action"] as string, @ViewData["controller"] as string, @ViewData["arg"], null)</button>
-                <button type="button" class="btn btn-mostaza">@Html.ActionLink("add to cart", "addcarr", "Usuario", new { idus = @ViewData["correo"] as string, idpro = Model.id }, null)</button>                 
+                <button type="button" class="btn ">@Html.ActionLink("Back", @Session["action"] as string, @Session["controller"] as string, @Session["arg"], null)</button>
+                <button type="button" class="btn btn-mostaza">@Html.ActionLink("add to cart", "addcarr", "Usuario", new { idus = @Session["correo"] as string, idpro = Model.id }, null)</button>                 
             </p>
         </div>
         <div class="col-sm-4">

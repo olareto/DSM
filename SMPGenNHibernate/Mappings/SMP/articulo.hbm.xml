@@ -81,7 +81,7 @@
 		  
 		  <query name="ArticuloENReadAllHQL">from ArticuloEN</query>
 		  <query name="ArticuloENfiltronombreHQL"><![CDATA[FROM ArticuloEN art where art.Nombre = :p_nombre]]></query>
-		  <query name="ArticuloENfiltroprecioHQL"><![CDATA[FROM ArticuloEN art where art.Precio > :p_min and art.Precio < :p_max]]></query>
+		  <query name="ArticuloENfiltroprecioHQL"><![CDATA[FROM ArticuloEN art where art.Precio >= :p_min and art.Precio <= :p_max]]></query>
 		  <query name="ArticuloENfiltrovalorHQL"><![CDATA[FROM ArticuloEN art where art.Valor = :p_valor]]></query>
 		</hibernate-mapping>
 	

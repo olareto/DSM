@@ -23,7 +23,7 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back", @ViewData["action"] as string, @ViewData["controller"] as string, @ViewData["arg"], null)|
+    @Html.ActionLink("Back", "mostrar_temp", "Serie", @Session["idserie"], null)|
     @Html.ActionLink("Show caps", "mostrar_cap", new { id = Model.id })
     
 </p>
