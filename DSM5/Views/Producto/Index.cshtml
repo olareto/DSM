@@ -42,7 +42,8 @@
                 <p class="gerMargenLetras">@Html.DisplayFor(modelItem => item.Precio)</p>
                 <p>
                 <button type="button" class="btn ">@Html.ActionLink("Edit", "Edit", new { id = item.id })</button>               
-                <button type="button" class="btn ">@Html.ActionLink("Details", "Details", new { id = item.id })</button>  
+                <button type="button" class="btn ">@Html.ActionLink("Details", "Details", new { id = item.id })</button>
+                <button type="button" class="btn btn-mostaza">@Html.ActionLink("add to cart", "addcarr", "Usuario", new { idus = @ViewData["correo"] as string, idpro = item.id }, null)</button>
                 <button type="button" class="btn ">@Html.ActionLink("Delete", "Delete", new { id = item.id })</button>   
                 </p>     
             </div>
