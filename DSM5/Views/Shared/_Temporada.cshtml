@@ -8,12 +8,13 @@
     {
 
         <div class="col-md-9">
-            <button type="button" class="btn btn-default col-md-12" data-toggle="collapse" data-target="#demo">@Html.DisplayFor(modelItem => item.Nombre)</button>
-            <div id="demo" class="collapse">
-                <p>Aqui van los capitulos</p>
+            <div class="col-md-10">
+                @Html.ActionLink(item.Nombre, "mostrar_cap", "Temporada", new { id = item.id, tipo = @ViewData["controller"] }, null)
             </div>
-            @Html.ActionLink("Edit", "Edit", "Temporada", new { id = item.id, tipo = @ViewData["controller"] }, null)
-            @Html.ActionLink("Delete", "Delete", "Temporada", new { id = item.id, tipo = @ViewData["controller"] }, null)
+            <div class="col-md-2 admin">
+                @Html.ActionLink("Edit", "Edit", "Temporada", new { id = item.id, tipo = @ViewData["controller"] }, null)
+                @Html.ActionLink("Delete", "Delete", "Temporada", new { id = item.id, tipo = @ViewData["controller"] }, null)
+            </div>
             <hr />
         </div>
     }

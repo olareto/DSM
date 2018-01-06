@@ -58,7 +58,6 @@ namespace DSM5.Controllers
             AssemblerTemporada assc = new AssemblerTemporada();
             IList<Temporada> solc = assc.ConvertListENToModel(ten);
 
-
             SessionClose();
             ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
             ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;

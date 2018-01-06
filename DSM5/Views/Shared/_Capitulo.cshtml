@@ -1,0 +1,17 @@
+﻿@model IEnumerable<DSM5.Models.Capitulo>
+
+<p class="admin">
+    @Html.ActionLink("Añadir capitulo", "Create", "Capitulo", new { id = @ViewData["id_serie"] })
+</p>
+<div class="container">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-9">
+            
+            @Html.ActionLink("Edit", "Edit", "Capitulo", new { id = item.id, tipo = @ViewData["controller"] }, null)
+            @Html.ActionLink("Delete", "Delete", "Capitulo", new { id = item.id, tipo = @ViewData["controller"] }, null)
+            <hr />
+        </div>
+    }
+
+</div>
