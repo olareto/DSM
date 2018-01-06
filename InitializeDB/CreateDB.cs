@@ -206,7 +206,18 @@ public static void InitializeData ()
 
                 int idoferta = ofertaCEN.New_ (idArticulo, new DateTime (1993, 12, 3), new DateTime (1993, 12, 3), 99);
 
-                int idproducto = productoCEN.New_ ("producto", 69, "descripcion", "imagen", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 999, "desclarga", "imagran", "talla");
+                int idproducto = productoCEN.New_ ("Producto", 40, "Figura Balrog", "Balrog.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, 80, "desclarga", "imagran", "Media");
+                int idproducto2 = productoCEN.New_("Producto", 35, "Camiseta Legolas", "CamisetaLegolas.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, 80, "desclarga", "imagran", "S,M,L,XL");
+                int idproducto3 = productoCEN.New_("Producto", 68, "Casco Darth Vader", "CascoDarthVader.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 30, "desclarga", "imagran", "Media");
+                int idproducto4 = productoCEN.New_("Producto", 29, "FunkoPop Frodo", "FunkoPopFrodo.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.dos, 100, "desclarga", "imagran", "Pequeña");
+                int idproducto5 = productoCEN.New_("Producto", 30, "Figura Harley Quinn", "HarleyQuinn.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, 80, "desclarga", "imagran", "Pequeña");
+                int idproducto6 = productoCEN.New_("Producto", 8, "Llavero Smaug", "LlaveroSmaug.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.dos, 80, "desclarga", "imagran", "");
+                int idproducto7 = productoCEN.New_("Producto", 100, "Espada Laser", "EspadaLaserRoja.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 20, "desclarga", "imagran", "");
+                int idproducto8 = productoCEN.New_("Producto", 39, "Monopoly Señor de los anillos", "MonopolySeñorAnillos.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, 80, "desclarga", "imagran", "");
+                int idproducto9 = productoCEN.New_("Producto", 180, "Ninmubs200", "Ninmubs200.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 20, "desclarga", "imagran", "media");
+                int idproducto10 = productoCEN.New_("Producto", 35, "Sudadera Harley Quinn", "SudaderaHarleyQuinn.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, 80, "desclarga", "imagran", "S,M,L,XL");
+                int idproducto11 = productoCEN.New_("Producto", 24, "Taza Joker", "TazaJoker.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 60, "desclarga", "imagran", "");
+                int idproducto12 = productoCEN.New_("Producto", 200, "Varita Sauco", "VaritaSauco.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 20, "desclarga", "imagran", "");
 
                 int idlista = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.visto, idUsuario);
                 int idlista2 = listaCEN.New_(SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.siguiendo, idUsuario);
