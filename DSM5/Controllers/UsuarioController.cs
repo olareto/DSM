@@ -34,25 +34,7 @@ namespace DSM5.Controllers
                 return RedirectToAction("Details", "Usuario", new { id=hola });
             }
             return RedirectToAction("log", "Usuario",null);
-            /*
-            UsuarioCEN cen = new UsuarioCEN(cad);
-            UsuarioEN en = cen.ReadOID(idus);
-            AssemblerUsuario ass = new AssemblerUsuario();
-            Usuario sol = ass.ConvertENToModelUI(en);
-            **/
-            /**
-            SessionInitialize();
-            UsuarioCAD cad = new UsuarioCAD(session);
-
-            UsuarioCEN cen = new UsuarioCEN(cad);
-            IList<UsuarioEN> enlinst=cen.ReadAll(0, 6);
-            AssemblerUsuario ass = new AssemblerUsuario();
-            IList<Usuario> listart = ass.ConvertListENToModel(enlinst);
            
-            SessionClose();
-    */
-            //articuloAsembler.covert
-            //return View(listart);
         }
 
         // GET: Articulo/Details/5
@@ -513,6 +495,7 @@ namespace DSM5.Controllers
                     System.Web.HttpContext.Current.Session["correo"] = us.Email;
                     System.Web.HttpContext.Current.Session["log"] = true;
                     System.Web.HttpContext.Current.Session["admin"] = false;
+                    System.Web.HttpContext.Current.Session["carrito"] = us.carrito;
 
                     SessionClose();
                     return RedirectToAction("Details", "Usuario", new { id = collection.email});
@@ -527,6 +510,7 @@ namespace DSM5.Controllers
                     System.Web.HttpContext.Current.Session["correo"] = ad.Email;
                     System.Web.HttpContext.Current.Session["log"] = true;
                     System.Web.HttpContext.Current.Session["admin"] = true;
+                    System.Web.HttpContext.Current.Session["carrito"] = ad.carrito;
                     SessionClose();
                     return RedirectToAction("Details", "Usuario", new { id = collection.email });
                 }
@@ -536,6 +520,7 @@ namespace DSM5.Controllers
                     System.Web.HttpContext.Current.Session["correo"] = null;
                     System.Web.HttpContext.Current.Session["log"] = false;
                     System.Web.HttpContext.Current.Session["admin"] = false;
+                    System.Web.HttpContext.Current.Session["carrito"] = null;
                     SessionClose();
                     return RedirectToAction("log", "Usuario");
                 }

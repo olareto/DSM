@@ -38,7 +38,7 @@ public ICapituloCAD get_ICapituloCAD ()
         return this._ICapituloCAD;
 }
 
-public int New_ (int p_temporada, string p_nombre, Nullable<DateTime> p_fecha, string p_descripcion, string p_imagen)
+public int New_ (int p_temporada, string p_nombre, Nullable<DateTime> p_fecha, string p_descripcion, string p_imagen, string p_link)
 {
         CapituloEN capituloEN = null;
         int oid;
@@ -61,13 +61,15 @@ public int New_ (int p_temporada, string p_nombre, Nullable<DateTime> p_fecha, s
 
         capituloEN.Imagen = p_imagen;
 
+        capituloEN.Link = p_link;
+
         //Call to CapituloCAD
 
         oid = _ICapituloCAD.New_ (capituloEN);
         return oid;
 }
 
-public void Modify (int p_Capitulo_OID, string p_nombre, Nullable<DateTime> p_fecha, string p_descripcion, string p_imagen)
+public void Modify (int p_Capitulo_OID, string p_nombre, Nullable<DateTime> p_fecha, string p_descripcion, string p_imagen, string p_link)
 {
         CapituloEN capituloEN = null;
 
@@ -78,6 +80,7 @@ public void Modify (int p_Capitulo_OID, string p_nombre, Nullable<DateTime> p_fe
         capituloEN.Fecha = p_fecha;
         capituloEN.Descripcion = p_descripcion;
         capituloEN.Imagen = p_imagen;
+        capituloEN.Link = p_link;
         //Call to CapituloCAD
 
         _ICapituloCAD.Modify (capituloEN);

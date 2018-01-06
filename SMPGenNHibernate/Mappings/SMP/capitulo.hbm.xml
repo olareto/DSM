@@ -24,6 +24,9 @@
 					<property name="Imagen" type="string"> 
 						<column name="imagen"  not-null="true"/>
 					</property>
+					<property name="Link" type="string"> 
+						<column name="link"  not-null="true"/>
+					</property>
 			
 			
 		  			
@@ -47,6 +50,8 @@
 			
 			
 			
+			
+					
 					
 					
 					

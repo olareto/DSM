@@ -92,6 +92,9 @@ public void ModifyDefault (PeliculaEN pelicula)
                 PeliculaEN peliculaEN = (PeliculaEN)session.Load (typeof(PeliculaEN), pelicula.Id);
 
 
+
+                peliculaEN.Link = pelicula.Link;
+
                 session.Update (peliculaEN);
                 SessionCommit ();
         }
@@ -166,6 +169,9 @@ public void Modify (PeliculaEN pelicula)
 
 
                 peliculaEN.Imagran = pelicula.Imagran;
+
+
+                peliculaEN.Link = pelicula.Link;
 
                 session.Update (peliculaEN);
                 SessionCommit ();

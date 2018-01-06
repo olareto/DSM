@@ -54,6 +54,13 @@ private string imagen;
 
 
 
+/**
+ *	Atributo link
+ */
+private string link;
+
+
+
 
 
 
@@ -99,6 +106,12 @@ public virtual string Imagen {
 
 
 
+public virtual string Link {
+        get { return link; } set { link = value;  }
+}
+
+
+
 
 
 public CapituloEN()
@@ -108,20 +121,20 @@ public CapituloEN()
 
 
 
-public CapituloEN(int id, SMPGenNHibernate.EN.SMP.TemporadaEN temporada, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, string nombre, Nullable<DateTime> fecha, string descripcion, string imagen
+public CapituloEN(int id, SMPGenNHibernate.EN.SMP.TemporadaEN temporada, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, string nombre, Nullable<DateTime> fecha, string descripcion, string imagen, string link
                   )
 {
-        this.init (Id, temporada, comentario, nombre, fecha, descripcion, imagen);
+        this.init (Id, temporada, comentario, nombre, fecha, descripcion, imagen, link);
 }
 
 
 public CapituloEN(CapituloEN capitulo)
 {
-        this.init (Id, capitulo.Temporada, capitulo.Comentario, capitulo.Nombre, capitulo.Fecha, capitulo.Descripcion, capitulo.Imagen);
+        this.init (Id, capitulo.Temporada, capitulo.Comentario, capitulo.Nombre, capitulo.Fecha, capitulo.Descripcion, capitulo.Imagen, capitulo.Link);
 }
 
 private void init (int id
-                   , SMPGenNHibernate.EN.SMP.TemporadaEN temporada, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, string nombre, Nullable<DateTime> fecha, string descripcion, string imagen)
+                   , SMPGenNHibernate.EN.SMP.TemporadaEN temporada, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, string nombre, Nullable<DateTime> fecha, string descripcion, string imagen, string link)
 {
         this.Id = id;
 
@@ -137,6 +150,8 @@ private void init (int id
         this.Descripcion = descripcion;
 
         this.Imagen = imagen;
+
+        this.Link = link;
 }
 
 public override bool Equals (object obj)

@@ -104,6 +104,9 @@ public void ModifyDefault (CapituloEN capitulo)
 
                 capituloEN.Imagen = capitulo.Imagen;
 
+
+                capituloEN.Link = capitulo.Link;
+
                 session.Update (capituloEN);
                 SessionCommit ();
         }
@@ -173,6 +176,9 @@ public void Modify (CapituloEN capitulo)
 
 
                 capituloEN.Imagen = capitulo.Imagen;
+
+
+                capituloEN.Link = capitulo.Link;
 
                 session.Update (capituloEN);
                 SessionCommit ();

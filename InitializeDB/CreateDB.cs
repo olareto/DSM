@@ -159,50 +159,50 @@ public static void InitializeData ()
 
                 string idUsuario = usuarioEN.Email;
 
-                string dstw = "Treinta años después de derrotar al Imperio Galáctico, Han Solo y sus aliados enfrentan una nueva amenaza del malvado Kylo Ren y su ejército de Stormtroopers.";
-                string despider = "Tras los acontecimientos del Capitán América: Guerra civil, Peter Parker, con la ayuda de su mentor Tony Stark, intenta equilibrar su vida como un estudiante normal de secundaria en Queens, Nueva York, con la lucha contra el crimen como su superhéroe alter ego Spider- El hombre como una nueva amenaza, el Buitre, emerge.";
-                string djumanji = "Las tornas se vuelven cuando cuatro adolescentes son absorbidos por el mundo de Jumanji: enfrentado a rinocerontes, mambas negras y una interminable variedad de trampas y acertijos de la jungla. Para sobrevivir, jugarán como personajes del juego.";
-                string dc = "A pesar de la desconcertante prohibición de la generación de música de su familia, Miguel sueña con convertirse en un músico consumado como su ídolo, Ernesto de la Cruz.";
-                string dperfdesc = "La historia se desarrolla a lo largo de una noche, durante un eclipse lunar, en el hogar de Alfonso y Eva, una pareja profesional bien curada preocupada por su hija adolescente y por la monotonía de sus vidas.";
-                string ddandonota = "Después de ganar los campeonatos del mundo, los Bellas se dividen y descubren que no hay perspectivas de trabajo para hacer música con la boca. Pero cuando tengan la oportunidad de reunirse para una gira USO en el extranjero, este grupo de genios increíbles se unirán para hacer algo de música, y algunas decisiones cuestionables, una última vez.";
-                string dferdi = "Ferdinand, un pequeño toro, prefiere sentarse tranquilamente bajo un árbol de corcho oliendo las flores, saltando, resoplando y golpeándose la cabeza con otros toros. A medida que Ferdinand crece grande y fuerte, su temperamento se mantiene suave, pero un día cinco hombres vienen a elegir el toro más grande, más rápido y más rudo para las corridas de toros en Madrid y Fernando es elegido por error. Basado en el clásico libro infantil de 1936 de Munro Leaf.";
-                string dww = "La historia de cuatro personajes cuyas vidas se entrelazan en medio del ajetreo y el bullicio del parque de atracciones Coney Island en la década de 1950: Ginny, una ex actriz emocionalmente volátil que ahora trabaja como camarera en una casa de almejas; Humpty, el operador operador de carrusel de Ginny; Mickey, un joven y guapo socorrista que sueña con convertirse en dramaturgo; y Carolina, la hija de Humpty que estuvo lejos, que ahora se esconde de los mafiosos en el departamento de su padre.";
-                string dit = "En una pequeña ciudad de Maine, siete niños conocidos como The Losers Club se enfrentan cara a cara con problemas de la vida, matones y un monstruo que toma la forma de un payaso llamado Pennywise.";
-                string dwoman = "Una princesa de Amazon llega al mundo del Hombre para convertirse en la más grande de los superhéroes femeninos.";
-                string dhday = "Una estudiante universitaria revive el día de su asesinato una y otra vez mientras trata de descubrir la identidad de su asesino. ";
-                string dgru = "Gru y su esposa Lucy deben evitar que la ex estrella infantil de los 80, Balthazar Bratt, alcance la dominación mundial.";
-                string dhrr1 = "Harry, Ron y Hermione se alejan de su último año en Hogwarts para encontrar y destruir los Horcruxes restantes, poniendo fin a la apuesta de Voldemort por la inmortalidad. Pero con el amado Dumbledore de Harry muerto y los inescrupulosos Mortífagos de Voldemort suelto, el mundo es más peligroso que nunca.";
-                string dhrr2 = "Harry, Ron y Hermione continúan su búsqueda para vencer al malvado Voldemort de una vez por todas. Justo cuando las cosas comienzan a parecer desesperanzadas para los jóvenes magos, Harry descubre un trío de objetos mágicos que le otorgan poderes para competir con las formidables habilidades de Voldemort.";
-                string dblad = "Treinta años después de los acontecimientos de la primera película, un nuevo corredor de cuchillas, el oficial K de LAPD, descubre un secreto oculto desde hace mucho tiempo que tiene el potencial de sumergir lo que queda de la sociedad en el caos. El descubrimiento de K lo lleva en una búsqueda para encontrar a Rick Deckard, un ex corredor de armas de LAPD que ha estado desaparecido durante 30 años.";
-                string dbay = "El salvavidas devoto, Mitch Buchannon, golpea la cabeza con un nuevo recluta temerario. Juntos, descubren un complot criminal local que amenaza el futuro de la Bahía.";
+                string dstw = "Treinta aï¿½os despuï¿½s de derrotar al Imperio Galï¿½ctico, Han Solo y sus aliados enfrentan una nueva amenaza del malvado Kylo Ren y su ejï¿½rcito de Stormtroopers.";
+                string despider = "Tras los acontecimientos del Capitï¿½n Amï¿½rica: Guerra civil, Peter Parker, con la ayuda de su mentor Tony Stark, intenta equilibrar su vida como un estudiante normal de secundaria en Queens, Nueva York, con la lucha contra el crimen como su superhï¿½roe alter ego Spider- El hombre como una nueva amenaza, el Buitre, emerge.";
+                string djumanji = "Las tornas se vuelven cuando cuatro adolescentes son absorbidos por el mundo de Jumanji: enfrentado a rinocerontes, mambas negras y una interminable variedad de trampas y acertijos de la jungla. Para sobrevivir, jugarï¿½n como personajes del juego.";
+                string dc = "A pesar de la desconcertante prohibiciï¿½n de la generaciï¿½n de mï¿½sica de su familia, Miguel sueï¿½a con convertirse en un mï¿½sico consumado como su ï¿½dolo, Ernesto de la Cruz.";
+                string dperfdesc = "La historia se desarrolla a lo largo de una noche, durante un eclipse lunar, en el hogar de Alfonso y Eva, una pareja profesional bien curada preocupada por su hija adolescente y por la monotonï¿½a de sus vidas.";
+                string ddandonota = "Despuï¿½s de ganar los campeonatos del mundo, los Bellas se dividen y descubren que no hay perspectivas de trabajo para hacer mï¿½sica con la boca. Pero cuando tengan la oportunidad de reunirse para una gira USO en el extranjero, este grupo de genios increï¿½bles se unirï¿½n para hacer algo de mï¿½sica, y algunas decisiones cuestionables, una ï¿½ltima vez.";
+                string dferdi = "Ferdinand, un pequeï¿½o toro, prefiere sentarse tranquilamente bajo un ï¿½rbol de corcho oliendo las flores, saltando, resoplando y golpeï¿½ndose la cabeza con otros toros. A medida que Ferdinand crece grande y fuerte, su temperamento se mantiene suave, pero un dï¿½a cinco hombres vienen a elegir el toro mï¿½s grande, mï¿½s rï¿½pido y mï¿½s rudo para las corridas de toros en Madrid y Fernando es elegido por error. Basado en el clï¿½sico libro infantil de 1936 de Munro Leaf.";
+                string dww = "La historia de cuatro personajes cuyas vidas se entrelazan en medio del ajetreo y el bullicio del parque de atracciones Coney Island en la dï¿½cada de 1950: Ginny, una ex actriz emocionalmente volï¿½til que ahora trabaja como camarera en una casa de almejas; Humpty, el operador operador de carrusel de Ginny; Mickey, un joven y guapo socorrista que sueï¿½a con convertirse en dramaturgo; y Carolina, la hija de Humpty que estuvo lejos, que ahora se esconde de los mafiosos en el departamento de su padre.";
+                string dit = "En una pequeï¿½a ciudad de Maine, siete niï¿½os conocidos como The Losers Club se enfrentan cara a cara con problemas de la vida, matones y un monstruo que toma la forma de un payaso llamado Pennywise.";
+                string dwoman = "Una princesa de Amazon llega al mundo del Hombre para convertirse en la mï¿½s grande de los superhï¿½roes femeninos.";
+                string dhday = "Una estudiante universitaria revive el dï¿½a de su asesinato una y otra vez mientras trata de descubrir la identidad de su asesino. ";
+                string dgru = "Gru y su esposa Lucy deben evitar que la ex estrella infantil de los 80, Balthazar Bratt, alcance la dominaciï¿½n mundial.";
+                string dhrr1 = "Harry, Ron y Hermione se alejan de su ï¿½ltimo aï¿½o en Hogwarts para encontrar y destruir los Horcruxes restantes, poniendo fin a la apuesta de Voldemort por la inmortalidad. Pero con el amado Dumbledore de Harry muerto y los inescrupulosos Mortï¿½fagos de Voldemort suelto, el mundo es mï¿½s peligroso que nunca.";
+                string dhrr2 = "Harry, Ron y Hermione continï¿½an su bï¿½squeda para vencer al malvado Voldemort de una vez por todas. Justo cuando las cosas comienzan a parecer desesperanzadas para los jï¿½venes magos, Harry descubre un trï¿½o de objetos mï¿½gicos que le otorgan poderes para competir con las formidables habilidades de Voldemort.";
+                string dblad = "Treinta aï¿½os despuï¿½s de los acontecimientos de la primera pelï¿½cula, un nuevo corredor de cuchillas, el oficial K de LAPD, descubre un secreto oculto desde hace mucho tiempo que tiene el potencial de sumergir lo que queda de la sociedad en el caos. El descubrimiento de K lo lleva en una bï¿½squeda para encontrar a Rick Deckard, un ex corredor de armas de LAPD que ha estado desaparecido durante 30 aï¿½os.";
+                string dbay = "El salvavidas devoto, Mitch Buchannon, golpea la cabeza con un nuevo recluta temerario. Juntos, descubren un complot criminal local que amenaza el futuro de la Bahï¿½a.";
 
-       
-                string dluci = "Lucifer, el ángel caído original, está aburrido e infeliz en el infierno y decide retirarse a Los Ángeles y abrir una discoteca de lujo. Después de que se produce un asesinato fuera de su club, conoce a una intrigante detective de homicidios llamada Chloe, y se asocia con ella para resolver casos.";
+
+                string dluci = "Lucifer, el ï¿½ngel caï¿½do original, estï¿½ aburrido e infeliz en el infierno y decide retirarse a Los ï¿½ngeles y abrir una discoteca de lujo. Despuï¿½s de que se produce un asesinato fuera de su club, conoce a una intrigante detective de homicidios llamada Chloe, y se asocia con ella para resolver casos.";
 
                 string dvegas = "Situado en el vuelo de la noche del viernes desde LAX a Las Vegas y el vuelo de regreso el domingo, un grupo de marginados que intentan encontrar su lugar en el mundo, todos comparten el mismo objetivo: volver a ser un ganador en el casino de la vida. ";
-                string dhappy = "Nick Sax es un ex policia borracho y corrupto que se convierte en un sicario, y que esta a la deriva en un mundo de asesinatos casuales, sexo desalmado y traicion. Despues de que un trabajo falla, su vida ebria es cambiada para siempre por un caballo alado pequeño, implacablemente positivo e imaginario llamado Happy.";
-                string ddam = "Seth Davenport parece ser un pequeño predicador de la ciudad de Iowa, pero tiene ambiciones de comenzar una insurreccion en toda regla contra el status quo. Pero el no sabe que un magnate industrial ha contratado a un rompehuelgas profesional mortal llamado Creeley Turner para detener esa insurreccion por cualquier medio necesario. Y desconocido para quienes los rodean, estos dos hombres comparten un pasado sangriento secreto.";
-                string dvh = "Vanessa Helsing, pariente lejana del famoso cazador de vampiros Abraham Van Helsing, es resucitada solo para descubrir que los vampiros se han adueñado del mundo.";
+                string dhappy = "Nick Sax es un ex policia borracho y corrupto que se convierte en un sicario, y que esta a la deriva en un mundo de asesinatos casuales, sexo desalmado y traicion. Despues de que un trabajo falla, su vida ebria es cambiada para siempre por un caballo alado pequeï¿½o, implacablemente positivo e imaginario llamado Happy.";
+                string ddam = "Seth Davenport parece ser un pequeï¿½o predicador de la ciudad de Iowa, pero tiene ambiciones de comenzar una insurreccion en toda regla contra el status quo. Pero el no sabe que un magnate industrial ha contratado a un rompehuelgas profesional mortal llamado Creeley Turner para detener esa insurreccion por cualquier medio necesario. Y desconocido para quienes los rodean, estos dos hombres comparten un pasado sangriento secreto.";
+                string dvh = "Vanessa Helsing, pariente lejana del famoso cazador de vampiros Abraham Van Helsing, es resucitada solo para descubrir que los vampiros se han adueï¿½ado del mundo.";
                 string drw = "Despues de descubrir que sus padres son super villanos disfrazados, un grupo de adolescentes se junta para huir de sus hogares a fin de expiar las acciones de sus padres y descubrir los secretos de sus origenes.";
                 string dgot = "Siete familias nobles luchan por el control de la tierra mitica de Poniente. La friccion entre las casas conduce a una guerra a gran escala. Todo mientras un mal muy antiguo despierta en el extremo norte. En medio de la guerra, una orden militar descuidada de inadaptados, la Guardia de la Noche, es todo lo que se interpone entre los reinos de los hombres y los helados horrores mas alla.";
-                string dbgbg = "¿Que sucede cuando los compañeros de cuarto hiperinteligentes Sheldon y Leonard conocen a Penny, una belleza de espiritu libre que se mueve en la casa de al lado, y se dan cuenta de que no saben casi nada sobre la vida fuera del laboratorio. Completan la tripulacion el fanatico Wolowitz, que piensa que es tan sexy como el, y Koothrappali, que no puede hablar en presencia de una mujer.";
-                string dhimym = "El año es 2030. Ted Mosby transmite la historia de como conocio a su esposa a su hija e hijo. La historia comienza en el año 2005, cuando el entonces arquitecto Ted, de veintisiete años, se anima a querer casarse despues de sus mejores amigos de Wesleyan, el abogado Marshall Eriksen, que era su compañero de habitacion en ese momento y maestro de jardin de infantes. Lily Aldrin, se comprometio despues de nueve años de salir juntos.";
-                string d13 = "Sigue al adolescente Clay Jensen, en su busqueda para descubrir la historia detras de su compañera de clase y enamoramiento, Hannah, y su decision de poner fin a su vida.";
-                string dst = "Cuando un niño desaparece, su madre, un jefe de policia y sus amigos deben enfrentar fuerzas terrorificas para recuperarlo.";
-                string dRYM = "Una serie animada que sigue las hazañas de un super cientifico y su nieto no tan brillante. ";
-                string dysh = "La vida temprana del niño genio Sheldon Cooper, mas tarde visto en The Big Bang Theory (2007).";
-                string dbmir = "Una serie de antologic¡a de television que muestra el lado oscuro de la vida y la tecnologia.";
+                string dbgbg = "ï¿½Que sucede cuando los compaï¿½eros de cuarto hiperinteligentes Sheldon y Leonard conocen a Penny, una belleza de espiritu libre que se mueve en la casa de al lado, y se dan cuenta de que no saben casi nada sobre la vida fuera del laboratorio. Completan la tripulacion el fanatico Wolowitz, que piensa que es tan sexy como el, y Koothrappali, que no puede hablar en presencia de una mujer.";
+                string dhimym = "El aï¿½o es 2030. Ted Mosby transmite la historia de como conocio a su esposa a su hija e hijo. La historia comienza en el aï¿½o 2005, cuando el entonces arquitecto Ted, de veintisiete aï¿½os, se anima a querer casarse despues de sus mejores amigos de Wesleyan, el abogado Marshall Eriksen, que era su compaï¿½ero de habitacion en ese momento y maestro de jardin de infantes. Lily Aldrin, se comprometio despues de nueve aï¿½os de salir juntos.";
+                string d13 = "Sigue al adolescente Clay Jensen, en su busqueda para descubrir la historia detras de su compaï¿½era de clase y enamoramiento, Hannah, y su decision de poner fin a su vida.";
+                string dst = "Cuando un niï¿½o desaparece, su madre, un jefe de policia y sus amigos deben enfrentar fuerzas terrorificas para recuperarlo.";
+                string dRYM = "Una serie animada que sigue las hazaï¿½as de un super cientifico y su nieto no tan brillante. ";
+                string dysh = "La vida temprana del niï¿½o genio Sheldon Cooper, mas tarde visto en The Big Bang Theory (2007).";
+                string dbmir = "Una serie de antologicï¿½a de television que muestra el lado oscuro de la vida y la tecnologia.";
                 string dvik = "Vikingos sigue las aventuras de Ragnar Lothbrok, el mas grande heroe de su edad. La serie cuenta las sagas de la banda de hermanos vikingos de Ragnar y su familia, mientras se eleva para convertirse en rey de las tribus vikingas. Ademas de ser un valiente guerrero, Ragnar encarna las tradiciones nordicas de devocion a los dioses, segun la leyenda, el era un descendiente directo de Odin, el dios de la guerra y los guerreros.";
                 string dmrr = "El Sr. Robot sigue a Elliot, un joven programador que trabaja de ingeniero de ciberseguridad de dia y un hacker vigilante por la noche. Elliot se encuentra en una encrucijada cuando el misterioso lider de un grupo clandestino de hackers lo recluta para destruir la corporacion a la que se le paga por proteger.";
 
                 //string idUsuario = usuarioCEN.New_("usuario", "apellidos", "contrasenya", "correo", "direcccion", "pago", "imagen");
                 //adminCEN.New_ ("usuario", "apellidos", "contrasenya", "correo", "direcccion", "pago", "imagen"));
                 int idevento = eventoCEN.New_ ("Evento", 70, "Musical del Rey Leon", "reyleon.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Musical");
-                int idevento2 = eventoCEN.New_("Evento", 60, "Entrada del Parque Harry Potter", "HarryPotterParque.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Parque");
-                int idevento3 = eventoCEN.New_("Evento", 5, "Visita guiada a la ua", "UA.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.dos, 8, "desclarga", "imagran", "Estudios");
-                int idevento4 = eventoCEN.New_("Evento", 25, "Estreno Star Wars", "EstrenoStarWars.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Cine");
-                int idevento5 = eventoCEN.New_("Evento", 60, "Sinfonia Harry Potter", "sinharry.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Musica Orquesta");
-                int idevento6 = eventoCEN.New_("Evento", 15, "Comic Con Madrid", "comic.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, 8, "desclarga", "imagran", "Evento");
+                int idevento2 = eventoCEN.New_ ("Evento", 60, "Entrada del Parque Harry Potter", "HarryPotterParque.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Parque");
+                int idevento3 = eventoCEN.New_ ("Evento", 5, "Visita guiada a la ua", "UA.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.dos, 8, "desclarga", "imagran", "Estudios");
+                int idevento4 = eventoCEN.New_ ("Evento", 25, "Estreno Star Wars", "EstrenoStarWars.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Cine");
+                int idevento5 = eventoCEN.New_ ("Evento", 60, "Sinfonia Harry Potter", "sinharry.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Musica Orquesta");
+                int idevento6 = eventoCEN.New_ ("Evento", 15, "Comic Con Madrid", "comic.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, 8, "desclarga", "imagran", "Evento");
 
                 int idCarrito = carritoCEN.New_ (idUsuario, 50000);
 
@@ -214,21 +214,21 @@ public static void InitializeData ()
                 int idoferta = ofertaCEN.New_ (idArticulo, new DateTime (1993, 12, 3), new DateTime (1993, 12, 3), 99);
 
                 int idproducto = productoCEN.New_ ("Producto", 40, "Figura Balrog", "Balrog.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, 80, "desclarga", "imagran", "Media");
-                int idproducto2 = productoCEN.New_("Producto", 35, "Camiseta Legolas", "CamisetaLegolas.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, 80, "desclarga", "imagran", "S,M,L,XL");
-                int idproducto3 = productoCEN.New_("Producto", 68, "Casco Darth Vader", "CascoDarthVader.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 30, "desclarga", "imagran", "Media");
-                int idproducto4 = productoCEN.New_("Producto", 29, "FunkoPop Frodo", "FunkoPopFrodo.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.dos, 100, "desclarga", "imagran", "Pequeña");
-                int idproducto5 = productoCEN.New_("Producto", 30, "Figura Harley Quinn", "HarleyQuinn.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, 80, "desclarga", "imagran", "Pequeña");
-                int idproducto6 = productoCEN.New_("Producto", 8, "Llavero Smaug", "LlaveroSmaug.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.dos, 80, "desclarga", "imagran", "");
-                int idproducto7 = productoCEN.New_("Producto", 100, "Espada Laser", "EspadaLaserRoja.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 20, "desclarga", "imagran", "");
-                int idproducto8 = productoCEN.New_("Producto", 39, "Monopoly Señor de los anillos", "MonopolySeñorAnillos.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, 80, "desclarga", "imagran", "");
-                int idproducto9 = productoCEN.New_("Producto", 180, "Ninmubs200", "Ninmubs200.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 20, "desclarga", "imagran", "media");
-                int idproducto10 = productoCEN.New_("Producto", 35, "Sudadera Harley Quinn", "SudaderaHarleyQuinn.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, 80, "desclarga", "imagran", "S,M,L,XL");
-                int idproducto11 = productoCEN.New_("Producto", 24, "Taza Joker", "TazaJoker.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 60, "desclarga", "imagran", "");
-                int idproducto12 = productoCEN.New_("Producto", 200, "Varita Sauco", "VaritaSauco.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 20, "desclarga", "imagran", "");
+                int idproducto2 = productoCEN.New_ ("Producto", 35, "Camiseta Legolas", "CamisetaLegolas.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, 80, "desclarga", "imagran", "S,M,L,XL");
+                int idproducto3 = productoCEN.New_ ("Producto", 68, "Casco Darth Vader", "CascoDarthVader.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 30, "desclarga", "imagran", "Media");
+                int idproducto4 = productoCEN.New_ ("Producto", 29, "FunkoPop Frodo", "FunkoPopFrodo.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.dos, 100, "desclarga", "imagran", "Pequeï¿½a");
+                int idproducto5 = productoCEN.New_ ("Producto", 30, "Figura Harley Quinn", "HarleyQuinn.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, 80, "desclarga", "imagran", "Pequeï¿½a");
+                int idproducto6 = productoCEN.New_ ("Producto", 8, "Llavero Smaug", "LlaveroSmaug.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.dos, 80, "desclarga", "imagran", "");
+                int idproducto7 = productoCEN.New_ ("Producto", 100, "Espada Laser", "EspadaLaserRoja.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 20, "desclarga", "imagran", "");
+                int idproducto8 = productoCEN.New_ ("Producto", 39, "Monopoly Seï¿½or de los anillos", "MonopolySeï¿½orAnillos.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, 80, "desclarga", "imagran", "");
+                int idproducto9 = productoCEN.New_ ("Producto", 180, "Ninmubs200", "Ninmubs200.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 20, "desclarga", "imagran", "media");
+                int idproducto10 = productoCEN.New_ ("Producto", 35, "Sudadera Harley Quinn", "SudaderaHarleyQuinn.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, 80, "desclarga", "imagran", "S,M,L,XL");
+                int idproducto11 = productoCEN.New_ ("Producto", 24, "Taza Joker", "TazaJoker.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 60, "desclarga", "imagran", "");
+                int idproducto12 = productoCEN.New_ ("Producto", 200, "Varita Sauco", "VaritaSauco.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 20, "desclarga", "imagran", "");
 
                 int idlista = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.visto, idUsuario);
-                int idlista2 = listaCEN.New_(SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.siguiendo, idUsuario);
-                int idlista3 = listaCEN.New_(SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.favorito, idUsuario);
+                int idlista2 = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.siguiendo, idUsuario);
+                int idlista3 = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.favorito, idUsuario);
 
                 int idcomentario = comentarioCEN.New_ ("comentario", "autor", new DateTime (1993, 12, 3));
 
@@ -271,16 +271,16 @@ public static void InitializeData ()
 
                 // idtemporada01 -> serie 0 temporada 1; idtemporada11 -> serie 1 temporada 1 .....
                 int idtemporada01 = temporadaCEN.New_ (idserie, "Temporada 1");
-                int idtemporada02 = temporadaCEN.New_(idserie, "Temporada 2");
-                int idtemporada03 = temporadaCEN.New_(idserie, "Temporada 3");
+                int idtemporada02 = temporadaCEN.New_ (idserie, "Temporada 2");
+                int idtemporada03 = temporadaCEN.New_ (idserie, "Temporada 3");
                 int idtemporada11 = temporadaCEN.New_ (idserie2, "Temporada 1");
 
                 int idcapitulo = capituloCEN.New_ (idtemporada01, "WHAT", new DateTime (1993, 12, 3), "descripccion", "imagen");
                 int idcapitulo2 = capituloCEN.New_ (idtemporada01, "Who", new DateTime (1993, 12, 3), "descripccion", "imagen");
-                int idcapitulo3 = capituloCEN.New_(idtemporada01, "WHEN", new DateTime(1993, 12, 3), "descripccion", "imagen");
-                int idcapitulo4 = capituloCEN.New_(idtemporada02, "Mandingo", new DateTime(1993, 12, 3), "descripccion", "imagen");
-                int idcapitulo5 = capituloCEN.New_(idtemporada02, "Yes", new DateTime(1993, 12, 3), "descripccion", "imagen");
-                int idcapitulo6 = capituloCEN.New_(idtemporada03, "Techo", new DateTime(1993, 12, 3), "descripccion", "imagen");
+                int idcapitulo3 = capituloCEN.New_ (idtemporada01, "WHEN", new DateTime (1993, 12, 3), "descripccion", "imagen");
+                int idcapitulo4 = capituloCEN.New_ (idtemporada02, "Mandingo", new DateTime (1993, 12, 3), "descripccion", "imagen");
+                int idcapitulo5 = capituloCEN.New_ (idtemporada02, "Yes", new DateTime (1993, 12, 3), "descripccion", "imagen");
+                int idcapitulo6 = capituloCEN.New_ (idtemporada03, "Techo", new DateTime (1993, 12, 3), "descripccion", "imagen");
 
                 #endregion
 

@@ -13,9 +13,12 @@ namespace DSM5.Models
             public int id { get; set; }
 
 
+        [Display(Prompt = "Nombre del Capitulo", Description = "Nombre del Capitulo", Name = "link ")]
+        [Required(ErrorMessage = "Debe indicar un nombre para el Capitulo")]
+        [StringLength(maximumLength: 200, ErrorMessage = "El nombre no puede tener más de 200 caracteres")]
+        public string link { get; set; }
 
-
-            [Display(Prompt = "Nombre de la pelicula", Description = "Nombre de la Pelicula", Name = "Nombre ")]
+        [Display(Prompt = "Nombre de la pelicula", Description = "Nombre de la Pelicula", Name = "Nombre ")]
             [Required(ErrorMessage = "Debe indicar un nombre para la Pelicula")]
             [StringLength(maximumLength: 200, ErrorMessage = "El nombre no puede tener más de 200 caracteres")]
             public string Nombre { get; set; }

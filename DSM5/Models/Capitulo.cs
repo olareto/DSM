@@ -29,6 +29,10 @@ namespace DSM5.Models
         [StringLength(maximumLength: 200, ErrorMessage = "El nombre no puede tener más de 200 caracteres")]
         public string Nombre { get; set; }
 
+        [Display(Prompt = "Nombre del Capitulo", Description = "Nombre del Capitulo", Name = "link ")]
+        [Required(ErrorMessage = "Debe indicar un nombre para el Capitulo")]
+        [StringLength(maximumLength: 200, ErrorMessage = "El nombre no puede tener más de 200 caracteres")]
+        public string link { get; set; }
 
         [Display(Prompt = "fecha del Capitulo", Description = "fecha del Capitulo", Name = "fecha ")]
         [Required(ErrorMessage = "Debe indicar un fecha para el Capitulo")]

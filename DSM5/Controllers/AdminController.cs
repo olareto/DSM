@@ -1,4 +1,5 @@
 ﻿using DSM5.Models;
+using SMPGenNHibernate.CAD.SMP;
 using SMPGenNHibernate.CEN.SMP;
 using SMPGenNHibernate.EN.SMP;
 using System;
@@ -26,23 +27,30 @@ namespace DSM5.Controllers
         // GET: Articulo/Details/5
         public ActionResult Details(string id)
         {
-            AdminCEN cen = new AdminCEN();
+            SessionInitialize();
+            AdminCAD cad = new AdminCAD(session);
+            AdminCEN cen = new AdminCEN(cad);
 
             AdminEN en = new AdminEN();
-            
+
             en = cen.ReadOID(id);
+
+            // CarritoCEN cenc = new CarritoCEN();
+            //CarritoEN enc = new CarritoEN();
+            //enc = en.Carrito;
+
             AssemblerAdmin ass = new AssemblerAdmin();
-            Admin sol =ass.ConvertENToModelUI(en);
-            
+            Admin sol = ass.ConvertENToModelUI(en);
+
+            SessionClose();
             return View(sol);
         }
 
         // GET: Articulo/Create
         public ActionResult Create()
         {
-            AdminEN en = new AdminEN();
-            AssemblerAdmin ass = new AssemblerAdmin();
-            Admin sol = ass.ConvertENToModelUI(en);
+            
+            Admin sol = new Admin();
             return View(sol);
         }
 
@@ -67,18 +75,22 @@ namespace DSM5.Controllers
         public ActionResult Edit(string id)
         {
 
-            AdminCEN cen = new AdminCEN();
+            SessionInitialize();
+            AdminCAD cad = new AdminCAD(session);
+            AdminCEN cen = new AdminCEN(cad);
 
             AdminEN en = new AdminEN();
+
             en = cen.ReadOID(id);
 
-            // SessionInitializeTransaction();
+            // CarritoCEN cenc = new CarritoCEN();
+            //CarritoEN enc = new CarritoEN();
+            //enc = en.Carrito;
 
-            //IProducto productoCAD = new productoCAD(session);
-
-            // ProductoEN en = new Pro;
             AssemblerAdmin ass = new AssemblerAdmin();
             Admin sol = ass.ConvertENToModelUI(en);
+
+            SessionClose();
             return View(sol);
         }
 
@@ -105,12 +117,22 @@ namespace DSM5.Controllers
         public ActionResult Delete(string id)
         {
 
-            AdminCEN cen = new AdminCEN();
+            SessionInitialize();
+            AdminCAD cad = new AdminCAD(session);
+            AdminCEN cen = new AdminCEN(cad);
 
             AdminEN en = new AdminEN();
+
             en = cen.ReadOID(id);
+
+            // CarritoCEN cenc = new CarritoCEN();
+            //CarritoEN enc = new CarritoEN();
+            //enc = en.Carrito;
+
             AssemblerAdmin ass = new AssemblerAdmin();
             Admin sol = ass.ConvertENToModelUI(en);
+
+            SessionClose();
             return View(sol);
         }
 

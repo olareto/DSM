@@ -16,6 +16,9 @@
 
 			
 					
+					<property name="Link" type="string"> 
+						<column name="link"  not-null="true"/>
+					</property>
 			
 			
 		  			
@@ -39,6 +42,8 @@
 									<column name="FK_idLista_idLista_0"/> 
       						</many-to-many>
     					</bag>
+			
+					
 					
 					
 		

@@ -24,7 +24,7 @@ namespace DSM5.Models
                 pel.fecha = DateTime.Today;
             pel.genero = en.Genero;
             pel.imagran = en.Imagran;
-      
+            pel.link = en.Link;
             return pel;
 
 

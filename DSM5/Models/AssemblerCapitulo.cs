@@ -17,9 +17,9 @@ namespace DSM5.Models
                 art.temporada = en.Temporada.Id;
                
             }
-         
 
 
+            art.link = en.Link;
             art.Nombre = en.Nombre;
             if (en.Fecha != null)
                 art.fecha = (DateTime)en.Fecha;
