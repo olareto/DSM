@@ -12,8 +12,8 @@
                 @Html.ActionLink(item.Nombre, "mostrar_cap", "Temporada", new { id = item.id, tipo = @ViewData["controller"] }, null)
             </div>
             <div class="col-md-2 admin">
-                @Html.ActionLink("Edit", "Edit", "Temporada", new { id = item.id, tipo = @ViewData["controller"] }, null)
-                @Html.ActionLink("Delete", "Delete", "Temporada", new { id = item.id, tipo = @ViewData["controller"] }, null)
+                @Html.ActionLink("Editar", "Edit", "Temporada", new { id = item.id, tipo = @ViewData["controller"] }, null)
+                @Html.ActionLink("Borrar", "Delete", "Temporada", new { id = item.id, tipo = @ViewData["controller"] }, null)
             </div>
             <hr />
         </div>
