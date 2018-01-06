@@ -1,49 +1,29 @@
 ﻿@model DSM5.Models.Pelicula
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Borrar película";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Pelicula</h4>
+<div class="container">
+    <h3 class="admin">¿Esta seguro de que desea borrar la película @Html.DisplayFor(model => model.Nombre)?</h3>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
+    <div class="row">
+        <img class="cartelera col-md-3 gerMargenLetras" src='~/Images/cartelera/@Html.DisplayFor(modelItem => modelItem.Imagen)' />
+        <div class="col-md-7 gerMargenLetras">
+            <h4><strong>Título: </strong>@Html.DisplayFor(model => model.Nombre)</h4>
+            <h4><strong>Género: </strong>@Html.DisplayFor(model => model.genero)</h4>
+            <h4><strong>Valoración: </strong>@Html.DisplayFor(model => model.Valoracion)</h4>
+            <hr />
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Valoracion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Valoracion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Imagen)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Imagen)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back", @ViewData["action"] as string, @ViewData["controller"] as string, @ViewData["arg"], null)|
+                <div class="form-actions no-color">
+                    <input type="submit" value="Borrar" class="btn btn-danger" />
+                    @Html.ActionLink("Back", @ViewData["action"] as string, @ViewData["controller"] as string, @ViewData["arg"], null)
+                </div>
+            }
         </div>
-    }
+    </div>
 </div>

@@ -1,41 +1,30 @@
 ﻿@model IEnumerable<DSM5.Models.Comentario>
 
-<p>
-    
-    @Html.ActionLink("Comentar", "Create", "Comentario", new { id = @ViewData["id_serie"] }, null)
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.autor)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.comentario)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fecha)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.autor)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.comentario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.fecha)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", "Comentario", new { id = item.id, tipo = @ViewData["controller"] }, null)
-            @Html.ActionLink("Details", "Details", "Comentario", new { id = item.id, tipo = @ViewData["controller"] }, null)
-            @Html.ActionLink("Delete", "Delete", "Comentario", new { id = item.id, tipo = @ViewData["controller"] }, null)
-           
-        </td>
-    </tr>
-}
-
-</table>
+<div class="container">
+    <p>
+        @Html.ActionLink("Comentar", "Create", "Comentario", new { id = @ViewData["id_serie"] }, null)
+    </p>
+    @foreach (var item in Model)
+    {
+        <hr />
+        <div class="row">
+            <div class="col-md-1">
+                <p>@Html.DisplayFor(model => item.autor)</p>
+            </div>
+            <div class="col-md-9">
+                <p>@Html.DisplayFor(model => item.comentario)</p>
+            </div>
+            <div class="col-md-2">
+                @Html.ActionLink("Edit", "Edit", "Comentario", new { id = item.id, tipo = @ViewData["controller"] }, null)
+                @Html.ActionLink("Details", "Details", "Comentario", new { id = item.id, tipo = @ViewData["controller"] }, null)
+                @Html.ActionLink("Delete", "Delete", "Comentario", new { id = item.id, tipo = @ViewData["controller"] }, null)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                @Html.DisplayFor(model => item.fecha)
+            </div>
+        </div>    
+    }
+</div>

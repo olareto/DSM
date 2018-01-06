@@ -367,6 +367,7 @@
     <Content Include="Views\Usuario\mostrarlista.cshtml" />
     <Content Include="Views\Usuario\_Serie.cshtml" />
     <Content Include="Views\Usuario\_Pelicula.cshtml" />
+    <Content Include="Views\Shared\_Temporada.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

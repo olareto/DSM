@@ -215,47 +215,55 @@ public static void InitializeData ()
                 int idcomentario = comentarioCEN.New_ ("comentario", "autor", new DateTime (1993, 12, 3));
 
                 int idpelicula = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Star Wars:Episodio VII", "i5.jpg", "desclarga", dstw, "ciencia ficcion", new DateTime (1993, 12, 3), "estarwa.jpg");
-                int idpelicula2 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Jumanji", "i2.jpg", "desclarga", djumanji, "Genero:Ficcion", new DateTime (1993, 12, 3), "jumanji.jpg");
-                int idpelicula3 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "COCO", "i7.jpg", "desclarga", dc, "Genero:Animacion", new DateTime (1993, 12, 3), "coco.jpg");
-                int idpelicula4 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Perfectos desconocidos", "i3.jpg", "desclarga", dperfdesc, "Genero:Tragicomedia", new DateTime (1993, 12, 3), "perfectdesc.jpg");
-                int idpelicula5 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Dando la nota 3", "i4.jpg", "desclarga", ddandonota, "Genero:Comedia", new DateTime (1993, 12, 3), "dandolanota.jpg");
-                int idpelicula6 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Ferdinand", "ferdi.jpg", "desclarga", dferdi, "Genero:Animacion", new DateTime (1993, 12, 3), "ferdinand.jpg");
-                int idpelicula7 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Wonder Wheel", "i8.jpg", "desclarga", dww, "Genero:Dramatico", new DateTime (1993, 12, 3), "wonderwheel.jpg");
-                int idpelicula8 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Spider-Man: Homecoming", "spider.jpg", "desclarga", despider, "Genero:Ciencia Ficcion", new DateTime (1993, 12, 3), "man.jpg");
-                int idpelicula9 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Wonder Woman", "ww.jpg", "desclarga", dwoman, "Genero:Ciencia Ficcion", new DateTime (1993, 12, 3), "woman.jpg");
-                int idpelicula10 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "it", "it.jpg", "desclarga", dit, "Genero:Terror", new DateTime (1993, 12, 3), "ittt.jpg");
-                int idpelicula11 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Feliz dia de tu muerte", "hday.jpg", "desclarga", dhday, "Genero:Terror", new DateTime (1993, 12, 3), "muerte.jpg");
-                int idpelicula12 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, "Despicable Me 3", "gru.jpg", "desclarga", dgru, "Genero:Animacion", new DateTime (1993, 12, 3), "gru3.jpg");
-                int idpelicula13 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Harry Potter y las reliquias de la muerte: Parte 1", "hrr1.jpg", "desclarga", dhrr1, "Genero:Fantasia", new DateTime (1993, 12, 3), "harry1.jpg");
-                int idpelicula14 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Harry Potter y las reliquias de la muerte: Parte 2", "hrr2.jpg", "desclarga", dhrr2, "Genero: Fantasia", new DateTime (1993, 12, 3), "harry2.jpg");
-                int idpelicula15 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Blade Runner 2049 ", "blad.jpg", "desclarga", dblad, "Genero:Ciencia Ficcion", new DateTime (1993, 12, 3), "bladerun.jpg");
-                int idpelicula16 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Baywatch ", "bay.jpg", "desclarga", dbay, "Genero:Comedia", new DateTime (1993, 12, 3), "playa.jpg");
+                int idpelicula2 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Jumanji", "i2.jpg", "desclarga", djumanji, "Ficcion", new DateTime (1993, 12, 3), "jumanji.jpg");
+                int idpelicula3 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "COCO", "i7.jpg", "desclarga", dc, "Animacion", new DateTime (1993, 12, 3), "coco.jpg");
+                int idpelicula4 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Perfectos desconocidos", "i3.jpg", "desclarga", dperfdesc, "Tragicomedia", new DateTime (1993, 12, 3), "perfectdesc.jpg");
+                int idpelicula5 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Dando la nota 3", "i4.jpg", "desclarga", ddandonota, "Comedia", new DateTime (1993, 12, 3), "dandolanota.jpg");
+                int idpelicula6 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Ferdinand", "ferdi.jpg", "desclarga", dferdi, "Animacion", new DateTime (1993, 12, 3), "ferdinand.jpg");
+                int idpelicula7 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Wonder Wheel", "i8.jpg", "desclarga", dww, "Dramatico", new DateTime (1993, 12, 3), "wonderwheel.jpg");
+                int idpelicula8 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Spider-Man: Homecoming", "spider.jpg", "desclarga", despider, "Ciencia Ficcion", new DateTime (1993, 12, 3), "man.jpg");
+                int idpelicula9 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Wonder Woman", "ww.jpg", "desclarga", dwoman, "Ciencia Ficcion", new DateTime (1993, 12, 3), "woman.jpg");
+                int idpelicula10 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "it", "it.jpg", "desclarga", dit, "Terror", new DateTime (1993, 12, 3), "ittt.jpg");
+                int idpelicula11 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Feliz dia de tu muerte", "hday.jpg", "desclarga", dhday, "Terror", new DateTime (1993, 12, 3), "muerte.jpg");
+                int idpelicula12 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, "Despicable Me 3", "gru.jpg", "desclarga", dgru, "Animacion", new DateTime (1993, 12, 3), "gru3.jpg");
+                int idpelicula13 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Harry Potter y las reliquias de la muerte: Parte 1", "hrr1.jpg", "desclarga", dhrr1, "Fantasia", new DateTime (1993, 12, 3), "harry1.jpg");
+                int idpelicula14 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Harry Potter y las reliquias de la muerte: Parte 2", "hrr2.jpg", "desclarga", dhrr2, " Fantasia", new DateTime (1993, 12, 3), "harry2.jpg");
+                int idpelicula15 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Blade Runner 2049 ", "blad.jpg", "desclarga", dblad, "Ciencia Ficcion", new DateTime (1993, 12, 3), "bladerun.jpg");
+                int idpelicula16 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Baywatch ", "bay.jpg", "desclarga", dbay, "Comedia", new DateTime (1993, 12, 3), "playa.jpg");
 
                 int idvideo = videoCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "nombre", "hola", "desclarga", "descripcion", "genero", new DateTime (1993, 12, 3), "imagrande");
 
-                int idserie = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, "La To Vegas", "s1.jpg", "desclarga", dvegas, "Genero:Comedia", new DateTime (1993, 12, 3), "latovegas.jpg");
-                int idserie2 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Happy", "s2.jpg", "desclarga", dhappy, "Genero:Comedia", new DateTime (1993, 12, 3), "happy.jpg");
-                int idserie3 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Lucifer", "luci.jpg", "desclarga", dluci, "Genero:Fantastico", new DateTime (1993, 12, 3), "lucifer.jpg");
-                int idserie4 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Damnation", "s4.jpg", "desclarga", ddam, "Genero:Drama", new DateTime (1993, 12, 3), "damnation.jpg");
-                int idserie5 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Van Helsing", "vh.jpg", "desclarga", dvh, "Genero:Accion", new DateTime (1993, 12, 3), "vanhel.jpg");
-                int idserie6 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Runaways", "rwa.jpg", "desclarga", drw, "Genero:Ciencia Ficcion", new DateTime (1993, 12, 3), "runaways.jpg");
-                int idserie7 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "The Big Bang", "bigbang.jpg", "desclarga", dbgbg, "Genero:Comedia", new DateTime (1993, 12, 3), "thebigbang.jpg");
-                int idserie8 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Game of Thrones", "got.jpg", "desclarga", dgot, "Genero:Fantastico", new DateTime (1993, 12, 3), "game.jpg");
-                int idserie9 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "HowIMeetYourMother", "himym.jpg", "desclarga", dhimym, "Genero:Comedia", new DateTime (1993, 12, 3), "comoconoci.jpg");
-                int idserie10 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "13 Reason Why", "reason.jpg", "desclarga", d13, "Genero:Drama", new DateTime (1993, 12, 3), "13reasonwhy.jpg");
-                int idserie11 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Stranger Things", "st.jpg", "desclarga", dst, "Genero:Ciencia Ficcion", new DateTime (1993, 12, 3), "stranger.jpg");
-                int idserie12 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Rick y Morty", "RYM.jpg", "desclarga", dRYM, "Genero:Animacion", new DateTime (1993, 12, 3), "rick.jpg");
-                int idserie13 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Young Sheldon", "ysh.jpg", "desclarga", dysh, "Genero:Comedia", new DateTime (1993, 12, 3), "young.jpg");
-                int idserie14 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Black Mirror", "bmir.jpg", "desclarga", dbmir, "Genero:Ciencia Ficcion", new DateTime (1993, 12, 3), "black.jpg");
-                int idserie15 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Vikings", "vik.jpg", "desclarga", dvik, "Genero:Accion", new DateTime (1993, 12, 3), "vikings.jpg");
-                int idserie16 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Mr.Robot", "mrr.jpg", "desclarga", dmrr, "Genero:Suspense", new DateTime (1993, 12, 3), "mr.rob.jpg");
+                int idserie = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, "La To Vegas", "s1.jpg", "desclarga", dvegas, "Comedia", new DateTime (1993, 12, 3), "latovegas.jpg");
+                int idserie2 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Happy", "s2.jpg", "desclarga", dhappy, "Comedia", new DateTime (1993, 12, 3), "happy.jpg");
+                int idserie3 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Lucifer", "luci.jpg", "desclarga", dluci, "Fantastico", new DateTime (1993, 12, 3), "lucifer.jpg");
+                int idserie4 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Damnation", "s4.jpg", "desclarga", ddam, "Drama", new DateTime (1993, 12, 3), "damnation.jpg");
+                int idserie5 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Van Helsing", "vh.jpg", "desclarga", dvh, "Accion", new DateTime (1993, 12, 3), "vanhel.jpg");
+                int idserie6 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Runaways", "rwa.jpg", "desclarga", drw, "Ciencia Ficcion", new DateTime (1993, 12, 3), "runaways.jpg");
+                int idserie7 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "The Big Bang", "bigbang.jpg", "desclarga", dbgbg, "Comedia", new DateTime (1993, 12, 3), "thebigbang.jpg");
+                int idserie8 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Game of Thrones", "got.jpg", "desclarga", dgot, "Fantastico", new DateTime (1993, 12, 3), "game.jpg");
+                int idserie9 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "HowIMeetYourMother", "himym.jpg", "desclarga", dhimym, "Comedia", new DateTime (1993, 12, 3), "comoconoci.jpg");
+                int idserie10 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "13 Reason Why", "reason.jpg", "desclarga", d13, "Drama", new DateTime (1993, 12, 3), "13reasonwhy.jpg");
+                int idserie11 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Stranger Things", "st.jpg", "desclarga", dst, "Ciencia Ficcion", new DateTime (1993, 12, 3), "stranger.jpg");
+                int idserie12 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Rick y Morty", "RYM.jpg", "desclarga", dRYM, "Animacion", new DateTime (1993, 12, 3), "rick.jpg");
+                int idserie13 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Young Sheldon", "ysh.jpg", "desclarga", dysh, "Comedia", new DateTime (1993, 12, 3), "young.jpg");
+                int idserie14 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Black Mirror", "bmir.jpg", "desclarga", dbmir, "Ciencia Ficcion", new DateTime (1993, 12, 3), "black.jpg");
+                int idserie15 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Vikings", "vik.jpg", "desclarga", dvik, "Accion", new DateTime (1993, 12, 3), "vikings.jpg");
+                int idserie16 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Mr.Robot", "mrr.jpg", "desclarga", dmrr, "Suspense", new DateTime (1993, 12, 3), "mr.rob.jpg");
 
 
+                // idtemporada01 -> serie 0 temporada 1; idtemporada11 -> serie 1 temporada 1 .....
+                int idtemporada01 = temporadaCEN.New_ (idserie, "Temporada 1");
+                int idtemporada02 = temporadaCEN.New_(idserie, "Temporada 2");
+                int idtemporada03 = temporadaCEN.New_(idserie, "Temporada 3");
+                int idtemporada11 = temporadaCEN.New_ (idserie2, "Temporada 1");
 
-                int idtemporada = temporadaCEN.New_ (idserie, "nombre");
-                int idtemporada2 = temporadaCEN.New_ (idserie2, "nombre");
-                int idcapitulo = capituloCEN.New_ (idtemporada, "nombre", new DateTime (1993, 12, 3), "descripccion", "imagen");
-                int idcapitulo2 = capituloCEN.New_ (idtemporada2, "nombre", new DateTime (1993, 12, 3), "descripccion", "imagen");
+                int idcapitulo = capituloCEN.New_ (idtemporada01, "WHAT", new DateTime (1993, 12, 3), "descripccion", "imagen");
+                int idcapitulo2 = capituloCEN.New_ (idtemporada01, "Who", new DateTime (1993, 12, 3), "descripccion", "imagen");
+                int idcapitulo3 = capituloCEN.New_(idtemporada01, "WHEN", new DateTime(1993, 12, 3), "descripccion", "imagen");
+                int idcapitulo4 = capituloCEN.New_(idtemporada02, "Mandingo", new DateTime(1993, 12, 3), "descripccion", "imagen");
+                int idcapitulo5 = capituloCEN.New_(idtemporada02, "Yes", new DateTime(1993, 12, 3), "descripccion", "imagen");
+                int idcapitulo6 = capituloCEN.New_(idtemporada03, "Techo", new DateTime(1993, 12, 3), "descripccion", "imagen");
+
                 #endregion
 
 

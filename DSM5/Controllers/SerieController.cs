@@ -44,18 +44,28 @@ namespace DSM5.Controllers
         // GET: Articulo/Details/5
         public ActionResult Details(int id)
         {
-            SerieCEN cen = new SerieCEN();
+            SessionInitialize();
+            SerieCAD cad = new SerieCAD(session);
 
-            SerieEN en = new SerieEN();
+            SerieCEN cen = new SerieCEN(cad);
+            SerieEN en = cen.ReadOID(id);
             
-            en = cen.ReadOID(id);
             AssemblerSerie ass = new AssemblerSerie();
             Serie sol =ass.ConvertENToModelUI(en);
 
+            IList<TemporadaEN> ten = en.Temporada;
+
+            AssemblerTemporada assc = new AssemblerTemporada();
+            IList<Temporada> solc = assc.ConvertListENToModel(ten);
+
+
+            SessionClose();
             ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
             ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
             ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
             ViewData["correo"] = System.Web.HttpContext.Current.Session["correo"];
+
+            ViewBag.temp = solc;
 
             return View(sol);
         }

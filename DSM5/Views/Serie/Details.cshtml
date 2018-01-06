@@ -1,7 +1,7 @@
 ﻿@model DSM5.Models.Serie
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = @Html.DisplayFor(model => model.Nombre);
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -14,9 +14,15 @@
         <img class="cartelera col-md-3 gerMargenLetras" src='~/Images/cartelera/@Html.DisplayFor(modelItem => modelItem.Imagen)' />
 
         <div class="col-md-6 gerMargenLetras">
-            <h4><strong>Título: </strong>@Html.DisplayFor(model => model.Nombre)</h4>
-            <h4><strong>Género: </strong>@Html.DisplayFor(model => model.genero)</h4>
-            <h>@Html.DisplayFor(model => model.descripcion)</h>
+            <div class="row">
+                <h4><strong>Título: </strong>@Html.DisplayFor(model => model.Nombre)</h4>
+                <h4><strong>Género: </strong>@Html.DisplayFor(model => model.genero)</h4>
+                <h>@Html.DisplayFor(model => model.descripcion)</h>
+            </div>
+            <div class="row">
+                <hr />
+                @Html.Partial("_Temporada", (IEnumerable<DSM5.Models.Temporada>)ViewBag.temp)
+            </div>
         </div>
 
         <div class="dropdown col-md-3 gerMargenLetras">
@@ -25,8 +31,8 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="#">Vista</a>
-                <a class="dropdown-item admin" href='@Url.Action("Delete", "Pelicula", new { id = Model.id })'>Borrar</a>
-                <a class="dropdown-item admin" href='@Url.Action("Edit", "Pelicula", new { id = Model.id })'>Editar</a>
+                <a class="dropdown-item admin" href='@Url.Action("Delete", "Serie", new { id = Model.id })'>Borrar</a>
+                <a class="dropdown-item admin" href='@Url.Action("Edit", "Serie", new { id = Model.id })'>Editar</a>
                 <a class="dropdown-item admin" href='@Url.Action("addlist", "Usuario", new { idus= @ViewData["correo"] as string, idpro=Model.id, lista="sig"  })'>siguiendo</a>
                 <a class="dropdown-item admin" href='@Url.Action("addlist", "Usuario", new { idus= @ViewData["correo"] as string, idpro=Model.id, lista="fav"  })'>favoritos</a>
                 <a class="dropdown-item admin" href='@Url.Action("addlist", "Usuario", new { idus= @ViewData["correo"] as string, idpro=Model.id, lista="visto"  })'>visto</a>
