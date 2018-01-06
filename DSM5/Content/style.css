@@ -2,7 +2,6 @@
     Nuestro style que nosotros queramos modificar. Si queremos modificar clases del bootstrap, modificarlas en bootstrap.css
 */
 
-
 .margin {
     margin-bottom: 45px;
 }
@@ -87,4 +86,15 @@ p, a, h2, h3 {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+.imagenesIndexProductos {
+    width: 100px;
+    height: 100px;
+}
+.imagenesDetailsProductos {
+    width: 300px;
+    height: 300px;
+}
+.margenDescripcionesEventos {
+    margin-top: 50px;
 }
