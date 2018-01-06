@@ -15,13 +15,21 @@ namespace DSM5.Controllers
         // GET: Articulo
         public ActionResult Index()
         {
-            CarritoCEN cen = new CarritoCEN();
-            IList<CarritoEN> enlinst=cen.ReadAll(0, 6);
-            AssemblerCarrito ass = new AssemblerCarrito();
-            IList<Carrito> listart = ass.ConvertListENToModel(enlinst);
 
-            //articuloAsembler.covert
-            return View(listart);
+
+          
+
+            if(System.Web.HttpContext.Current.Session["carrito"] != null)
+            {
+                int id = (int)System.Web.HttpContext.Current.Session["carrito"];
+                return RedirectToAction("Details", "Carrito", new { id = id });
+            }
+            else
+            {
+                return RedirectToAction("Index", "Usuario", null);
+            }
+    
+          
         }
 
         // GET: Articulo/Details/5

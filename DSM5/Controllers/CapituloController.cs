@@ -88,7 +88,7 @@ namespace DSM5.Controllers
 
         
 
-                cen.New_(id, collection.Nombre,new DateTime (collection.fecha.Year, collection.fecha.Month, collection.fecha.Day), collection.descripcion, collection.imagen);
+                cen.New_(id, collection.Nombre,new DateTime (collection.fecha.Year, collection.fecha.Month, collection.fecha.Day), collection.descripcion, collection.imagen, collection.link);
 
                 string action = "mostrar_cap";
                 string controller = "Temporada";
@@ -139,7 +139,7 @@ namespace DSM5.Controllers
                 CapituloCEN cen = new CapituloCEN();
 
             
-                cen.Modify(collection.id, collection.Nombre, new DateTime(collection.fecha.Year, collection.fecha.Month, collection.fecha.Day), collection.descripcion, collection.imagen);
+                cen.Modify(collection.id, collection.Nombre, new DateTime(collection.fecha.Year, collection.fecha.Month, collection.fecha.Day), collection.descripcion, collection.imagen, collection.link);
                 //cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock, collection.Talla);
                 //return RedirectToAction("Index");
 
