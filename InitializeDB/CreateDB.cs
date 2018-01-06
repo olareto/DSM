@@ -178,6 +178,7 @@ public static void InitializeData ()
 
        
                 string dluci = "Lucifer, el ángel caído original, está aburrido e infeliz en el infierno y decide retirarse a Los Ángeles y abrir una discoteca de lujo. Después de que se produce un asesinato fuera de su club, conoce a una intrigante detective de homicidios llamada Chloe, y se asocia con ella para resolver casos.";
+
                 string dvegas = "Situado en el vuelo de la noche del viernes desde LAX a Las Vegas y el vuelo de regreso el domingo, un grupo de marginados que intentan encontrar su lugar en el mundo, todos comparten el mismo objetivo: volver a ser un ganador en el casino de la vida. ";
                 string dhappy = "Nick Sax es un ex policia borracho y corrupto que se convierte en un sicario, y que esta a la deriva en un mundo de asesinatos casuales, sexo desalmado y traicion. Despues de que un trabajo falla, su vida ebria es cambiada para siempre por un caballo alado pequeño, implacablemente positivo e imaginario llamado Happy.";
                 string ddam = "Seth Davenport parece ser un pequeño predicador de la ciudad de Iowa, pero tiene ambiciones de comenzar una insurreccion en toda regla contra el status quo. Pero el no sabe que un magnate industrial ha contratado a un rompehuelgas profesional mortal llamado Creeley Turner para detener esa insurreccion por cualquier medio necesario. Y desconocido para quienes los rodean, estos dos hombres comparten un pasado sangriento secreto.";
@@ -196,7 +197,13 @@ public static void InitializeData ()
 
                 //string idUsuario = usuarioCEN.New_("usuario", "apellidos", "contrasenya", "correo", "direcccion", "pago", "imagen");
                 //adminCEN.New_ ("usuario", "apellidos", "contrasenya", "correo", "direcccion", "pago", "imagen"));
-                int idevento = eventoCEN.New_ ("evento", 72, "descripcion", "imagen", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.dos, 8, "desclarga", "imagran", "tipo");
+                int idevento = eventoCEN.New_ ("Evento", 70, "Musical del Rey Leon", "reyleon.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Musical");
+                int idevento2 = eventoCEN.New_("Evento", 60, "Entrada del Parque Harry Potter", "HarryPotterParque.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Parque");
+                int idevento3 = eventoCEN.New_("Evento", 5, "Visita guiada a la ua", "UA.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.dos, 8, "desclarga", "imagran", "Estudios");
+                int idevento4 = eventoCEN.New_("Evento", 25, "Estreno Star Wars", "EstrenoStarWars.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Cine");
+                int idevento5 = eventoCEN.New_("Evento", 60, "Sinfonia Harry Potter", "sinharry.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Musica Orquesta");
+                int idevento6 = eventoCEN.New_("Evento", 15, "Comic Con Madrid", "comic.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, 8, "desclarga", "imagran", "Evento");
+
                 int idCarrito = carritoCEN.New_ (idUsuario, 50000);
 
                 int idArticulo = articuloCEN.New_ ("articulo", 69, "descripcion", "imagen", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 999, "desclarga", "imagran");
@@ -206,7 +213,18 @@ public static void InitializeData ()
 
                 int idoferta = ofertaCEN.New_ (idArticulo, new DateTime (1993, 12, 3), new DateTime (1993, 12, 3), 99);
 
-                int idproducto = productoCEN.New_ ("producto", 69, "descripcion", "imagen", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 999, "desclarga", "imagran", "talla");
+                int idproducto = productoCEN.New_ ("Producto", 40, "Figura Balrog", "Balrog.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, 80, "desclarga", "imagran", "Media");
+                int idproducto2 = productoCEN.New_("Producto", 35, "Camiseta Legolas", "CamisetaLegolas.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, 80, "desclarga", "imagran", "S,M,L,XL");
+                int idproducto3 = productoCEN.New_("Producto", 68, "Casco Darth Vader", "CascoDarthVader.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 30, "desclarga", "imagran", "Media");
+                int idproducto4 = productoCEN.New_("Producto", 29, "FunkoPop Frodo", "FunkoPopFrodo.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.dos, 100, "desclarga", "imagran", "Pequeña");
+                int idproducto5 = productoCEN.New_("Producto", 30, "Figura Harley Quinn", "HarleyQuinn.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, 80, "desclarga", "imagran", "Pequeña");
+                int idproducto6 = productoCEN.New_("Producto", 8, "Llavero Smaug", "LlaveroSmaug.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.dos, 80, "desclarga", "imagran", "");
+                int idproducto7 = productoCEN.New_("Producto", 100, "Espada Laser", "EspadaLaserRoja.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 20, "desclarga", "imagran", "");
+                int idproducto8 = productoCEN.New_("Producto", 39, "Monopoly Señor de los anillos", "MonopolySeñorAnillos.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, 80, "desclarga", "imagran", "");
+                int idproducto9 = productoCEN.New_("Producto", 180, "Ninmubs200", "Ninmubs200.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 20, "desclarga", "imagran", "media");
+                int idproducto10 = productoCEN.New_("Producto", 35, "Sudadera Harley Quinn", "SudaderaHarleyQuinn.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, 80, "desclarga", "imagran", "S,M,L,XL");
+                int idproducto11 = productoCEN.New_("Producto", 24, "Taza Joker", "TazaJoker.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 60, "desclarga", "imagran", "");
+                int idproducto12 = productoCEN.New_("Producto", 200, "Varita Sauco", "VaritaSauco.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 20, "desclarga", "imagran", "");
 
                 int idlista = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.visto, idUsuario);
                 int idlista2 = listaCEN.New_(SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.siguiendo, idUsuario);
