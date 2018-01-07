@@ -21,7 +21,13 @@
         {
                 <tbody>
                     <tr>
-                        <td>@Html.DisplayFor(modelItem => item.articulo)</td>
+                        <td>
+                            <a class="imagenesCarrito" href='@Url.Action("Details", "@Html.DisplayFor(modelItem => item.tipo)s", new { id = item.id })'>
+                                <img class="imagenesCarrito" src='~/Images/@Html.DisplayFor(modelItem => item.tipo)s/@Html.DisplayFor(modelItem => item.imagen)' />
+                            </a>
+
+                            @Html.DisplayFor(modelItem => item.nombre)
+                        </td>
                         <td>@Html.DisplayFor(modelItem => item.tipo)</td>
                         <td>@Html.DisplayFor(modelItem => item.precio)€</td>
                         <td>@Html.DisplayFor(modelItem => item.cantidad)</td>
