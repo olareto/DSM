@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<div class="container-fluid  text-center bg-2G">
+    <h2 class="margin colorTituloProductos">Mi perfil</h2>
 
-<div>
-    <h4>Usuario</h4>
+    <h4>Datos personales</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -68,13 +68,28 @@
         </dd>
 
     </dl>
+    <hr />
+
+    <p class="admin btn btn-default">
+        @Html.ActionLink("Modificar datos", "Edit", new { id = Model.Email })
+    </p>
+
+    <p class="admin btn btn-default">
+        @Html.ActionLink("Ver carrito", "Details", "Carrito", new { id = Model.carrito }, null)
+    </p>
+
+    <p class="admin btn btn-default">
+        @Html.ActionLink("Lista Siguiendo", "mostrarlista", "Usuario", new { idus = Model.Email, tipo = "sig" }, null)
+    </p>
+
+    <p class="admin btn btn-default">
+        @Html.ActionLink("Lista Favoritos", "mostrarlista", "Usuario", new { idus = Model.Email, tipo = "fav" }, null)
+    </p>
+
+    <p class="admin btn btn-default">
+        @Html.ActionLink("Lista Vistos", "mostrarlista", "Usuario", new { idus = Model.Email, tipo = "visto" }, null)
+    </p>
+    <p class="admin btn btn-default">
+        @Html.ActionLink("Salir", "deslog", "Usuario", null, null)
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Email }) |
-    @Html.ActionLink("Back to List(pruebas)", "Index")
-    @Html.ActionLink("ver carrito", "Details", "Carrito", new { id =  Model.carrito }, null)
-    @Html.ActionLink("sig", "mostrarlista", "Usuario", new { idus = Model.Email,tipo="sig" }, null)
-    @Html.ActionLink("fav", "mostrarlista", "Usuario", new { idus = Model.Email, tipo = "fav" }, null)
-    @Html.ActionLink("visto", "mostrarlista", "Usuario", new { idus = Model.Email, tipo = "visto" }, null)
-    @Html.ActionLink("deslog", "deslog", "Usuario", null, null)
-</p>
