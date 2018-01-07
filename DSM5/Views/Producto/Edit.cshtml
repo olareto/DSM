@@ -6,13 +6,13 @@
 }
 
 
+<div class="container-fluid bg-2 text-center">
+    <h2 class="margin">Editar Producto</h2>
 
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
-    <h2 class="bg-2">Editar @Html.DisplayFor(model => model.Nombre)</h2>
 
         <div class="form-horizontal bg-2">
 
@@ -77,17 +77,17 @@
             </div>
 
             <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <button type="button" class="btn btn-default">@Html.ActionLink("Back to list", @Session["action"] as string, @Session["controller"] as string, @Session["arg"], null)</button>
-                    <input type="submit" value="Save" class="btn btn-default" />
+                <div class="col-md-8">
+                    <input type="submit" value="Guardar cambios" class="btn btn-danger" />
+                    @Html.ActionLink("Cancelar", @Session["action"] as string, @Session["controller"] as string, @Session["arg"], null)
                 </div>
             </div>
         </div>
-    
-
-}
 
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+    }
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
