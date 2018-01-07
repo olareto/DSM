@@ -23,6 +23,8 @@ namespace DSM5.Models
                 art.tipo = "Producto";
                 art.stock = en.Producto.Stock;
                 art.precio = en.Producto.Precio;
+                art.nombre = en.Producto.Nombre;
+                art.imagen = en.Producto.Imagen;
             }
             if (en.Evento != null)
             {
@@ -30,6 +32,8 @@ namespace DSM5.Models
                 art.tipo = "Evento";
                 art.stock = en.Evento.Stock;
                 art.precio = en.Evento.Precio;
+                art.nombre = en.Evento.Nombre;
+                art.imagen = en.Evento.Imagen;
             }
 
             return art;
