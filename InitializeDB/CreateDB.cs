@@ -163,7 +163,7 @@ public static void InitializeData ()
 
                 string idAdmin = adminEN.Email;
 
-                string dstw = "Treinta a�os despu�s de derrotar al Imperio Gal�ctico, Han Solo y sus aliados enfrentan una nueva amenaza del malvado Kylo Ren y su ej�rcito de Stormtroopers.";
+                string dstw = "Treinta años despues de derrotar al Imperio Gal�ctico, Han Solo y sus aliados enfrentan una nueva amenaza del malvado Kylo Ren y su ej�rcito de Stormtroopers.";
                 string despider = "Tras los acontecimientos del Capit�n Am�rica: Guerra civil, Peter Parker, con la ayuda de su mentor Tony Stark, intenta equilibrar su vida como un estudiante normal de secundaria en Queens, Nueva York, con la lucha contra el crimen como su superh�roe alter ego Spider- El hombre como una nueva amenaza, el Buitre, emerge.";
                 string djumanji = "Las tornas se vuelven cuando cuatro adolescentes son absorbidos por el mundo de Jumanji: enfrentado a rinocerontes, mambas negras y una interminable variedad de trampas y acertijos de la jungla. Para sobrevivir, jugar�n como personajes del juego.";
                 string dc = "A pesar de la desconcertante prohibici�n de la generaci�n de m�sica de su familia, Miguel sue�a con convertirse en un m�sico consumado como su �dolo, Ernesto de la Cruz.";
@@ -314,6 +314,12 @@ public static void InitializeData ()
                 int idtemporada27 = temporadaCEN.New_(idserie9, "Temporada 6");
                 int idtemporada28 = temporadaCEN.New_(idserie10, "Temporada 1");
                 int idtemporada29 = temporadaCEN.New_(idserie11, "Temporada 1");
+                int idtemporada30 = temporadaCEN.New_(idserie11, "Temporada 2");
+                int idtemporada31 = temporadaCEN.New_(idserie12, "Temporada 1");
+                int idtemporada32 = temporadaCEN.New_(idserie12, "Temporada 2");
+                int idtemporada33 = temporadaCEN.New_(idserie12, "Temporada 3");
+
+
 
                 string cveg1 = "El estreno de la serie presenta a la tripulación de la aerolínea de bajo presupuesto y sus pasajeros excéntricos que, cada fin de semana, toman el vuelo de ida y vuelta desde Los Ángeles a Las Vegas con un objetivo en mente: volver a ser un ganador. No será fácil, pero este improbable grupo de malhechores y soñadores eventualmente pasará de ser extraños en un avión a ser de apoyo, aunque no convencionales, en familia, bueno, al menos de viernes a domingo.";
                 string ch1 = "Un sicario debe asociarse con un caballo imaginario de alas azules para rescatar a un niño desaparecido";
@@ -369,8 +375,19 @@ public static void InitializeData ()
                 string chow8 = "Cuando Ted y Barney discuten sobre quién tiene dibs con una chica candente, Ted se da cuenta de que ella está allí con Cindy, una chica con la que anteriormente salió y que también es el compañero de habitación de su futura esposa. Mientras tanto, Robin tiene el corazón roto por Don, y Marshall no puede callar su deseo de formar una familia.";
                 string crea1 = "Mientras la escuela llora la muerte de Hannah Baker, su amiga Clay recibe una caja de cintas con mensajes que grabó antes de suicidarse.";
                 string crea2 = "Hannah hace amistad con Jessica y Alex, otros dos estudiantes nuevos. Justin no se presenta en la escuela, y la madre de Hannah encuentra algo preocupante.";
-
-
+                string cstr1 = "En su camino a casa desde la casa de un amigo, el joven Will ve algo aterrador. Cerca de allí, un secreto siniestro acecha en las profundidades de un laboratorio gubernamental.";
+                string cstr2 = "Lucas, Mike y Dustin intentan hablar con la chica que encontraron en el bosque. Hopper pregunta a una inquieta Joyce sobre una inquietante llamada telefónica.";
+                string cstr3 = "Una Nancy cada vez más preocupada busca a Barb y descubre lo que Jonathan ha estado haciendo. Joyce está convencida de que Will intenta hablar con ella.";
+                string cstr4 = "Mientras la ciudad se prepara para Halloween, un rival de alto puntaje sacude las cosas en el salón recreativo, y un escéptico Hopper inspecciona un campo de calabazas en descomposición.";
+                string cstr5 = "Después de que Will ve algo terrible en la noche de trick-or-treat, Mike se pregunta si Eleven todavía está por ahí. Nancy lucha con la verdad sobre Barb.";
+                string crick1 = "Rick se muda con la familia de su hija y se establece como una mala influencia para su nieto, Morty.";
+                string crick2 = "Rick y Morty intentan deducir que el profesor de matemáticas de Morty le dio a Morty una 'A'. Mientras tanto, Rick le da a Jerry un dispositivo para entrenar a su perro, Snuffles.";
+                string crick3 = "El día de Navidad, el amigo de Rick, Reuben, viene a su chequeo médico anual. Mientras tanto, Jerry se entera de que sus padres tienen un nuevo amigo.";
+                string crick4 = "Rick y Morty intentan llegar al fondo de un misterio en este episodio de M. Night Shyamalan.";
+                string crick5 = "Rick, Morty y Summer se meten en problemas cuando el tiempo se rompe por un ciclo de retroalimentación de la incertidumbre que divide la realidad en más de una imposibilidad igualmente posible. Mientras tanto, Beth y Jerry hacen todo lo posible para salvar a un ciervo golpeado por su vehículo.";
+                string crick6 = "La familia Smith trata de arreglárselas sin Rick, lo cual es bastante doloroso por sí mismo sin tener en cuenta las sofocantes reglas puestas en práctica por la Federación. Mientras tanto, el pasado de Rick finalmente se revela cuando intenta salir de su prisión.";
+                string crick7 = "Rick, Morty y Summer viajan a una dimensión post-apocalíptica y conocen a algunos enemigos peligrosos, al tiempo que evitan un desarrollo familiar reciente.";
+                string crick8 = "Rick se convierte en un pepinillo, el mismo día que Beth lleva a los niños a terapia familiar.";
 
                 int idcapitulo = capituloCEN.New_ (idtemporada01, "Piloto", new DateTime (1993, 12, 3), cveg1, "cap1vegas.jpg", "https://www.youtube.com/embed/p4ijrL4zscE");
 
@@ -437,9 +454,22 @@ public static void InitializeData ()
                 int idcapitulo53 = capituloCEN.New_(idtemporada28, "1-Tape 1, Side A", new DateTime(1993, 12, 3), crea1, "rea1.jpg", "https://www.youtube.com/embed/taMknA8wFrY");
                 int idcapitulo54 = capituloCEN.New_(idtemporada28, "2-Tape 1, Side B", new DateTime(1993, 12, 3), crea2, "rea2.jpg", "https://www.youtube.com/embed/taMknA8wFrY");
 
+                int idcapitulo55 = capituloCEN.New_(idtemporada29, "1-Chapter One: The Vanishing of Will Byers", new DateTime(1993, 12, 3), cstr1, "str1.jpg", "https://www.youtube.com/embed/udmlXQj4new");
+                int idcapitulo56 = capituloCEN.New_(idtemporada29, "2-Chapter Two: The Weirdo on Maple Street", new DateTime(1993, 12, 3), cstr2, "str2.jpg", "https://www.youtube.com/embed/udmlXQj4new");
+                int idcapitulo57 = capituloCEN.New_(idtemporada29, "3-Chapter Three: Holly, Jolly", new DateTime(1993, 12, 3), cstr3, "str3.jpg", "https://www.youtube.com/embed/udmlXQj4new");
+                int idcapitulo58 = capituloCEN.New_(idtemporada30, "1-Chapter One: MADMAX", new DateTime(1993, 12, 3), cstr4, "str4.jpg", "https://www.youtube.com/embed/UMb3G8WQMsI");
+                int idcapitulo59 = capituloCEN.New_(idtemporada30, "1-Chapter Two: Trick or Treat, Freak", new DateTime(1993, 12, 3), cstr5, "str5.jpg", "https://www.youtube.com/embed/UMb3G8WQMsI");
+
+                int idcapitulo60 = capituloCEN.New_(idtemporada31, "Piloto", new DateTime(1993, 12, 3), crick1, "rick1.jpg", "https://www.youtube.com/embed/ZX-j8VPXCwA");
+                int idcapitulo61 = capituloCEN.New_(idtemporada31, "2-Lawnmower Dog", new DateTime(1993, 12, 3), crick2, "rick2.jpg", "https://www.youtube.com/embed/0VBQRnP-xj0");
+                int idcapitulo62 = capituloCEN.New_(idtemporada31, "3-Anatomy Park", new DateTime(1993, 12, 3), crick3, "rick3.jpg", "https://www.youtube.com/embed/7wMatAhhHSI");
+                int idcapitulo63 = capituloCEN.New_(idtemporada31, "4-M. Night Shaym-Aliens!", new DateTime(1993, 12, 3), crick4, "rick4.jpg", "https://www.youtube.com/embed/0yySbBKW6Zw");
+                int idcapitulo64 = capituloCEN.New_(idtemporada32, "1-A Rickle in Time", new DateTime(1993, 12, 3), crick5, "rick5.jpg", "https://www.youtube.com/embed/sztQVOdVbkU");
+                int idcapitulo65 = capituloCEN.New_(idtemporada33, "1-The Rickshank Rickdemption", new DateTime(1993, 12, 3), crick6, "rick6.jpg", "https://www.youtube.com/embed/veoymnykMe0");
+                int idcapitulo66 = capituloCEN.New_(idtemporada33, "2-Rickmancing the Stone", new DateTime(1993, 12, 3), crick7, "rick7.jpg", "https://www.youtube.com/embed/3FcHfqDYJq4");
+                int idcapitulo67 = capituloCEN.New_(idtemporada33, "2-Pickle Rick", new DateTime(1993, 12, 3), crick8, "rick8.jpg", "https://www.youtube.com/embed/bXeRpoWJK_I");
 
 
-                
                 #endregion
 
 
