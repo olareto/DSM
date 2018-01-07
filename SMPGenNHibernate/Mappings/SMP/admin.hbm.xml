@@ -30,12 +30,15 @@
 					
 			
 		  			
+						<bag name="Carrito_0" >
+							<key>
+							
+								
+								<column name="FK_email_idAdmin"/>
+					      	</key>
+							<one-to-many class="SMPGenNHibernate.EN.SMP.CarritoEN"/>
+					    </bag>
 					
-							<many-to-one name="Carrito_0" class="SMPGenNHibernate.EN.SMP.CarritoEN" >
-								<column name="FK_idCarrito_idCarrito_0"/> 
-        					</many-to-one>
-					 
-						
 					
 					
 		

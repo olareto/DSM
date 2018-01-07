@@ -39,10 +39,10 @@
 					
 			
 		  			
-					
-							   <one-to-one name="Admin" class="SMPGenNHibernate.EN.SMP.AdminEN" property-ref="Carrito_0" />							
-					 
-						
+						<many-to-one name="Admin" class="SMPGenNHibernate.EN.SMP.AdminEN" >	
+								<column name="FK_email_idAdmin"/> 
+						</many-to-one>
+											 					
 					
 					
 					

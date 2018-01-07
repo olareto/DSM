@@ -17,7 +17,7 @@ private System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista_
 /**
  *	Atributo carrito_0
  */
-private SMPGenNHibernate.EN.SMP.CarritoEN carrito_0;
+private System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.CarritoEN> carrito_0;
 
 
 
@@ -30,7 +30,7 @@ public virtual System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN>
 
 
 
-public virtual SMPGenNHibernate.EN.SMP.CarritoEN Carrito_0 {
+public virtual System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.CarritoEN> Carrito_0 {
         get { return carrito_0; } set { carrito_0 = value;  }
 }
 
@@ -41,11 +41,12 @@ public virtual SMPGenNHibernate.EN.SMP.CarritoEN Carrito_0 {
 public AdminEN() : base ()
 {
         lista_0 = new System.Collections.Generic.List<SMPGenNHibernate.EN.SMP.ListaEN>();
+        carrito_0 = new System.Collections.Generic.List<SMPGenNHibernate.EN.SMP.CarritoEN>();
 }
 
 
 
-public AdminEN(string email, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista_0, SMPGenNHibernate.EN.SMP.CarritoEN carrito_0
+public AdminEN(string email, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista_0, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.CarritoEN> carrito_0
                , SMPGenNHibernate.EN.SMP.CarritoEN carrito, string nombre, string apellidos, String contrasenya, string direccion, string tarjeta, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, string imagen
                )
 {
@@ -59,7 +60,7 @@ public AdminEN(AdminEN admin)
 }
 
 private void init (string email
-                   , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista_0, SMPGenNHibernate.EN.SMP.CarritoEN carrito_0, SMPGenNHibernate.EN.SMP.CarritoEN carrito, string nombre, string apellidos, String contrasenya, string direccion, string tarjeta, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, string imagen)
+                   , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista_0, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.CarritoEN> carrito_0, SMPGenNHibernate.EN.SMP.CarritoEN carrito, string nombre, string apellidos, String contrasenya, string direccion, string tarjeta, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, string imagen)
 {
         this.Email = email;
 

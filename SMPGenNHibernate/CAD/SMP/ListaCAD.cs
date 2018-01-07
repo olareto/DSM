@@ -121,6 +121,13 @@ public int New_ (ListaEN lista)
         try
         {
                 SessionInitializeTransaction ();
+                if (lista.Usuario_1 != null) {
+                        // Argumento OID y no colección.
+                        lista.Usuario_1 = (SMPGenNHibernate.EN.SMP.UsuarioEN)session.Load (typeof(SMPGenNHibernate.EN.SMP.UsuarioEN), lista.Usuario_1.Email);
+
+                        lista.Usuario_1.Lista
+                        .Add (lista);
+                }
 
                 session.Save (lista);
                 SessionCommit ();
@@ -389,67 +396,6 @@ public void Delpel (int p_Lista_OID, System.Collections.Generic.IList<int> p_pel
                                         throw new ModelException ("The identifier " + item + " in p_pelicula_OIDs you are trying to unrelationer, doesn't exist in ListaEN");
                         }
                 }
-
-                session.Update (listaEN);
-                SessionCommit ();
-        }
-
-        catch (Exception ex) {
-                SessionRollBack ();
-                if (ex is SMPGenNHibernate.Exceptions.ModelException)
-                        throw ex;
-                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in ListaCAD.", ex);
-        }
-
-
-        finally
-        {
-                SessionClose ();
-        }
-}
-public void Addusuario (int p_Lista_OID, string p_usuario_1_OID)
-{
-        SMPGenNHibernate.EN.SMP.ListaEN listaEN = null;
-        try
-        {
-                SessionInitializeTransaction ();
-                listaEN = (ListaEN)session.Load (typeof(ListaEN), p_Lista_OID);
-                listaEN.Usuario_1 = (SMPGenNHibernate.EN.SMP.UsuarioEN)session.Load (typeof(SMPGenNHibernate.EN.SMP.UsuarioEN), p_usuario_1_OID);
-
-                listaEN.Usuario_1.Lista.Add (listaEN);
-
-
-
-                session.Update (listaEN);
-                SessionCommit ();
-        }
-
-        catch (Exception ex) {
-                SessionRollBack ();
-                if (ex is SMPGenNHibernate.Exceptions.ModelException)
-                        throw ex;
-                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in ListaCAD.", ex);
-        }
-
-
-        finally
-        {
-                SessionClose ();
-        }
-}
-
-public void Addadmin (int p_Lista_OID, string p_admin_OID)
-{
-        SMPGenNHibernate.EN.SMP.ListaEN listaEN = null;
-        try
-        {
-                SessionInitializeTransaction ();
-                listaEN = (ListaEN)session.Load (typeof(ListaEN), p_Lista_OID);
-                listaEN.Admin = (SMPGenNHibernate.EN.SMP.AdminEN)session.Load (typeof(SMPGenNHibernate.EN.SMP.AdminEN), p_admin_OID);
-
-                listaEN.Admin.Lista_0.Add (listaEN);
-
-
 
                 session.Update (listaEN);
                 SessionCommit ();

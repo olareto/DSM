@@ -307,7 +307,9 @@
 			
 			
 			
+			<Compile Include="CEN\SMP\ListaCEN_Operation.cs" />
 			
+			<Compile Include="CEN\SMP\ListaCEN_Operation2.cs" />
 			
 	<Compile Include="EN\SMP\OfertaEN.cs" />
 	<Compile Include="CEN\SMP\OfertaCEN.cs" />

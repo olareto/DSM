@@ -370,8 +370,7 @@ public void Addadmin (int p_carrito_OID, string p_admin_OID)
                 carritoEN = (CarritoEN)session.Load (typeof(CarritoEN), p_carrito_OID);
                 carritoEN.Admin = (SMPGenNHibernate.EN.SMP.AdminEN)session.Load (typeof(SMPGenNHibernate.EN.SMP.AdminEN), p_admin_OID);
 
-                carritoEN.Admin.Carrito_0 = carritoEN;
-
+                carritoEN.Admin.Carrito_0.Add (carritoEN);
 
 
 

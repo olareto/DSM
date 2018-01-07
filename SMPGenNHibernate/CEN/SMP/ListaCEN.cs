@@ -38,7 +38,7 @@ public IListaCAD get_IListaCAD ()
         return this._IListaCAD;
 }
 
-public int New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum p_estado)
+public int New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum p_estado, string p_usuario_1)
 {
         ListaEN listaEN = null;
         int oid;
@@ -46,6 +46,14 @@ public int New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum p_estado)
         //Initialized ListaEN
         listaEN = new ListaEN ();
         listaEN.Estado = p_estado;
+
+
+        if (p_usuario_1 != null) {
+                // El argumento p_usuario_1 -> Property usuario_1 es oid = false
+                // Lista de oids id
+                listaEN.Usuario_1 = new SMPGenNHibernate.EN.SMP.UsuarioEN ();
+                listaEN.Usuario_1.Email = p_usuario_1;
+        }
 
         //Call to ListaCAD
 
@@ -111,18 +119,6 @@ public void Delpel (int p_Lista_OID, System.Collections.Generic.IList<int> p_pel
         //Call to ListaCAD
 
         _IListaCAD.Delpel (p_Lista_OID, p_pelicula_OIDs);
-}
-public void Addusuario (int p_Lista_OID, string p_usuario_1_OID)
-{
-        //Call to ListaCAD
-
-        _IListaCAD.Addusuario (p_Lista_OID, p_usuario_1_OID);
-}
-public void Addadmin (int p_Lista_OID, string p_admin_OID)
-{
-        //Call to ListaCAD
-
-        _IListaCAD.Addadmin (p_Lista_OID, p_admin_OID);
 }
 }
 }

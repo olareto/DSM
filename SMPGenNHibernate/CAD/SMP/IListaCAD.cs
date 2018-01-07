@@ -36,9 +36,5 @@ void Delserie (int p_Lista_OID, System.Collections.Generic.IList<int> p_serie_OI
 void Addpel (int p_Lista_OID, System.Collections.Generic.IList<int> p_pelicula_OIDs);
 
 void Delpel (int p_Lista_OID, System.Collections.Generic.IList<int> p_pelicula_OIDs);
-
-void Addusuario (int p_Lista_OID, string p_usuario_1_OID);
-
-void Addadmin (int p_Lista_OID, string p_admin_OID);
 }
 }
