@@ -30,6 +30,10 @@ namespace DSM5.Models
         public string genero { get; set; }
 
 
+
+
+
+
         [Display(Prompt = "Filtrar por Valoracion", Description = "Filtrar por Valoracion", Name = "Filtrar por Valoracion ")]
         public bool Valoracionbol { get; set; }
 

@@ -254,6 +254,31 @@ namespace DSM5.Controllers
                 res = cen.ReadAll(0, int.MaxValue);
 
 
+                if (!(collection.anyobol == false || collection.anyomin <= 0 || collection.anyomax <= 0 || collection.anyomax <= collection.anyomin))
+                {
+                    aux = cen.Filtroanyo(collection.anyomin, collection.anyomax);
+                    res = res.Intersect(aux).ToList();
+                }
+                if (collection.Nombrebol == true && collection.Nombre != null)
+                {
+                    aux = cen.Filtronombre(collection.Nombre);
+                    res = res.Intersect(aux).ToList();
+                }
+                if (collection.generobol == true && collection.genero != null)
+                {
+                    aux = cen.Filtrogenero(collection.genero);
+                    res = res.Intersect(aux).ToList();
+                }
+
+                if (collection.Valoracionbol == true && collection.Valoracion > 0 && collection.Valoracion < 6)
+                {
+                    aux = cen.Filtrovalor((SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion);
+                    res = res.Intersect(aux).ToList();
+                }
+
+
+
+
                 AssemblerSerie ass = new AssemblerSerie();
                 IList<Serie> listart = ass.ConvertListENToModel(res);
                 return View("Resultadobusqueda", listart);
