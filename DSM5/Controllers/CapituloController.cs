@@ -187,9 +187,23 @@ namespace DSM5.Controllers
             }
         }
 
+        public ActionResult Reproducir(int id)
+        {
+            CapituloCEN cen = new CapituloCEN();
+
+            CapituloEN en = new CapituloEN();
+
+            en = cen.ReadOID(id);
+            AssemblerCapitulo ass = new AssemblerCapitulo();
+            Capitulo sol = ass.ConvertENToModelUI(en);
 
 
-      
+
+
+            return View(sol);
+        }
+
+
 
 
     }
