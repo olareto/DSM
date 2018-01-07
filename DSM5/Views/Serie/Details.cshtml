@@ -17,6 +17,15 @@
             <div class="row">
                 <h4><strong>Título: </strong>@Html.DisplayFor(model => model.Nombre)</h4>
                 <h4><strong>Género: </strong>@Html.DisplayFor(model => model.genero)</h4>
+                @if ((bool)@Model.finalizada == true)
+                {
+                    <h4>@Model.fecha - @Model.fechafin</h4>
+                }
+                else 
+                {
+                    <h4>@Model.fecha - en emisión</h4>
+                }
+               
                 <h>@Html.DisplayFor(model => model.descripcion)</h>
             </div>
             <div class="row">
