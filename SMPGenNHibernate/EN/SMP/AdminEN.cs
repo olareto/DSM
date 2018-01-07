@@ -7,30 +7,66 @@ public partial class AdminEN                                                    
 
 
 {
-public AdminEN() : base ()
-{
+/**
+ *	Atributo lista_0
+ */
+private System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista_0;
+
+
+
+/**
+ *	Atributo carrito_0
+ */
+private SMPGenNHibernate.EN.SMP.CarritoEN carrito_0;
+
+
+
+
+
+
+public virtual System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> Lista_0 {
+        get { return lista_0; } set { lista_0 = value;  }
 }
 
 
 
-public AdminEN(string email,
-               SMPGenNHibernate.EN.SMP.CarritoEN carrito, string nombre, string apellidos, String contrasenya, string direccion, string tarjeta, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, string imagen
+public virtual SMPGenNHibernate.EN.SMP.CarritoEN Carrito_0 {
+        get { return carrito_0; } set { carrito_0 = value;  }
+}
+
+
+
+
+
+public AdminEN() : base ()
+{
+        lista_0 = new System.Collections.Generic.List<SMPGenNHibernate.EN.SMP.ListaEN>();
+}
+
+
+
+public AdminEN(string email, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista_0, SMPGenNHibernate.EN.SMP.CarritoEN carrito_0
+               , SMPGenNHibernate.EN.SMP.CarritoEN carrito, string nombre, string apellidos, String contrasenya, string direccion, string tarjeta, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, string imagen
                )
 {
-        this.init (Email, carrito, nombre, apellidos, contrasenya, direccion, tarjeta, lista, imagen);
+        this.init (Email, lista_0, carrito_0, carrito, nombre, apellidos, contrasenya, direccion, tarjeta, lista, imagen);
 }
 
 
 public AdminEN(AdminEN admin)
 {
-        this.init (Email, admin.Carrito, admin.Nombre, admin.Apellidos, admin.Contrasenya, admin.Direccion, admin.Tarjeta, admin.Lista, admin.Imagen);
+        this.init (Email, admin.Lista_0, admin.Carrito_0, admin.Carrito, admin.Nombre, admin.Apellidos, admin.Contrasenya, admin.Direccion, admin.Tarjeta, admin.Lista, admin.Imagen);
 }
 
 private void init (string email
-                   , SMPGenNHibernate.EN.SMP.CarritoEN carrito, string nombre, string apellidos, String contrasenya, string direccion, string tarjeta, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, string imagen)
+                   , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista_0, SMPGenNHibernate.EN.SMP.CarritoEN carrito_0, SMPGenNHibernate.EN.SMP.CarritoEN carrito, string nombre, string apellidos, String contrasenya, string direccion, string tarjeta, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista, string imagen)
 {
         this.Email = email;
 
+
+        this.Lista_0 = lista_0;
+
+        this.Carrito_0 = carrito_0;
 
         this.Carrito = carrito;
 

@@ -216,6 +216,10 @@
 			
 			<Compile Include="CEN\SMP\AdminCEN_Login.cs" />
 			
+			<Compile Include="CP\SMP\AdminCP_New_CP.cs" />
+			
+			
+			
 	<Compile Include="EN\SMP\ProductoEN.cs" />
 	<Compile Include="CEN\SMP\ProductoCEN.cs" />
 	<Compile Include="CAD\SMP\IProductoCAD.cs" />
@@ -258,6 +262,8 @@
 			<Compile Include="CEN\SMP\CarritoCEN_Filtronombre.cs" />
 			
 			
+			
+			
 	<Compile Include="EN\SMP\ArticuloEN.cs" />
 	<Compile Include="CEN\SMP\ArticuloCEN.cs" />
 	<Compile Include="CAD\SMP\IArticuloCAD.cs" />
@@ -292,6 +298,8 @@
 	<Compile Include="CAD\SMP\IListaCAD.cs" />
 	<Compile Include="CAD\SMP\ListaCAD.cs" />
 	<Compile Include="CP\SMP\ListaCP.cs" />
+			
+			
 			
 			
 			

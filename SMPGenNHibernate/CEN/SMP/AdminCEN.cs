@@ -105,5 +105,17 @@ public System.Collections.Generic.IList<AdminEN> ReadAll (int first, int size)
         list = _IAdminCAD.ReadAll (first, size);
         return list;
 }
+public void Addlista (string p_admin_OID, System.Collections.Generic.IList<int> p_lista_0_OIDs)
+{
+        //Call to AdminCAD
+
+        _IAdminCAD.Addlista (p_admin_OID, p_lista_0_OIDs);
+}
+public void Addcarrito (string p_admin_OID, int p_carrito_0_OID)
+{
+        //Call to AdminCAD
+
+        _IAdminCAD.Addcarrito (p_admin_OID, p_carrito_0_OID);
+}
 }
 }

@@ -66,9 +66,13 @@ public SMPGenNHibernate.EN.SMP.UsuarioEN New_CP (string p_nombre, string p_apell
 
                 p_oid = usuarioCAD.New_CP (usuarioEN);
 
-                int id = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.siguiendo, p_oid);
-                int id2 = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.favorito, p_oid);
-                int id3 = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.visto, p_oid);
+                int id = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.siguiendo);
+                int id2 = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.favorito);
+                int id3 = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.visto);
+
+                listaCEN.Addusuario (id, p_oid);
+                listaCEN.Addusuario (id2, p_oid);
+                listaCEN.Addusuario (id3, p_oid);
 
 
 

@@ -38,21 +38,13 @@ public ICarritoCAD get_ICarritoCAD ()
         return this._ICarritoCAD;
 }
 
-public int New_ (string p_usuario, double p_precio)
+public int New_ (double p_precio)
 {
         CarritoEN carritoEN = null;
         int oid;
 
         //Initialized CarritoEN
         carritoEN = new CarritoEN ();
-
-        if (p_usuario != null) {
-                // El argumento p_usuario -> Property usuario es oid = false
-                // Lista de oids id
-                carritoEN.Usuario = new SMPGenNHibernate.EN.SMP.UsuarioEN ();
-                carritoEN.Usuario.Email = p_usuario;
-        }
-
         carritoEN.Precio = p_precio;
 
         //Call to CarritoCAD
@@ -107,6 +99,18 @@ public void Dellinea (int p_carrito_OID, System.Collections.Generic.IList<int> p
         //Call to CarritoCAD
 
         _ICarritoCAD.Dellinea (p_carrito_OID, p_lineas_pedido_OIDs);
+}
+public void Addusuario (int p_carrito_OID, string p_usuario_OID)
+{
+        //Call to CarritoCAD
+
+        _ICarritoCAD.Addusuario (p_carrito_OID, p_usuario_OID);
+}
+public void Addadmin (int p_carrito_OID, string p_admin_OID)
+{
+        //Call to CarritoCAD
+
+        _ICarritoCAD.Addadmin (p_carrito_OID, p_admin_OID);
 }
 }
 }

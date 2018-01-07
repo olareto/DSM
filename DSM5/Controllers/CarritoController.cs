@@ -307,8 +307,18 @@ namespace DSM5.Controllers
             {
                 // TODO: Add insert logic here
                 CarritoCEN cen = new CarritoCEN();
+                int es = cen.New_(collection.Precio);
+                if ((bool)System.Web.HttpContext.Current.Session["admin"])
+                {
+                    
+                    cen.Addadmin(es, collection.Usuario);
+                }
+                else
+                {
+                    cen.Addusuario(es, collection.Usuario);
+                }
                 
-                cen.New_(collection.Usuario, collection.Precio);
+
                 return RedirectToAction("Index");
             }
             catch

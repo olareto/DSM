@@ -77,12 +77,15 @@ namespace DSM5.Controllers
             {
                 // TODO: Add insert logic here
                 UsuarioCEN cen = new UsuarioCEN();
+
                 UsuarioCP cp = new UsuarioCP();
                 string id=cp.New_CP( collection.Nombre, collection.Apellidos, collection.Password, collection.Email, collection.Direccion, collection.Tarjeta, collection.Imagen).Email;
                
               
-                CarritoCEN CarritoCEN = new CarritoCEN();
-                int id4 = CarritoCEN.New_(id, 0);
+                CarritoCEN carritoCEN = new CarritoCEN();
+                int id4 = carritoCEN.New_( 0);
+                carritoCEN.Addusuario(id4,id);
+                cen.Addcarrito(id,id4);
 
                 return RedirectToAction("Index");
             }
@@ -474,19 +477,20 @@ namespace DSM5.Controllers
             {
                 SessionInitialize();
                 UsuarioCAD cad = new UsuarioCAD(session);
-                
+                AdminCAD cada = new AdminCAD(session);
+
                 // TODO: Add insert logic here
                 UsuarioCEN cen = new UsuarioCEN(cad);
-                UsuarioEN en = new UsuarioEN();
+                UsuarioEN en = cen.ReadOID(collection.email);
                 AssemblerUsuario ass = new AssemblerUsuario();
                 Usuario us;
 
-                AdminCEN cena = new AdminCEN();
-                AdminEN ena = new AdminEN();
+                AdminCEN cena = new AdminCEN(cada);
+                AdminEN ena = cena.ReadOID(collection.email);
                 AssemblerAdmin assa = new AssemblerAdmin();
                 Admin ad;
 
-                if (cen.Login(collection.email, collection.Password)){
+                if (cen.Login(collection.email, collection.Password)&&ena==null){
                     en = cen.ReadOID(collection.email);
                     us = ass.ConvertENToModelUI(en);
 
@@ -501,7 +505,7 @@ namespace DSM5.Controllers
                     return RedirectToAction("Details", "Usuario", new { id = collection.email});
 
                 }
-                else if(cena.Login(collection.email, collection.Password))
+                else if(cena.Login(collection.email, collection.Password)&&ena!=null)
                 {
                     ena = cena.ReadOID(collection.email);
                     ad = assa.ConvertENToModelUI(ena);

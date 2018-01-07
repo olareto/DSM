@@ -40,6 +40,13 @@ private System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> pel
 
 
 
+/**
+ *	Atributo admin
+ */
+private SMPGenNHibernate.EN.SMP.AdminEN admin;
+
+
+
 
 
 
@@ -73,6 +80,12 @@ public virtual System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.Pelicula
 
 
 
+public virtual SMPGenNHibernate.EN.SMP.AdminEN Admin {
+        get { return admin; } set { admin = value;  }
+}
+
+
+
 
 
 public ListaEN()
@@ -83,20 +96,20 @@ public ListaEN()
 
 
 
-public ListaEN(int id, SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum estado, SMPGenNHibernate.EN.SMP.UsuarioEN usuario_1, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.SerieEN> serie, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> pelicula
+public ListaEN(int id, SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum estado, SMPGenNHibernate.EN.SMP.UsuarioEN usuario_1, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.SerieEN> serie, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> pelicula, SMPGenNHibernate.EN.SMP.AdminEN admin
                )
 {
-        this.init (Id, estado, usuario_1, serie, pelicula);
+        this.init (Id, estado, usuario_1, serie, pelicula, admin);
 }
 
 
 public ListaEN(ListaEN lista)
 {
-        this.init (Id, lista.Estado, lista.Usuario_1, lista.Serie, lista.Pelicula);
+        this.init (Id, lista.Estado, lista.Usuario_1, lista.Serie, lista.Pelicula, lista.Admin);
 }
 
 private void init (int id
-                   , SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum estado, SMPGenNHibernate.EN.SMP.UsuarioEN usuario_1, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.SerieEN> serie, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> pelicula)
+                   , SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum estado, SMPGenNHibernate.EN.SMP.UsuarioEN usuario_1, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.SerieEN> serie, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> pelicula, SMPGenNHibernate.EN.SMP.AdminEN admin)
 {
         this.Id = id;
 
@@ -108,6 +121,8 @@ private void init (int id
         this.Serie = serie;
 
         this.Pelicula = pelicula;
+
+        this.Admin = admin;
 }
 
 public override bool Equals (object obj)

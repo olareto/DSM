@@ -27,5 +27,13 @@ AdminEN ReadOID (string email
 
 
 System.Collections.Generic.IList<AdminEN> ReadAll (int first, int size);
+
+
+
+string New_CP (AdminEN admin);
+
+void Addlista (string p_admin_OID, System.Collections.Generic.IList<int> p_lista_0_OIDs);
+
+void Addcarrito (string p_admin_OID, int p_carrito_0_OID);
 }
 }

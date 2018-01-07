@@ -33,6 +33,13 @@ private System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.Lineas_pedidoEN
 
 
 
+/**
+ *	Atributo admin
+ */
+private SMPGenNHibernate.EN.SMP.AdminEN admin;
+
+
+
 
 
 
@@ -60,6 +67,12 @@ public virtual System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.Lineas_p
 
 
 
+public virtual SMPGenNHibernate.EN.SMP.AdminEN Admin {
+        get { return admin; } set { admin = value;  }
+}
+
+
+
 
 
 public CarritoEN()
@@ -69,20 +82,20 @@ public CarritoEN()
 
 
 
-public CarritoEN(int id, SMPGenNHibernate.EN.SMP.UsuarioEN usuario, double precio, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.Lineas_pedidoEN> lineas_pedido
+public CarritoEN(int id, SMPGenNHibernate.EN.SMP.UsuarioEN usuario, double precio, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.Lineas_pedidoEN> lineas_pedido, SMPGenNHibernate.EN.SMP.AdminEN admin
                  )
 {
-        this.init (Id, usuario, precio, lineas_pedido);
+        this.init (Id, usuario, precio, lineas_pedido, admin);
 }
 
 
 public CarritoEN(CarritoEN carrito)
 {
-        this.init (Id, carrito.Usuario, carrito.Precio, carrito.Lineas_pedido);
+        this.init (Id, carrito.Usuario, carrito.Precio, carrito.Lineas_pedido, carrito.Admin);
 }
 
 private void init (int id
-                   , SMPGenNHibernate.EN.SMP.UsuarioEN usuario, double precio, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.Lineas_pedidoEN> lineas_pedido)
+                   , SMPGenNHibernate.EN.SMP.UsuarioEN usuario, double precio, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.Lineas_pedidoEN> lineas_pedido, SMPGenNHibernate.EN.SMP.AdminEN admin)
 {
         this.Id = id;
 
@@ -92,6 +105,8 @@ private void init (int id
         this.Precio = precio;
 
         this.Lineas_pedido = lineas_pedido;
+
+        this.Admin = admin;
 }
 
 public override bool Equals (object obj)

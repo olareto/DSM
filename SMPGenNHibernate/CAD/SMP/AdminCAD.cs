@@ -90,6 +90,8 @@ public void ModifyDefault (AdminEN admin)
         {
                 SessionInitializeTransaction ();
                 AdminEN adminEN = (AdminEN)session.Load (typeof(AdminEN), admin.Email);
+
+
                 session.Update (adminEN);
                 SessionCommit ();
         }
@@ -259,6 +261,103 @@ public System.Collections.Generic.IList<AdminEN> ReadAll (int first, int size)
         }
 
         return result;
+}
+
+public string New_CP (AdminEN admin)
+{
+        try
+        {
+                SessionInitializeTransaction ();
+
+                session.Save (admin);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is SMPGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in AdminCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return admin.Email;
+}
+
+public void Addlista (string p_admin_OID, System.Collections.Generic.IList<int> p_lista_0_OIDs)
+{
+        SMPGenNHibernate.EN.SMP.AdminEN adminEN = null;
+        try
+        {
+                SessionInitializeTransaction ();
+                adminEN = (AdminEN)session.Load (typeof(AdminEN), p_admin_OID);
+                SMPGenNHibernate.EN.SMP.ListaEN lista_0ENAux = null;
+                if (adminEN.Lista_0 == null) {
+                        adminEN.Lista_0 = new System.Collections.Generic.List<SMPGenNHibernate.EN.SMP.ListaEN>();
+                }
+
+                foreach (int item in p_lista_0_OIDs) {
+                        lista_0ENAux = new SMPGenNHibernate.EN.SMP.ListaEN ();
+                        lista_0ENAux = (SMPGenNHibernate.EN.SMP.ListaEN)session.Load (typeof(SMPGenNHibernate.EN.SMP.ListaEN), item);
+                        lista_0ENAux.Admin = adminEN;
+
+                        adminEN.Lista_0.Add (lista_0ENAux);
+                }
+
+
+                session.Update (adminEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is SMPGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in AdminCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+}
+
+public void Addcarrito (string p_admin_OID, int p_carrito_0_OID)
+{
+        SMPGenNHibernate.EN.SMP.AdminEN adminEN = null;
+        try
+        {
+                SessionInitializeTransaction ();
+                adminEN = (AdminEN)session.Load (typeof(AdminEN), p_admin_OID);
+                adminEN.Carrito_0 = (SMPGenNHibernate.EN.SMP.CarritoEN)session.Load (typeof(SMPGenNHibernate.EN.SMP.CarritoEN), p_carrito_0_OID);
+
+                adminEN.Carrito_0.Admin = adminEN;
+
+
+
+
+                session.Update (adminEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is SMPGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in AdminCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
 }
 }
 }

@@ -37,6 +37,13 @@
 							<one-to-many class="SMPGenNHibernate.EN.SMP.Lineas_pedidoEN"/>
 					    </bag>
 					
+			
+		  			
+					
+							   <one-to-one name="Admin" class="SMPGenNHibernate.EN.SMP.AdminEN" property-ref="Carrito_0" />							
+					 
+						
+					
 					
 					
 					

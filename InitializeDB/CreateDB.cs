@@ -102,6 +102,7 @@ public static void InitializeData ()
                 UsuarioCEN usuarioCEN = new UsuarioCEN (_IUsuarioCAD);
 
                 UsuarioCP usuarioCP = new UsuarioCP ();
+                AdminCP adminCP = new AdminCP ();
 
 
                 AdminEN adminEN = new AdminEN ();
@@ -159,6 +160,12 @@ public static void InitializeData ()
 
                 string idUsuario = usuarioEN.Email;
 
+
+
+                UsuarioEN AdminEN = adminCP.New_CP ("usuarioadmin", "apellidosadmin", "contrasenyaadmin", "correoadmin", "direcccionadmin", "pagoadmin", "imagenadmin");
+
+                string idadmin = AdminEN.Email;
+
                 string dstw = "Treinta a�os despu�s de derrotar al Imperio Gal�ctico, Han Solo y sus aliados enfrentan una nueva amenaza del malvado Kylo Ren y su ej�rcito de Stormtroopers.";
                 string despider = "Tras los acontecimientos del Capit�n Am�rica: Guerra civil, Peter Parker, con la ayuda de su mentor Tony Stark, intenta equilibrar su vida como un estudiante normal de secundaria en Queens, Nueva York, con la lucha contra el crimen como su superh�roe alter ego Spider- El hombre como una nueva amenaza, el Buitre, emerge.";
                 string djumanji = "Las tornas se vuelven cuando cuatro adolescentes son absorbidos por el mundo de Jumanji: enfrentado a rinocerontes, mambas negras y una interminable variedad de trampas y acertijos de la jungla. Para sobrevivir, jugar�n como personajes del juego.";
@@ -204,7 +211,13 @@ public static void InitializeData ()
                 int idevento5 = eventoCEN.New_ ("Sinfonía Harry Potter", 60, "Sinfonia Harry Potter", "sinharry.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Musica Orquesta");
                 int idevento6 = eventoCEN.New_ ("Comic Con Madrid", 15, "Comic Con Madrid", "comic.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, 8, "desclarga", "imagran", "Evento");
 
-                int idCarrito = carritoCEN.New_ (idUsuario, 50000);
+                int idCarrito = carritoCEN.New_ (50000);
+
+                int idCarrito2 = carritoCEN.New_ (50001);
+
+                carritoCEN.Addusuario (idCarrito, idUsuario);
+
+                carritoCEN.Addadmin (idCarrito2, idadmin);
 
                 int idArticulo = articuloCEN.New_ ("articulo", 69, "descripcion", "imagen", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 999, "desclarga", "imagran");
 
@@ -226,9 +239,9 @@ public static void InitializeData ()
                 int idproducto11 = productoCEN.New_ ("Sombrero Ace", 24, "Sombrero Ace", "SombreroAce.png", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 15, "desclarga", "imagran", "Estándar");
                 int idproducto12 = productoCEN.New_ ("Varita Sauco", 200, "Varita Sauco", "VaritaSauco.png", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 20, "desclarga", "imagran", "Estándar");
 
-                int idlista = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.visto, idUsuario);
-                int idlista2 = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.siguiendo, idUsuario);
-                int idlista3 = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.favorito, idUsuario);
+                //int idlista = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.visto, idUsuario);
+                //int idlista2 = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.siguiendo, idUsuario);
+                //int idlista3 = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.favorito, idUsuario);
 
                 int idcomentario = comentarioCEN.New_ ("comentario", "autor", new DateTime (1993, 12, 3));
 

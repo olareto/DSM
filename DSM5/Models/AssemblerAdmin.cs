@@ -25,17 +25,17 @@ namespace DSM5.Models
             art.Direccion = en.Direccion;
             art.Tarjeta = en.Tarjeta;
             art.Imagen = en.Imagen;
-            if (en.Lista != null)
+            if (en.Lista_0 != null)
             {
-                art.siguiendo = en.Lista.ElementAt(0).Id;
-                art.favorito = en.Lista.ElementAt(1).Id;
-                art.visto = en.Lista.ElementAt(2).Id;
+                art.siguiendo = en.Lista_0.ElementAt(0).Id;
+                art.favorito = en.Lista_0.ElementAt(1).Id;
+                art.visto = en.Lista_0.ElementAt(2).Id;
             }
 
 
 
-            if (en.Carrito != null)
-                art.carrito = en.Carrito.Id;
+            if (en.Carrito_0 != null)
+                art.carrito = en.Carrito_0.Id;
 
             return art;
 

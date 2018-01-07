@@ -46,6 +46,13 @@
 									<column name="FK_idVideo_idPelicula"/> 
       						</many-to-many>
     					</bag>
+			
+		  			
+						<many-to-one name="Admin" class="SMPGenNHibernate.EN.SMP.AdminEN" >	
+								<column name="FK_email_idAdmin"/> 
+						</many-to-one>
+											 					
+					
 					
 					
 					
