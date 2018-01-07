@@ -284,16 +284,34 @@ public static void InitializeData ()
 
 
                 // idtemporada01 -> serie 0 temporada 1; idtemporada11 -> serie 1 temporada 1 .....
-                int idtemporada01 = temporadaCEN.New_ (idserie, "Temporada 1");
-                int idtemporada02 = temporadaCEN.New_ (idserie2, "Temporada 1");
-                int idtemporada03 = temporadaCEN.New_ (idserie3, "Temporada 1");
-                int idtemporada04 = temporadaCEN.New_ (idserie3, "Temporada 2");
+                int idtemporada01 = temporadaCEN.New_(idserie, "Temporada 1");
+                int idtemporada02 = temporadaCEN.New_(idserie2, "Temporada 1");
+                int idtemporada03 = temporadaCEN.New_(idserie3, "Temporada 1");
+                int idtemporada04 = temporadaCEN.New_(idserie3, "Temporada 2");
                 int idtemporada05 = temporadaCEN.New_(idserie3, "Temporada 3");
                 int idtemporada06 = temporadaCEN.New_(idserie4, "Temporada 1");
                 int idtemporada07 = temporadaCEN.New_(idserie5, "Temporada 1");
                 int idtemporada08 = temporadaCEN.New_(idserie5, "Temporada 2");
                 int idtemporada09 = temporadaCEN.New_(idserie6, "Temporada 1");
                 int idtemporada10 = temporadaCEN.New_(idserie7, "Temporada 1");
+                int idtemporada11 = temporadaCEN.New_(idserie7, "Temporada 2");
+                int idtemporada12 = temporadaCEN.New_(idserie7, "Temporada 3");
+                int idtemporada13 = temporadaCEN.New_(idserie7, "Temporada 4");
+                int idtemporada14 = temporadaCEN.New_(idserie7, "Temporada 5");
+                int idtemporada15 = temporadaCEN.New_(idserie7, "Temporada 6");
+                int idtemporada16 = temporadaCEN.New_(idserie8, "Temporada 1");
+                int idtemporada17 = temporadaCEN.New_(idserie8, "Temporada 2");
+                int idtemporada18 = temporadaCEN.New_(idserie8, "Temporada 3");
+                int idtemporada19 = temporadaCEN.New_(idserie8, "Temporada 4");
+                int idtemporada20 = temporadaCEN.New_(idserie8, "Temporada 5");
+                int idtemporada21 = temporadaCEN.New_(idserie8, "Temporada 6");
+                int idtemporada22 = temporadaCEN.New_(idserie9, "Temporada 1");
+                int idtemporada23 = temporadaCEN.New_(idserie9, "Temporada 2");
+                int idtemporada24 = temporadaCEN.New_(idserie9, "Temporada 3");
+                int idtemporada25 = temporadaCEN.New_(idserie9, "Temporada 4");
+                int idtemporada26 = temporadaCEN.New_(idserie9, "Temporada 5");
+                int idtemporada27 = temporadaCEN.New_(idserie9, "Temporada 6");
+                int idtemporada28 = temporadaCEN.New_(idserie10, "Temporada 1");
 
                 string cveg1 = "El estreno de la serie presenta a la tripulación de la aerolínea de bajo presupuesto y sus pasajeros excéntricos que, cada fin de semana, toman el vuelo de ida y vuelta desde Los Ángeles a Las Vegas con un objetivo en mente: volver a ser un ganador. No será fácil, pero este improbable grupo de malhechores y soñadores eventualmente pasará de ser extraños en un avión a ser de apoyo, aunque no convencionales, en familia, bueno, al menos de viernes a domingo.";
                 string ch1 = "Un sicario debe asociarse con un caballo imaginario de alas azules para rescatar a un niño desaparecido";
@@ -323,6 +341,31 @@ public static void InitializeData ()
                 string crun1 = "Un grupo de seis adolescentes de Los Ángeles, fracturados por una trágica pérdida, se reúnen solo para descubrir que sus padres pueden estar ocultando un terrible secreto que pone patas arriba su mundo.";
                 string crun2 = "Una nueva versión de 101, como se ve desde la perspectiva de los padres. Todos están nerviosos, pero después de esta noche, si todo sale según lo planeado, no tendrán que preocuparse por sus obligaciones nuevamente.";
                 string crun3 = "Los niños se tambalean después de los eventos de anoche. Cuando comienza una investigación, descubren que sus padres pueden tener más cosas que esconder de lo que podrían haber imaginado.";
+                string cbig1 = "Los brillantes compañeros físicos de física, Leonard y Sheldon, conocen a su nueva vecina, Penny, quien comienza a mostrarles que, por mucho que sepan sobre ciencia, saben muy poco sobre la vida real.";
+                string cbig2 = "Leonard se ofrece como voluntario para firmar un paquete en un intento de causar una buena impresión en Penny, pero cuando él recluta a Sheldon para que lo ayude, su intento de caballería sale terriblemente mal.";
+                string cbig3 = "Leonard le pide salir a una mujer después de enterarse de que Penny está saliendo con alguien.";
+                string cbig4 = "La primera cita de Penny con Leonard sale mal; Penny encuentra que Sheldon es un confidente involuntario. ";
+                string cbig5 = "Cuando Sheldon descubre que los tipos manipularon los datos de su expedición que recibió del Ártico, se va a Texas deshonrado. Esto hace que los chicos lo sigan, lo que amenaza la esperanza de Leonard de pasar un rato romántico con Penny y la amistad de los chicos con Sheldon.";
+                string cbig6 = "Penny etiqueta en la primera cita de Sheldon; Wolowitz encuentra un nuevo uso para un brazo robótico.";
+                string cbig7 = "Penny está preocupada por lo dañada que será su amistad con los muchachos después de acostarse con Raj mientras Sheldon se convierte en el líder del equipo de paintball.";
+                string cbig8 = "Raj se enfrenta a su soledad cuando sus amigos salen a citas; mientras que en el espacio, Wolowitz se ve involucrado en una pelea entre Bernadette y su madre.";
+                string cgot1 = "Ned Stark, Lord of Winterfell, descubre que su mentor, Jon Arryn, ha muerto y que el Rey Robert se dirige hacia el norte para ofrecer la posición de Ned Arryn como Mano del Rey. Al otro lado del Mar Estrecho en Pentos, Viserys Targaryen planea casarse con su hermana Daenerys al líder guerrero nómada Dothraki, Khal Drogo para forjar una alianza para tomar el trono.";
+                string cgot2 = "Después de haber aceptado convertirse en la Mano del Rey, Ned deja Invernalia con sus hijas Sansa y Arya, mientras Catelyn se queda atrás en Invernalia. Jon Snow se dirige al norte para unirse a la hermandad de la Guardia Nocturna. Tyrion decide renunciar al viaje al sur con su familia, en lugar de unirse a Jon en la comitiva que se dirige al Muro. Viserys espera su momento con la esperanza de recuperar el trono, mientras que Daenerys centra su atención en aprender cómo complacer a su nuevo marido, Drogo.";
+                string cgot3 = "Al llegar a Desembarco del Rey, Ned se sorprende al enterarse del despilfarro de la Corona por parte de sus nuevos asesores. En Castle Black, Jon Snow impresiona a Tyrion a expensas de reclutas más verdes. Sospechando que los Lannister tuvieron algo que ver en la caída de Bran, Catelyn sigue encubiertamente a su esposo a King's Landing, donde es interceptada por Petyr Baelish, un Littlefinger, un astuto aliado de toda la vida y propietario de un burdel. Cersei y Jaime reflexionan sobre las implicaciones de la recuperación de Bran; Arya estudia esgrima. En el camino a Vaes Dothrak, Daenerys se encuentra en desacuerdo con Viserys.";
+                string cgot4 = "Mientras Robb Stark y su ejército del norte continúan la guerra contra los Lannisters, Tyrion llega a Desembarco del Rey para aconsejar a Joffrey y atemperar los excesos del joven rey. En la isla de Rocadragón, Stannis Baratheon trama una invasión para reclamar el trono de su difunto hermano, aliándose con el feroz Melisandre, una extraña sacerdotisa de un dios extraño. Al otro lado del mar, Daenerys, sus tres jóvenes dragones y los khalasar recorren los Red Waste en busca de aliados o agua. En el norte, Bran preside una raída Winterfell, mientras que más allá del Muro, Jon Snow y Night's Watch deben refugiarse con un salvaje retorcido.";
+                string cgot5 = "Jon se encuentra con King-Beyond-the-Wall mientras sus Night Watch Brothers huyen hacia el sur. En Desembarco del Rey, Tyrion quiere una recompensa, Margaery muestra su naturaleza caritativa, Cersei organiza una cena y Littlefinger se ofrece para ayudar a Sansa. Al otro lado del Estrecho, Daenerys comienza su viaje hacia el oeste.";
+                string cgot6 = "Tyrion da la bienvenida a un invitado sorpresa a Desembarco del Rey para la boda real, pero teme que haya venido a la Fortaleza Roja por algo más. Mientras tanto, Jon advierte a sus superiores escépticos de la Guardia Nocturna sobre un ataque inminente. Jaime lucha por recuperar su estado en casa. Arya encuentra una cara de su pasado, y Daario Naharis discute la estrategia con Daenerys en el viaje a la ciudad esclava Meereen.";
+                string cgot7 = "Cersei y Jaime se ajustan a un mundo sin Tywin; Varys revela una conspiración a Tyrion; Daenerys enfrenta una nueva amenaza a su gobierno; Jon está atrapado entre dos reyes.";
+                string cgot8 = "Jon Snow está muerto. Daenerys conoce a un hombre fuerte. Cersei ve a su hija otra vez.";
+                string chow1 = "Es el año 2030 y un viejo Ted Mosby le está contando la historia a su hijo y a su hija sobre cómo conoció y finalmente se casará con su madre. Aquí es donde nos encontramos por primera vez con Ted, Lily, Marshall, Barney y Robin.";
+                string chow2 = "En un intento desesperado por una segunda cita, Ted invita a Robin a una fiesta que está lanzando. Sin embargo, ella no aparece y sigue organizando fiestas con la esperanza de que finalmente llegue.";
+                string chow3 = "Ted acepta dejar que Barney condimente su vida amorosa y termina en una loca aventura de volar a Filadelfia, encontrarse con la ley y visitar la Campana de la Libertad.";
+                string chow4 = "La pandilla intenta ayudar a Marshall a superar a Lily, especialmente cuando encuentra un recibo de tarjeta de crédito que lleva a un hotel en la ciudad de Nueva York donde figuran algunos de sus cargos.";
+                string chow5 = "Robin aparece con una cita y esto motiva a Ted a volver allí. También aprendemos algo importante sobre 'la Madre'.";
+                string chow6 = "Ted y Stella se comprometen, pero Ted pronto descubre que no sabe nada de ella. Mientras tanto, Barney confiesa a Lily que está enamorado de Robin.";
+                string chow7 = "Después de compartir un beso al principio del verano, Robin y Barney no están seguros de cómo manejar su atracción mutua. Después de algunas consideraciones le dicen a la pandilla que han decidido seguir siendo solo amigos, pero en secreto continúan viéndose entre ellos. Son capaces de salirse con la suya con su romance secreto durante un par de meses, pero se descubren cuando Ted, Marshall y Lily los visitan juntos. Le explican a la pandilla que están contentos con su relación casual, y no quisieron complicarla al definirla. Esto es inaceptable para Lily, quien los presiona para etiquetar su situación, y finalmente los encierra en la habitación de Robin para obligarlos a abordarlo. Mientras tanto, Ted está ansioso por sus primeros días como profesor en Columbia, lo que empeora cuando aparece en la clase equivocada y comienza su conferencia.";
+                string chow8 = "Cuando Ted y Barney discuten sobre quién tiene dibs con una chica candente, Ted se da cuenta de que ella está allí con Cindy, una chica con la que anteriormente salió y que también es el compañero de habitación de su futura esposa. Mientras tanto, Robin tiene el corazón roto por Don, y Marshall no puede callar su deseo de formar una familia.";
+
 
                 int idcapitulo = capituloCEN.New_ (idtemporada01, "Piloto", new DateTime (1993, 12, 3), cveg1, "cap1vegas.jpg", "https://www.youtube.com/watch?v=p4ijrL4zscE");
 
@@ -355,9 +398,36 @@ public static void InitializeData ()
                 int idcapitulo24 = capituloCEN.New_(idtemporada08, "2-In Redemption", new DateTime(1993, 12, 3), cvan5, "van5.jpg", "https://www.youtube.com/watch?v=Jtic6uu8P5Q");
                 int idcapitulo25 = capituloCEN.New_(idtemporada08, "3-Love Bites", new DateTime(1993, 12, 3), cvan6, "van6.jpg", "https://www.youtube.com/watch?v=Jtic6uu8P5Q");
 
-                int idcapitulo26 = capituloCEN.New_(idtemporada09, "1-Reunion", new DateTime(1993, 12, 3), crun1, "crun1.jpg", "https://www.youtube.com/watch?v=pLzQaMbTg7Q");
-                int idcapitulo27 = capituloCEN.New_(idtemporada09, "2-Rewind", new DateTime(1993, 12, 3), crun2, "crun2.jpg", "https://www.youtube.com/watch?v=pLzQaMbTg7Q");
-                int idcapitulo28 = capituloCEN.New_(idtemporada09, "3-Rewind", new DateTime(1993, 12, 3), crun3, "crun3.jpg", "https://www.youtube.com/watch?v=pLzQaMbTg7Q");
+                int idcapitulo26 = capituloCEN.New_(idtemporada09, "1-Reunion", new DateTime(1993, 12, 3), crun1, "run1.jpg", "https://www.youtube.com/watch?v=pLzQaMbTg7Q");
+                int idcapitulo27 = capituloCEN.New_(idtemporada09, "2-Rewind", new DateTime(1993, 12, 3), crun2, "run2.jpg", "https://www.youtube.com/watch?v=pLzQaMbTg7Q");
+                int idcapitulo28 = capituloCEN.New_(idtemporada09, "3-Rewind", new DateTime(1993, 12, 3), crun3, "run3.jpg", "https://www.youtube.com/watch?v=pLzQaMbTg7Q");
+
+                int idcapitulo29 = capituloCEN.New_(idtemporada10, "Pilot", new DateTime(1993, 12, 3), cbig1, "big1.jpg", "https://www.youtube.com/watch?v=_uQXxvZ3afQ");
+                int idcapitulo30 = capituloCEN.New_(idtemporada10, "2-The Big Bran Hypothesis", new DateTime(1993, 12, 3), cbig2, "big2.jpg", "https://www.youtube.com/watch?v=_uQXxvZ3afQ");
+                int idcapitulo31 = capituloCEN.New_(idtemporada10, "3-The Fuzzy Boots Corollary", new DateTime(1993, 12, 3), cbig3, "big3.jpg", "https://www.youtube.com/watch?v=_uQXxvZ3afQ");
+                int idcapitulo32 = capituloCEN.New_(idtemporada11, "1-The Bad Fish Paradigm", new DateTime(1993, 12, 3), cbig4, "big4.jpg", "https://www.youtube.com/watch?v=_uQXxvZ3afQ");
+                int idcapitulo33 = capituloCEN.New_(idtemporada12, "1-The Electric Can Opener Fluctuation", new DateTime(1993, 12, 3), cbig5, "big5.jpg", "https://www.youtube.com/watch?v=_uQXxvZ3afQ");
+                int idcapitulo34 = capituloCEN.New_(idtemporada13, "1-The Robotic Manipulation", new DateTime(1993, 12, 3), cbig6, "big6.jpg", "https://www.youtube.com/watch?v=_uQXxvZ3afQ");
+                int idcapitulo35 = capituloCEN.New_(idtemporada14, "1-The Skank Reflex Analysis", new DateTime(1993, 12, 3), cbig7, "big7.jpg", "https://www.youtube.com/watch?v=_uQXxvZ3afQ");
+                int idcapitulo36 = capituloCEN.New_(idtemporada15, "1-The Date Night Variable", new DateTime(1993, 12, 3), cbig8, "big8.jpg", "https://www.youtube.com/watch?v=_uQXxvZ3afQ");
+
+                int idcapitulo37 = capituloCEN.New_(idtemporada16, "1-Winter Is Coming", new DateTime(1993, 12, 3), cgot1, "got1.jpg", "https://www.youtube.com/watch?v=iGp_N3Ir7Do");
+                int idcapitulo38 = capituloCEN.New_(idtemporada16, "2-The Kingsroad", new DateTime(1993, 12, 3), cgot2, "got2.jpg", "https://www.youtube.com/watch?v=iGp_N3Ir7Do");
+                int idcapitulo39 = capituloCEN.New_(idtemporada16, "3-Lord Snow", new DateTime(1993, 12, 3), cgot3, "got3.jpg", "https://www.youtube.com/watch?v=iGp_N3Ir7Do");
+                int idcapitulo40 = capituloCEN.New_(idtemporada17, "1-The North Remembers", new DateTime(1993, 12, 3), cgot4, "got4.jpg", "https://www.youtube.com/watch?v=iGp_N3Ir7Do");
+                int idcapitulo41 = capituloCEN.New_(idtemporada18, "1-Valar Dohaeris", new DateTime(1993, 12, 3), cgot5, "got5.jpg", "https://www.youtube.com/watch?v=iGp_N3Ir7Do");
+                int idcapitulo42 = capituloCEN.New_(idtemporada19, "1-Two Swords", new DateTime(1993, 12, 3), cgot6, "got6.jpg", "https://www.youtube.com/watch?v=iGp_N3Ir7Do");
+                int idcapitulo43 = capituloCEN.New_(idtemporada20, "1-The Wars to Come", new DateTime(1993, 12, 3), cgot7, "got7.jpg", "https://www.youtube.com/watch?v=iGp_N3Ir7Do");
+                int idcapitulo44 = capituloCEN.New_(idtemporada21, "1-The Red Woman", new DateTime(1993, 12, 3), cgot8, "got8.jpg", "https://www.youtube.com/watch?v=iGp_N3Ir7Do");
+
+                int idcapitulo45 = capituloCEN.New_(idtemporada22, "Pilot", new DateTime(1993, 12, 3), chow1, "how1.jpg", "https://www.youtube.com/watch?v=apRiP2h-O5o");
+                int idcapitulo46 = capituloCEN.New_(idtemporada22, "2-Purple Giraffe", new DateTime(1993, 12, 3), chow2, "how2.jpg", "https://www.youtube.com/watch?v=apRiP2h-O5o");
+                int idcapitulo47 = capituloCEN.New_(idtemporada22, "3-Sweet Taste of Liberty", new DateTime(1993, 12, 3), chow3, "how3.jpg", "https://www.youtube.com/watch?v=apRiP2h-O5o");
+                int idcapitulo48 = capituloCEN.New_(idtemporada23, "1-Where Were We?", new DateTime(1993, 12, 3), chow4, "how4.jpg", "https://www.youtube.com/watch?v=apRiP2h-O5o");
+                int idcapitulo49 = capituloCEN.New_(idtemporada24, "1-Wait for It", new DateTime(1993, 12, 3), chow5, "how5.jpg", "https://www.youtube.com/watch?v=apRiP2h-O5o");
+                int idcapitulo50 = capituloCEN.New_(idtemporada25, "1-Do I Know You?", new DateTime(1993, 12, 3), chow6, "how6.jpg", "https://www.youtube.com/watch?v=apRiP2h-O5o");
+                int idcapitulo51 = capituloCEN.New_(idtemporada26, "1-Definitions", new DateTime(1993, 12, 3), chow7, "how7.jpg", "https://www.youtube.com/watch?v=apRiP2h-O5o");
+                int idcapitulo52 = capituloCEN.New_(idtemporada27, "1-Big Days", new DateTime(1993, 12, 3), chow8, "how8.jpg", "https://www.youtube.com/watch?v=apRiP2h-O5o");
 
 
 
