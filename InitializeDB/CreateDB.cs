@@ -313,8 +313,8 @@ public static void InitializeData ()
                 int idtemporada26 = temporadaCEN.New_(idserie9, "Temporada 5");
                 int idtemporada27 = temporadaCEN.New_(idserie9, "Temporada 6");
                 int idtemporada28 = temporadaCEN.New_(idserie10, "Temporada 1");
+                int idtemporada29 = temporadaCEN.New_(idserie11, "Temporada 1");
 
-           
                 string cveg1 = "El estreno de la serie presenta a la tripulación de la aerolínea de bajo presupuesto y sus pasajeros excéntricos que, cada fin de semana, toman el vuelo de ida y vuelta desde Los Ángeles a Las Vegas con un objetivo en mente: volver a ser un ganador. No será fácil, pero este improbable grupo de malhechores y soñadores eventualmente pasará de ser extraños en un avión a ser de apoyo, aunque no convencionales, en familia, bueno, al menos de viernes a domingo.";
                 string ch1 = "Un sicario debe asociarse con un caballo imaginario de alas azules para rescatar a un niño desaparecido";
                 string ch2 = "Sax se estrella en un juego de póquer de alto riesgo para ganar armas y dinero en efectivo para escapar de Nueva York mientras Happy intenta convencerlo de que es un padre. La ex esposa Amanda y su ex amante Merry se unen para rescatar a Hailey.";
@@ -367,6 +367,9 @@ public static void InitializeData ()
                 string chow6 = "Ted y Stella se comprometen, pero Ted pronto descubre que no sabe nada de ella. Mientras tanto, Barney confiesa a Lily que está enamorado de Robin.";
                 string chow7 = "Después de compartir un beso al principio del verano, Robin y Barney no están seguros de cómo manejar su atracción mutua. Después de algunas consideraciones le dicen a la pandilla que han decidido seguir siendo solo amigos, pero en secreto continúan viéndose entre ellos. Son capaces de salirse con la suya con su romance secreto durante un par de meses, pero se descubren cuando Ted, Marshall y Lily los visitan juntos. Le explican a la pandilla que están contentos con su relación casual, y no quisieron complicarla al definirla. Esto es inaceptable para Lily, quien los presiona para etiquetar su situación, y finalmente los encierra en la habitación de Robin para obligarlos a abordarlo. Mientras tanto, Ted está ansioso por sus primeros días como profesor en Columbia, lo que empeora cuando aparece en la clase equivocada y comienza su conferencia.";
                 string chow8 = "Cuando Ted y Barney discuten sobre quién tiene dibs con una chica candente, Ted se da cuenta de que ella está allí con Cindy, una chica con la que anteriormente salió y que también es el compañero de habitación de su futura esposa. Mientras tanto, Robin tiene el corazón roto por Don, y Marshall no puede callar su deseo de formar una familia.";
+                string crea1 = "Mientras la escuela llora la muerte de Hannah Baker, su amiga Clay recibe una caja de cintas con mensajes que grabó antes de suicidarse.";
+                string crea2 = "Hannah hace amistad con Jessica y Alex, otros dos estudiantes nuevos. Justin no se presenta en la escuela, y la madre de Hannah encuentra algo preocupante.";
+
 
 
                 int idcapitulo = capituloCEN.New_ (idtemporada01, "Piloto", new DateTime (1993, 12, 3), cveg1, "cap1vegas.jpg", "https://www.youtube.com/embed/p4ijrL4zscE");
@@ -375,7 +378,6 @@ public static void InitializeData ()
                 int idcapitulo3 = capituloCEN.New_ (idtemporada02, "2-What Smiles Are For", new DateTime (1993, 12, 3), ch2, "happy2.jpg", "https://www.youtube.com/embed/t7OYkSgmM-w");
                 int idcapitulo4 = capituloCEN.New_ (idtemporada02, "3-When Christmas Was Christmas", new DateTime (1993, 12, 3), ch3, "happy3.jpg", "https://www.youtube.com/embed/t7OYkSgmM-w");
                 int idcapitulo5 = capituloCEN.New_ (idtemporada02, "4-Year of the Horse", new DateTime (1993, 12, 3), ch4, "happy4.jpg", "https://www.youtube.com/embed/t7OYkSgmM-w");
-
 
                 int idcapitulo6 = capituloCEN.New_ (idtemporada03, "1-Piloto", new DateTime (1993, 12, 3), cl1, "luci1.jpg", "https://www.youtube.com/embed/K2kyWOMsy2Q");
 
@@ -432,8 +434,12 @@ public static void InitializeData ()
                 int idcapitulo51 = capituloCEN.New_(idtemporada26, "1-Definitions", new DateTime(1993, 12, 3), chow7, "how7.jpg", "https://www.youtube.com/embed/apRiP2h-O5o");
                 int idcapitulo52 = capituloCEN.New_(idtemporada27, "1-Big Days", new DateTime(1993, 12, 3), chow8, "how8.jpg", "https://www.youtube.com/embed/apRiP2h-O5o");
 
+                int idcapitulo53 = capituloCEN.New_(idtemporada28, "1-Tape 1, Side A", new DateTime(1993, 12, 3), crea1, "rea1.jpg", "https://www.youtube.com/embed/taMknA8wFrY");
+                int idcapitulo54 = capituloCEN.New_(idtemporada28, "2-Tape 1, Side B", new DateTime(1993, 12, 3), crea2, "rea2.jpg", "https://www.youtube.com/embed/taMknA8wFrY");
 
 
+
+                
                 #endregion
 
 
