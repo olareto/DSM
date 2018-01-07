@@ -204,7 +204,7 @@ public static void InitializeData ()
                 int idevento5 = eventoCEN.New_ ("Sinfonía Harry Potter", 60, "Sinfonia Harry Potter", "sinharry.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Musica Orquesta");
                 int idevento6 = eventoCEN.New_ ("Comic Con Madrid", 15, "Comic Con Madrid", "comic.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, 8, "desclarga", "imagran", "Evento");
 
-                int idCarrito = carritoCEN.New_ (idUsuario, 50000);
+                int idCarrito = carritoCEN.New_ (idUsuario, 0);
 
                 int idArticulo = articuloCEN.New_ ("articulo", 69, "descripcion", "imagen", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 999, "desclarga", "imagran");
 

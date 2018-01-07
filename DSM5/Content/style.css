@@ -94,6 +94,9 @@ p, a, h2, h3 {
     width: 200px;
     height: 200px;
 }
+.imagenesIndexProductos:hover{
+        opacity:0.8;
+}
 .imagenesDetailsProductos {
     width: 300px;
     height: 300px;
@@ -112,4 +115,10 @@ p, a, h2, h3 {
 }
 .colorTituloProductos {
     color: #ffffff;
+}
+.ne {
+    color: black;
+}
+.perfilTabla {
+    width: 50%;
 }
