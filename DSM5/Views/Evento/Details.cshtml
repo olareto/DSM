@@ -69,7 +69,7 @@
 
 </div>
 
-@if (Session["admin"] != null && (bool)Session["admin"] == true)
+@if (Session["log"] != null && (bool)Session["log"] == true)
 {
     <p>
         @Html.Partial("_Comentario", (IEnumerable<DSM5.Models.Comentario>)ViewBag.coment)

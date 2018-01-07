@@ -17,9 +17,9 @@
         }
     
 
-    <p class="text-center">
-        @Html.ActionLink("Busqueda", "Filtrar")
-    </p>
+        <p>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span>@Html.ActionLink("Busqueda", "Filtrar")</button>
+        </p>
 
     @foreach (var item in Model)
     {
