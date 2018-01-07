@@ -16,7 +16,7 @@ namespace DSM5.Controllers
         public ActionResult Index()
         {
             CapituloCEN cen = new CapituloCEN();
-            IList<CapituloEN> enlinst=cen.ReadAll(0, 6);
+            IList<CapituloEN> enlinst=cen.ReadAll(0, int.MaxValue);
             AssemblerCapitulo ass = new AssemblerCapitulo();
             IList<Capitulo> listart = ass.ConvertListENToModel(enlinst);
 

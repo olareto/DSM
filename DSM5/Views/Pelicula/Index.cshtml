@@ -8,30 +8,34 @@
 <div class="container-fluid bg-2 text-center">
     <h2 class="margin">Películas</h2>
 
-    <p class="admin">
-        @Html.ActionLink("Añadir película", "Create")
-    </p>
 
-    <p class="text-center">
-        @Html.ActionLink("Busqueda", "Filtrar")
-    </p>
 
-    @foreach (var item in Model)
+    @if (Session["admin"] != null && (bool)Session["admin"] == true)
     {
-        <div class="col-md-3">
-            <div class="col">
-                <h3>@Html.DisplayFor(modelItem => item.Nombre)</h3>
-            </div>
-            <div class="col">
-                <p>Valoración: @Html.DisplayFor(modelItem => item.Valoracion)</p>
-            </div>
-            <div class="col">
-                <a href='@Url.Action("Details", "Pelicula", new { id = item.id })'>
-                    <!--Ruta simple: sw8.jpg-->
-                    <img class="cartelera" src='~/Images/cartelera/@Html.DisplayFor(modelItem => item.Imagen)' />
-                </a>
-            </div>
-        </div>
+        <p class="admin">
+            @Html.ActionLink("Añadir película", "Create")
+        </p>
     }
+        <p class="text-center">
+            @Html.ActionLink("Busqueda", "Filtrar")
+        </p>
 
-</div>
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3">
+                <div class="col">
+                    <h3>@Html.DisplayFor(modelItem => item.Nombre)</h3>
+                </div>
+                <div class="col">
+                    <p>Valoración: @Html.DisplayFor(modelItem => item.Valoracion)</p>
+                </div>
+                <div class="col">
+                    <a href='@Url.Action("Details", "Pelicula", new { id = item.id })'>
+                        <!--Ruta simple: sw8.jpg-->
+                        <img class="cartelera" src='~/Images/cartelera/@Html.DisplayFor(modelItem => item.Imagen)' />
+                    </a>
+                </div>
+            </div>
+        }
+
+    </div>

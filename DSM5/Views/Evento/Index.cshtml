@@ -8,11 +8,15 @@
 
    <div class="container-fluid bg-2G">
        <h2 class="margin colorTituloProductos text-center">Eventos</h2>
-       <p class="admin text-center">
-           @Html.ActionLink("Añadir Evento", "Create")
-       </p>
+       @if (Session["admin"] != null && (bool)Session["admin"] == true)
+       {
+        <p class="admin text-center">
+            @Html.ActionLink("Añadir Evento", "Create")
+        </p>
+       }
+       
        <p class="text-center">
-          @Html.ActionLink("Busqueda", "Filtrar") 
+           <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span>@Html.ActionLink("Busqueda", "Filtrar")</button>         
        </p>
 
         @foreach (var item in Model)

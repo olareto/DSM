@@ -16,7 +16,7 @@ namespace DSM5.Controllers
         public ActionResult Index()
         {
             TemporadaCEN cen = new TemporadaCEN();
-            IList<TemporadaEN> enlinst=cen.ReadAll(0, 6);
+            IList<TemporadaEN> enlinst=cen.ReadAll(0, int.MaxValue);
             AssemblerTemporada ass = new AssemblerTemporada();
             IList<Temporada> listart = ass.ConvertListENToModel(enlinst);
 

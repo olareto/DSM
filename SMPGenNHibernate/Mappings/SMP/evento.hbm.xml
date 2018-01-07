@@ -39,7 +39,7 @@
 		 </joined-subclass>
 		  
 		  <query name="EventoENReadAllHQL">from EventoEN</query>
-		  <query name="EventoENfiltronombreHQL"><![CDATA[FROM EventoEN art where art.Nombre = :p_nombre]]></query>
+		  <query name="EventoENfiltronombreHQL"><![CDATA[FROM EventoEN art where art.Nombre like '%'+:p_nombre+'%']]></query>
 		  <query name="EventoENfiltroprecioHQL"><![CDATA[FROM EventoEN art where art.Precio >= :p_min and art.Precio <= :p_max]]></query>
 		  <query name="EventoENfiltrovalorHQL"><![CDATA[FROM EventoEN art where art.Valor = :p_valor]]></query>
 		  <query name="EventoENfiltrotipoHQL"><![CDATA[FROM EventoEN art where art.Tipo = :p_tipo]]></query>

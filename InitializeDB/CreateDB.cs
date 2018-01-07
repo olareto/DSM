@@ -104,7 +104,6 @@ public static void InitializeData ()
                 UsuarioCP usuarioCP = new UsuarioCP ();
                 AdminCP adminCP = new AdminCP ();
 
-
                 AdminEN adminEN = new AdminEN ();
                 AdminCEN adminCEN = new AdminCEN (_IAdminCAD);
 
@@ -164,8 +163,6 @@ public static void InitializeData ()
 
                 string idAdmin = adminEN.Email;
 
-
-
                 string dstw = "Treinta a�os despu�s de derrotar al Imperio Gal�ctico, Han Solo y sus aliados enfrentan una nueva amenaza del malvado Kylo Ren y su ej�rcito de Stormtroopers.";
                 string despider = "Tras los acontecimientos del Capit�n Am�rica: Guerra civil, Peter Parker, con la ayuda de su mentor Tony Stark, intenta equilibrar su vida como un estudiante normal de secundaria en Queens, Nueva York, con la lucha contra el crimen como su superh�roe alter ego Spider- El hombre como una nueva amenaza, el Buitre, emerge.";
                 string djumanji = "Las tornas se vuelven cuando cuatro adolescentes son absorbidos por el mundo de Jumanji: enfrentado a rinocerontes, mambas negras y una interminable variedad de trampas y acertijos de la jungla. Para sobrevivir, jugar�n como personajes del juego.";
@@ -211,12 +208,9 @@ public static void InitializeData ()
                 int idevento5 = eventoCEN.New_ ("Sinfonía Harry Potter", 60, "Sinfonia Harry Potter", "sinharry.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Musica Orquesta");
                 int idevento6 = eventoCEN.New_ ("Comic Con Madrid", 15, "Comic Con Madrid", "comic.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, 8, "desclarga", "imagran", "Evento");
 
-
                 int idCarrito = carritoCEN.New_ (idUsuario, 0);
-                int idCarrito2 = carritoCEN.New_(idAdmin, 0);
+                int idCarrito2 = carritoCEN.New_ (idAdmin, 0);
 
-
-                
 
 
                 int idArticulo = articuloCEN.New_ ("articulo", 69, "descripcion", "imagen", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 999, "desclarga", "imagran");
@@ -246,56 +240,198 @@ public static void InitializeData ()
                 int idcomentario = comentarioCEN.New_ ("comentario", "autor", new DateTime (1993, 12, 3));
 
 
-                int idpelicula = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Star Wars:Episodio VII", "i5.jpg", "desclarga", dstw, "ciencia ficcion", 1993, "estarwa.jpg","https://www.youtube.com/watch?v=sGbxmsDFVnE");
-                int idpelicula2 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Jumanji", "i2.jpg", "desclarga", djumanji, "Ficcion", 1993, "jumanji.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
-                int idpelicula3 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "COCO", "i7.jpg", "desclarga", dc, "Animacion", 1993, "coco.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
-                int idpelicula4 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Perfectos desconocidos", "i3.jpg", "desclarga", dperfdesc, "Tragicomedia", 1993, "perfectdesc.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
-                int idpelicula5 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Dando la nota 3", "i4.jpg", "desclarga", ddandonota, "Comedia", 1993, "dandolanota.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
-                int idpelicula6 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Ferdinand", "ferdi.jpg", "desclarga", dferdi, "Animacion", 1993, "ferdinand.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
-                int idpelicula7 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Wonder Wheel", "i8.jpg", "desclarga", dww, "Dramatico", 1993, "wonderwheel.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
-                int idpelicula8 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Spider-Man: Homecoming", "spider.jpg", "desclarga", despider, "Ciencia Ficcion", 1993, "man.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
-                int idpelicula9 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Wonder Woman", "ww.jpg", "desclarga", dwoman, "Ciencia Ficcion", 1993, "woman.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
-                int idpelicula10 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "it", "it.jpg", "desclarga", dit, "Terror",1993, "ittt.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
-                int idpelicula11 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Feliz dia de tu muerte", "hday.jpg", "desclarga", dhday, "Terror", 1993, "muerte.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
-                int idpelicula12 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, "Despicable Me 3", "gru.jpg", "desclarga", dgru, "Animacion", 1993, "gru3.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
-                int idpelicula13 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Harry Potter y las reliquias de la muerte: Parte 1", "hrr1.jpg", "desclarga", dhrr1, "Fantasia", 1993, "harry1.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
-                int idpelicula14 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Harry Potter y las reliquias de la muerte: Parte 2", "hrr2.jpg", "desclarga", dhrr2, " Fantasia", 1993, "harry2.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
-                int idpelicula15 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Blade Runner 2049 ", "blad.jpg", "desclarga", dblad, "Ciencia Ficcion", 1993, "bladerun.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
-                int idpelicula16 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Baywatch ", "bay.jpg", "desclarga", dbay, "Comedia", 1993, "playa.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
 
-                
-                int idserie = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, "La To Vegas", "s1.jpg", "desclarga", dvegas, "Comedia", 1993, "latovegas.jpg", 2000, true);
-                int idserie2 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Happy", "s2.jpg", "desclarga", dhappy, "Comedia", 1993, "happy.jpg", 2000, true);
-                int idserie3 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Lucifer", "luci.jpg", "desclarga", dluci, "Fantastico", 1993, "lucifer.jpg", 2000, true);
-                int idserie4 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Damnation", "s4.jpg", "desclarga", ddam, "Drama", 1993, "damnation.jpg", 2000, true);
-                int idserie5 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Van Helsing", "vh.jpg", "desclarga", dvh, "Accion", 1993, "vanhel.jpg", 2000, true);
-                int idserie6 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Runaways", "rwa.jpg", "desclarga", drw, "Ciencia Ficcion", 1993, "runaways.jpg", 2000, true);
-                int idserie7 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "The Big Bang", "bigbang.jpg", "desclarga", dbgbg, "Comedia", 1993, "thebigbang.jpg", 2000, true);
-                int idserie8 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Game of Thrones", "got.jpg", "desclarga", dgot, "Fantastico", 1993, "game.jpg", 2000, true);
-                int idserie9 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "HowIMeetYourMother", "himym.jpg", "desclarga", dhimym, "Comedia", 1993, "comoconoci.jpg", 2000, true);
-                int idserie10 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "13 Reason Why", "reason.jpg", "desclarga", d13, "Drama", 1993, "13reasonwhy.jpg", 2000, true);
-                int idserie11 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Stranger Things", "st.jpg", "desclarga", dst, "Ciencia Ficcion", 1993, "stranger.jpg", 2000, true);
-                int idserie12 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Rick y Morty", "RYM.jpg", "desclarga", dRYM, "Animacion", 1993, "rick.jpg", 2000, true);
-                int idserie13 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Young Sheldon", "ysh.jpg", "desclarga", dysh, "Comedia", 1993, "young.jpg", 2000, true);
-                int idserie14 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Black Mirror", "bmir.jpg", "desclarga", dbmir, "Ciencia Ficcion", 1993, "black.jpg", 2000, true);
-                int idserie15 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Vikings", "vik.jpg", "desclarga", dvik, "Accion", 1993, "vikings.jpg", 2000, true);
-                int idserie16 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Mr.Robot", "mrr.jpg", "desclarga", dmrr, "Suspense", 1993, "mr.rob.jpg", 2000, true);
+
+
+
+
+                int idpelicula = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Star Wars:Episodio VII", "i5.jpg", "desclarga", dstw, "Ciencia ficcion", 2015, "estarwa.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
+                int idpelicula2 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Jumanji", "i2.jpg", "desclarga", djumanji, "Ciencia ficcion", 2017, "jumanji.jpg", "https://www.youtube.com/watch?v=leIrosWRbYQ");
+                int idpelicula3 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "COCO", "i7.jpg", "desclarga", dc, "Animacion", 2017, "coco.jpg", "https://www.youtube.com/watch?v=-hTHtv1hmqc");
+                int idpelicula4 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Perfectos desconocidos", "i3.jpg", "desclarga", dperfdesc, "Tragicomedia", 2017, "perfectdesc.jpg", "https://www.youtube.com/watch?v=UqkXCILU_oE");
+                int idpelicula5 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Dando la nota 3", "i4.jpg", "desclarga", ddandonota, "Comedia", 2017, "dandolanota.jpg", "https://www.youtube.com/watch?v=1FgDZ2adeow");
+                int idpelicula6 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Ferdinand", "ferdi.jpg", "desclarga", dferdi, "Animacion", 2017, "ferdinand.jpg", "https://www.youtube.com/watch?v=9XcmEC8o98U");
+                int idpelicula7 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Wonder Wheel", "i8.jpg", "desclarga", dww, "Dramatico", 2017, "wonderwheel.jpg", "https://www.youtube.com/watch?v=7Y7VfCEb3Kg");
+                int idpelicula8 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Spider-Man: Homecoming", "spider.jpg", "desclarga", despider, "Ciencia Ficcion", 2017, "man.jpg", "https://www.youtube.com/watch?v=Xhvucc6KrVw");
+                int idpelicula9 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Wonder Woman", "ww.jpg", "desclarga", dwoman, "Ciencia Ficcion", 2017, "woman.jpg", "https://www.youtube.com/watch?v=gOfmwQijKFg");
+                int idpelicula10 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "it", "it.jpg", "desclarga", dit, "Terror", 2017, "ittt.jpg", "https://www.youtube.com/watch?v=_oBZ_zTz0Nw");
+                int idpelicula11 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Feliz dia de tu muerte", "hday.jpg", "desclarga", dhday, "Terror", 2017, "muerte.jpg", "https://www.youtube.com/watch?v=QzMX83gWxxA");
+                int idpelicula12 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, "Despicable Me 3", "gru.jpg", "desclarga", dgru, "Animacion", 2017, "gru3.jpg", "https://www.youtube.com/watch?v=6DBi41reeF0");
+                int idpelicula13 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Harry Potter y las reliquias de la muerte: Parte 1", "hrr1.jpg", "desclarga", dhrr1, "Fantasia", 2010, "harry1.jpg", "https://www.youtube.com/watch?v=f3O0odK1VIQ");
+                int idpelicula14 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Harry Potter y las reliquias de la muerte: Parte 2", "hrr2.jpg", "desclarga", dhrr2, " Fantasia", 2011, "harry2.jpg", "https://www.youtube.com/watch?v=HguSMW8XveQ");
+                int idpelicula15 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Blade Runner 2049 ", "blad.jpg", "desclarga", dblad, "Ciencia Ficcion", 2017, "bladerun.jpg", "https://www.youtube.com/watch?v=PkqHVGFAhbU");
+                int idpelicula16 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Baywatch ", "bay.jpg", "desclarga", dbay, "Comedia", 2017, "playa.jpg", "https://www.youtube.com/watch?v=p4ijrL4zscE");
+
+                int idvideo = videoCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "nombre", "hola", "desclarga", "descripcion", "genero", 1993, "imagrande");
+
+                int idserie = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, "La To Vegas", "s1.jpg", "desclarga", dvegas, "Comedia", 2017, "latovegas.jpg", 2000, false);
+                int idserie2 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Happy", "s2.jpg", "desclarga", dhappy, "Comedia", 2017, "happy.jpg", 2000, false);
+                int idserie3 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Lucifer", "luci.jpg", "desclarga", dluci, "Fantastico", 2016, "lucifer.jpg", 2000, false);
+                int idserie4 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Damnation", "s4.jpg", "desclarga", ddam, "Drama", 2017, "damnation.jpg", 2000, false);
+                int idserie5 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Van Helsing", "vh.jpg", "desclarga", dvh, "Accion", 2016, "vanhel.jpg", 2000, false);
+                int idserie6 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Runaways", "rwa.jpg", "desclarga", drw, "Ciencia Ficcion", 2017, "runaways.jpg", 2000, false);
+                int idserie7 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "The Big Bang", "bigbang.jpg", "desclarga", dbgbg, "Comedia", 2007, "thebigbang.jpg", 2000, false);
+                int idserie8 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Game of Thrones", "got.jpg", "desclarga", dgot, "Fantastico", 2011, "game.jpg", 2000, false);
+                int idserie9 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "HowIMeetYourMother", "himym.jpg", "desclarga", dhimym, "Comedia", 2005, "comoconoci.jpg", 2014, true);
+                int idserie10 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "13 Reason Why", "reason.jpg", "desclarga", d13, "Drama", 2017, "13reasonwhy.jpg", 2017, true);
+                int idserie11 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Stranger Things", "st.jpg", "desclarga", dst, "Ciencia Ficcion", 2016, "stranger.jpg", 2017, true);
+                int idserie12 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Rick y Morty", "RYM.jpg", "desclarga", dRYM, "Animacion", 2013, "rick.jpg", 2000, false);
+                int idserie13 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Young Sheldon", "ysh.jpg", "desclarga", dysh, "Comedia", 2017, "young.jpg", 2000, false);
+                int idserie14 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Black Mirror", "bmir.jpg", "desclarga", dbmir, "Ciencia Ficcion", 2011, "black.jpg", 2000, false);
+                int idserie15 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Vikings", "vik.jpg", "desclarga", dvik, "Accion", 2013, "vikings.jpg", 2000, false);
+                int idserie16 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Mr.Robot", "mrr.jpg", "desclarga", dmrr, "Suspense", 2015, "mr.rob.jpg", 2000, false);
 
 
 
                 // idtemporada01 -> serie 0 temporada 1; idtemporada11 -> serie 1 temporada 1 .....
-                int idtemporada01 = temporadaCEN.New_ (idserie, "Temporada 1");
-                int idtemporada02 = temporadaCEN.New_ (idserie, "Temporada 2");
-                int idtemporada03 = temporadaCEN.New_ (idserie, "Temporada 3");
-                int idtemporada11 = temporadaCEN.New_ (idserie2, "Temporada 1");
+
+                int idtemporada01 = temporadaCEN.New_(idserie, "Temporada 1");
+                int idtemporada02 = temporadaCEN.New_(idserie2, "Temporada 1");
+                int idtemporada03 = temporadaCEN.New_(idserie3, "Temporada 1");
+                int idtemporada04 = temporadaCEN.New_(idserie3, "Temporada 2");
+                int idtemporada05 = temporadaCEN.New_(idserie3, "Temporada 3");
+                int idtemporada06 = temporadaCEN.New_(idserie4, "Temporada 1");
+                int idtemporada07 = temporadaCEN.New_(idserie5, "Temporada 1");
+                int idtemporada08 = temporadaCEN.New_(idserie5, "Temporada 2");
+                int idtemporada09 = temporadaCEN.New_(idserie6, "Temporada 1");
+                int idtemporada10 = temporadaCEN.New_(idserie7, "Temporada 1");
+                int idtemporada11 = temporadaCEN.New_(idserie7, "Temporada 2");
+                int idtemporada12 = temporadaCEN.New_(idserie7, "Temporada 3");
+                int idtemporada13 = temporadaCEN.New_(idserie7, "Temporada 4");
+                int idtemporada14 = temporadaCEN.New_(idserie7, "Temporada 5");
+                int idtemporada15 = temporadaCEN.New_(idserie7, "Temporada 6");
+                int idtemporada16 = temporadaCEN.New_(idserie8, "Temporada 1");
+                int idtemporada17 = temporadaCEN.New_(idserie8, "Temporada 2");
+                int idtemporada18 = temporadaCEN.New_(idserie8, "Temporada 3");
+                int idtemporada19 = temporadaCEN.New_(idserie8, "Temporada 4");
+                int idtemporada20 = temporadaCEN.New_(idserie8, "Temporada 5");
+                int idtemporada21 = temporadaCEN.New_(idserie8, "Temporada 6");
+                int idtemporada22 = temporadaCEN.New_(idserie9, "Temporada 1");
+                int idtemporada23 = temporadaCEN.New_(idserie9, "Temporada 2");
+                int idtemporada24 = temporadaCEN.New_(idserie9, "Temporada 3");
+                int idtemporada25 = temporadaCEN.New_(idserie9, "Temporada 4");
+                int idtemporada26 = temporadaCEN.New_(idserie9, "Temporada 5");
+                int idtemporada27 = temporadaCEN.New_(idserie9, "Temporada 6");
+                int idtemporada28 = temporadaCEN.New_(idserie10, "Temporada 1");
+
+           
+                string cveg1 = "El estreno de la serie presenta a la tripulación de la aerolínea de bajo presupuesto y sus pasajeros excéntricos que, cada fin de semana, toman el vuelo de ida y vuelta desde Los Ángeles a Las Vegas con un objetivo en mente: volver a ser un ganador. No será fácil, pero este improbable grupo de malhechores y soñadores eventualmente pasará de ser extraños en un avión a ser de apoyo, aunque no convencionales, en familia, bueno, al menos de viernes a domingo.";
+                string ch1 = "Un sicario debe asociarse con un caballo imaginario de alas azules para rescatar a un niño desaparecido";
+                string ch2 = "Sax se estrella en un juego de póquer de alto riesgo para ganar armas y dinero en efectivo para escapar de Nueva York mientras Happy intenta convencerlo de que es un padre. La ex esposa Amanda y su ex amante Merry se unen para rescatar a Hailey.";
+                string ch3 = "Sax recorre un oscuro pasado mientras él y Happy siguen a su hija. Merry y Amanda hacen un descubrimiento escalofriante. Very Bad Santa coacciona la información de Hailey sobre su padre.";
+                string ch4 = "Sax y Happy siguen sus fortunas a Chinatown. La hermana de Blue aparece buscando venganza por el asesinato de sus hijos. La búsqueda de Merry la acerca cada vez más a Very Bad Santa.";
+                string cl1 = "Al salir del infierno, Lucifer Morningstar se retira a Los Ángeles para una vida más emocionante. Cuando el asesinato de un amigo lo conecta con la detective del LAPD Chloe Decker, Lucifer se siente intrigado con la idea de castigar a los criminales, enviando al diablo a una lucha entre el bien y el mal.";
+                string cl2 = "Cuando el hijo de una estrella de cine es asesinado después de ser perseguido por los paparazzi, Chloe echa un vistazo al caso con un poco de ayuda de Lucifer. Mientras tanto, Maze y Amenadiel continúan alentando a Lucifer a volver al infierno.";
+                string cl3 = "Cuando un futuro quarterback súper estrella de 22 años se despierta y encuentra a una niña muerta flotando en su piscina, recurre a su amigo, Lucifer, en busca de ayuda. Lucifer recluta a Chloe para investigar el caso, lo que lleva al mundo de los grandes deportes de dinero y las personas que literalmente matan para ser el número uno.";
+                string cl4 = "En un esfuerzo por superar su enamoramiento con Chloe, Lucifer decide que él debe seducirla. Mientras tanto, los dos se juntan en una caja de niña desaparecida y Amenadiel confronta a Maze sobre sus preocupaciones sobre Lucifer.";
+                string cl5 = "Lucifer se distrae con el escape de su madre del infierno, mientras él y Chloe investigan el asesinato de una actriz suplente. Mientras tanto, la fe de Chloe en Lucifer es probada por el nuevo médico forense, Ella. Además, Amenadiel espera controlar el lado salvaje de Lucifer, ya que ambos lidian con la ausencia de Maze.";
+                string cl6 = "Cuando la madre de Lucifer, Charlotte, aparece en la escena de un grizzly asesinato que suplica inocencia, Lucifer duda de creer en su historia. No queriendo dejarla sola, le ordena a Maze que cuide de ella, y no que la torture, permitiéndole investigar el caso con Chloe.";
+                string cl7 = "Lucifer y Chloe investigan un asesinato horrible después de un video de las superficies del crimen en las redes sociales. Cuando aparece un segundo video, se dan cuenta de que tienen un asesino en serie en sus manos. Mientras tanto, la madre de Lucifer regresa como Charlotte Richards. Además, Amenadiel, luchando con su pérdida de poder, tiene una cita con Linda.";
+                string cl8 = "Después de que los cuerpos de dos jóvenes trasplantes de L.A. se encuentran envenenados, Chloe y Lucifer buscan al asesino. Cuando Maze convence a Chloe para que tome unas copas, lo que el detective percibe como un acto de amistad, pero en realidad es parte de una apuesta entre Maze y Lucifer, los dos toman una decisión impactante.";
+                string cl9 = "Después de que un confundido Lucifer se despierta en el medio del desierto con sus alas hacia atrás, recluta la ayuda de Chloe para ayudar a descubrir qué le sucedió y por qué. Al hacer su propia investigación, se encuentran con una escena del crimen que podría estar relacionada con el secuestro de Lucifer. Cuando el Departamento de Policía de Lancaster se involucra, el Teniente recién llegado Marcus Pierce no logra causar una gran impresión en todos con su actitud severa. La investigación sale mal cuando Lucifer se encuentra en otra situación comprometedora y se revela algo mucho más oscuro.";
+                string cl10 = "Después de que Lucifer retira sus alas una vez más, Linda se preocupa porque él está demasiado enfocado en rastrear al Sinnerman y descuidar su propio bienestar. Las tensiones continúan aumentando entre Lucifer y Chloe, pero se dan cuenta de que deben poner sus diferencias de lado para resolver un caso en el que Lucifer toma un interés repentino. Sin embargo, una vez que se revela el pasado del Detective Pierce, todos se dan cuenta de que el Sinnerman es mucho más peligroso de lo que pensaban.";
+                string cdam1 = "When a farmer's strike led by a local preacher escalates, a man from his past is sent to restore order. ";
+                string cdam2 = "Seth y los granjeros rechazan al grupo de vigilantes de la Legión Negra; Creeley intenta aprender más sobre la nueva vida de su hermano.";
+                string cdam3 = "Cuando las fincas locales enfrentan ejecuciones hipotecarias, Seth y Amelia intentan recuperarlas; Creeley y Bessie se enfrentan a la Legión Negra.";
+                string cdam4 = "Las negociaciones comienzan entre los agricultores y el banco. Pero las cosas se vuelven sangrientas cuando Creeley divide a los granjeros.";
+                string cvan1 = "Es Vanessa Helsing vs vampiros en la Seattle post-apocalíptica.";
+                string cvan2 = "En los días previos a The Rising, Vanessa es atacada y dejada por un intruso. Cuando Doc descubre anomalías en los análisis de sangre de Vanessa, Axel y los infantes de marina vienen a recuperar el cuerpo, solo para quedar abandonados en el hospital cuando se desata el infierno fuera del edificio.";
+                string cvan3 = "La fuente de energía del hospital está dañada, poniendo en peligro las luces UV protectoras. Vanessa y Axel se dirigen a Seattle para recoger partes, dejando a los demás para luchar contra los vampiros entre ellos.";
+                string cvan4 = "Vanessa y Mohamad buscan a Dylan mientras la ciudadela de Dmitri se derrumba a su alrededor; Flesh adquiere un aliado inesperado en uno de los Combatientes de la Resistencia; Taka choca con Vampire Elite.";
+                string cvan5 = "Vanessa lucha para sacar a su hija de la ciudadela; Dmitri y Antanasia traman un plan para detener a Vanessa; Mohamad arriesga su vida para salvar a Vanessa y Dylan.";
+                string cvan6 = "Vanessa toma una decisión horrible para salvar a su hija; Axel y un antiguo aliado luchan por sobrevivir en la naturaleza; un grupo de delincuentes juveniles se encuentran cara a cara con un vampiro sádico.";
+                string crun1 = "Un grupo de seis adolescentes de Los Ángeles, fracturados por una trágica pérdida, se reúnen solo para descubrir que sus padres pueden estar ocultando un terrible secreto que pone patas arriba su mundo.";
+                string crun2 = "Una nueva versión de 101, como se ve desde la perspectiva de los padres. Todos están nerviosos, pero después de esta noche, si todo sale según lo planeado, no tendrán que preocuparse por sus obligaciones nuevamente.";
+                string crun3 = "Los niños se tambalean después de los eventos de anoche. Cuando comienza una investigación, descubren que sus padres pueden tener más cosas que esconder de lo que podrían haber imaginado.";
+                string cbig1 = "Los brillantes compañeros físicos de física, Leonard y Sheldon, conocen a su nueva vecina, Penny, quien comienza a mostrarles que, por mucho que sepan sobre ciencia, saben muy poco sobre la vida real.";
+                string cbig2 = "Leonard se ofrece como voluntario para firmar un paquete en un intento de causar una buena impresión en Penny, pero cuando él recluta a Sheldon para que lo ayude, su intento de caballería sale terriblemente mal.";
+                string cbig3 = "Leonard le pide salir a una mujer después de enterarse de que Penny está saliendo con alguien.";
+                string cbig4 = "La primera cita de Penny con Leonard sale mal; Penny encuentra que Sheldon es un confidente involuntario. ";
+                string cbig5 = "Cuando Sheldon descubre que los tipos manipularon los datos de su expedición que recibió del Ártico, se va a Texas deshonrado. Esto hace que los chicos lo sigan, lo que amenaza la esperanza de Leonard de pasar un rato romántico con Penny y la amistad de los chicos con Sheldon.";
+                string cbig6 = "Penny etiqueta en la primera cita de Sheldon; Wolowitz encuentra un nuevo uso para un brazo robótico.";
+                string cbig7 = "Penny está preocupada por lo dañada que será su amistad con los muchachos después de acostarse con Raj mientras Sheldon se convierte en el líder del equipo de paintball.";
+                string cbig8 = "Raj se enfrenta a su soledad cuando sus amigos salen a citas; mientras que en el espacio, Wolowitz se ve involucrado en una pelea entre Bernadette y su madre.";
+                string cgot1 = "Ned Stark, Lord of Winterfell, descubre que su mentor, Jon Arryn, ha muerto y que el Rey Robert se dirige hacia el norte para ofrecer la posición de Ned Arryn como Mano del Rey. Al otro lado del Mar Estrecho en Pentos, Viserys Targaryen planea casarse con su hermana Daenerys al líder guerrero nómada Dothraki, Khal Drogo para forjar una alianza para tomar el trono.";
+                string cgot2 = "Después de haber aceptado convertirse en la Mano del Rey, Ned deja Invernalia con sus hijas Sansa y Arya, mientras Catelyn se queda atrás en Invernalia. Jon Snow se dirige al norte para unirse a la hermandad de la Guardia Nocturna. Tyrion decide renunciar al viaje al sur con su familia, en lugar de unirse a Jon en la comitiva que se dirige al Muro. Viserys espera su momento con la esperanza de recuperar el trono, mientras que Daenerys centra su atención en aprender cómo complacer a su nuevo marido, Drogo.";
+                string cgot3 = "Al llegar a Desembarco del Rey, Ned se sorprende al enterarse del despilfarro de la Corona por parte de sus nuevos asesores. En Castle Black, Jon Snow impresiona a Tyrion a expensas de reclutas más verdes. Sospechando que los Lannister tuvieron algo que ver en la caída de Bran, Catelyn sigue encubiertamente a su esposo a King's Landing, donde es interceptada por Petyr Baelish, un Littlefinger, un astuto aliado de toda la vida y propietario de un burdel. Cersei y Jaime reflexionan sobre las implicaciones de la recuperación de Bran; Arya estudia esgrima. En el camino a Vaes Dothrak, Daenerys se encuentra en desacuerdo con Viserys.";
+                string cgot4 = "Mientras Robb Stark y su ejército del norte continúan la guerra contra los Lannisters, Tyrion llega a Desembarco del Rey para aconsejar a Joffrey y atemperar los excesos del joven rey. En la isla de Rocadragón, Stannis Baratheon trama una invasión para reclamar el trono de su difunto hermano, aliándose con el feroz Melisandre, una extraña sacerdotisa de un dios extraño. Al otro lado del mar, Daenerys, sus tres jóvenes dragones y los khalasar recorren los Red Waste en busca de aliados o agua. En el norte, Bran preside una raída Winterfell, mientras que más allá del Muro, Jon Snow y Night's Watch deben refugiarse con un salvaje retorcido.";
+                string cgot5 = "Jon se encuentra con King-Beyond-the-Wall mientras sus Night Watch Brothers huyen hacia el sur. En Desembarco del Rey, Tyrion quiere una recompensa, Margaery muestra su naturaleza caritativa, Cersei organiza una cena y Littlefinger se ofrece para ayudar a Sansa. Al otro lado del Estrecho, Daenerys comienza su viaje hacia el oeste.";
+                string cgot6 = "Tyrion da la bienvenida a un invitado sorpresa a Desembarco del Rey para la boda real, pero teme que haya venido a la Fortaleza Roja por algo más. Mientras tanto, Jon advierte a sus superiores escépticos de la Guardia Nocturna sobre un ataque inminente. Jaime lucha por recuperar su estado en casa. Arya encuentra una cara de su pasado, y Daario Naharis discute la estrategia con Daenerys en el viaje a la ciudad esclava Meereen.";
+                string cgot7 = "Cersei y Jaime se ajustan a un mundo sin Tywin; Varys revela una conspiración a Tyrion; Daenerys enfrenta una nueva amenaza a su gobierno; Jon está atrapado entre dos reyes.";
+                string cgot8 = "Jon Snow está muerto. Daenerys conoce a un hombre fuerte. Cersei ve a su hija otra vez.";
+                string chow1 = "Es el año 2030 y un viejo Ted Mosby le está contando la historia a su hijo y a su hija sobre cómo conoció y finalmente se casará con su madre. Aquí es donde nos encontramos por primera vez con Ted, Lily, Marshall, Barney y Robin.";
+                string chow2 = "En un intento desesperado por una segunda cita, Ted invita a Robin a una fiesta que está lanzando. Sin embargo, ella no aparece y sigue organizando fiestas con la esperanza de que finalmente llegue.";
+                string chow3 = "Ted acepta dejar que Barney condimente su vida amorosa y termina en una loca aventura de volar a Filadelfia, encontrarse con la ley y visitar la Campana de la Libertad.";
+                string chow4 = "La pandilla intenta ayudar a Marshall a superar a Lily, especialmente cuando encuentra un recibo de tarjeta de crédito que lleva a un hotel en la ciudad de Nueva York donde figuran algunos de sus cargos.";
+                string chow5 = "Robin aparece con una cita y esto motiva a Ted a volver allí. También aprendemos algo importante sobre 'la Madre'.";
+                string chow6 = "Ted y Stella se comprometen, pero Ted pronto descubre que no sabe nada de ella. Mientras tanto, Barney confiesa a Lily que está enamorado de Robin.";
+                string chow7 = "Después de compartir un beso al principio del verano, Robin y Barney no están seguros de cómo manejar su atracción mutua. Después de algunas consideraciones le dicen a la pandilla que han decidido seguir siendo solo amigos, pero en secreto continúan viéndose entre ellos. Son capaces de salirse con la suya con su romance secreto durante un par de meses, pero se descubren cuando Ted, Marshall y Lily los visitan juntos. Le explican a la pandilla que están contentos con su relación casual, y no quisieron complicarla al definirla. Esto es inaceptable para Lily, quien los presiona para etiquetar su situación, y finalmente los encierra en la habitación de Robin para obligarlos a abordarlo. Mientras tanto, Ted está ansioso por sus primeros días como profesor en Columbia, lo que empeora cuando aparece en la clase equivocada y comienza su conferencia.";
+                string chow8 = "Cuando Ted y Barney discuten sobre quién tiene dibs con una chica candente, Ted se da cuenta de que ella está allí con Cindy, una chica con la que anteriormente salió y que también es el compañero de habitación de su futura esposa. Mientras tanto, Robin tiene el corazón roto por Don, y Marshall no puede callar su deseo de formar una familia.";
 
 
-                int idcapitulo = capituloCEN.New_ (idtemporada01, "WHAT", new DateTime (1993, 12, 3), "descripccion", "imagen", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
-                int idcapitulo2 = capituloCEN.New_ (idtemporada01, "Who", new DateTime (1993, 12, 3), "descripccion", "imagen", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
-                int idcapitulo3 = capituloCEN.New_ (idtemporada01, "WHEN", new DateTime (1993, 12, 3), "descripccion", "imagen", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
-                int idcapitulo4 = capituloCEN.New_ (idtemporada02, "Mandingo", new DateTime (1993, 12, 3), "descripccion", "imagen", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
-                int idcapitulo5 = capituloCEN.New_ (idtemporada02, "Yes", new DateTime (1993, 12, 3), "descripccion", "imagen", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
-                int idcapitulo6 = capituloCEN.New_ (idtemporada03, "Techo", new DateTime (1993, 12, 3), "descripccion", "imagen", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
+                int idcapitulo = capituloCEN.New_ (idtemporada01, "Piloto", new DateTime (1993, 12, 3), cveg1, "cap1vegas.jpg", "https://www.youtube.com/watch?v=p4ijrL4zscE");
+
+                int idcapitulo2 = capituloCEN.New_ (idtemporada02, "1-Saint Nick", new DateTime (1993, 12, 3), ch1, "happy1.jpg", "https://www.youtube.com/watch?v=t7OYkSgmM-w");
+                int idcapitulo3 = capituloCEN.New_ (idtemporada02, "2-What Smiles Are For", new DateTime (1993, 12, 3), ch2, "happy2.jpg", "https://www.youtube.com/watch?v=t7OYkSgmM-w");
+                int idcapitulo4 = capituloCEN.New_ (idtemporada02, "3-When Christmas Was Christmas", new DateTime (1993, 12, 3), ch3, "happy3.jpg", "https://www.youtube.com/watch?v=t7OYkSgmM-w");
+                int idcapitulo5 = capituloCEN.New_ (idtemporada02, "4-Year of the Horse", new DateTime (1993, 12, 3), ch4, "happy4.jpg", "https://www.youtube.com/watch?v=t7OYkSgmM-w");
+
+
+                int idcapitulo6 = capituloCEN.New_ (idtemporada03, "1-Piloto", new DateTime (1993, 12, 3), cl1, "luci1.jpg", "https://www.youtube.com/watch?v=K2kyWOMsy2Q");
+
+                int idcapitulo7 = capituloCEN.New_(idtemporada03, "2-Lucifer, Stay. Good Devil.", new DateTime(1993, 12, 3), cl2, "luci2.jpg", "https://www.youtube.com/watch?v=K2kyWOMsy2Q");
+                int idcapitulo8 = capituloCEN.New_(idtemporada03, "3-The Would-Be Prince of Darkness", new DateTime(1993, 12, 3), cl3, "luci3.jpg", "https://www.youtube.com/watch?v=K2kyWOMsy2Q");
+                int idcapitulo9 = capituloCEN.New_(idtemporada03, "4-Lucifer, Stay. Good Devil.", new DateTime(1993, 12, 3), cl4, "luci2.jpg", "https://www.youtube.com/watch?v=K2kyWOMsy2Q");
+                int idcapitulo10 = capituloCEN.New_(idtemporada04, "1-Everything's Coming Up Lucifer.", new DateTime(1993, 12, 3), cl5, "luci5.jpg", "https://www.youtube.com/watch?v=K2kyWOMsy2Q");
+                int idcapitulo11 = capituloCEN.New_(idtemporada04, "2-Liar, Liar, Slutty Dress on Fire.", new DateTime(1993, 12, 3), cl6, "luci6.jpg", "https://www.youtube.com/watch?v=K2kyWOMsy2Q");
+                int idcapitulo12 = capituloCEN.New_(idtemporada04, "3-Sin-Eater", new DateTime(1993, 12, 3), cl7, "luci7.jpg", "https://www.youtube.com/watch?v=K2kyWOMsy2Q");
+                int idcapitulo13 = capituloCEN.New_(idtemporada04, "4-Lady Parts", new DateTime(1993, 12, 3), cl8, "luci8.jpg", "https://www.youtube.com/watch?v=K2kyWOMsy2Q");
+                int idcapitulo14 = capituloCEN.New_(idtemporada05, "1-They're Back Again, Aren't They?", new DateTime(1993, 12, 3), cl9, "luci9.jpg", "https://www.youtube.com/watch?v=K2kyWOMsy2Q");
+                int idcapitulo15 = capituloCEN.New_(idtemporada05, "2-The One with the Baby Carrot", new DateTime(1993, 12, 3), cl10, "luci10.jpg", "https://www.youtube.com/watch?v=K2kyWOMsy2Q");
+
+                int idcapitulo16 = capituloCEN.New_(idtemporada06, "1-Sam Riley's Body", new DateTime(1993, 12, 3), cdam1, "dam1.jpg", "https://www.youtube.com/watch?v=n7yW7h0YkPI");
+                int idcapitulo17 = capituloCEN.New_(idtemporada06, "2-Which Side Are You On", new DateTime(1993, 12, 3), cdam2, "dam2.jpg", "https://www.youtube.com/watch?v=n7yW7h0YkPI");
+                int idcapitulo18 = capituloCEN.New_(idtemporada06, "3-One Penny", new DateTime(1993, 12, 3), cdam3, "dam3.jpg", "https://www.youtube.com/watch?v=n7yW7h0YkPI");
+                int idcapitulo19 = capituloCEN.New_(idtemporada06, "4-The Emperor of Ice Cream", new DateTime(1993, 12, 3), cdam4, "dam4.jpg", "https://www.youtube.com/watch?v=n7yW7h0YkPI");
+
+                int idcapitulo20 = capituloCEN.New_(idtemporada07, "1-Help Me", new DateTime(1993, 12, 3), cvan1, "van1.jpg", "https://www.youtube.com/watch?v=Jtic6uu8P5Q");
+                int idcapitulo21 = capituloCEN.New_(idtemporada07, "2-Seen You", new DateTime(1993, 12, 3), cvan2, "van2.jpg", "https://www.youtube.com/watch?v=Jtic6uu8P5Q");
+                int idcapitulo22 = capituloCEN.New_(idtemporada07, "3-Stay Inside", new DateTime(1993, 12, 3), cvan3, "van3.jpg", "https://www.youtube.com/watch?v=Jtic6uu8P5Q");
+                int idcapitulo23 = capituloCEN.New_(idtemporada08, "1-Began Again", new DateTime(1993, 12, 3), cvan4, "van4.jpg", "https://www.youtube.com/watch?v=Jtic6uu8P5Q");
+                int idcapitulo24 = capituloCEN.New_(idtemporada08, "2-In Redemption", new DateTime(1993, 12, 3), cvan5, "van5.jpg", "https://www.youtube.com/watch?v=Jtic6uu8P5Q");
+                int idcapitulo25 = capituloCEN.New_(idtemporada08, "3-Love Bites", new DateTime(1993, 12, 3), cvan6, "van6.jpg", "https://www.youtube.com/watch?v=Jtic6uu8P5Q");
+
+                int idcapitulo26 = capituloCEN.New_(idtemporada09, "1-Reunion", new DateTime(1993, 12, 3), crun1, "run1.jpg", "https://www.youtube.com/watch?v=pLzQaMbTg7Q");
+                int idcapitulo27 = capituloCEN.New_(idtemporada09, "2-Rewind", new DateTime(1993, 12, 3), crun2, "run2.jpg", "https://www.youtube.com/watch?v=pLzQaMbTg7Q");
+                int idcapitulo28 = capituloCEN.New_(idtemporada09, "3-Rewind", new DateTime(1993, 12, 3), crun3, "run3.jpg", "https://www.youtube.com/watch?v=pLzQaMbTg7Q");
+
+                int idcapitulo29 = capituloCEN.New_(idtemporada10, "Pilot", new DateTime(1993, 12, 3), cbig1, "big1.jpg", "https://www.youtube.com/watch?v=_uQXxvZ3afQ");
+                int idcapitulo30 = capituloCEN.New_(idtemporada10, "2-The Big Bran Hypothesis", new DateTime(1993, 12, 3), cbig2, "big2.jpg", "https://www.youtube.com/watch?v=_uQXxvZ3afQ");
+                int idcapitulo31 = capituloCEN.New_(idtemporada10, "3-The Fuzzy Boots Corollary", new DateTime(1993, 12, 3), cbig3, "big3.jpg", "https://www.youtube.com/watch?v=_uQXxvZ3afQ");
+                int idcapitulo32 = capituloCEN.New_(idtemporada11, "1-The Bad Fish Paradigm", new DateTime(1993, 12, 3), cbig4, "big4.jpg", "https://www.youtube.com/watch?v=_uQXxvZ3afQ");
+                int idcapitulo33 = capituloCEN.New_(idtemporada12, "1-The Electric Can Opener Fluctuation", new DateTime(1993, 12, 3), cbig5, "big5.jpg", "https://www.youtube.com/watch?v=_uQXxvZ3afQ");
+                int idcapitulo34 = capituloCEN.New_(idtemporada13, "1-The Robotic Manipulation", new DateTime(1993, 12, 3), cbig6, "big6.jpg", "https://www.youtube.com/watch?v=_uQXxvZ3afQ");
+                int idcapitulo35 = capituloCEN.New_(idtemporada14, "1-The Skank Reflex Analysis", new DateTime(1993, 12, 3), cbig7, "big7.jpg", "https://www.youtube.com/watch?v=_uQXxvZ3afQ");
+                int idcapitulo36 = capituloCEN.New_(idtemporada15, "1-The Date Night Variable", new DateTime(1993, 12, 3), cbig8, "big8.jpg", "https://www.youtube.com/watch?v=_uQXxvZ3afQ");
+
+                int idcapitulo37 = capituloCEN.New_(idtemporada16, "1-Winter Is Coming", new DateTime(1993, 12, 3), cgot1, "got1.jpg", "https://www.youtube.com/watch?v=iGp_N3Ir7Do");
+                int idcapitulo38 = capituloCEN.New_(idtemporada16, "2-The Kingsroad", new DateTime(1993, 12, 3), cgot2, "got2.jpg", "https://www.youtube.com/watch?v=iGp_N3Ir7Do");
+                int idcapitulo39 = capituloCEN.New_(idtemporada16, "3-Lord Snow", new DateTime(1993, 12, 3), cgot3, "got3.jpg", "https://www.youtube.com/watch?v=iGp_N3Ir7Do");
+                int idcapitulo40 = capituloCEN.New_(idtemporada17, "1-The North Remembers", new DateTime(1993, 12, 3), cgot4, "got4.jpg", "https://www.youtube.com/watch?v=iGp_N3Ir7Do");
+                int idcapitulo41 = capituloCEN.New_(idtemporada18, "1-Valar Dohaeris", new DateTime(1993, 12, 3), cgot5, "got5.jpg", "https://www.youtube.com/watch?v=iGp_N3Ir7Do");
+                int idcapitulo42 = capituloCEN.New_(idtemporada19, "1-Two Swords", new DateTime(1993, 12, 3), cgot6, "got6.jpg", "https://www.youtube.com/watch?v=iGp_N3Ir7Do");
+                int idcapitulo43 = capituloCEN.New_(idtemporada20, "1-The Wars to Come", new DateTime(1993, 12, 3), cgot7, "got7.jpg", "https://www.youtube.com/watch?v=iGp_N3Ir7Do");
+                int idcapitulo44 = capituloCEN.New_(idtemporada21, "1-The Red Woman", new DateTime(1993, 12, 3), cgot8, "got8.jpg", "https://www.youtube.com/watch?v=iGp_N3Ir7Do");
+
+                int idcapitulo45 = capituloCEN.New_(idtemporada22, "Pilot", new DateTime(1993, 12, 3), chow1, "how1.jpg", "https://www.youtube.com/watch?v=apRiP2h-O5o");
+                int idcapitulo46 = capituloCEN.New_(idtemporada22, "2-Purple Giraffe", new DateTime(1993, 12, 3), chow2, "how2.jpg", "https://www.youtube.com/watch?v=apRiP2h-O5o");
+                int idcapitulo47 = capituloCEN.New_(idtemporada22, "3-Sweet Taste of Liberty", new DateTime(1993, 12, 3), chow3, "how3.jpg", "https://www.youtube.com/watch?v=apRiP2h-O5o");
+                int idcapitulo48 = capituloCEN.New_(idtemporada23, "1-Where Were We?", new DateTime(1993, 12, 3), chow4, "how4.jpg", "https://www.youtube.com/watch?v=apRiP2h-O5o");
+                int idcapitulo49 = capituloCEN.New_(idtemporada24, "1-Wait for It", new DateTime(1993, 12, 3), chow5, "how5.jpg", "https://www.youtube.com/watch?v=apRiP2h-O5o");
+                int idcapitulo50 = capituloCEN.New_(idtemporada25, "1-Do I Know You?", new DateTime(1993, 12, 3), chow6, "how6.jpg", "https://www.youtube.com/watch?v=apRiP2h-O5o");
+                int idcapitulo51 = capituloCEN.New_(idtemporada26, "1-Definitions", new DateTime(1993, 12, 3), chow7, "how7.jpg", "https://www.youtube.com/watch?v=apRiP2h-O5o");
+                int idcapitulo52 = capituloCEN.New_(idtemporada27, "1-Big Days", new DateTime(1993, 12, 3), chow8, "how8.jpg", "https://www.youtube.com/watch?v=apRiP2h-O5o");
+
 
 
                 #endregion

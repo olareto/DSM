@@ -9,7 +9,7 @@
     <div class="row">
         <img class="col-md-12" src='~/Images/cabecera/@Html.DisplayFor(model => model.imagran)' />
     </div>
-    
+
     <div class="row">
         <img class="cartelera col-md-3 gerMargenLetras" src='~/Images/cartelera/@Html.DisplayFor(modelItem => modelItem.Imagen)' />
 
@@ -20,23 +20,47 @@
             <a class="btn btn-primary center-block" href='@Url.Action("Reproducir", "Pelicula", new { id = Model.id })'>Reproducir pelicula</a>
         </div>
 
+        @if (Session["log"] != null && (bool)Session["log"] == true)
+    {
         <div class="dropdown col-md-3 gerMargenLetras">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Opciones
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Vista</a>
-                <a class="dropdown-item admin" href='@Url.Action("Delete", "Pelicula", new { id = Model.id })'>Borrar</a>
-                <a class="dropdown-item admin" href='@Url.Action("Edit", "Pelicula", new { id = Model.id })'>Editar</a>
-                <a class="dropdown-item admin" href='@Url.Action("addlist", "Usuario", new { idus= @Session["correo"] as string, idpro=Model.id, lista="sig"  })'>siguiendo</a>
-                <a class="dropdown-item admin" href='@Url.Action("addlist", "Usuario", new { idus= @Session["correo"] as string, idpro=Model.id, lista="fav"  })'>favoritos</a>
-                <a class="dropdown-item admin" href='@Url.Action("addlist", "Usuario", new { idus= @Session["correo"] as string, idpro=Model.id, lista="visto"  })'>visto</a>
+                <div>
+                    <a class="dropdown-item" href='@Url.Action("addlist", "Usuario", new { idus = @Session["correo"] as string, idpro = Model.id, lista = "sig" })'>Añadir a siguiendo</a>
+                </div>
+                <div>
+                    <a class="dropdown-item" href='@Url.Action("addlist", "Usuario", new { idus = @Session["correo"] as string, idpro = Model.id, lista = "fav" })'>Añadir a favoritos</a>
+                </div>
+                <div>
+                    <a class="dropdown-item" href='@Url.Action("addlist", "Usuario", new { idus = @Session["correo"] as string, idpro = Model.id, lista = "visto" })'>Añadir a visto</a>
+
+                </div>
+
+                @if (Session["admin"] != null && (bool)Session["admin"] == true)
+    {
+            <div>
+                <a class="dropdown-item admin" href='@Url.Action("Edit", "Serie", new { id = Model.id })'>Editar</a>
+               
             </div>
-        </div>
+
+            <div>
+                <a class="dropdown-item admin" href='@Url.Action("Delete", "Serie", new { id = Model.id })'>Borrar</a>
+
+            </div>
+                }
+            </div>
+            </div>
+}
 
     </div>
-    
+
 </div>
-<p>
-    @Html.Partial("_Comentario", (IEnumerable<DSM5.Models.Comentario>)ViewBag.coment)
-</p>
+
+@if (Session["log"] != null && (bool)Session["log"] == true)
+{
+    <p>
+        @Html.Partial("_Comentario", (IEnumerable<DSM5.Models.Comentario>)ViewBag.coment)
+    </p>
+}

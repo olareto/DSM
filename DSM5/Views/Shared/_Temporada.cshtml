@@ -1,22 +1,29 @@
 ﻿@model IEnumerable<DSM5.Models.Temporada>
 
-<p class="admin">
-    @Html.ActionLink("Añadir temporada", "Create", "Temporada", new { id = @ViewData["id_serie"] })
-</p>
-<div class="container">
-    @foreach (var item in Model)
-    {
+
+@if (Session["admin"] != null && (bool)Session["admin"] == true)
+{
+    <p class="admin">
+        @Html.ActionLink("Añadir temporada", "Create", "Temporada", new { id = @ViewData["id_serie"] })
+    </p>
+}
+    <div class="container">
+        @foreach (var item in Model)
+        {
 
         <div class="col-md-9">
             <div class="col-md-10">
                 @Html.ActionLink(item.Nombre, "mostrar_cap", "Temporada", new { id = item.id, tipo = @ViewData["controller"] }, null)
             </div>
-            <div class="col-md-2 admin">
-                @Html.ActionLink("Editar", "Edit", "Temporada", new { id = item.id, tipo = @ViewData["controller"] }, null)
-                @Html.ActionLink("Borrar", "Delete", "Temporada", new { id = item.id, tipo = @ViewData["controller"] }, null)
-            </div>
-            <hr />
+            @if (Session["admin"] != null && (bool)Session["admin"] == true)
+            {
+        <div class="col-md-2 admin">
+            @Html.ActionLink("Editar", "Edit", "Temporada", new { id = item.id, tipo = @ViewData["controller"] }, null)
+            @Html.ActionLink("Borrar", "Delete", "Temporada", new { id = item.id, tipo = @ViewData["controller"] }, null)
         </div>
-    }
+            }
+        <hr />
+        </div>
+        }
 
-</div>
+    </div>

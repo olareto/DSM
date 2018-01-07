@@ -19,7 +19,7 @@ namespace DSM5.Controllers
             UsuarioCAD cad = new UsuarioCAD(session);
 
             UsuarioCEN cen = new UsuarioCEN(cad);
-            IList<UsuarioEN> enlinst=cen.ReadAll(0, 6);
+            IList<UsuarioEN> enlinst=cen.ReadAll(0, int.MaxValue);
             AssemblerUsuario ass = new AssemblerUsuario();
             IList<Usuario> listart = ass.ConvertListENToModel(enlinst);
 
