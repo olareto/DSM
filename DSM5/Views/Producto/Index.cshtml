@@ -83,7 +83,7 @@
                         @Html.DisplayFor(modelItem => item.Precio)
                         </p>
                         <p>                         
-                            <button type="button" class="btn btn-mostaza">@Html.ActionLink("Añadir al carrito", "addcarr", "Usuario", new { idus = @ViewData["correo"] as string, idpro = item.id }, null)</button>                     
+                            <button type="button" class="btn btn-mostaza">@Html.ActionLink("Añadir al carrito", "addcarr", "Usuario", new { idus = @Session["correo"] as string, idpro = item.id }, null)</button>                     
                         </p>
                     </div>
                 </div>
