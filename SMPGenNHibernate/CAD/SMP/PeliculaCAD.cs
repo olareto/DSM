@@ -358,7 +358,7 @@ public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> Filt
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM PeliculaEN self where FROM PeliculaEN art where art.Nombre = :p_nombre";
+                //String sql = @"FROM PeliculaEN self where FROM PeliculaEN art where art.Nombre like '%'+:p_nombre+'%'";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("PeliculaENfiltronombreHQL");
                 query.SetParameter ("p_nombre", p_nombre);

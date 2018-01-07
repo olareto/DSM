@@ -364,7 +364,7 @@ public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.SerieEN> Filtron
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM SerieEN self where FROM SerieEN art where art.Nombre = :p_nombre";
+                //String sql = @"FROM SerieEN self where FROM SerieEN art where art.Nombre like '%'+:p_nombre+'%'";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("SerieENfiltronombreHQL");
                 query.SetParameter ("p_nombre", p_nombre);

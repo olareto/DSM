@@ -280,7 +280,7 @@ public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.EventoEN> Filtro
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM EventoEN self where FROM EventoEN art where art.Nombre = :p_nombre";
+                //String sql = @"FROM EventoEN self where FROM EventoEN art where art.Nombre like '%'+:p_nombre+'%'";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("EventoENfiltronombreHQL");
                 query.SetParameter ("p_nombre", p_nombre);
