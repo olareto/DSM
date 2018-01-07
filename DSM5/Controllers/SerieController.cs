@@ -16,10 +16,30 @@ namespace DSM5.Controllers
         public ActionResult Index()
         {
             SerieCEN cen = new SerieCEN();
-            IList<SerieEN> enlinst=cen.ReadAll(0, 16);
+            IList<SerieEN> enlinst=cen.ReadAll(0, int.MaxValue);
             AssemblerSerie ass = new AssemblerSerie();
             IList<Serie> listart = ass.ConvertListENToModel(enlinst);
+            int max = listart.Count;
+            Random aleatorio = new Random();
             
+            int uno = aleatorio.Next(1,max);
+            int dos = aleatorio.Next(1, max);
+            while (dos==uno)
+            {
+                dos = aleatorio.Next(1, max);
+            }
+            int tres = aleatorio.Next(1, max);
+            while (dos == tres || uno==tres)
+            {
+                tres = aleatorio.Next(1, max);
+            }
+
+            
+            IList<Serie> resu = new List<Serie>();
+            resu.Add(listart.ElementAt(uno));
+            resu.Add(listart.ElementAt(dos));
+            resu.Add(listart.ElementAt(tres));
+            ViewBag.serie = resu;
 
             System.Web.HttpContext.Current.Session["controller"] = "Serie";
             System.Web.HttpContext.Current.Session["action"] = "Index";
@@ -32,12 +52,36 @@ namespace DSM5.Controllers
         public ActionResult Index_Usu()
         {
             SerieCEN cen = new SerieCEN();
-            IList<SerieEN> enlinst = cen.ReadAll(0, 16);
+            IList<SerieEN> enlinst = cen.ReadAll(0, int.MaxValue);
             AssemblerSerie ass = new AssemblerSerie();
             IList<Serie> listart = ass.ConvertListENToModel(enlinst);
 
 
-                return View(listart);
+
+            int max = listart.Count;
+            Random aleatorio = new Random();
+
+            int uno = aleatorio.Next(1, max);
+            int dos = aleatorio.Next(1, max);
+            while (dos == uno)
+            {
+                dos = aleatorio.Next(1, max);
+            }
+            int tres = aleatorio.Next(1, max);
+            while (dos == tres || uno == tres)
+            {
+                tres = aleatorio.Next(1, max);
+            }
+
+
+            IList<Serie> resu = new List<Serie>();
+            resu.Add(listart.ElementAt(uno));
+            resu.Add(listart.ElementAt(dos));
+            resu.Add(listart.ElementAt(tres));
+            ViewBag.serie = resu;
+
+
+            return View(listart);
 
         }
 

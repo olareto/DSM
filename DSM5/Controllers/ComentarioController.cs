@@ -27,7 +27,7 @@ namespace DSM5.Controllers
 
 
             ComentarioCEN cen = new ComentarioCEN();
-            IList<ComentarioEN> enlinst=cen.ReadAll(0, 6);
+            IList<ComentarioEN> enlinst=cen.ReadAll(0, int.MaxValue);
             AssemblerComentario ass = new AssemblerComentario();
             IList<Comentario> listart = ass.ConvertListENToModel(enlinst);
 

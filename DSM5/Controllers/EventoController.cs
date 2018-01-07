@@ -16,7 +16,7 @@ namespace DSM5.Controllers
         public ActionResult Index()
         {
             EventoCEN cen = new EventoCEN();
-            IList<EventoEN> enlinst=cen.ReadAll(0, 6);
+            IList<EventoEN> enlinst=cen.ReadAll(0, int.MaxValue);
             AssemblerEvento ass = new AssemblerEvento();
             IList<Evento> listart = ass.ConvertListENToModel(enlinst);
 
