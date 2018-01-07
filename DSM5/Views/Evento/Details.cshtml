@@ -6,9 +6,9 @@
 }
 
 
-<div class="container-fluid">
+<div class="container-fluid bg-2">
     <div class="row">
-        <div class="col-sm-4 text-center">
+        <div class="col-sm-4 text-justify">
             <h2>@Html.DisplayFor(model => model.Nombre)</h2>
             <img class="centrarResponsive img-responsive imagenesDetailsProductos" src="~/Images/Eventos/@Html.DisplayFor(model => model.Imagen)" />
         </div>
@@ -40,8 +40,12 @@
             <p>
                 <button type="button" class="btn ">@Html.ActionLink("Back", @Session["action"] as string, @Session["controller"] as string, @Session["arg"], null)</button>
                 <button type="button" class="btn btn-mostaza">@Html.ActionLink("add to cart", "addcarr", "Usuario", new { idus = @Session["correo"] as string, idpro = Model.id }, null)</button>
-                <button type="button" class="btn admin ">@Html.ActionLink("Edit", "Edit", new { id = Model.id }) </button>
-                <button type="button" class="btn admin ">@Html.ActionLink("Delete", "Delete", new { id = Model.id }) </button>
+                @if (Session["admin"] != null && (bool)Session["admin"] == true)
+                {
+                    <button type="button" class="btn admin ">@Html.ActionLink("Edit", "Edit", new { id = Model.id }) </button>
+                    <button type="button" class="btn admin ">@Html.ActionLink("Delete", "Delete", new { id = Model.id }) </button>
+                }
+                
             </p>
         </div>
         <div class="col-sm-5">

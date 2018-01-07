@@ -20,40 +20,22 @@
         </div>
         <div class="col-sm-4">
             <p>
-                @Html.DisplayNameFor(model => model.Nombre)
+                @Html.DisplayNameFor(model => model.Nombre): @Html.DisplayFor(model => model.Nombre)
+            </p>         
+            <p>
+                @Html.DisplayNameFor(model => model.Descripcion): @Html.DisplayFor(model => model.Descripcion)
             </p>
             <p>
-                @Html.DisplayFor(model => model.Nombre)
+                @Html.DisplayNameFor(model => model.Talla): @Html.DisplayFor(model => model.Talla)
             </p>
             <p>
-                @Html.DisplayNameFor(model => model.Descripcion)
+                @Html.DisplayNameFor(model => model.Stock): @Html.DisplayFor(model => model.Stock)
             </p>
             <p>
-                @Html.DisplayFor(model => model.Descripcion)
+                @Html.DisplayNameFor(model => model.Precio): @Html.DisplayFor(model => model.Precio)
             </p>
             <p>
-                @Html.DisplayNameFor(model => model.Talla)
-            </p>
-            <p>
-                @Html.DisplayFor(model => model.Talla)
-            </p>
-            <p>
-                @Html.DisplayNameFor(model => model.Stock)
-            </p>
-            <p>
-                @Html.DisplayFor(model => model.Stock)
-            </p>
-            <p>
-                @Html.DisplayNameFor(model => model.Precio)
-            </p>
-            <p>
-                @Html.DisplayFor(model => model.Precio)
-            </p>
-            <p>
-                @Html.DisplayNameFor(model => model.Valoracion)
-            </p>
-            <p>
-                @Html.DisplayFor(model => model.Valoracion)
+                @Html.DisplayNameFor(model => model.Valoracion): @Html.DisplayFor(model => model.Valoracion)
             </p>            
             <p>
                 <button type="button" class="btn ">@Html.ActionLink("Volver", @Session["action"] as string, @Session["controller"] as string, @Session["arg"], null)</button>
