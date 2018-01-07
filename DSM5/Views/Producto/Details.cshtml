@@ -10,20 +10,29 @@
 
 <div class="container-fluid bg-2">
     <div class="row">
+<<<<<<< HEAD
         <div class="col-sm-4 text-center">  
+=======
+        <div class="col-sm-4 text-justify">
+>>>>>>> 39de9b3183f32a1b7b9db0df4cd971f506ac1230
             <p>
-                <h2 class="text-center">@Html.DisplayFor(model => model.Nombre)</h2> 
+                <h2 class="text-center">@Html.DisplayFor(model => model.Nombre)</h2>
             </p>
             <p>
                 <img class="centrarResponsive img-responsive imagenesDetailsProductos" src="~/Images/Productos/@Html.DisplayFor(model => model.Imagen)" />
-            </p>              
+            </p>
         </div>
         <div class="col-sm-4">
             <p>
+<<<<<<< HEAD
                 <h4>
                     @Html.DisplayNameFor(model => model.Nombre): @Html.DisplayFor(model => model.Nombre)
                 </h4>               
             </p>         
+=======
+                @Html.DisplayNameFor(model => model.Nombre): @Html.DisplayFor(model => model.Nombre)
+            </p>
+>>>>>>> 39de9b3183f32a1b7b9db0df4cd971f506ac1230
             <p>
                 <h4>
                     @Html.DisplayNameFor(model => model.Descripcion): @Html.DisplayFor(model => model.Descripcion)
@@ -45,96 +54,103 @@
                 </h4>  
             </p>
             <p>
+<<<<<<< HEAD
                 <h4>
                     @Html.DisplayNameFor(model => model.Valoracion): @Html.DisplayFor(model => model.Valoracion)
                 </h4>  
             </p>            
+=======
+                @Html.DisplayNameFor(model => model.Valoracion): @Html.DisplayFor(model => model.Valoracion)
+            </p>
+>>>>>>> 39de9b3183f32a1b7b9db0df4cd971f506ac1230
             <p>
                 <button type="button" class="btn ">@Html.ActionLink("Volver", @Session["action"] as string, @Session["controller"] as string, @Session["arg"], null)</button>
                 <button type="button" class="btn btn-mostaza">@Html.ActionLink("Añadir al carrito", "addcarr", "Usuario", new { idus = @Session["correo"] as string, idpro = Model.id }, null)</button>
-                
+
                 @if (Session["admin"] != null && (bool)Session["admin"] == true)
                 {
                     <button type="button" class="btn admin">@Html.ActionLink("Edit", "Edit", new { id = Model.id }) </button>
                     <button type="button" class="btn admin">@Html.ActionLink("Delete", "Delete", new { id = Model.id }) </button>
                 }
 
-                
-               
+
+
             </p>
         </div>
         <div class="col-sm-4">
-            
+
         </div>
     </div>
 </div>
 
-<p>
-    @Html.Partial("_Comentario", (IEnumerable<DSM5.Models.Comentario>)ViewBag.coment)
-</p>
-
-@*
-    <div>
-        <hr />
-        <dl class="dl-horizontal">
-            <dd>
-                <img src="~/Images/@Html.DisplayFor(model => model.Imagen)" width="300px" height="300px" />
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Stock)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Stock)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Nombre)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Nombre)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Precio)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Precio)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Descripcion)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Descripcion)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Valoracion)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Valoracion)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Talla)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Talla)
-            </dd>
-
-        </dl>
-    </div>
-
+@if (Session["admin"] != null && (bool)Session["admin"] == true)
+{
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-        @Html.ActionLink("Back", @ViewData["action"]as string, @ViewData["controller"] as string, @ViewData["arg"], null)|
-        @Html.ActionLink("add to cart", "addcarr", "Usuario", new {idus= @ViewData["correo"] as string,idpro=Model.id },null)|
-
         @Html.Partial("_Comentario", (IEnumerable<DSM5.Models.Comentario>)ViewBag.coment)
     </p>
-*@
+}
+    @*
+        <div>
+            <hr />
+            <dl class="dl-horizontal">
+                <dd>
+                    <img src="~/Images/@Html.DisplayFor(model => model.Imagen)" width="300px" height="300px" />
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Stock)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Stock)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Precio)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Precio)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Descripcion)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Valoracion)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Valoracion)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Talla)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Talla)
+                </dd>
+
+            </dl>
+        </div>
+
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+            @Html.ActionLink("Back", @ViewData["action"]as string, @ViewData["controller"] as string, @ViewData["arg"], null)|
+            @Html.ActionLink("add to cart", "addcarr", "Usuario", new {idus= @ViewData["correo"] as string,idpro=Model.id },null)|
+
+            @Html.Partial("_Comentario", (IEnumerable<DSM5.Models.Comentario>)ViewBag.coment)
+        </p>
+    *@

@@ -18,29 +18,29 @@
                     @Html.DisplayNameFor(model => model.Tipo): @Html.DisplayFor(model => model.Tipo)
                 </h4>    
             </p>
-            
+
 
             <p>
                 <h4>
                     @Html.DisplayNameFor(model => model.Stock): @Html.DisplayFor(model => model.Stock)
                 </h4>  
             </p>
-            
+
 
             <p>
                 <h4>
                     @Html.DisplayNameFor(model => model.Precio): @Html.DisplayFor(model => model.Precio)
                 </h4>  
             </p>
-           
+
 
             <p>
                 <h4>
                     @Html.DisplayNameFor(model => model.Valoracion): @Html.DisplayFor(model => model.Valoracion)
                 </h4>  
             </p>
-            
-       
+
+
             <p>
                 <button type="button" class="btn ">@Html.ActionLink("Back", @Session["action"] as string, @Session["controller"] as string, @Session["arg"], null)</button>
                 <button type="button" class="btn btn-mostaza">@Html.ActionLink("add to cart", "addcarr", "Usuario", new { idus = @Session["correo"] as string, idpro = Model.id }, null)</button>
@@ -49,7 +49,7 @@
                     <button type="button" class="btn admin ">@Html.ActionLink("Edit", "Edit", new { id = Model.id }) </button>
                     <button type="button" class="btn admin ">@Html.ActionLink("Delete", "Delete", new { id = Model.id }) </button>
                 }
-                
+
             </p>
         </div>
         <div class="col-sm-5">
@@ -69,74 +69,77 @@
 
 </div>
 
-<p>
-    @Html.Partial("_Comentario", (IEnumerable<DSM5.Models.Comentario>)ViewBag.coment)
-</p>
+@if (Session["admin"] != null && (bool)Session["admin"] == true)
+{
+    <p>
+        @Html.Partial("_Comentario", (IEnumerable<DSM5.Models.Comentario>)ViewBag.coment)
+    </p>
+}
 
-@*
-<div>
-    <h4>Evento</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Stock)
-        </dt>
+    @*
+        <div>
+            <h4>Evento</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Stock)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Stock)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Stock)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Precio)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Precio)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Precio)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Precio)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Descripcion)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Imagen)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Imagen)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Imagen)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Imagen)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Valoracion)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Valoracion)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Valoracion)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Valoracion)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Tipo)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Tipo)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Tipo)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Tipo)
+                </dd>
 
-    </dl>
-</div>
-*@
+            </dl>
+        </div>
+    *@
 
 
 

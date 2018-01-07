@@ -15,7 +15,7 @@ namespace DSM5.Controllers
         public ActionResult Index()
         {
             Lineas_pedidoCEN cen = new Lineas_pedidoCEN();
-            IList<Lineas_pedidoEN> enlinst=cen.ReadAll(0, 6);
+            IList<Lineas_pedidoEN> enlinst=cen.ReadAll(0, int.MaxValue);
             AssemblerLineas_pedido ass = new AssemblerLineas_pedido();
             IList<Lineas_pedido> listart = ass.ConvertListENToModel(enlinst);
 

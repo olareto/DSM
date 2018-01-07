@@ -15,7 +15,7 @@ namespace DSM5.Controllers
         public ActionResult Index()
         {
             UsuarioCEN cen = new UsuarioCEN();
-            IList<UsuarioEN> enlinst=cen.ReadAll(0, 6);
+            IList<UsuarioEN> enlinst=cen.ReadAll(0, int.MaxValue);
             AssemblerUsuario ass = new AssemblerUsuario();
             IList<Usuario> listart = ass.ConvertListENToModel(enlinst);
 

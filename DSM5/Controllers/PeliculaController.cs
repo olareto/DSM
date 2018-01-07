@@ -16,9 +16,33 @@ namespace DSM5.Controllers
         public ActionResult Index()
         {
             PeliculaCEN cen = new PeliculaCEN();
-            IList<PeliculaEN> enlinst = cen.ReadAll(0, 16);
+            IList<PeliculaEN> enlinst = cen.ReadAll(0, int.MaxValue);
             AssemblerPelicula ass = new AssemblerPelicula();
             IList<Pelicula> listart = ass.ConvertListENToModel(enlinst);
+
+            int max = listart.Count;
+            Random aleatorio = new Random();
+
+            int uno = aleatorio.Next(1, max);
+            int dos = aleatorio.Next(1, max);
+            while (dos == uno)
+            {
+                dos = aleatorio.Next(1, max);
+            }
+            int tres = aleatorio.Next(1, max);
+            while (dos == tres || uno == tres)
+            {
+                tres = aleatorio.Next(1, max);
+            }
+
+
+            IList<Pelicula> resu = new List<Pelicula>();
+            resu.Add(listart.ElementAt(uno));
+            resu.Add(listart.ElementAt(dos));
+            resu.Add(listart.ElementAt(tres));
+            ViewBag.peli = resu;
+
+
 
             System.Web.HttpContext.Current.Session["controller"] = "Pelicula";
             System.Web.HttpContext.Current.Session["action"] = "Index";

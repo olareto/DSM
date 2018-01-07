@@ -16,10 +16,30 @@ namespace DSM5.Controllers
         public ActionResult Index()
         {
             SerieCEN cen = new SerieCEN();
-            IList<SerieEN> enlinst=cen.ReadAll(0, 16);
+            IList<SerieEN> enlinst=cen.ReadAll(0, int.MaxValue);
             AssemblerSerie ass = new AssemblerSerie();
             IList<Serie> listart = ass.ConvertListENToModel(enlinst);
+            int max = listart.Count;
+            Random aleatorio = new Random();
             
+            int uno = aleatorio.Next(1,max);
+            int dos = aleatorio.Next(1, max);
+            while (dos==uno)
+            {
+                dos = aleatorio.Next(1, max);
+            }
+            int tres = aleatorio.Next(1, max);
+            while (dos == tres || uno==tres)
+            {
+                tres = aleatorio.Next(1, max);
+            }
+
+            
+            IList<Serie> resu = new List<Serie>();
+            resu.Add(listart.ElementAt(uno));
+            resu.Add(listart.ElementAt(dos));
+            resu.Add(listart.ElementAt(tres));
+            ViewBag.serie = resu;
 
             System.Web.HttpContext.Current.Session["controller"] = "Serie";
             System.Web.HttpContext.Current.Session["action"] = "Index";
@@ -32,12 +52,36 @@ namespace DSM5.Controllers
         public ActionResult Index_Usu()
         {
             SerieCEN cen = new SerieCEN();
-            IList<SerieEN> enlinst = cen.ReadAll(0, 16);
+            IList<SerieEN> enlinst = cen.ReadAll(0, int.MaxValue);
             AssemblerSerie ass = new AssemblerSerie();
             IList<Serie> listart = ass.ConvertListENToModel(enlinst);
 
 
-                return View(listart);
+
+            int max = listart.Count;
+            Random aleatorio = new Random();
+
+            int uno = aleatorio.Next(1, max);
+            int dos = aleatorio.Next(1, max);
+            while (dos == uno)
+            {
+                dos = aleatorio.Next(1, max);
+            }
+            int tres = aleatorio.Next(1, max);
+            while (dos == tres || uno == tres)
+            {
+                tres = aleatorio.Next(1, max);
+            }
+
+
+            IList<Serie> resu = new List<Serie>();
+            resu.Add(listart.ElementAt(uno));
+            resu.Add(listart.ElementAt(dos));
+            resu.Add(listart.ElementAt(tres));
+            ViewBag.serie = resu;
+
+
+            return View(listart);
 
         }
 
@@ -208,6 +252,31 @@ namespace DSM5.Controllers
                 IList<SerieEN> res = null, aux = null;
                 // TODO: Add delete logic here
                 res = cen.ReadAll(0, int.MaxValue);
+
+
+                if (!(collection.anyobol == false || collection.anyomin <= 0 || collection.anyomax <= 0 || collection.anyomax <= collection.anyomin))
+                {
+                    aux = cen.Filtroanyo(collection.anyomin, collection.anyomax);
+                    res = res.Intersect(aux).ToList();
+                }
+                if (collection.Nombrebol == true && collection.Nombre != null)
+                {
+                    aux = cen.Filtronombre(collection.Nombre);
+                    res = res.Intersect(aux).ToList();
+                }
+                if (collection.generobol == true && collection.genero != null)
+                {
+                    aux = cen.Filtrogenero(collection.genero);
+                    res = res.Intersect(aux).ToList();
+                }
+
+                if (collection.Valoracionbol == true && collection.Valoracion > 0 && collection.Valoracion < 6)
+                {
+                    aux = cen.Filtrovalor((SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion);
+                    res = res.Intersect(aux).ToList();
+                }
+
+
 
 
                 AssemblerSerie ass = new AssemblerSerie();
