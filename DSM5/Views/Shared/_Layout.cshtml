@@ -47,23 +47,13 @@
                         
                     </li>
 
-                    <li>
-                        <a href='@Url.Action("Index", "Buscar")'>
-                            <span class="glyphicon glyphicon-search"> </span>
-                        </a>
-                    </li>
                     @if (Session["log"]!=null&&(bool)Session["log"] == true)
                     {
-                        <li>
-                            <p>usuario @Session["correo"] registrado </p>
+                        <li class="margin colorTituloProductos">
+                             @Session["correo"] 
                         </li>
                     }
-                    else
-                    {
-                        <li>
-                            <p>ningun usuario  registrado </p>
-                        </li>
-                    }
+
 
 
                 </ul>
