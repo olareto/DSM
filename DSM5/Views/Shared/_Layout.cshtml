@@ -1,18 +1,18 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="~/Content/style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>@ViewBag.Title - COKE & POPCORNS</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <style>
-        
     </style>
 </head>
 <body>
@@ -40,19 +40,24 @@
                         </a>
 
                     </li>
-                    <li>
-                        <a href='@Url.Action("Index", "Usuario")'>
-                            <span class="glyphicon glyphicon-user"> </span>
-                        </a>
-                        
-                    </li>
 
-                    @if (Session["log"]!=null&&(bool)Session["log"] == true)
-                    {
-                        <li class="margin colorTituloProductos">
-                             @Session["correo"] 
-                        </li>
-                    }
+
+                    @if (Session["admin"] != null && (bool)Session["admin"] == true)
+    {
+                <li>
+                    <a style="font-size:20px; color:red" href='@Url.Action("Index", "Usuario")'>
+                        <i class="fas fa-user"></i>
+                    </a>
+                </li>
+}
+else
+{
+                <li>
+                    <a style="font-size:20px; color:grey" href='@Url.Action("Index", "Usuario")'>
+                        <i class="fas fa-user"></i>
+                    </a>
+                </li>
+}
 
 
 

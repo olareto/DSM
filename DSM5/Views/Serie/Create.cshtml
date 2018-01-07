@@ -5,8 +5,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
-    <h2>Añadir serie</h2>
+<div class="container-fluid bg-2 text-center">
+    <h2 class="margin">Nueva Serie</h2>
 
     @using (Html.BeginForm())
     {
@@ -40,7 +40,7 @@
             </div>
 
             <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
+                <div class="col-md-8">
                     <input type="submit" value="Añadir" class="btn btn-danger" />
                     @Html.ActionLink("Cancelar", @Session["action"] as string, @Session["controller"] as string, @Session["arg"], null)
                 </div>
