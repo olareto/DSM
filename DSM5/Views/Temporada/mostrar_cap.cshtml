@@ -35,11 +35,15 @@
         }
 
     </div>
-    <p class="admin btn btn-default">
-        @Html.ActionLink("Añadir capitulo", "Create", "Capitulo", new { id = @Session["id_serie"] }, null)
-    </p>
-    <p class="admin btn btn-default">
-        @Html.ActionLink("Volver", "Details", "Serie", new { id = @Session["id_serie"] }, null)
-    </p>
-    
-</div>
+
+    @if (Session["admin"] != null && (bool)Session["admin"] == true)
+    {
+        <p class="admin btn btn-default">
+            @Html.ActionLink("Añadir capitulo", "Create", "Capitulo", new { id = @Session["id_serie"] }, null)
+        </p>
+    }
+        <p class="admin btn btn-default">
+            @Html.ActionLink("Volver", "Details", "Serie", new { id = @Session["id_serie"] }, null)
+        </p>
+
+    </div>
