@@ -51,76 +51,29 @@
 </div>
 
 
-@if (Session["log"] == null)
-{
+
 <div class="container-fluid bg-2 text-center">
     <h2 class="margin">Peliculas Destacadas</h2>
-    <div class="col-md-3">
-        <div class="col">
-            <h3>Coco</h3>
-        </div>
-        <div class="col">
-            <p>Valoración: 5</p>
-        </div>
-        <div class="col">
-            <a href='@Url.Action("Details", "Pelicula", new { id = 229378 })'>
-                <!--Ruta simple: sw8.jpg-->
-                <img class="cartelera" src='~/Images/cartelera/i7.jpg' />
-            </a>
-        </div>
-    </div>
 
-    <div class="col-md-3">
-        <div class="col">
-            <h3>Jumanji</h3>
-        </div>
-        <div class="col">
-            <p>Valoración: 4</p>
-        </div>
-        <div class="col">
-            <a href='@Url.Action("Details", "Pelicula", new { id = 229377 })'>
-                <!--Ruta simple: sw8.jpg-->
-                <img class="cartelera" src='~/Images/cartelera/i2.jpg' />
-            </a>
-        </div>
-    </div>
+    
+    @Html.Partial("_peliR", (IEnumerable<DSM5.Models.Pelicula>)ViewBag.peli)
 
-    <div class="col-md-3">
-        <div class="col">
-            <h3>Perfectos Desconocidos</h3>
-        </div>
-        <div class="col">
-            <p>Valoración: 4</p>
-        </div>
-        <div class="col">
-            <a href='@Url.Action("Details", "Pelicula", new { id = 229379 })'>
-                <!--Ruta simple: sw8.jpg-->
-                <img class="cartelera" src='~/Images/cartelera/i3.jpg' />
-            </a>
-        </div>
-    </div>
+
+
+ 
+
+
 </div>
 
 
 
 
-    }
+    
 
 
     <div class="container-fluid bg-2 text-center">
         <h2 class="margin">Series Destacadas</h2>
-        <div class="row">
-            <div class="col-sm-4">
-                <p>Gladiator</p>
-                <img src="~/Images/Gladiator.jpg" class="img-thumbnail img-responsive margin" alt="Cinque Terre">
-            </div>
-            <div class="col-sm-4">
-                <p>Master and Comander</p>
-                <img src="~/Images/MasterAndComander.jpg" class="img-thumbnail img-responsive margin" alt="Cinque Terre">
-            </div>
-            <div class="col-sm-4">
-                <p>Titanic</p>
-                <img src="~/Images/Titanic.jpg" class="img-thumbnail img-responsive margin" alt="Cinque Terre">
-            </div>
-        </div>
+
+        @Html.Partial("_serieR", (IEnumerable<DSM5.Models.Serie>)ViewBag.serie)
+    
     </div>

@@ -41,7 +41,7 @@
 .carousel-caption {
     margin-bottom: 40px;
 }
-p, a, h2, h3 {
+p, a, h2, h3, h4, th {
     font-family: 'Vintage Avalanche';
 }
 

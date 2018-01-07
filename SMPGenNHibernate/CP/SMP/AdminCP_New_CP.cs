@@ -38,15 +38,15 @@ public SMPGenNHibernate.EN.SMP.AdminEN New_CP (string p_nombre, string p_apellid
                 adminCEN = new  AdminCEN (adminCAD);
 
 
-                ListaCAD listaCAD = new ListaCAD(session);
-                ListaCEN listaCEN = new ListaCEN(listaCAD);
+                ListaCAD listaCAD = new ListaCAD (session);
+                ListaCEN listaCEN = new ListaCEN (listaCAD);
 
 
-                UsuarioCAD usuarioCAD = new UsuarioCAD(session);
-                UsuarioCEN usuarioCEN = new UsuarioCEN(usuarioCAD);
+                UsuarioCAD usuarioCAD = new UsuarioCAD (session);
+                UsuarioCEN usuarioCEN = new UsuarioCEN (usuarioCAD);
 
-                CarritoCAD CarritoCAD = new CarritoCAD(session);
-                CarritoCEN CarritoCEN = new CarritoCEN(CarritoCAD);
+                CarritoCAD CarritoCAD = new CarritoCAD (session);
+                CarritoCEN CarritoCEN = new CarritoCEN (CarritoCAD);
 
                 string oid;
                 //Initialized AdminEN
@@ -69,26 +69,26 @@ public SMPGenNHibernate.EN.SMP.AdminEN New_CP (string p_nombre, string p_apellid
                 //Call to AdminCAD
 
                 oid = adminCAD.New_CP (adminEN);
-                
 
-                
 
-                int id = listaCEN.New_(SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.siguiendo, oid);
-                int id2 = listaCEN.New_(SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.favorito, oid);
-                int id3 = listaCEN.New_(SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.visto, oid);
+
+
+                int id = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.siguiendo, oid);
+                int id2 = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.favorito, oid);
+                int id3 = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.visto, oid);
 
 
 
                 IList<int> listas = new List<int>();
-                listas.Add(id);
-                listas.Add(id2);
-                listas.Add(id3);
+                listas.Add (id);
+                listas.Add (id2);
+                listas.Add (id3);
 
 
 
-                usuarioCEN.Addlista(oid, listas);
+                usuarioCEN.Addlista (oid, listas);
 
-                result = adminCAD.ReadOIDDefault(oid);
+                result = adminCAD.ReadOIDDefault (oid);
 
                 SessionCommit ();
         }
