@@ -324,7 +324,7 @@ public static void InitializeData ()
                 string crun2 = "Una nueva versión de 101, como se ve desde la perspectiva de los padres. Todos están nerviosos, pero después de esta noche, si todo sale según lo planeado, no tendrán que preocuparse por sus obligaciones nuevamente.";
                 string crun3 = "Los niños se tambalean después de los eventos de anoche. Cuando comienza una investigación, descubren que sus padres pueden tener más cosas que esconder de lo que podrían haber imaginado.";
 
-                int idcapitulo = capituloCEN.New_ (idtemporada01, "Piloto", new DateTime (2017, 28, 12), cveg1, "cap1vegas.jpg", "https://www.youtube.com/watch?v=p4ijrL4zscE");
+                int idcapitulo = capituloCEN.New_ (idtemporada01, "Piloto", new DateTime (1993, 12, 3), cveg1, "cap1vegas.jpg", "https://www.youtube.com/watch?v=p4ijrL4zscE");
 
                 int idcapitulo2 = capituloCEN.New_ (idtemporada02, "1-Saint Nick", new DateTime (1993, 12, 3), ch1, "happy1.jpg", "https://www.youtube.com/watch?v=t7OYkSgmM-w");
                 int idcapitulo3 = capituloCEN.New_ (idtemporada02, "2-What Smiles Are For", new DateTime (1993, 12, 3), ch2, "happy2.jpg", "https://www.youtube.com/watch?v=t7OYkSgmM-w");
@@ -343,21 +343,21 @@ public static void InitializeData ()
                 int idcapitulo14 = capituloCEN.New_(idtemporada05, "1-They're Back Again, Aren't They?", new DateTime(1993, 12, 3), cl9, "luci9.jpg", "https://www.youtube.com/watch?v=K2kyWOMsy2Q");
                 int idcapitulo15 = capituloCEN.New_(idtemporada05, "2-The One with the Baby Carrot", new DateTime(1993, 12, 3), cl10, "luci10.jpg", "https://www.youtube.com/watch?v=K2kyWOMsy2Q");
 
-                int idcapitulo16 = capituloCEN.New_(idtemporada06, "1-Sam Riley's Body", new DateTime(1993, 12, 3), cdam1, "dam1.jpg", "link");
-                int idcapitulo17 = capituloCEN.New_(idtemporada06, "2-Which Side Are You On", new DateTime(1993, 12, 3), cdam2, "dam2.jpg", "link");
-                int idcapitulo18 = capituloCEN.New_(idtemporada06, "3-One Penny", new DateTime(1993, 12, 3), cdam3, "dam3.jpg", "link");
-                int idcapitulo19 = capituloCEN.New_(idtemporada06, "4-The Emperor of Ice Cream", new DateTime(1993, 12, 3), cdam4, "dam4.jpg", "link");
+                int idcapitulo16 = capituloCEN.New_(idtemporada06, "1-Sam Riley's Body", new DateTime(1993, 12, 3), cdam1, "dam1.jpg", "https://www.youtube.com/watch?v=n7yW7h0YkPI");
+                int idcapitulo17 = capituloCEN.New_(idtemporada06, "2-Which Side Are You On", new DateTime(1993, 12, 3), cdam2, "dam2.jpg", "https://www.youtube.com/watch?v=n7yW7h0YkPI");
+                int idcapitulo18 = capituloCEN.New_(idtemporada06, "3-One Penny", new DateTime(1993, 12, 3), cdam3, "dam3.jpg", "https://www.youtube.com/watch?v=n7yW7h0YkPI");
+                int idcapitulo19 = capituloCEN.New_(idtemporada06, "4-The Emperor of Ice Cream", new DateTime(1993, 12, 3), cdam4, "dam4.jpg", "https://www.youtube.com/watch?v=n7yW7h0YkPI");
 
-                int idcapitulo20 = capituloCEN.New_(idtemporada07, "1-Help Me", new DateTime(2016, 23, 9), cvan1, "van1.jpg", "link");
-                int idcapitulo21 = capituloCEN.New_(idtemporada07, "2-Seen You", new DateTime(2016, 23, 9), cvan2, "van2.jpg", "link");
-                int idcapitulo22 = capituloCEN.New_(idtemporada07, "3-Stay Inside", new DateTime(2016, 23, 9), cvan3, "van3.jpg", "link");
-                int idcapitulo23 = capituloCEN.New_(idtemporada08, "1-Began Again", new DateTime(2017, 5,10), cvan4, "van4.jpg", "link");
-                int idcapitulo24 = capituloCEN.New_(idtemporada08, "2-In Redemption", new DateTime(2017, 12, 10), cvan5, "van5.jpg", "link");
-                int idcapitulo25 = capituloCEN.New_(idtemporada08, "3-Love Bites", new DateTime(2017, 19, 10), cvan6, "van6.jpg", "link");
+                int idcapitulo20 = capituloCEN.New_(idtemporada07, "1-Help Me", new DateTime(1993, 12, 3), cvan1, "van1.jpg", "https://www.youtube.com/watch?v=Jtic6uu8P5Q");
+                int idcapitulo21 = capituloCEN.New_(idtemporada07, "2-Seen You", new DateTime(1993, 12, 3), cvan2, "van2.jpg", "https://www.youtube.com/watch?v=Jtic6uu8P5Q");
+                int idcapitulo22 = capituloCEN.New_(idtemporada07, "3-Stay Inside", new DateTime(1993, 12, 3), cvan3, "van3.jpg", "https://www.youtube.com/watch?v=Jtic6uu8P5Q");
+                int idcapitulo23 = capituloCEN.New_(idtemporada08, "1-Began Again", new DateTime(1993, 12, 3), cvan4, "van4.jpg", "https://www.youtube.com/watch?v=Jtic6uu8P5Q");
+                int idcapitulo24 = capituloCEN.New_(idtemporada08, "2-In Redemption", new DateTime(1993, 12, 3), cvan5, "van5.jpg", "https://www.youtube.com/watch?v=Jtic6uu8P5Q");
+                int idcapitulo25 = capituloCEN.New_(idtemporada08, "3-Love Bites", new DateTime(1993, 12, 3), cvan6, "van6.jpg", "https://www.youtube.com/watch?v=Jtic6uu8P5Q");
 
-                int idcapitulo26 = capituloCEN.New_(idtemporada09, "1-Reunion", new DateTime(2017, 21, 11), crun1, "crun1.jpg", "link");
-                int idcapitulo27 = capituloCEN.New_(idtemporada09, "2-Rewind", new DateTime(2017, 21, 11), crun2, "crun2.jpg", "link");
-                int idcapitulo28 = capituloCEN.New_(idtemporada09, "3-Rewind", new DateTime(2017, 21, 11), crun3, "crun3.jpg", "link");
+                int idcapitulo26 = capituloCEN.New_(idtemporada09, "1-Reunion", new DateTime(1993, 12, 3), crun1, "crun1.jpg", "https://www.youtube.com/watch?v=pLzQaMbTg7Q");
+                int idcapitulo27 = capituloCEN.New_(idtemporada09, "2-Rewind", new DateTime(1993, 12, 3), crun2, "crun2.jpg", "https://www.youtube.com/watch?v=pLzQaMbTg7Q");
+                int idcapitulo28 = capituloCEN.New_(idtemporada09, "3-Rewind", new DateTime(1993, 12, 3), crun3, "crun3.jpg", "https://www.youtube.com/watch?v=pLzQaMbTg7Q");
 
 
 
