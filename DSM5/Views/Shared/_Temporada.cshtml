@@ -4,7 +4,7 @@
 @if (Session["admin"] != null && (bool)Session["admin"] == true)
 {
     <p class="admin">
-        @Html.ActionLink("Añadir temporada", "Create", "Temporada", new { id = @Session["id_serie"] },null)
+        @Html.ActionLink("Añadir temporada", "Create", "Temporada", new { id = @ViewData["id_serie"] })
     </p>
 }
     <div class="container">
@@ -13,13 +13,13 @@
 
         <div class="col-md-9">
             <div class="col-md-10">
-                @Html.ActionLink(item.Nombre, "mostrar_cap", "Temporada", new { id = item.id, tipo = @Session["controller"] }, null)
+                <a class="btn btn-primary center-block" href='@Url.Action("mostrar_cap", "Temporada", new { id = item.id, tipo = @ViewData["controller"] })'>@item.Nombre</a>
             </div>
             @if (Session["admin"] != null && (bool)Session["admin"] == true)
             {
         <div class="col-md-2 admin">
-            @Html.ActionLink("Editar", "Edit", "Temporada", new { id = item.id, tipo = @Session["controller"] }, null)
-            @Html.ActionLink("Borrar", "Delete", "Temporada", new { id = item.id, tipo = @Session["controller"] }, null)
+            @Html.ActionLink("Editar", "Edit", "Temporada", new { id = item.id, tipo = @ViewData["controller"] }, null)
+            @Html.ActionLink("Borrar", "Delete", "Temporada", new { id = item.id, tipo = @ViewData["controller"] }, null)
         </div>
             }
         <hr />
