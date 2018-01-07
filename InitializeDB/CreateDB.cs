@@ -232,22 +232,22 @@ public static void InitializeData ()
 
                 int idcomentario = comentarioCEN.New_ ("comentario", "autor", new DateTime (1993, 12, 3));
 
-                int idpelicula = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Star Wars:Episodio VII", "i5.jpg", "desclarga", dstw, "ciencia ficcion", new DateTime (1993, 12, 3), "estarwa.jpg");
-                int idpelicula2 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Jumanji", "i2.jpg", "desclarga", djumanji, "Ficcion", new DateTime (1993, 12, 3), "jumanji.jpg");
-                int idpelicula3 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "COCO", "i7.jpg", "desclarga", dc, "Animacion", new DateTime (1993, 12, 3), "coco.jpg");
-                int idpelicula4 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Perfectos desconocidos", "i3.jpg", "desclarga", dperfdesc, "Tragicomedia", new DateTime (1993, 12, 3), "perfectdesc.jpg");
-                int idpelicula5 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Dando la nota 3", "i4.jpg", "desclarga", ddandonota, "Comedia", new DateTime (1993, 12, 3), "dandolanota.jpg");
-                int idpelicula6 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Ferdinand", "ferdi.jpg", "desclarga", dferdi, "Animacion", new DateTime (1993, 12, 3), "ferdinand.jpg");
-                int idpelicula7 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Wonder Wheel", "i8.jpg", "desclarga", dww, "Dramatico", new DateTime (1993, 12, 3), "wonderwheel.jpg");
-                int idpelicula8 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Spider-Man: Homecoming", "spider.jpg", "desclarga", despider, "Ciencia Ficcion", new DateTime (1993, 12, 3), "man.jpg");
-                int idpelicula9 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Wonder Woman", "ww.jpg", "desclarga", dwoman, "Ciencia Ficcion", new DateTime (1993, 12, 3), "woman.jpg");
-                int idpelicula10 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "it", "it.jpg", "desclarga", dit, "Terror", new DateTime (1993, 12, 3), "ittt.jpg");
-                int idpelicula11 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Feliz dia de tu muerte", "hday.jpg", "desclarga", dhday, "Terror", new DateTime (1993, 12, 3), "muerte.jpg");
-                int idpelicula12 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, "Despicable Me 3", "gru.jpg", "desclarga", dgru, "Animacion", new DateTime (1993, 12, 3), "gru3.jpg");
-                int idpelicula13 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Harry Potter y las reliquias de la muerte: Parte 1", "hrr1.jpg", "desclarga", dhrr1, "Fantasia", new DateTime (1993, 12, 3), "harry1.jpg");
-                int idpelicula14 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Harry Potter y las reliquias de la muerte: Parte 2", "hrr2.jpg", "desclarga", dhrr2, " Fantasia", new DateTime (1993, 12, 3), "harry2.jpg");
-                int idpelicula15 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Blade Runner 2049 ", "blad.jpg", "desclarga", dblad, "Ciencia Ficcion", new DateTime (1993, 12, 3), "bladerun.jpg");
-                int idpelicula16 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Baywatch ", "bay.jpg", "desclarga", dbay, "Comedia", new DateTime (1993, 12, 3), "playa.jpg");
+                int idpelicula = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Star Wars:Episodio VII", "i5.jpg", "desclarga", dstw, "ciencia ficcion", new DateTime (1993, 12, 3), "estarwa.jpg","https://www.youtube.com/watch?v=sGbxmsDFVnE");
+                int idpelicula2 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Jumanji", "i2.jpg", "desclarga", djumanji, "Ficcion", new DateTime (1993, 12, 3), "jumanji.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
+                int idpelicula3 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "COCO", "i7.jpg", "desclarga", dc, "Animacion", new DateTime (1993, 12, 3), "coco.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
+                int idpelicula4 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Perfectos desconocidos", "i3.jpg", "desclarga", dperfdesc, "Tragicomedia", new DateTime (1993, 12, 3), "perfectdesc.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
+                int idpelicula5 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Dando la nota 3", "i4.jpg", "desclarga", ddandonota, "Comedia", new DateTime (1993, 12, 3), "dandolanota.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
+                int idpelicula6 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Ferdinand", "ferdi.jpg", "desclarga", dferdi, "Animacion", new DateTime (1993, 12, 3), "ferdinand.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
+                int idpelicula7 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Wonder Wheel", "i8.jpg", "desclarga", dww, "Dramatico", new DateTime (1993, 12, 3), "wonderwheel.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
+                int idpelicula8 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Spider-Man: Homecoming", "spider.jpg", "desclarga", despider, "Ciencia Ficcion", new DateTime (1993, 12, 3), "man.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
+                int idpelicula9 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Wonder Woman", "ww.jpg", "desclarga", dwoman, "Ciencia Ficcion", new DateTime (1993, 12, 3), "woman.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
+                int idpelicula10 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "it", "it.jpg", "desclarga", dit, "Terror", new DateTime (1993, 12, 3), "ittt.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
+                int idpelicula11 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Feliz dia de tu muerte", "hday.jpg", "desclarga", dhday, "Terror", new DateTime (1993, 12, 3), "muerte.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
+                int idpelicula12 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, "Despicable Me 3", "gru.jpg", "desclarga", dgru, "Animacion", new DateTime (1993, 12, 3), "gru3.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
+                int idpelicula13 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Harry Potter y las reliquias de la muerte: Parte 1", "hrr1.jpg", "desclarga", dhrr1, "Fantasia", new DateTime (1993, 12, 3), "harry1.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
+                int idpelicula14 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Harry Potter y las reliquias de la muerte: Parte 2", "hrr2.jpg", "desclarga", dhrr2, " Fantasia", new DateTime (1993, 12, 3), "harry2.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
+                int idpelicula15 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Blade Runner 2049 ", "blad.jpg", "desclarga", dblad, "Ciencia Ficcion", new DateTime (1993, 12, 3), "bladerun.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
+                int idpelicula16 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Baywatch ", "bay.jpg", "desclarga", dbay, "Comedia", new DateTime (1993, 12, 3), "playa.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
 
                 int idvideo = videoCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "nombre", "hola", "desclarga", "descripcion", "genero", new DateTime (1993, 12, 3), "imagrande");
 
@@ -275,12 +275,12 @@ public static void InitializeData ()
                 int idtemporada03 = temporadaCEN.New_ (idserie, "Temporada 3");
                 int idtemporada11 = temporadaCEN.New_ (idserie2, "Temporada 1");
 
-                int idcapitulo = capituloCEN.New_ (idtemporada01, "WHAT", new DateTime (1993, 12, 3), "descripccion", "imagen");
-                int idcapitulo2 = capituloCEN.New_ (idtemporada01, "Who", new DateTime (1993, 12, 3), "descripccion", "imagen");
-                int idcapitulo3 = capituloCEN.New_ (idtemporada01, "WHEN", new DateTime (1993, 12, 3), "descripccion", "imagen");
-                int idcapitulo4 = capituloCEN.New_ (idtemporada02, "Mandingo", new DateTime (1993, 12, 3), "descripccion", "imagen");
-                int idcapitulo5 = capituloCEN.New_ (idtemporada02, "Yes", new DateTime (1993, 12, 3), "descripccion", "imagen");
-                int idcapitulo6 = capituloCEN.New_ (idtemporada03, "Techo", new DateTime (1993, 12, 3), "descripccion", "imagen");
+                int idcapitulo = capituloCEN.New_ (idtemporada01, "WHAT", new DateTime (1993, 12, 3), "descripccion", "imagen", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
+                int idcapitulo2 = capituloCEN.New_ (idtemporada01, "Who", new DateTime (1993, 12, 3), "descripccion", "imagen", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
+                int idcapitulo3 = capituloCEN.New_ (idtemporada01, "WHEN", new DateTime (1993, 12, 3), "descripccion", "imagen", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
+                int idcapitulo4 = capituloCEN.New_ (idtemporada02, "Mandingo", new DateTime (1993, 12, 3), "descripccion", "imagen", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
+                int idcapitulo5 = capituloCEN.New_ (idtemporada02, "Yes", new DateTime (1993, 12, 3), "descripccion", "imagen", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
+                int idcapitulo6 = capituloCEN.New_ (idtemporada03, "Techo", new DateTime (1993, 12, 3), "descripccion", "imagen", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
 
                 #endregion
 
