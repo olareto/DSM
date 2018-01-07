@@ -2,13 +2,48 @@
     Nuestro style que nosotros queramos modificar. Si queremos modificar clases del bootstrap, modificarlas en bootstrap.css
 */
 
+
+.navbar-inverse {
+    background-color: #FF3B77;
+    border-color: #FF8598;
+    color: #e09e04;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #e09e04;
+    border-bottom: 3px solid transparent;
+    transition: border-bottom ease-in-out .15s;
+    padding-bottom: 10px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    border-bottom: 3px solid #e09e04;
+    color: #e09e04;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #e09e04;
+}
+
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+    color: #860D32;
+    background-color: transparent;
+}
 .margin {
     margin-bottom: 45px;
 }
+a, .btn-link {
+    color: #09A7E4;
+}
 
+.btn {
+    border-radius: 10px;
+    text-transform: none;
+    font-weight: bold;
+    font-size: 12px;
+}
 .bg-1 {
-    background-color: #1abc9c; /* Green */
-    color: #ffffff;
+    background-color: #ffffff; /* WHITE FOR REAL */
 }
 
 .bg-2 {
@@ -52,13 +87,28 @@ p, a, h2, h3, h4, th {
     color: red;
     text-decoration:none;
 }
-.cartelera {
+.imagenDetails {
     width: 60%;
     height: 80%;
     margin-bottom: 50px;
 }
+.cartelera {
+    width: 60%;
+    height: 80%;
+    margin-bottom: 50px;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+.cabecera {
+    transform: scale(1.35,1.1);
+}
+.shadow {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 .cartelera:hover{
     opacity:0.8;
+    transition: 1s ease;
+    transform: translate(-5px, -5px);
 }
 .reproductor{
     height:1000px;
@@ -107,11 +157,6 @@ p, a, h2, h3, h4, th {
 }
 .margenDescripcionesEventos {
     margin-top: 50px;
-}
-
-.card{
-    width: 1200px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .colorTituloProductos {
     color: #ffffff;

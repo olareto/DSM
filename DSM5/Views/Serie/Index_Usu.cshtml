@@ -6,8 +6,17 @@
 }
 
 <div class="container-fluid bg-2 text-center">
-    <h2 class="margin">Series</h2>
-
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <h2 class="margin">Series</h2>
+        </div>
+        <div class="col-md-3">
+            <p>
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span>@Html.ActionLink("Busqueda", "Filtrar")</button>
+            </p>
+        </div>
+    </div> 
     
         @if (Session["admin"] != null && (bool)Session["admin"] == true)
         {
@@ -15,11 +24,6 @@
             @Html.ActionLink("Añadir serie", "Create")
         </p>
         }
-    
-
-        <p>
-            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span>@Html.ActionLink("Busqueda", "Filtrar")</button>
-        </p>
 
     @foreach (var item in Model)
     {
