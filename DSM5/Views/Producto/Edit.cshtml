@@ -5,16 +5,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Editar @Html.DisplayFor(model => model.Nombre)</h2>
+
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
- 
+    <h2 class="bg-2">Editar @Html.DisplayFor(model => model.Nombre)</h2>
 
-        <div class="form-horizontal">
+        <div class="form-horizontal bg-2">
 
             <hr />
 
@@ -78,7 +78,7 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <button type="button" class="btn btn-default">@Html.ActionLink("Back to list", @ViewData["action"] as string, @ViewData["controller"] as string, @ViewData["arg"], null)</button>
+                    <button type="button" class="btn btn-default">@Html.ActionLink("Back to list", @Session["action"] as string, @Session["controller"] as string, @Session["arg"], null)</button>
                     <input type="submit" value="Save" class="btn btn-default" />
                 </div>
             </div>

@@ -8,68 +8,58 @@
 
 
 
-<div class="container-fluid">
+<div class="container-fluid bg-2">
     <div class="row">
-        <div class="col-sm-4 text-center">           
-                <h2 class="text-center">@Html.DisplayFor(model => model.Nombre)</h2>                                 
-            <img class="centrarResponsive img-responsive imagenesDetailsProductos" src="~/Images/Productos/@Html.DisplayFor(model => model.Imagen)"/>
+        <div class="col-sm-4 text-justify">  
+            <p>
+                <h2 class="text-center">@Html.DisplayFor(model => model.Nombre)</h2> 
+            </p>
+            <p>
+                <img class="centrarResponsive img-responsive imagenesDetailsProductos" src="~/Images/Productos/@Html.DisplayFor(model => model.Imagen)" />
+            </p>              
         </div>
         <div class="col-sm-4">
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Nombre)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Nombre)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Descripcion)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Descripcion)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Talla)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Talla)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Stock)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Stock)
-            </dd>
-          
-            <dt>
-                @Html.DisplayNameFor(model => model.Precio)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Precio)
-            </dd>
-
-            
-            <dt>
-                @Html.DisplayNameFor(model => model.Valoracion)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Valoracion)
-            </dd>
-
-            
             <p>
-                <button type="button" class="btn ">@Html.ActionLink("Edit", "Edit", new { id = Model.id }) </button>
-                <button type="button" class="btn ">@Html.ActionLink("Back", @ViewData["action"] as string, @ViewData["controller"] as string, @ViewData["arg"], null)</button>
-                <button type="button" class="btn btn-mostaza">@Html.ActionLink("add to cart", "addcarr", "Usuario", new { idus = @ViewData["correo"] as string, idpro = Model.id }, null)</button>                 
+                @Html.DisplayNameFor(model => model.Nombre)
+            </p>
+            <p>
+                @Html.DisplayFor(model => model.Nombre)
+            </p>
+            <p>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </p>
+            <p>
+                @Html.DisplayFor(model => model.Descripcion)
+            </p>
+            <p>
+                @Html.DisplayNameFor(model => model.Talla)
+            </p>
+            <p>
+                @Html.DisplayFor(model => model.Talla)
+            </p>
+            <p>
+                @Html.DisplayNameFor(model => model.Stock)
+            </p>
+            <p>
+                @Html.DisplayFor(model => model.Stock)
+            </p>
+            <p>
+                @Html.DisplayNameFor(model => model.Precio)
+            </p>
+            <p>
+                @Html.DisplayFor(model => model.Precio)
+            </p>
+            <p>
+                @Html.DisplayNameFor(model => model.Valoracion)
+            </p>
+            <p>
+                @Html.DisplayFor(model => model.Valoracion)
+            </p>            
+            <p>
+                <button type="button" class="btn ">@Html.ActionLink("Volver", @Session["action"] as string, @Session["controller"] as string, @Session["arg"], null)</button>
+                <button type="button" class="btn btn-mostaza">@Html.ActionLink("Añadir al carrito", "addcarr", "Usuario", new { idus = @Session["correo"] as string, idpro = Model.id }, null)</button>
+                <button type="button" class="btn admin">@Html.ActionLink("Edit", "Edit", new { id = Model.id }) </button>
+                <button type="button" class="btn admin">@Html.ActionLink("Delete", "Delete", new { id = Model.id }) </button>
             </p>
         </div>
         <div class="col-sm-4">

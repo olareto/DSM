@@ -30,7 +30,7 @@
         </td>
         <td>
             
-            @Html.ActionLink("delete", "dellist", "Usuario", new { idus = (string)@ViewData["correo"], idpro = item.id, tipo = (string)@ViewData["type"], t = "peli" }, null)|
+            @Html.ActionLink("delete", "dellist", "Usuario", new { idus = (string)@Session["correo"], idpro = item.id, tipo = (string)@Session["type"], t = "peli" }, null)|
             @Html.ActionLink("Details", "Details", new { id=item.id }) |
         </td>
     </tr>

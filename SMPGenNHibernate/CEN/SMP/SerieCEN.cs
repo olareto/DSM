@@ -38,7 +38,7 @@ public ISerieCAD get_ISerieCAD ()
         return this._ISerieCAD;
 }
 
-public int New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, string p_nombre, string p_imagen, string p_descriplarga, string p_descripcion, string p_genero, Nullable<DateTime> p_anyo, string p_imagran)
+public int New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, string p_nombre, string p_imagen, string p_descriplarga, string p_descripcion, string p_genero, int p_anyo, string p_imagran, int p_anyofin, bool p_finalizada)
 {
         SerieEN serieEN = null;
         int oid;
@@ -61,13 +61,17 @@ public int New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, st
 
         serieEN.Imagran = p_imagran;
 
+        serieEN.Anyofin = p_anyofin;
+
+        serieEN.Finalizada = p_finalizada;
+
         //Call to SerieCAD
 
         oid = _ISerieCAD.New_ (serieEN);
         return oid;
 }
 
-public void Modify (int p_Serie_OID, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, string p_nombre, string p_imagen, string p_descriplarga, string p_descripcion, string p_genero, Nullable<DateTime> p_anyo, string p_imagran)
+public void Modify (int p_Serie_OID, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, string p_nombre, string p_imagen, string p_descriplarga, string p_descripcion, string p_genero, int p_anyo, string p_imagran, int p_anyofin, bool p_finalizada)
 {
         SerieEN serieEN = null;
 
@@ -82,6 +86,8 @@ public void Modify (int p_Serie_OID, SMPGenNHibernate.Enumerated.SMP.ValoracionE
         serieEN.Genero = p_genero;
         serieEN.Anyo = p_anyo;
         serieEN.Imagran = p_imagran;
+        serieEN.Anyofin = p_anyofin;
+        serieEN.Finalizada = p_finalizada;
         //Call to SerieCAD
 
         _ISerieCAD.Modify (serieEN);
@@ -120,6 +126,22 @@ public void Addtemporada (int p_Serie_OID, System.Collections.Generic.IList<int>
         //Call to SerieCAD
 
         _ISerieCAD.Addtemporada (p_Serie_OID, p_temporada_OIDs);
+}
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.SerieEN> Filtronombre (string p_nombre)
+{
+        return _ISerieCAD.Filtronombre (p_nombre);
+}
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.SerieEN> Filtrovalor (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum ? p_valor)
+{
+        return _ISerieCAD.Filtrovalor (p_valor);
+}
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.SerieEN> Filtroanyo (int? p_min, int ? p_max)
+{
+        return _ISerieCAD.Filtroanyo (p_min, p_max);
+}
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.SerieEN> Filtrogenero (string p_genero)
+{
+        return _ISerieCAD.Filtrogenero (p_genero);
 }
 }
 }

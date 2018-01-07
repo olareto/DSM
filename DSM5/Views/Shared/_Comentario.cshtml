@@ -3,7 +3,7 @@
 
 <div class="container">
     <p>
-        @Html.ActionLink("Comentar", "Create", "Comentario", new { id = @ViewData["id_serie"] }, null)
+        @Html.ActionLink("Comentar", "Create", "Comentario", new { id = @Session["id_cap"] }, null)
     </p>
     @foreach (var item in Model)
     {
@@ -16,9 +16,9 @@
                 <p>@Html.DisplayFor(model => item.comentario)</p>
             </div>
             <div class="col-md-2">
-                @Html.ActionLink("Edit", "Edit", "Comentario", new { id = item.id, tipo = @ViewData["controller"] }, null)
-                @Html.ActionLink("Details", "Details", "Comentario", new { id = item.id, tipo = @ViewData["controller"] }, null)
-                @Html.ActionLink("Delete", "Delete", "Comentario", new { id = item.id, tipo = @ViewData["controller"] }, null)
+                @Html.ActionLink("Edit", "Edit", "Comentario", new { id = item.id, tipo = @Session["controller"] }, null)
+                @Html.ActionLink("Details", "Details", "Comentario", new { id = item.id, tipo = @Session["controller"] }, null)
+                @Html.ActionLink("Delete", "Delete", "Comentario", new { id = item.id, tipo = @Session["controller"] }, null)
             </div>
         </div>
         <div class="row">

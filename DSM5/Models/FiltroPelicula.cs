@@ -22,6 +22,14 @@ namespace DSM5.Models
         public string Nombre { get; set; }
 
 
+        [Display(Prompt = "Filtrar por nombre", Description = "Filtrar por nombre", Name = "Filtrar por genero ")]
+        public bool generobol { get; set; }
+
+        [Display(Prompt = "Nombre de la Pelicula", Description = "Nombre de la Pelicula", Name = "genero ")]
+        [StringLength(maximumLength: 200, ErrorMessage = "El nombre no puede tener más de 200 caracteres")]
+        public string genero { get; set; }
+
+
         [Display(Prompt = "Filtrar por Valoracion", Description = "Filtrar por Valoracion", Name = "Filtrar por Valoracion ")]
         public bool Valoracionbol { get; set; }
 
@@ -29,7 +37,20 @@ namespace DSM5.Models
         [Range(minimum: 1, maximum: 5, ErrorMessage = "El valoración debe ser mayor que cero y menor de 5")]
         public int Valoracion { get; set; }
 
+
+        [Display(Prompt = "Filtrar por anyo", Description = "Filtrar por Valoracion", Name = "Filtrar por anyo ")]
+        public bool anyobol { get; set; }
+
+        [Display(Prompt = "Valoracion de la Pelicula", Description = "Valoracion de la Pelicula", Name = "anyo ")]
+        [Range(minimum: 1900, maximum: 2018, ErrorMessage = "El valoración debe ser mayor que 1900 y menor de 2018")]
+        public int anyomin { get; set; }
+
+        [Display(Prompt = "Valoracion de la Pelicula", Description = "Valoracion de la Pelicula", Name = "anyo ")]
+        [Range(minimum: 1900, maximum: 2018, ErrorMessage = "El valoración debe ser mayor que 1900 y menor de 2018")]
+        public int anyomax { get; set; }
         
+
+
 
 
     }

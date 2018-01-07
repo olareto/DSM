@@ -197,14 +197,14 @@ public static void InitializeData ()
 
                 //string idUsuario = usuarioCEN.New_("usuario", "apellidos", "contrasenya", "correo", "direcccion", "pago", "imagen");
                 //adminCEN.New_ ("usuario", "apellidos", "contrasenya", "correo", "direcccion", "pago", "imagen"));
-                int idevento = eventoCEN.New_ ("Evento", 70, "Musical del Rey Leon", "reyleon.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Musical");
-                int idevento2 = eventoCEN.New_ ("Evento", 60, "Entrada del Parque Harry Potter", "HarryPotterParque.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Parque");
-                int idevento3 = eventoCEN.New_ ("Evento", 5, "Visita guiada a la ua", "UA.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.dos, 8, "desclarga", "imagran", "Estudios");
-                int idevento4 = eventoCEN.New_ ("Evento", 25, "Estreno Star Wars", "EstrenoStarWars.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Cine");
-                int idevento5 = eventoCEN.New_ ("Evento", 60, "Sinfonia Harry Potter", "sinharry.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Musica Orquesta");
-                int idevento6 = eventoCEN.New_ ("Evento", 15, "Comic Con Madrid", "comic.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, 8, "desclarga", "imagran", "Evento");
+                int idevento = eventoCEN.New_ ("Musical Rey León", 70, "Musical del Rey León", "reyleon.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Musical");
+                int idevento2 = eventoCEN.New_ ("Entradas al parque de Harry Potter", 60, "Entrada del Parque Harry Potter", "HarryPotterParque.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Parque");
+                int idevento3 = eventoCEN.New_ ("Daniel Radcliffe visita la Ua", 5, "Visita guiada a la ua", "UA.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.dos, 8, "desclarga", "imagran", "Estudios");
+                int idevento4 = eventoCEN.New_ ("Estreno Star Wars L", 25, "Estreno Star Wars", "EstrenoStarWars.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Cine");
+                int idevento5 = eventoCEN.New_ ("Sinfonía Harry Potter", 60, "Sinfonia Harry Potter", "sinharry.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Musica Orquesta");
+                int idevento6 = eventoCEN.New_ ("Comic Con Madrid", 15, "Comic Con Madrid", "comic.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, 8, "desclarga", "imagran", "Evento");
 
-                int idCarrito = carritoCEN.New_ (idUsuario, 50000);
+                int idCarrito = carritoCEN.New_ (idUsuario, 0);
 
                 int idArticulo = articuloCEN.New_ ("articulo", 69, "descripcion", "imagen", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 999, "desclarga", "imagran");
 
@@ -213,18 +213,18 @@ public static void InitializeData ()
 
                 int idoferta = ofertaCEN.New_ (idArticulo, new DateTime (1993, 12, 3), new DateTime (1993, 12, 3), 99);
 
-                int idproducto = productoCEN.New_ ("Producto", 40, "Figura Balrog", "Balrog.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, 80, "desclarga", "imagran", "Media");
-                int idproducto2 = productoCEN.New_ ("Producto", 35, "Camiseta Legolas", "CamisetaLegolas.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, 80, "desclarga", "imagran", "S,M,L,XL");
-                int idproducto3 = productoCEN.New_ ("Producto", 68, "Casco Darth Vader", "CascoDarthVader.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 30, "desclarga", "imagran", "Media");
-                int idproducto4 = productoCEN.New_ ("Producto", 29, "FunkoPop Frodo", "FunkoPopFrodo.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.dos, 100, "desclarga", "imagran", "Peque�a");
-                int idproducto5 = productoCEN.New_ ("Producto", 30, "Figura Harley Quinn", "HarleyQuinn.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, 80, "desclarga", "imagran", "Peque�a");
-                int idproducto6 = productoCEN.New_ ("Producto", 8, "Llavero Smaug", "LlaveroSmaug.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.dos, 80, "desclarga", "imagran", "");
-                int idproducto7 = productoCEN.New_ ("Producto", 100, "Espada Laser", "EspadaLaserRoja.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 20, "desclarga", "imagran", "");
-                int idproducto8 = productoCEN.New_ ("Producto", 39, "Monopoly Se�or de los anillos", "MonopolySe�orAnillos.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, 80, "desclarga", "imagran", "");
-                int idproducto9 = productoCEN.New_ ("Producto", 180, "Ninmubs200", "Ninmubs200.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 20, "desclarga", "imagran", "media");
-                int idproducto10 = productoCEN.New_ ("Producto", 35, "Sudadera Harley Quinn", "SudaderaHarleyQuinn.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, 80, "desclarga", "imagran", "S,M,L,XL");
-                int idproducto11 = productoCEN.New_ ("Producto", 24, "Taza Joker", "TazaJoker.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 60, "desclarga", "imagran", "");
-                int idproducto12 = productoCEN.New_ ("Producto", 200, "Varita Sauco", "VaritaSauco.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 20, "desclarga", "imagran", "");
+                int idproducto = productoCEN.New_ ("FunkoPop Balrog", 40, "Figura Balrog", "Balrog.png", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, 80, "desclarga", "imagran", "Media");
+                int idproducto2 = productoCEN.New_ ("Camiseta Legolas", 35, "Camiseta Legolas", "CamisetaLegolas.png", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, 80, "desclarga", "imagran", "S,M,L,XL");
+                int idproducto3 = productoCEN.New_ ("Casco Darth Vader", 68, "Casco Darth Vader", "CascoDarthVader.png", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 30, "desclarga", "imagran", "Media");
+                int idproducto4 = productoCEN.New_ ("FunkoPop Frodo", 29, "FunkoPop Frodo", "FunkoPopFrodo.png", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.dos, 100, "desclarga", "imagran", "Peque�a");
+                int idproducto5 = productoCEN.New_ ("Figura Harley Quinn", 30, "Figura Harley Quinn", "HarleyQuinn.png", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, 80, "desclarga", "imagran", "Peque�a");
+                int idproducto6 = productoCEN.New_ ("Llavero Morty", 8, "Excepcional llavero de Morty de la serie de Rick y Morty. Ideal para adornar estuches estudiantiles o para usar de llavero", "LlaveroMorty2.png", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.dos, 80, "desclarga", "imagran", "Estándar");
+                int idproducto7 = productoCEN.New_ ("Espada Laser Roja", 100, "Espada Laser", "EspadaLaserRoja.png", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 20, "desclarga", "imagran", "Estándar");
+                int idproducto8 = productoCEN.New_ ("Risk Juego de Tronos", 39, "Juega en ambos mapas, participando en una guerra épica con un máximo de 7 jugadores. Advertencias: -Este juguete contiene piezas pequeñas. Riesgo de asfixia.Materiales Plástico:-Cartón-Papel-MetalEdad recomendada: Edad desde 18 hasta 99 años.", "RiskGoT.png", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, 80, "desclarga", "imagran", "Estándar");
+                int idproducto9 = productoCEN.New_ ("Jersey Rick", 180, "Ricka y morty camiseta Opinión No Significa Nada La Camiseta rick y morty divertido camisetas ropa camisetas hombre de manga corta t-shirt", "JerseyRick.png", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 20, "desclarga", "imagran", "media");
+                int idproducto10 = productoCEN.New_ ("Sudadera Harley Quinn", 35, "Sudadera Harley Quinn", "SudaderaHarleyQuinn.png", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, 80, "desclarga", "imagran", "S,M,L,XL");
+                int idproducto11 = productoCEN.New_ ("Sombrero Ace", 24, "Sombrero Ace", "SombreroAce.png", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 15, "desclarga", "imagran", "Estándar");
+                int idproducto12 = productoCEN.New_ ("Varita Sauco", 200, "Varita Sauco", "VaritaSauco.png", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 20, "desclarga", "imagran", "Estándar");
 
                 int idlista = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.visto, idUsuario);
                 int idlista2 = listaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.Estado_videoEnum.siguiendo, idUsuario);
@@ -232,6 +232,7 @@ public static void InitializeData ()
 
                 int idcomentario = comentarioCEN.New_ ("comentario", "autor", new DateTime (1993, 12, 3));
 
+<<<<<<< HEAD
                 int idpelicula = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Star Wars:Episodio VII", "i5.jpg", "desclarga", dstw, "ciencia ficcion", new DateTime (1993, 12, 3), "estarwa.jpg","https://www.youtube.com/watch?v=sGbxmsDFVnE");
                 int idpelicula2 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Jumanji", "i2.jpg", "desclarga", djumanji, "Ficcion", new DateTime (1993, 12, 3), "jumanji.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
                 int idpelicula3 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "COCO", "i7.jpg", "desclarga", dc, "Animacion", new DateTime (1993, 12, 3), "coco.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
@@ -267,6 +268,43 @@ public static void InitializeData ()
                 int idserie14 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Black Mirror", "bmir.jpg", "desclarga", dbmir, "Ciencia Ficcion", new DateTime (1993, 12, 3), "black.jpg");
                 int idserie15 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Vikings", "vik.jpg", "desclarga", dvik, "Accion", new DateTime (1993, 12, 3), "vikings.jpg");
                 int idserie16 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Mr.Robot", "mrr.jpg", "desclarga", dmrr, "Suspense", new DateTime (1993, 12, 3), "mr.rob.jpg");
+=======
+                int idpelicula = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Star Wars:Episodio VII", "i5.jpg", "desclarga", dstw, "ciencia ficcion", 1993, "estarwa.jpg", "link");
+                int idpelicula2 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Jumanji", "i2.jpg", "desclarga", djumanji, "Ficcion", 1993, "jumanji.jpg", "link");
+                int idpelicula3 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "COCO", "i7.jpg", "desclarga", dc, "Animacion", 1993, "coco.jpg", "link");
+                int idpelicula4 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Perfectos desconocidos", "i3.jpg", "desclarga", dperfdesc, "Tragicomedia", 1993, "perfectdesc.jpg", "link");
+                int idpelicula5 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Dando la nota 3", "i4.jpg", "desclarga", ddandonota, "Comedia", 1993, "dandolanota.jpg", "link");
+                int idpelicula6 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Ferdinand", "ferdi.jpg", "desclarga", dferdi, "Animacion", 1993, "ferdinand.jpg", "link");
+                int idpelicula7 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Wonder Wheel", "i8.jpg", "desclarga", dww, "Dramatico", 1993, "wonderwheel.jpg", "link");
+                int idpelicula8 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Spider-Man: Homecoming", "spider.jpg", "desclarga", despider, "Ciencia Ficcion", 1993, "man.jpg", "link");
+                int idpelicula9 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Wonder Woman", "ww.jpg", "desclarga", dwoman, "Ciencia Ficcion", 1993, "woman.jpg", "link");
+                int idpelicula10 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "it", "it.jpg", "desclarga", dit, "Terror", 1993, "ittt.jpg", "link");
+                int idpelicula11 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Feliz dia de tu muerte", "hday.jpg", "desclarga", dhday, "Terror", 1993, "muerte.jpg", "link");
+                int idpelicula12 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, "Despicable Me 3", "gru.jpg", "desclarga", dgru, "Animacion", 1993, "gru3.jpg", "link");
+                int idpelicula13 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Harry Potter y las reliquias de la muerte: Parte 1", "hrr1.jpg", "desclarga", dhrr1, "Fantasia", 1993, "harry1.jpg", "link");
+                int idpelicula14 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Harry Potter y las reliquias de la muerte: Parte 2", "hrr2.jpg", "desclarga", dhrr2, " Fantasia", 1993, "harry2.jpg", "link");
+                int idpelicula15 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Blade Runner 2049 ", "blad.jpg", "desclarga", dblad, "Ciencia Ficcion", 1993, "bladerun.jpg", "link");
+                int idpelicula16 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Baywatch ", "bay.jpg", "desclarga", dbay, "Comedia", 1993, "playa.jpg", "link");
+
+                //int idvideo = videoCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "nombre", "hola", "desclarga", "descripcion", "genero", 1993, "imagrande");
+
+                int idserie = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, "La To Vegas", "s1.jpg", "desclarga", dvegas, "Comedia", 1993, "latovegas.jpg", 2000, true);
+                int idserie2 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Happy", "s2.jpg", "desclarga", dhappy, "Comedia", 1993, "happy.jpg", 2000, true);
+                int idserie3 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Lucifer", "luci.jpg", "desclarga", dluci, "Fantastico", 1993, "lucifer.jpg", 2000, true);
+                int idserie4 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Damnation", "s4.jpg", "desclarga", ddam, "Drama", 1993, "damnation.jpg", 2000, true);
+                int idserie5 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Van Helsing", "vh.jpg", "desclarga", dvh, "Accion", 1993, "vanhel.jpg", 2000, true);
+                int idserie6 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Runaways", "rwa.jpg", "desclarga", drw, "Ciencia Ficcion", 1993, "runaways.jpg", 2000, true);
+                int idserie7 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "The Big Bang", "bigbang.jpg", "desclarga", dbgbg, "Comedia", 1993, "thebigbang.jpg", 2000, true);
+                int idserie8 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Game of Thrones", "got.jpg", "desclarga", dgot, "Fantastico", 1993, "game.jpg", 2000, true);
+                int idserie9 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "HowIMeetYourMother", "himym.jpg", "desclarga", dhimym, "Comedia", 1993, "comoconoci.jpg", 2000, true);
+                int idserie10 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "13 Reason Why", "reason.jpg", "desclarga", d13, "Drama", 1993, "13reasonwhy.jpg", 2000, true);
+                int idserie11 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Stranger Things", "st.jpg", "desclarga", dst, "Ciencia Ficcion", 1993, "stranger.jpg", 2000, true);
+                int idserie12 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Rick y Morty", "RYM.jpg", "desclarga", dRYM, "Animacion", 1993, "rick.jpg", 2000, true);
+                int idserie13 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Young Sheldon", "ysh.jpg", "desclarga", dysh, "Comedia", 1993, "young.jpg", 2000, true);
+                int idserie14 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Black Mirror", "bmir.jpg", "desclarga", dbmir, "Ciencia Ficcion", 1993, "black.jpg", 2000, true);
+                int idserie15 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Vikings", "vik.jpg", "desclarga", dvik, "Accion", 1993, "vikings.jpg", 2000, true);
+                int idserie16 = serieCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Mr.Robot", "mrr.jpg", "desclarga", dmrr, "Suspense", 1993, "mr.rob.jpg", 2000, true);
+>>>>>>> 379f25ac55051bfd1284e778ecb654075477f265
 
 
                 // idtemporada01 -> serie 0 temporada 1; idtemporada11 -> serie 1 temporada 1 .....
@@ -275,12 +313,21 @@ public static void InitializeData ()
                 int idtemporada03 = temporadaCEN.New_ (idserie, "Temporada 3");
                 int idtemporada11 = temporadaCEN.New_ (idserie2, "Temporada 1");
 
+<<<<<<< HEAD
                 int idcapitulo = capituloCEN.New_ (idtemporada01, "WHAT", new DateTime (1993, 12, 3), "descripccion", "imagen", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
                 int idcapitulo2 = capituloCEN.New_ (idtemporada01, "Who", new DateTime (1993, 12, 3), "descripccion", "imagen", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
                 int idcapitulo3 = capituloCEN.New_ (idtemporada01, "WHEN", new DateTime (1993, 12, 3), "descripccion", "imagen", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
                 int idcapitulo4 = capituloCEN.New_ (idtemporada02, "Mandingo", new DateTime (1993, 12, 3), "descripccion", "imagen", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
                 int idcapitulo5 = capituloCEN.New_ (idtemporada02, "Yes", new DateTime (1993, 12, 3), "descripccion", "imagen", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
                 int idcapitulo6 = capituloCEN.New_ (idtemporada03, "Techo", new DateTime (1993, 12, 3), "descripccion", "imagen", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
+=======
+                int idcapitulo = capituloCEN.New_ (idtemporada01, "WHAT", new DateTime (1993, 12, 3), "descripccion", "imagen", "link");
+                int idcapitulo2 = capituloCEN.New_ (idtemporada01, "Who", new DateTime (1993, 12, 3), "descripccion", "imagen", "link");
+                int idcapitulo3 = capituloCEN.New_ (idtemporada01, "WHEN", new DateTime (1993, 12, 3), "descripccion", "imagen", "link");
+                int idcapitulo4 = capituloCEN.New_ (idtemporada02, "Mandingo", new DateTime (1993, 12, 3), "descripccion", "imagen", "link");
+                int idcapitulo5 = capituloCEN.New_ (idtemporada02, "Yes", new DateTime (1993, 12, 3), "descripccion", "imagen", "link");
+                int idcapitulo6 = capituloCEN.New_ (idtemporada03, "Techo", new DateTime (1993, 12, 3), "descripccion", "imagen", "link");
+>>>>>>> 379f25ac55051bfd1284e778ecb654075477f265
 
                 #endregion
 

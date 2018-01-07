@@ -92,6 +92,12 @@ public void ModifyDefault (SerieEN serie)
                 SerieEN serieEN = (SerieEN)session.Load (typeof(SerieEN), serie.Id);
 
 
+
+                serieEN.Anyofin = serie.Anyofin;
+
+
+                serieEN.Finalizada = serie.Finalizada;
+
                 session.Update (serieEN);
                 SessionCommit ();
         }
@@ -166,6 +172,12 @@ public void Modify (SerieEN serie)
 
 
                 serieEN.Imagran = serie.Imagran;
+
+
+                serieEN.Anyofin = serie.Anyofin;
+
+
+                serieEN.Finalizada = serie.Finalizada;
 
                 session.Update (serieEN);
                 SessionCommit ();
@@ -344,6 +356,128 @@ public void Addtemporada (int p_Serie_OID, System.Collections.Generic.IList<int>
         {
                 SessionClose ();
         }
+}
+
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.SerieEN> Filtronombre (string p_nombre)
+{
+        System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.SerieEN> result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM SerieEN self where FROM SerieEN art where art.Nombre = :p_nombre";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("SerieENfiltronombreHQL");
+                query.SetParameter ("p_nombre", p_nombre);
+
+                result = query.List<SMPGenNHibernate.EN.SMP.SerieEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is SMPGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in SerieCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.SerieEN> Filtrovalor (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum ? p_valor)
+{
+        System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.SerieEN> result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM SerieEN self where FROM SerieEN art where art.Valoracion = :p_valor";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("SerieENfiltrovalorHQL");
+                query.SetParameter ("p_valor", p_valor);
+
+                result = query.List<SMPGenNHibernate.EN.SMP.SerieEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is SMPGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in SerieCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.SerieEN> Filtroanyo (int? p_min, int ? p_max)
+{
+        System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.SerieEN> result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM SerieEN self where FROM SerieEN art where art.Anyo >= :p_min and art.Anyo <= :p_max";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("SerieENfiltroanyoHQL");
+                query.SetParameter ("p_min", p_min);
+                query.SetParameter ("p_max", p_max);
+
+                result = query.List<SMPGenNHibernate.EN.SMP.SerieEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is SMPGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in SerieCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.SerieEN> Filtrogenero (string p_genero)
+{
+        System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.SerieEN> result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM SerieEN self where FROM SerieEN art where art.Genero = :p_genero";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("SerieENfiltrogeneroHQL");
+                query.SetParameter ("p_genero", p_genero);
+
+                result = query.List<SMPGenNHibernate.EN.SMP.SerieEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is SMPGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in SerieCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
 }
 }
 }

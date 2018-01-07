@@ -8,8 +8,20 @@
 <div class="container-fluid bg-2 text-center">
     <h2 class="margin">Series</h2>
 
+    @*
+        @if (Session["admin"] != null && (bool)Session["admin"] == true)
+        {
+        <p class="admin">
+            @Html.ActionLink("Añadir serie", "Create")
+        </p>
+        }
+    *@
     <p class="admin">
         @Html.ActionLink("Añadir serie", "Create")
+    </p>
+
+    <p class="text-center">
+        @Html.ActionLink("Busqueda", "Filtrar")
     </p>
 
     @foreach (var item in Model)

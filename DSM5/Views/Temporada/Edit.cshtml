@@ -26,7 +26,7 @@
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Guardar cambios" class="btn btn-danger" />
-                    @Html.ActionLink("Cancelar", @ViewData["action"] as string, @ViewData["controller"] as string, @ViewData["arg"], null)
+                    @Html.ActionLink("Cancelar", "mostrar_temp", "Serie", @Session["idserie"], null)
                 </div>
             </div>
         </div>

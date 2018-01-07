@@ -49,7 +49,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back", @ViewData["action"] as string, @ViewData["controller"] as string, @ViewData["arg"], null)|
+    @Html.ActionLink("Back", @Session["action"] as string, @Session["controller"] as string, @Session["arg"], null)|
 </div>
 
 @section Scripts {

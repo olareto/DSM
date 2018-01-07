@@ -47,6 +47,6 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back", @ViewData["action"] as string, @ViewData["controller"] as string, @ViewData["arg"], null)|
+    @Html.ActionLink("Back", "mostrar_cap", "Temporada", new { id = @Session["idtemp"] }, null)|
     @Html.Partial("_Comentario", (IEnumerable<DSM5.Models.Comentario>)ViewBag.coment)
 </p>

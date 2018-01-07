@@ -351,5 +351,127 @@ public void Addcomentario (int p_Pelicula_OID, System.Collections.Generic.IList<
                 SessionClose ();
         }
 }
+
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> Filtronombre (string p_nombre)
+{
+        System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM PeliculaEN self where FROM PeliculaEN art where art.Nombre = :p_nombre";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("PeliculaENfiltronombreHQL");
+                query.SetParameter ("p_nombre", p_nombre);
+
+                result = query.List<SMPGenNHibernate.EN.SMP.PeliculaEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is SMPGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in PeliculaCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> Filtroanyo (int? p_min, int ? p_max)
+{
+        System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM PeliculaEN self where FROM PeliculaEN art where art.Anyo >= :p_min and art.Anyo <= :p_max";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("PeliculaENfiltroanyoHQL");
+                query.SetParameter ("p_min", p_min);
+                query.SetParameter ("p_max", p_max);
+
+                result = query.List<SMPGenNHibernate.EN.SMP.PeliculaEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is SMPGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in PeliculaCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> Filtrovalor (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum ? p_valor)
+{
+        System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM PeliculaEN self where FROM PeliculaEN art where art.Valoracion = :p_valor";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("PeliculaENfiltrovalorHQL");
+                query.SetParameter ("p_valor", p_valor);
+
+                result = query.List<SMPGenNHibernate.EN.SMP.PeliculaEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is SMPGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in PeliculaCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> Filtrogenero (string p_genero)
+{
+        System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM PeliculaEN self where FROM PeliculaEN art where art.Genero = :p_genero";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("PeliculaENfiltrogeneroHQL");
+                query.SetParameter ("p_genero", p_genero);
+
+                result = query.List<SMPGenNHibernate.EN.SMP.PeliculaEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is SMPGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in PeliculaCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
 }
 }

@@ -11,8 +11,8 @@
 <p>
 
     
-    @Html.ActionLink("Create New", "Create", "Temporada", new { id = @ViewData["id_serie"] },null)
-    @Html.ActionLink("Back to List", "Details", "Serie", new { id = @ViewData["id_serie"] }, null)|
+    @Html.ActionLink("Create New", "Create", "Temporada", new { id = @Session["id_serie"] },null)
+    @Html.ActionLink("Back to List", "Details", "Serie", new { id = @Session["id_serie"] }, null)|
     
 </p>
 <table class="table">

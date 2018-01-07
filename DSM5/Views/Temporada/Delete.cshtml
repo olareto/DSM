@@ -16,7 +16,7 @@
 
                 <div class="form-actions no-color">
                     <input type="submit" value="Borrar" class="btn btn-danger" />
-                    @Html.ActionLink("Cancelar", @ViewData["action"] as string, @ViewData["controller"] as string, @ViewData["arg"], null)
+                    @Html.ActionLink("Cancelar", "mostrar_temp", "Serie", @Session["idserie"], null)
                 </div>
             }
         </div>

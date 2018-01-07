@@ -38,7 +38,7 @@ public IPeliculaCAD get_IPeliculaCAD ()
         return this._IPeliculaCAD;
 }
 
-public int New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, string p_nombre, string p_imagen, string p_descriplarga, string p_descripcion, string p_genero, Nullable<DateTime> p_anyo, string p_imagran, string p_link)
+public int New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, string p_nombre, string p_imagen, string p_descriplarga, string p_descripcion, string p_genero, int p_anyo, string p_imagran, string p_link)
 {
         PeliculaEN peliculaEN = null;
         int oid;
@@ -69,7 +69,7 @@ public int New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, st
         return oid;
 }
 
-public void Modify (int p_Pelicula_OID, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, string p_nombre, string p_imagen, string p_descriplarga, string p_descripcion, string p_genero, Nullable<DateTime> p_anyo, string p_imagran, string p_link)
+public void Modify (int p_Pelicula_OID, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum p_valoracion, string p_nombre, string p_imagen, string p_descriplarga, string p_descripcion, string p_genero, int p_anyo, string p_imagran, string p_link)
 {
         PeliculaEN peliculaEN = null;
 
@@ -123,6 +123,22 @@ public void Addcomentario (int p_Pelicula_OID, System.Collections.Generic.IList<
         //Call to PeliculaCAD
 
         _IPeliculaCAD.Addcomentario (p_Pelicula_OID, p_comentario_OIDs);
+}
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> Filtronombre (string p_nombre)
+{
+        return _IPeliculaCAD.Filtronombre (p_nombre);
+}
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> Filtroanyo (int? p_min, int ? p_max)
+{
+        return _IPeliculaCAD.Filtroanyo (p_min, p_max);
+}
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> Filtrovalor (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum ? p_valor)
+{
+        return _IPeliculaCAD.Filtrovalor (p_valor);
+}
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.PeliculaEN> Filtrogenero (string p_genero)
+{
+        return _IPeliculaCAD.Filtrogenero (p_genero);
 }
 }
 }

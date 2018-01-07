@@ -95,14 +95,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Añadir" class="btn btn-danger" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back", @ViewData["action"] as string, @ViewData["controller"] as string, @ViewData["arg"], null)|
+    @Html.ActionLink("Back", @Session["action"] as string, @Session["controller"] as string, @Session["arg"], null)|
 </div>
 
 @section Scripts {

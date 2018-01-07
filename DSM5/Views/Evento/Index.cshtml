@@ -5,88 +5,99 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 class="text-center">Eventos</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-    @Html.ActionLink("Busqueda", "Filtrar")
-</p>
+   <div class="container-fluid bg-2G">
+       <h2 class="margin colorTituloProductos text-center">Eventos</h2>
+       <p class="admin text-center">
+           @Html.ActionLink("Añadir Evento", "Create")
+       </p>
+       <p class="text-center">
+          @Html.ActionLink("Busqueda", "Filtrar") 
+       </p>
 
-   
-@foreach (var item in Model)
-{
+        @foreach (var item in Model)
+        {
+            <div class="panel">
+                <div class="panel-heading text-center">
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </div>
+                <div class="panel-body bg-2">  
+                    <div class="row">
+                        <div class="col-sm-4 text-justify">
+                            <div>
+                                <a href='@Url.Action("Details", "Evento", new { id = item.id })'>
+                                    <img class="centrarResponsive img-responsive imagenesDetailsProductos" src="~/Images/Eventos/@Html.DisplayFor(model => item.Imagen)" />
 
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div>
+                                <p>
+                                    @Html.DisplayFor(model => item.Descripcion)
+                                </p>
+                                <p>
+                                    @Html.DisplayFor(model => item.Precio)
+                                </p>
+                                <p>
+                                    @Html.DisplayFor(model => item.Valoracion)
+                                </p>
+                                
+                            </div> 
+                            <div>
+                                <p>
+                                    <button type="button" class="btn btn-mostaza">@Html.ActionLink("Añadir al carrito", "addcarr", "Usuario", new { idus = @Session["correo"] as string, idpro = item.id }, null)</button>
+                                    <button type="button" class="btn ">@Html.ActionLink("Detalles", "Details", new { id = item.id })</button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
 
-<hr />
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-4 text-center">
-                <h2>@Html.DisplayFor(model => item.Nombre)</h2>
-                <img class="centrarResponsive img-responsive imagenesDetailsProductos" src="~/Images/Eventos/@Html.DisplayFor(model => item.Imagen)" />
+                        </div>
+                    </div>                               
+                </div>
             </div>
-            <div class="col-sm-4 margenDescripcionesEventos">
+         
 
-                <p>
-                    
-                </p>
-               
-                <p>
-                    @Html.DisplayFor(model => item.Descripcion)  
-                </p>
-
-                <p>
-                    @Html.DisplayFor(model => item.Precio)
-                </p>
-
-                <p>
-                    @Html.DisplayFor(model => item.Valoracion)
-                </p>        
-                <p>
-                    <button type="button" class="btn ">@Html.ActionLink("Edit", "Edit", new { id = item.id })</button>
-                    <button type="button" class="btn ">@Html.ActionLink("Detalles", "Details", new { id = item.id })</button>
-                    <button type="button" class="btn ">@Html.ActionLink("Delete", "Delete", new { id = item.id })</button> 
-                    <button type="button" class="btn btn-mostaza">@Html.ActionLink("add to cart", "addcarr", "Usuario", new { idus = @ViewData["correo"] as string, idpro = item.id }, null)</button>
-                </p>
+        @*
+            <div class="container-fluid">
+                @foreach (var item in Model)
+                {
+                    <div class="container">
+                        <div class="panel panel-default panelGer">
+                            <div class="panel-heading">
+                                @Html.DisplayFor(modelItem => item.Nombre)
+                            </div>
+                            <div class="panel-body">
+                                <img class="imagenesIndexProductos" src="~/Images/Productos/@item.Imagen" />
+                                <p class="gerMargenLetras">@Html.DisplayFor(modelItem => item.Precio)</p>
+                                <p>
+                                    <button type="button" class="btn ">@Html.ActionLink("Edit", "Edit", new { id = item.id })</button>
+                                    <button type="button" class="btn ">@Html.ActionLink("Details", "Details", new { id = item.id })</button>
+                                    <button type="button" class="btn btn-mostaza">@Html.ActionLink("add to cart", "addcarr", "Usuario", new { idus = @ViewData["correo"] as string, idpro = item.id }, null)</button>
+                                    <button type="button" class="btn ">@Html.ActionLink("Delete", "Delete", new { id = item.id })</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
             </div>
-            <div class="col-sm-4">
+        *@
 
-            </div>
-        </div>
-    </div>
-<hr />
 
+        }
+   </div>
 
 
 
 
-    @*
-    <tr>
-        <td>
-            <img class="imagenesIndexProductos" src="~/Images/Productos/@item.Imagen" />
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Descripcion)
-        </td>       
-        <td>
-            @Html.DisplayFor(modelItem => item.Precio)
-        </td>       
-        <td>
-            @Html.DisplayFor(modelItem => item.Valoracion)
-        </td>       
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-    *@
 
 
 
 
-}
+
+
+
+
 
 

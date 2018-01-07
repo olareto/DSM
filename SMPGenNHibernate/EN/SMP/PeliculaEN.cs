@@ -60,7 +60,7 @@ public PeliculaEN() : base ()
 
 
 public PeliculaEN(int id, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista_0, string link
-                  , SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen, string descriplarga, string descripcion, string genero, Nullable<DateTime> anyo, string imagran
+                  , SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen, string descriplarga, string descripcion, string genero, int anyo, string imagran
                   )
 {
         this.init (Id, comentario, lista_0, link, valoracion, nombre, imagen, descriplarga, descripcion, genero, anyo, imagran);
@@ -73,7 +73,7 @@ public PeliculaEN(PeliculaEN pelicula)
 }
 
 private void init (int id
-                   , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista_0, string link, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen, string descriplarga, string descripcion, string genero, Nullable<DateTime> anyo, string imagran)
+                   , System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ComentarioEN> comentario, System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ListaEN> lista_0, string link, SMPGenNHibernate.Enumerated.SMP.ValoracionEnum valoracion, string nombre, string imagen, string descriplarga, string descripcion, string genero, int anyo, string imagran)
 {
         this.Id = id;
 

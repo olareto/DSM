@@ -19,6 +19,10 @@ namespace DSM5.Models
 
         [ScaffoldColumn(false)]
         public string tipo { get; set; }
+        [ScaffoldColumn(false)]
+        public string nombre { get; set; }
+        [ScaffoldColumn(false)]
+        public string imagen { get; set; }
 
         [ScaffoldColumn(false)]
         public int stock { get; set; }

@@ -280,7 +280,7 @@ public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.ProductoEN> Filt
         try
         {
                 SessionInitializeTransaction ();
-                //String sql = @"FROM ProductoEN self where FROM ProductoEN art where art.Precio > :p_min and art.Precio < :p_max ";
+                //String sql = @"FROM ProductoEN self where FROM ProductoEN art where art.Precio >= :p_min and art.Precio <= :p_max ";
                 //IQuery query = session.CreateQuery(sql);
                 IQuery query = (IQuery)session.GetNamedQuery ("ProductoENfiltroprecioHQL");
                 query.SetParameter ("p_min", p_min);
