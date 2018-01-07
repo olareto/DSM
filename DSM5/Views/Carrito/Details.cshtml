@@ -4,8 +4,41 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2 class="text-center">Carrito de compra</h2>
 
+
+<p>
+    @Html.Partial("_Lineapedido", (IEnumerable<DSM5.Models.Lineas_pedido>)ViewBag.coment)
+    @*
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Details", "Usuario", new { id = @Session["correo"] }, null)
+    *@
+</p>
+<p >
+   <h3 class="text-center"> Precio total: @Html.DisplayFor(model => model.Precio) 
+       <button type="button" class="btn ">@Html.ActionLink("Comprar", "compra", "Carrito", new { id = Model.id }, null)</button>  
+    </h3>
+    
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*
 <div>
     <h4>Carrito</h4>
     <hr />
@@ -28,15 +61,6 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Details", "Usuario", new { id = @Session["correo"] }, null)
-    @Html.ActionLink("compra", "compra", "Carrito", new { id =Model.id }, null)
-    @Html.Partial("_Lineapedido", (IEnumerable<DSM5.Models.Lineas_pedido>)ViewBag.coment)
+*@
 
 
-    
-
-
-    
-</p>

@@ -15,6 +15,12 @@
     background-color: #4f4f4f; /* Dark Blue */
     color: #ffffff;
 }
+.bg-2G {
+    background-color: #4f4f4f; /* Dark Blue */
+}
+.bg-mostaza {
+    background-color: #e09e04;
+}
 
 .bg-3 {
     background-color: #4f4f4f; /* White */
@@ -64,10 +70,7 @@ p, a, h2, h3 {
     background: #e09e04;
     color: #e09e04;
 }
-.mostaza {
-    background: #e09e04;
-    color: #e09e04;
-}
+
 .gercaja {
     float: left;
     width: 300px;
@@ -88,8 +91,8 @@ p, a, h2, h3 {
     margin-right: auto;
 }
 .imagenesIndexProductos {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
 }
 .imagenesDetailsProductos {
     width: 300px;
@@ -102,4 +105,7 @@ p, a, h2, h3 {
 .card{
     width: 1200px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.colorTituloProductos {
+    color: #ffffff;
 }

@@ -1,30 +1,85 @@
 ﻿@model IEnumerable<DSM5.Models.Lineas_pedido>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
+@*
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+*@
+<div class="container">
+    <table class="table table-bordered table-responsive">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+                <tbody>
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.articulo)</td>
+                        <td>@Html.DisplayFor(modelItem => item.tipo)</td>
+                        <td>@Html.DisplayFor(modelItem => item.precio)€</td>
+                        <td>@Html.DisplayFor(modelItem => item.cantidad)</td>
+                        <td>
+                            @Html.ActionLink("Detalles", "Details", new { id = item.id }) |
+                            @Html.ActionLink("Restar cantidad", "delllinea", "Carrito", new { id = @Session["carrito"], idpro = item.id }, null) |
+                            @Html.ActionLink("Eliminar", "Delete", new { id = item.id })                           
+                        </td>
+                    </tr>
+                </tbody>
+        }
+    </table>
+</div>
+
+@*
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.cantidad)
+            Nombre
         </th>
+        <th>
+            Tipo
+        </th>
+        <th>
+            Precio
+        </th>
+        <th>
+            Cantidad
+        </th>
+
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.cantidad)
+            @Html.DisplayFor(modelItem => item.articulo)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            @Html.DisplayFor(modelItem => item.tipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precio)€
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cantidad)
+        </td>
 
-            
+
+
+        <td>
+           
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })   
             @Html.ActionLink("eliminar uno", "delllinea", "Carrito", new { id = @Session["carrito"],idpro=item.id }, null)
         </td>
     </tr>
 }
 
 </table>
+*@
