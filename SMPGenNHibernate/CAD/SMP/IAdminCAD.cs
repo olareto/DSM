@@ -27,5 +27,9 @@ AdminEN ReadOID (string email
 
 
 System.Collections.Generic.IList<AdminEN> ReadAll (int first, int size);
+
+
+
+string New_CP (AdminEN admin);
 }
 }

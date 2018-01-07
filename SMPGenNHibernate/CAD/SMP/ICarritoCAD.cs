@@ -33,5 +33,7 @@ void Addlinea (int p_carrito_OID, System.Collections.Generic.IList<int> p_lineas
 
 
 void Dellinea (int p_carrito_OID, System.Collections.Generic.IList<int> p_lineas_pedido_OIDs);
+
+void Addusuario (int p_carrito_OID, string p_usuario_OID);
 }
 }

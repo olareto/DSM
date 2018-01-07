@@ -15,12 +15,16 @@ namespace DSM5.Controllers
         // GET: Articulo
         public ActionResult Index()
         {
-            AdminCEN cen = new AdminCEN();
-            IList<AdminEN> enlinst=cen.ReadAll(0, 6);
-            AssemblerAdmin ass = new AssemblerAdmin();
-            IList<Admin> listart = ass.ConvertListENToModel(enlinst);
+            SessionInitialize();
+            UsuarioCAD cad = new UsuarioCAD(session);
+
+            UsuarioCEN cen = new UsuarioCEN(cad);
+            IList<UsuarioEN> enlinst=cen.ReadAll(0, 6);
+            AssemblerUsuario ass = new AssemblerUsuario();
+            IList<Usuario> listart = ass.ConvertListENToModel(enlinst);
 
             //articuloAsembler.covert
+            SessionClose();
             return View(listart);
         }
 

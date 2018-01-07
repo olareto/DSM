@@ -108,5 +108,11 @@ public void Dellinea (int p_carrito_OID, System.Collections.Generic.IList<int> p
 
         _ICarritoCAD.Dellinea (p_carrito_OID, p_lineas_pedido_OIDs);
 }
+public void Addusuario (int p_carrito_OID, string p_usuario_OID)
+{
+        //Call to CarritoCAD
+
+        _ICarritoCAD.Addusuario (p_carrito_OID, p_usuario_OID);
+}
 }
 }

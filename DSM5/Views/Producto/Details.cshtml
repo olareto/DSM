@@ -58,8 +58,15 @@
             <p>
                 <button type="button" class="btn ">@Html.ActionLink("Volver", @Session["action"] as string, @Session["controller"] as string, @Session["arg"], null)</button>
                 <button type="button" class="btn btn-mostaza">@Html.ActionLink("Añadir al carrito", "addcarr", "Usuario", new { idus = @Session["correo"] as string, idpro = Model.id }, null)</button>
-                <button type="button" class="btn admin">@Html.ActionLink("Edit", "Edit", new { id = Model.id }) </button>
-                <button type="button" class="btn admin">@Html.ActionLink("Delete", "Delete", new { id = Model.id }) </button>
+                
+                @if (Session["admin"] != null && (bool)Session["admin"] == true)
+                {
+                    <button type="button" class="btn admin">@Html.ActionLink("Edit", "Edit", new { id = Model.id }) </button>
+                    <button type="button" class="btn admin">@Html.ActionLink("Delete", "Delete", new { id = Model.id }) </button>
+                }
+
+                
+               
             </p>
         </div>
         <div class="col-sm-4">

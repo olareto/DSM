@@ -260,5 +260,31 @@ public System.Collections.Generic.IList<AdminEN> ReadAll (int first, int size)
 
         return result;
 }
+
+public string New_CP (AdminEN admin)
+{
+        try
+        {
+                SessionInitializeTransaction ();
+
+                session.Save (admin);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is SMPGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in AdminCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return admin.Email;
+}
 }
 }

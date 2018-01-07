@@ -335,5 +335,36 @@ public void Dellinea (int p_carrito_OID, System.Collections.Generic.IList<int> p
                 SessionClose ();
         }
 }
+public void Addusuario (int p_carrito_OID, string p_usuario_OID)
+{
+        SMPGenNHibernate.EN.SMP.CarritoEN carritoEN = null;
+        try
+        {
+                SessionInitializeTransaction ();
+                carritoEN = (CarritoEN)session.Load (typeof(CarritoEN), p_carrito_OID);
+                carritoEN.Usuario = (SMPGenNHibernate.EN.SMP.UsuarioEN)session.Load (typeof(SMPGenNHibernate.EN.SMP.UsuarioEN), p_usuario_OID);
+
+                carritoEN.Usuario.Carrito = carritoEN;
+
+
+
+
+                session.Update (carritoEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is SMPGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in CarritoCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+}
 }
 }

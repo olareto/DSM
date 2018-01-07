@@ -481,37 +481,35 @@ namespace DSM5.Controllers
                 AssemblerUsuario ass = new AssemblerUsuario();
                 Usuario us;
 
-                AdminCEN cena = new AdminCEN();
-                AdminEN ena = new AdminEN();
-                AssemblerAdmin assa = new AssemblerAdmin();
-                Admin ad;
+                
+               
 
-                if (cen.Login(collection.email, collection.Password)){
+                if (cen.Login(collection.email, collection.Password)) {
                     en = cen.ReadOID(collection.email);
                     us = ass.ConvertENToModelUI(en);
+                    if (en is AdminEN) { 
+                   
 
+                    System.Web.HttpContext.Current.Session["usuario"] = us;
+                    System.Web.HttpContext.Current.Session["correo"] = us.Email;
+                    System.Web.HttpContext.Current.Session["log"] = true;
+                    System.Web.HttpContext.Current.Session["admin"] = true;
+                    System.Web.HttpContext.Current.Session["carrito"] = us.carrito;
+
+                    SessionClose();
+
+                }
+                else
+                {
+                    
 
                     System.Web.HttpContext.Current.Session["usuario"] = us;
                     System.Web.HttpContext.Current.Session["correo"] = us.Email;
                     System.Web.HttpContext.Current.Session["log"] = true;
                     System.Web.HttpContext.Current.Session["admin"] = false;
                     System.Web.HttpContext.Current.Session["carrito"] = us.carrito;
-
                     SessionClose();
-                    return RedirectToAction("Details", "Usuario", new { id = collection.email});
-
                 }
-                else if(cena.Login(collection.email, collection.Password))
-                {
-                    ena = cena.ReadOID(collection.email);
-                    ad = assa.ConvertENToModelUI(ena);
-
-                    System.Web.HttpContext.Current.Session["usuario"] = ad;
-                    System.Web.HttpContext.Current.Session["correo"] = ad.Email;
-                    System.Web.HttpContext.Current.Session["log"] = true;
-                    System.Web.HttpContext.Current.Session["admin"] = true;
-                    System.Web.HttpContext.Current.Session["carrito"] = ad.carrito;
-                    SessionClose();
                     return RedirectToAction("Details", "Usuario", new { id = collection.email });
                 }
                 else
