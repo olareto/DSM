@@ -12,6 +12,10 @@
         @Html.ActionLink("Añadir película", "Create")
     </p>
 
+    <p class="text-center">
+        @Html.ActionLink("Busqueda", "Filtrar")
+    </p>
+
     @foreach (var item in Model)
     {
         <div class="col-md-3">
@@ -24,7 +28,7 @@
             <div class="col">
                 <a href='@Url.Action("Details", "Pelicula", new { id = item.id })'>
                     <!--Ruta simple: sw8.jpg-->
-                    <img class="cartelera" src='~/Images/cartelera/@Html.DisplayFor(modelItem => item.Imagen)'/>
+                    <img class="cartelera" src='~/Images/cartelera/@Html.DisplayFor(modelItem => item.Imagen)' />
                 </a>
             </div>
         </div>
