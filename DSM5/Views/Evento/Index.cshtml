@@ -25,7 +25,10 @@
                     <div class="row">
                         <div class="col-sm-4 text-justify">
                             <div>
-                                <img class="centrarResponsive img-responsive imagenesDetailsProductos" src="~/Images/Eventos/@Html.DisplayFor(model => item.Imagen)" />
+                                <a href='@Url.Action("Details", "Evento", new { id = item.id })'>
+                                    <img class="centrarResponsive img-responsive imagenesDetailsProductos" src="~/Images/Eventos/@Html.DisplayFor(model => item.Imagen)" />
+
+                                </a>
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -43,10 +46,8 @@
                             </div> 
                             <div>
                                 <p>
-                                    <button type="button" class="btn ">@Html.ActionLink("Edit", "Edit", new { id = item.id })</button>
+                                    <button type="button" class="btn btn-mostaza">@Html.ActionLink("Añadir al carrito", "addcarr", "Usuario", new { idus = @Session["correo"] as string, idpro = item.id }, null)</button>
                                     <button type="button" class="btn ">@Html.ActionLink("Detalles", "Details", new { id = item.id })</button>
-                                    <button type="button" class="btn ">@Html.ActionLink("Delete", "Delete", new { id = item.id })</button>
-                                    <button type="button" class="btn btn-mostaza">@Html.ActionLink("add to cart", "addcarr", "Usuario", new { idus = @Session["correo"] as string, idpro = item.id }, null)</button>
                                 </p>
                             </div>
                         </div>
