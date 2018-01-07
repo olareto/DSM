@@ -43,16 +43,15 @@
                     <li>
                         <a href='@Url.Action("Index", "Usuario")'>
                             <span class="glyphicon glyphicon-user"> </span>
+                            @if (Session["log"]!=null&&(bool)Session["log"] == true)
+                            {
+                                @Session["correo"] 
+                            }
                         </a>
                         
                     </li>
 
-                    @if (Session["log"]!=null&&(bool)Session["log"] == true)
-                    {
-                        <li class="margin colorTituloProductos">
-                             @Session["correo"] 
-                        </li>
-                    }
+                    
 
 
 

@@ -13,7 +13,7 @@
 
         <div class="col-md-9">
             <div class="col-md-10">
-                @Html.ActionLink(item.Nombre, "mostrar_cap", "Temporada", new { id = item.id, tipo = @ViewData["controller"] }, null)
+                <a class="btn btn-primary center-block" href='@Url.Action("mostrar_cap", "Temporada", new { id = item.id, tipo = @ViewData["controller"] })'>@item.Nombre</a>
             </div>
             @if (Session["admin"] != null && (bool)Session["admin"] == true)
             {

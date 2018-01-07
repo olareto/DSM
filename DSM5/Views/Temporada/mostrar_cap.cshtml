@@ -10,11 +10,11 @@
         <hr />
         @foreach (var item in Model)
         {
-            <div class="row">
-                <div class="col-md-3">
-                    @Html.DisplayFor(modelItem => item.imagen)
+            <div class="row shadow">
+                <div class="col-md-4">
+                    <img src="~/Images/capitulos/@Html.DisplayFor(modelItem => item.imagen)" />
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 margenDescripcionesEventos">
                     <p>
                         @Html.DisplayFor(modelItem => item.Nombre)
                     </p>
@@ -22,10 +22,10 @@
                         @Html.DisplayFor(modelItem => item.fecha)
                     </p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-5 margenDescripcionesEventos">
                     @Html.DisplayFor(modelItem => item.descripcion)
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-1 margenDescripcionesEventos">
                     @Html.ActionLink("Edit", "Edit", "Capitulo", new { id = item.id }, null)
                     @Html.ActionLink("Reproducir", "Reproducir", "Capitulo", new { id = item.id }, null)
                     @Html.ActionLink("Delete", "Delete", "Capitulo", new { id = item.id }, null)
@@ -42,7 +42,7 @@
             @Html.ActionLink("Añadir capitulo", "Create", "Capitulo", new { id = @Session["id_serie"] }, null)
         </p>
     }
-        <p class="admin btn btn-default">
+        <p class="btn btn-default">
             @Html.ActionLink("Volver", "Details", "Serie", new { id = @Session["id_serie"] }, null)
         </p>
 
