@@ -245,22 +245,22 @@ public static void InitializeData ()
 
 
 
-                int idpelicula = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Star Wars:Episodio VII", "i5.jpg", "desclarga", dstw, "Ciencia ficcion", 2015, "estarwa.jpg", "https://www.youtube.com/watch?v=sGbxmsDFVnE");
-                int idpelicula2 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Jumanji", "i2.jpg", "desclarga", djumanji, "Ciencia ficcion", 2017, "jumanji.jpg", "https://www.youtube.com/watch?v=leIrosWRbYQ");
-                int idpelicula3 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "COCO", "i7.jpg", "desclarga", dc, "Animacion", 2017, "coco.jpg", "https://www.youtube.com/watch?v=-hTHtv1hmqc");
-                int idpelicula4 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Perfectos desconocidos", "i3.jpg", "desclarga", dperfdesc, "Tragicomedia", 2017, "perfectdesc.jpg", "https://www.youtube.com/watch?v=UqkXCILU_oE");
-                int idpelicula5 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Dando la nota 3", "i4.jpg", "desclarga", ddandonota, "Comedia", 2017, "dandolanota.jpg", "https://www.youtube.com/watch?v=1FgDZ2adeow");
-                int idpelicula6 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Ferdinand", "ferdi.jpg", "desclarga", dferdi, "Animacion", 2017, "ferdinand.jpg", "https://www.youtube.com/watch?v=9XcmEC8o98U");
-                int idpelicula7 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Wonder Wheel", "i8.jpg", "desclarga", dww, "Dramatico", 2017, "wonderwheel.jpg", "https://www.youtube.com/watch?v=7Y7VfCEb3Kg");
-                int idpelicula8 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Spider-Man: Homecoming", "spider.jpg", "desclarga", despider, "Ciencia Ficcion", 2017, "man.jpg", "https://www.youtube.com/watch?v=Xhvucc6KrVw");
-                int idpelicula9 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Wonder Woman", "ww.jpg", "desclarga", dwoman, "Ciencia Ficcion", 2017, "woman.jpg", "https://www.youtube.com/watch?v=gOfmwQijKFg");
-                int idpelicula10 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "it", "it.jpg", "desclarga", dit, "Terror", 2017, "ittt.jpg", "https://www.youtube.com/watch?v=_oBZ_zTz0Nw");
-                int idpelicula11 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Feliz dia de tu muerte", "hday.jpg", "desclarga", dhday, "Terror", 2017, "muerte.jpg", "https://www.youtube.com/watch?v=QzMX83gWxxA");
-                int idpelicula12 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, "Despicable Me 3", "gru.jpg", "desclarga", dgru, "Animacion", 2017, "gru3.jpg", "https://www.youtube.com/watch?v=6DBi41reeF0");
-                int idpelicula13 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Harry Potter y las reliquias de la muerte: Parte 1", "hrr1.jpg", "desclarga", dhrr1, "Fantasia", 2010, "harry1.jpg", "https://www.youtube.com/watch?v=f3O0odK1VIQ");
-                int idpelicula14 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Harry Potter y las reliquias de la muerte: Parte 2", "hrr2.jpg", "desclarga", dhrr2, " Fantasia", 2011, "harry2.jpg", "https://www.youtube.com/watch?v=HguSMW8XveQ");
-                int idpelicula15 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Blade Runner 2049 ", "blad.jpg", "desclarga", dblad, "Ciencia Ficcion", 2017, "bladerun.jpg", "https://www.youtube.com/watch?v=PkqHVGFAhbU");
-                int idpelicula16 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Baywatch ", "bay.jpg", "desclarga", dbay, "Comedia", 2017, "playa.jpg", "https://www.youtube.com/watch?v=p4ijrL4zscE");
+                int idpelicula = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Star Wars:Episodio VII", "i5.jpg", "desclarga", dstw, "Ciencia ficcion", 2015, "estarwa.jpg", "https://www.youtube.com/embed/sGbxmsDFVnE");
+                int idpelicula2 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Jumanji", "i2.jpg", "desclarga", djumanji, "Ciencia ficcion", 2017, "jumanji.jpg", "https://www.youtube.com/embed/leIrosWRbYQ");
+                int idpelicula3 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "COCO", "i7.jpg", "desclarga", dc, "Animacion", 2017, "coco.jpg", "https://www.youtube.com/embed/-hTHtv1hmqc");
+                int idpelicula4 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Perfectos desconocidos", "i3.jpg", "desclarga", dperfdesc, "Tragicomedia", 2017, "perfectdesc.jpg", "https://www.youtube.com/embed/UqkXCILU_oE");
+                int idpelicula5 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Dando la nota 3", "i4.jpg", "desclarga", ddandonota, "Comedia", 2017, "dandolanota.jpg", "https://www.youtube.com/embed/1FgDZ2adeow");
+                int idpelicula6 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Ferdinand", "ferdi.jpg", "desclarga", dferdi, "Animacion", 2017, "ferdinand.jpg", "https://www.youtube.com/embed/9XcmEC8o98U");
+                int idpelicula7 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Wonder Wheel", "i8.jpg", "desclarga", dww, "Dramatico", 2017, "wonderwheel.jpg", "https://www.youtube.com/embed/7Y7VfCEb3Kg");
+                int idpelicula8 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Spider-Man: Homecoming", "spider.jpg", "desclarga", despider, "Ciencia Ficcion", 2017, "man.jpg", "https://www.youtube.com/embed/Xhvucc6KrVw");
+                int idpelicula9 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Wonder Woman", "ww.jpg", "desclarga", dwoman, "Ciencia Ficcion", 2017, "woman.jpg", "https://www.youtube.com/embed/gOfmwQijKFg");
+                int idpelicula10 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "it", "it.jpg", "desclarga", dit, "Terror", 2017, "ittt.jpg", "https://www.youtube.com/embed/_oBZ_zTz0Nw");
+                int idpelicula11 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Feliz dia de tu muerte", "hday.jpg", "desclarga", dhday, "Terror", 2017, "muerte.jpg", "https://www.youtube.com/embed/QzMX83gWxxA");
+                int idpelicula12 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.tres, "Despicable Me 3", "gru.jpg", "desclarga", dgru, "Animacion", 2017, "gru3.jpg", "https://www.youtube.com/embed/6DBi41reeF0");
+                int idpelicula13 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Harry Potter y las reliquias de la muerte: Parte 1", "hrr1.jpg", "desclarga", dhrr1, "Fantasia", 2010, "harry1.jpg", "https://www.youtube.com/embed/f3O0odK1VIQ");
+                int idpelicula14 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "Harry Potter y las reliquias de la muerte: Parte 2", "hrr2.jpg", "desclarga", dhrr2, " Fantasia", 2011, "harry2.jpg", "https://www.youtube.com/embed/HguSMW8XveQ");
+                int idpelicula15 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Blade Runner 2049 ", "blad.jpg", "desclarga", dblad, "Ciencia Ficcion", 2017, "bladerun.jpg", "https://www.youtube.com/embed/PkqHVGFAhbU");
+                int idpelicula16 = peliculaCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, "Baywatch ", "bay.jpg", "desclarga", dbay, "Comedia", 2017, "playa.jpg", "https://www.youtube.com/embed/p4ijrL4zscE");
 
                 int idvideo = videoCEN.New_ (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, "nombre", "hola", "desclarga", "descripcion", "genero", 1993, "imagrande");
 
@@ -369,68 +369,68 @@ public static void InitializeData ()
                 string chow8 = "Cuando Ted y Barney discuten sobre quién tiene dibs con una chica candente, Ted se da cuenta de que ella está allí con Cindy, una chica con la que anteriormente salió y que también es el compañero de habitación de su futura esposa. Mientras tanto, Robin tiene el corazón roto por Don, y Marshall no puede callar su deseo de formar una familia.";
 
 
-                int idcapitulo = capituloCEN.New_ (idtemporada01, "Piloto", new DateTime (1993, 12, 3), cveg1, "cap1vegas.jpg", "https://www.youtube.com/watch?v=p4ijrL4zscE");
+                int idcapitulo = capituloCEN.New_ (idtemporada01, "Piloto", new DateTime (1993, 12, 3), cveg1, "cap1vegas.jpg", "https://www.youtube.com/embed/p4ijrL4zscE");
 
-                int idcapitulo2 = capituloCEN.New_ (idtemporada02, "1-Saint Nick", new DateTime (1993, 12, 3), ch1, "happy1.jpg", "https://www.youtube.com/watch?v=t7OYkSgmM-w");
-                int idcapitulo3 = capituloCEN.New_ (idtemporada02, "2-What Smiles Are For", new DateTime (1993, 12, 3), ch2, "happy2.jpg", "https://www.youtube.com/watch?v=t7OYkSgmM-w");
-                int idcapitulo4 = capituloCEN.New_ (idtemporada02, "3-When Christmas Was Christmas", new DateTime (1993, 12, 3), ch3, "happy3.jpg", "https://www.youtube.com/watch?v=t7OYkSgmM-w");
-                int idcapitulo5 = capituloCEN.New_ (idtemporada02, "4-Year of the Horse", new DateTime (1993, 12, 3), ch4, "happy4.jpg", "https://www.youtube.com/watch?v=t7OYkSgmM-w");
+                int idcapitulo2 = capituloCEN.New_ (idtemporada02, "1-Saint Nick", new DateTime (1993, 12, 3), ch1, "happy1.jpg", "https://www.youtube.com/embed/t7OYkSgmM-w");
+                int idcapitulo3 = capituloCEN.New_ (idtemporada02, "2-What Smiles Are For", new DateTime (1993, 12, 3), ch2, "happy2.jpg", "https://www.youtube.com/embed/t7OYkSgmM-w");
+                int idcapitulo4 = capituloCEN.New_ (idtemporada02, "3-When Christmas Was Christmas", new DateTime (1993, 12, 3), ch3, "happy3.jpg", "https://www.youtube.com/embed/t7OYkSgmM-w");
+                int idcapitulo5 = capituloCEN.New_ (idtemporada02, "4-Year of the Horse", new DateTime (1993, 12, 3), ch4, "happy4.jpg", "https://www.youtube.com/embed/t7OYkSgmM-w");
 
 
-                int idcapitulo6 = capituloCEN.New_ (idtemporada03, "1-Piloto", new DateTime (1993, 12, 3), cl1, "luci1.jpg", "https://www.youtube.com/watch?v=K2kyWOMsy2Q");
+                int idcapitulo6 = capituloCEN.New_ (idtemporada03, "1-Piloto", new DateTime (1993, 12, 3), cl1, "luci1.jpg", "https://www.youtube.com/embed/K2kyWOMsy2Q");
 
-                int idcapitulo7 = capituloCEN.New_(idtemporada03, "2-Lucifer, Stay. Good Devil.", new DateTime(1993, 12, 3), cl2, "luci2.jpg", "https://www.youtube.com/watch?v=K2kyWOMsy2Q");
-                int idcapitulo8 = capituloCEN.New_(idtemporada03, "3-The Would-Be Prince of Darkness", new DateTime(1993, 12, 3), cl3, "luci3.jpg", "https://www.youtube.com/watch?v=K2kyWOMsy2Q");
-                int idcapitulo9 = capituloCEN.New_(idtemporada03, "4-Lucifer, Stay. Good Devil.", new DateTime(1993, 12, 3), cl4, "luci2.jpg", "https://www.youtube.com/watch?v=K2kyWOMsy2Q");
-                int idcapitulo10 = capituloCEN.New_(idtemporada04, "1-Everything's Coming Up Lucifer.", new DateTime(1993, 12, 3), cl5, "luci5.jpg", "https://www.youtube.com/watch?v=K2kyWOMsy2Q");
-                int idcapitulo11 = capituloCEN.New_(idtemporada04, "2-Liar, Liar, Slutty Dress on Fire.", new DateTime(1993, 12, 3), cl6, "luci6.jpg", "https://www.youtube.com/watch?v=K2kyWOMsy2Q");
-                int idcapitulo12 = capituloCEN.New_(idtemporada04, "3-Sin-Eater", new DateTime(1993, 12, 3), cl7, "luci7.jpg", "https://www.youtube.com/watch?v=K2kyWOMsy2Q");
-                int idcapitulo13 = capituloCEN.New_(idtemporada04, "4-Lady Parts", new DateTime(1993, 12, 3), cl8, "luci8.jpg", "https://www.youtube.com/watch?v=K2kyWOMsy2Q");
-                int idcapitulo14 = capituloCEN.New_(idtemporada05, "1-They're Back Again, Aren't They?", new DateTime(1993, 12, 3), cl9, "luci9.jpg", "https://www.youtube.com/watch?v=K2kyWOMsy2Q");
-                int idcapitulo15 = capituloCEN.New_(idtemporada05, "2-The One with the Baby Carrot", new DateTime(1993, 12, 3), cl10, "luci10.jpg", "https://www.youtube.com/watch?v=K2kyWOMsy2Q");
+                int idcapitulo7 = capituloCEN.New_(idtemporada03, "2-Lucifer, Stay. Good Devil.", new DateTime(1993, 12, 3), cl2, "luci2.jpg", "https://www.youtube.com/embed/K2kyWOMsy2Q");
+                int idcapitulo8 = capituloCEN.New_(idtemporada03, "3-The Would-Be Prince of Darkness", new DateTime(1993, 12, 3), cl3, "luci3.jpg", "https://www.youtube.com/embed/K2kyWOMsy2Q");
+                int idcapitulo9 = capituloCEN.New_(idtemporada03, "4-Lucifer, Stay. Good Devil.", new DateTime(1993, 12, 3), cl4, "luci2.jpg", "https://www.youtube.com/embed/K2kyWOMsy2Q");
+                int idcapitulo10 = capituloCEN.New_(idtemporada04, "1-Everything's Coming Up Lucifer.", new DateTime(1993, 12, 3), cl5, "luci5.jpg", "https://www.youtube.com/embed/K2kyWOMsy2Q");
+                int idcapitulo11 = capituloCEN.New_(idtemporada04, "2-Liar, Liar, Slutty Dress on Fire.", new DateTime(1993, 12, 3), cl6, "luci6.jpg", "https://www.youtube.com/embed/K2kyWOMsy2Q");
+                int idcapitulo12 = capituloCEN.New_(idtemporada04, "3-Sin-Eater", new DateTime(1993, 12, 3), cl7, "luci7.jpg", "https://www.youtube.com/embed/K2kyWOMsy2Q");
+                int idcapitulo13 = capituloCEN.New_(idtemporada04, "4-Lady Parts", new DateTime(1993, 12, 3), cl8, "luci8.jpg", "https://www.youtube.com/embed/K2kyWOMsy2Q");
+                int idcapitulo14 = capituloCEN.New_(idtemporada05, "1-They're Back Again, Aren't They?", new DateTime(1993, 12, 3), cl9, "luci9.jpg", "https://www.youtube.com/embed/K2kyWOMsy2Q");
+                int idcapitulo15 = capituloCEN.New_(idtemporada05, "2-The One with the Baby Carrot", new DateTime(1993, 12, 3), cl10, "luci10.jpg", "https://www.youtube.com/embed/K2kyWOMsy2Q");
 
-                int idcapitulo16 = capituloCEN.New_(idtemporada06, "1-Sam Riley's Body", new DateTime(1993, 12, 3), cdam1, "dam1.jpg", "https://www.youtube.com/watch?v=n7yW7h0YkPI");
-                int idcapitulo17 = capituloCEN.New_(idtemporada06, "2-Which Side Are You On", new DateTime(1993, 12, 3), cdam2, "dam2.jpg", "https://www.youtube.com/watch?v=n7yW7h0YkPI");
-                int idcapitulo18 = capituloCEN.New_(idtemporada06, "3-One Penny", new DateTime(1993, 12, 3), cdam3, "dam3.jpg", "https://www.youtube.com/watch?v=n7yW7h0YkPI");
-                int idcapitulo19 = capituloCEN.New_(idtemporada06, "4-The Emperor of Ice Cream", new DateTime(1993, 12, 3), cdam4, "dam4.jpg", "https://www.youtube.com/watch?v=n7yW7h0YkPI");
+                int idcapitulo16 = capituloCEN.New_(idtemporada06, "1-Sam Riley's Body", new DateTime(1993, 12, 3), cdam1, "dam1.jpg", "https://www.youtube.com/embed/n7yW7h0YkPI");
+                int idcapitulo17 = capituloCEN.New_(idtemporada06, "2-Which Side Are You On", new DateTime(1993, 12, 3), cdam2, "dam2.jpg", "https://www.youtube.com/embed/n7yW7h0YkPI");
+                int idcapitulo18 = capituloCEN.New_(idtemporada06, "3-One Penny", new DateTime(1993, 12, 3), cdam3, "dam3.jpg", "https://www.youtube.com/embed/n7yW7h0YkPI");
+                int idcapitulo19 = capituloCEN.New_(idtemporada06, "4-The Emperor of Ice Cream", new DateTime(1993, 12, 3), cdam4, "dam4.jpg", "https://www.youtube.com/embed/n7yW7h0YkPI");
 
-                int idcapitulo20 = capituloCEN.New_(idtemporada07, "1-Help Me", new DateTime(1993, 12, 3), cvan1, "van1.jpg", "https://www.youtube.com/watch?v=Jtic6uu8P5Q");
-                int idcapitulo21 = capituloCEN.New_(idtemporada07, "2-Seen You", new DateTime(1993, 12, 3), cvan2, "van2.jpg", "https://www.youtube.com/watch?v=Jtic6uu8P5Q");
-                int idcapitulo22 = capituloCEN.New_(idtemporada07, "3-Stay Inside", new DateTime(1993, 12, 3), cvan3, "van3.jpg", "https://www.youtube.com/watch?v=Jtic6uu8P5Q");
-                int idcapitulo23 = capituloCEN.New_(idtemporada08, "1-Began Again", new DateTime(1993, 12, 3), cvan4, "van4.jpg", "https://www.youtube.com/watch?v=Jtic6uu8P5Q");
-                int idcapitulo24 = capituloCEN.New_(idtemporada08, "2-In Redemption", new DateTime(1993, 12, 3), cvan5, "van5.jpg", "https://www.youtube.com/watch?v=Jtic6uu8P5Q");
-                int idcapitulo25 = capituloCEN.New_(idtemporada08, "3-Love Bites", new DateTime(1993, 12, 3), cvan6, "van6.jpg", "https://www.youtube.com/watch?v=Jtic6uu8P5Q");
+                int idcapitulo20 = capituloCEN.New_(idtemporada07, "1-Help Me", new DateTime(1993, 12, 3), cvan1, "van1.jpg", "https://www.youtube.com/embed/Jtic6uu8P5Q");
+                int idcapitulo21 = capituloCEN.New_(idtemporada07, "2-Seen You", new DateTime(1993, 12, 3), cvan2, "van2.jpg", "https://www.youtube.com/embed/Jtic6uu8P5Q");
+                int idcapitulo22 = capituloCEN.New_(idtemporada07, "3-Stay Inside", new DateTime(1993, 12, 3), cvan3, "van3.jpg", "https://www.youtube.com/embed/Jtic6uu8P5Q");
+                int idcapitulo23 = capituloCEN.New_(idtemporada08, "1-Began Again", new DateTime(1993, 12, 3), cvan4, "van4.jpg", "https://www.youtube.com/embed/Jtic6uu8P5Q");
+                int idcapitulo24 = capituloCEN.New_(idtemporada08, "2-In Redemption", new DateTime(1993, 12, 3), cvan5, "van5.jpg", "https://www.youtube.com/embed/Jtic6uu8P5Q");
+                int idcapitulo25 = capituloCEN.New_(idtemporada08, "3-Love Bites", new DateTime(1993, 12, 3), cvan6, "van6.jpg", "https://www.youtube.com/embed/Jtic6uu8P5Q");
 
-                int idcapitulo26 = capituloCEN.New_(idtemporada09, "1-Reunion", new DateTime(1993, 12, 3), crun1, "run1.jpg", "https://www.youtube.com/watch?v=pLzQaMbTg7Q");
-                int idcapitulo27 = capituloCEN.New_(idtemporada09, "2-Rewind", new DateTime(1993, 12, 3), crun2, "run2.jpg", "https://www.youtube.com/watch?v=pLzQaMbTg7Q");
-                int idcapitulo28 = capituloCEN.New_(idtemporada09, "3-Rewind", new DateTime(1993, 12, 3), crun3, "run3.jpg", "https://www.youtube.com/watch?v=pLzQaMbTg7Q");
+                int idcapitulo26 = capituloCEN.New_(idtemporada09, "1-Reunion", new DateTime(1993, 12, 3), crun1, "run1.jpg", "https://www.youtube.com/embed/pLzQaMbTg7Q");
+                int idcapitulo27 = capituloCEN.New_(idtemporada09, "2-Rewind", new DateTime(1993, 12, 3), crun2, "run2.jpg", "https://www.youtube.com/embed/pLzQaMbTg7Q");
+                int idcapitulo28 = capituloCEN.New_(idtemporada09, "3-Rewind", new DateTime(1993, 12, 3), crun3, "run3.jpg", "https://www.youtube.com/embed/pLzQaMbTg7Q");
 
-                int idcapitulo29 = capituloCEN.New_(idtemporada10, "Pilot", new DateTime(1993, 12, 3), cbig1, "big1.jpg", "https://www.youtube.com/watch?v=_uQXxvZ3afQ");
-                int idcapitulo30 = capituloCEN.New_(idtemporada10, "2-The Big Bran Hypothesis", new DateTime(1993, 12, 3), cbig2, "big2.jpg", "https://www.youtube.com/watch?v=_uQXxvZ3afQ");
-                int idcapitulo31 = capituloCEN.New_(idtemporada10, "3-The Fuzzy Boots Corollary", new DateTime(1993, 12, 3), cbig3, "big3.jpg", "https://www.youtube.com/watch?v=_uQXxvZ3afQ");
-                int idcapitulo32 = capituloCEN.New_(idtemporada11, "1-The Bad Fish Paradigm", new DateTime(1993, 12, 3), cbig4, "big4.jpg", "https://www.youtube.com/watch?v=_uQXxvZ3afQ");
-                int idcapitulo33 = capituloCEN.New_(idtemporada12, "1-The Electric Can Opener Fluctuation", new DateTime(1993, 12, 3), cbig5, "big5.jpg", "https://www.youtube.com/watch?v=_uQXxvZ3afQ");
-                int idcapitulo34 = capituloCEN.New_(idtemporada13, "1-The Robotic Manipulation", new DateTime(1993, 12, 3), cbig6, "big6.jpg", "https://www.youtube.com/watch?v=_uQXxvZ3afQ");
-                int idcapitulo35 = capituloCEN.New_(idtemporada14, "1-The Skank Reflex Analysis", new DateTime(1993, 12, 3), cbig7, "big7.jpg", "https://www.youtube.com/watch?v=_uQXxvZ3afQ");
-                int idcapitulo36 = capituloCEN.New_(idtemporada15, "1-The Date Night Variable", new DateTime(1993, 12, 3), cbig8, "big8.jpg", "https://www.youtube.com/watch?v=_uQXxvZ3afQ");
+                int idcapitulo29 = capituloCEN.New_(idtemporada10, "Pilot", new DateTime(1993, 12, 3), cbig1, "big1.jpg", "https://www.youtube.com/embed/_uQXxvZ3afQ");
+                int idcapitulo30 = capituloCEN.New_(idtemporada10, "2-The Big Bran Hypothesis", new DateTime(1993, 12, 3), cbig2, "big2.jpg", "https://www.youtube.com/embed/_uQXxvZ3afQ");
+                int idcapitulo31 = capituloCEN.New_(idtemporada10, "3-The Fuzzy Boots Corollary", new DateTime(1993, 12, 3), cbig3, "big3.jpg", "https://www.youtube.com/embed/_uQXxvZ3afQ");
+                int idcapitulo32 = capituloCEN.New_(idtemporada11, "1-The Bad Fish Paradigm", new DateTime(1993, 12, 3), cbig4, "big4.jpg", "https://www.youtube.com/embed/_uQXxvZ3afQ");
+                int idcapitulo33 = capituloCEN.New_(idtemporada12, "1-The Electric Can Opener Fluctuation", new DateTime(1993, 12, 3), cbig5, "big5.jpg", "https://www.youtube.com/embed/_uQXxvZ3afQ");
+                int idcapitulo34 = capituloCEN.New_(idtemporada13, "1-The Robotic Manipulation", new DateTime(1993, 12, 3), cbig6, "big6.jpg", "https://www.youtube.com/embed/_uQXxvZ3afQ");
+                int idcapitulo35 = capituloCEN.New_(idtemporada14, "1-The Skank Reflex Analysis", new DateTime(1993, 12, 3), cbig7, "big7.jpg", "https://www.youtube.com/embed/_uQXxvZ3afQ");
+                int idcapitulo36 = capituloCEN.New_(idtemporada15, "1-The Date Night Variable", new DateTime(1993, 12, 3), cbig8, "big8.jpg", "https://www.youtube.com/embed/_uQXxvZ3afQ");
 
-                int idcapitulo37 = capituloCEN.New_(idtemporada16, "1-Winter Is Coming", new DateTime(1993, 12, 3), cgot1, "got1.jpg", "https://www.youtube.com/watch?v=iGp_N3Ir7Do");
-                int idcapitulo38 = capituloCEN.New_(idtemporada16, "2-The Kingsroad", new DateTime(1993, 12, 3), cgot2, "got2.jpg", "https://www.youtube.com/watch?v=iGp_N3Ir7Do");
-                int idcapitulo39 = capituloCEN.New_(idtemporada16, "3-Lord Snow", new DateTime(1993, 12, 3), cgot3, "got3.jpg", "https://www.youtube.com/watch?v=iGp_N3Ir7Do");
-                int idcapitulo40 = capituloCEN.New_(idtemporada17, "1-The North Remembers", new DateTime(1993, 12, 3), cgot4, "got4.jpg", "https://www.youtube.com/watch?v=iGp_N3Ir7Do");
-                int idcapitulo41 = capituloCEN.New_(idtemporada18, "1-Valar Dohaeris", new DateTime(1993, 12, 3), cgot5, "got5.jpg", "https://www.youtube.com/watch?v=iGp_N3Ir7Do");
-                int idcapitulo42 = capituloCEN.New_(idtemporada19, "1-Two Swords", new DateTime(1993, 12, 3), cgot6, "got6.jpg", "https://www.youtube.com/watch?v=iGp_N3Ir7Do");
-                int idcapitulo43 = capituloCEN.New_(idtemporada20, "1-The Wars to Come", new DateTime(1993, 12, 3), cgot7, "got7.jpg", "https://www.youtube.com/watch?v=iGp_N3Ir7Do");
-                int idcapitulo44 = capituloCEN.New_(idtemporada21, "1-The Red Woman", new DateTime(1993, 12, 3), cgot8, "got8.jpg", "https://www.youtube.com/watch?v=iGp_N3Ir7Do");
+                int idcapitulo37 = capituloCEN.New_(idtemporada16, "1-Winter Is Coming", new DateTime(1993, 12, 3), cgot1, "got1.jpg", "https://www.youtube.com/embed/iGp_N3Ir7Do");
+                int idcapitulo38 = capituloCEN.New_(idtemporada16, "2-The Kingsroad", new DateTime(1993, 12, 3), cgot2, "got2.jpg", "https://www.youtube.com/embed/iGp_N3Ir7Do");
+                int idcapitulo39 = capituloCEN.New_(idtemporada16, "3-Lord Snow", new DateTime(1993, 12, 3), cgot3, "got3.jpg", "https://www.youtube.com/embed/iGp_N3Ir7Do");
+                int idcapitulo40 = capituloCEN.New_(idtemporada17, "1-The North Remembers", new DateTime(1993, 12, 3), cgot4, "got4.jpg", "https://www.youtube.com/embed/iGp_N3Ir7Do");
+                int idcapitulo41 = capituloCEN.New_(idtemporada18, "1-Valar Dohaeris", new DateTime(1993, 12, 3), cgot5, "got5.jpg", "https://www.youtube.com/embed/iGp_N3Ir7Do");
+                int idcapitulo42 = capituloCEN.New_(idtemporada19, "1-Two Swords", new DateTime(1993, 12, 3), cgot6, "got6.jpg", "https://www.youtube.com/embed/iGp_N3Ir7Do");
+                int idcapitulo43 = capituloCEN.New_(idtemporada20, "1-The Wars to Come", new DateTime(1993, 12, 3), cgot7, "got7.jpg", "https://www.youtube.com/embed/iGp_N3Ir7Do");
+                int idcapitulo44 = capituloCEN.New_(idtemporada21, "1-The Red Woman", new DateTime(1993, 12, 3), cgot8, "got8.jpg", "https://www.youtube.com/embed/iGp_N3Ir7Do");
 
-                int idcapitulo45 = capituloCEN.New_(idtemporada22, "Pilot", new DateTime(1993, 12, 3), chow1, "how1.jpg", "https://www.youtube.com/watch?v=apRiP2h-O5o");
-                int idcapitulo46 = capituloCEN.New_(idtemporada22, "2-Purple Giraffe", new DateTime(1993, 12, 3), chow2, "how2.jpg", "https://www.youtube.com/watch?v=apRiP2h-O5o");
-                int idcapitulo47 = capituloCEN.New_(idtemporada22, "3-Sweet Taste of Liberty", new DateTime(1993, 12, 3), chow3, "how3.jpg", "https://www.youtube.com/watch?v=apRiP2h-O5o");
-                int idcapitulo48 = capituloCEN.New_(idtemporada23, "1-Where Were We?", new DateTime(1993, 12, 3), chow4, "how4.jpg", "https://www.youtube.com/watch?v=apRiP2h-O5o");
-                int idcapitulo49 = capituloCEN.New_(idtemporada24, "1-Wait for It", new DateTime(1993, 12, 3), chow5, "how5.jpg", "https://www.youtube.com/watch?v=apRiP2h-O5o");
-                int idcapitulo50 = capituloCEN.New_(idtemporada25, "1-Do I Know You?", new DateTime(1993, 12, 3), chow6, "how6.jpg", "https://www.youtube.com/watch?v=apRiP2h-O5o");
-                int idcapitulo51 = capituloCEN.New_(idtemporada26, "1-Definitions", new DateTime(1993, 12, 3), chow7, "how7.jpg", "https://www.youtube.com/watch?v=apRiP2h-O5o");
-                int idcapitulo52 = capituloCEN.New_(idtemporada27, "1-Big Days", new DateTime(1993, 12, 3), chow8, "how8.jpg", "https://www.youtube.com/watch?v=apRiP2h-O5o");
+                int idcapitulo45 = capituloCEN.New_(idtemporada22, "Pilot", new DateTime(1993, 12, 3), chow1, "how1.jpg", "https://www.youtube.com/embed/apRiP2h-O5o");
+                int idcapitulo46 = capituloCEN.New_(idtemporada22, "2-Purple Giraffe", new DateTime(1993, 12, 3), chow2, "how2.jpg", "https://www.youtube.com/embed/apRiP2h-O5o");
+                int idcapitulo47 = capituloCEN.New_(idtemporada22, "3-Sweet Taste of Liberty", new DateTime(1993, 12, 3), chow3, "how3.jpg", "https://www.youtube.com/embed/apRiP2h-O5o");
+                int idcapitulo48 = capituloCEN.New_(idtemporada23, "1-Where Were We?", new DateTime(1993, 12, 3), chow4, "how4.jpg", "https://www.youtube.com/embed/apRiP2h-O5o");
+                int idcapitulo49 = capituloCEN.New_(idtemporada24, "1-Wait for It", new DateTime(1993, 12, 3), chow5, "how5.jpg", "https://www.youtube.com/embed/apRiP2h-O5o");
+                int idcapitulo50 = capituloCEN.New_(idtemporada25, "1-Do I Know You?", new DateTime(1993, 12, 3), chow6, "how6.jpg", "https://www.youtube.com/embed/apRiP2h-O5o");
+                int idcapitulo51 = capituloCEN.New_(idtemporada26, "1-Definitions", new DateTime(1993, 12, 3), chow7, "how7.jpg", "https://www.youtube.com/embed/apRiP2h-O5o");
+                int idcapitulo52 = capituloCEN.New_(idtemporada27, "1-Big Days", new DateTime(1993, 12, 3), chow8, "how8.jpg", "https://www.youtube.com/embed/apRiP2h-O5o");
 
 
 
