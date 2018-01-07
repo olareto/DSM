@@ -10,36 +10,43 @@
         <hr />
         @foreach (var item in Model)
         {
-            <div class="row">
-                <div class="col-md-3">
-                    @Html.DisplayFor(modelItem => item.imagen)
-                </div>
-                <div class="col-md-2">
-                    <p>
-                        @Html.DisplayFor(modelItem => item.Nombre)
-                    </p>
-                    <p>
-                        @Html.DisplayFor(modelItem => item.fecha)
-                    </p>
-                </div>
-                <div class="col-md-6">
-                    @Html.DisplayFor(modelItem => item.descripcion)
-                </div>
-                <div class="col-md-1">
-                    @Html.ActionLink("Edit", "Edit", "Capitulo", new { id = item.id }, null)
-                    @Html.ActionLink("Details", "Details", "Capitulo", new { id = item.id }, null)
-                    @Html.ActionLink("Delete", "Delete", "Capitulo", new { id = item.id }, null)
-                </div>
+        <div class="row">
+            <div class="col-md-3">
+                @Html.DisplayFor(modelItem => item.imagen)
             </div>
+            <div class="col-md-2">
+                <p>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </p>
+                <p>
+                    @Html.DisplayFor(modelItem => item.fecha)
+                </p>
+            </div>
+            <div class="col-md-6">
+                @Html.DisplayFor(modelItem => item.descripcion)
+            </div>
+            @if (Session["admin"] != null && (bool)Session["admin"] == true)
+            {
+        <div class="col-md-1">
+            @Html.ActionLink("Edit", "Edit", "Capitulo", new { id = item.id }, null)
+            @Html.ActionLink("Details", "Details", "Capitulo", new { id = item.id }, null)
+            @Html.ActionLink("Delete", "Delete", "Capitulo", new { id = item.id }, null)
+        </div>
+            }
+        </div>
             <hr />
         }
 
     </div>
-    <p class="admin btn btn-default">
-        @Html.ActionLink("Añadir capitulo", "Create", "Capitulo", new { id = @Session["id_serie"] }, null)
-    </p>
-    <p class="admin btn btn-default">
-        @Html.ActionLink("Volver", "Details", "Serie", new { id = @Session["id_serie"] }, null)
-    </p>
-    
-</div>
+
+    @if (Session["admin"] != null && (bool)Session["admin"] == true)
+    {
+        <p class="admin btn btn-default">
+            @Html.ActionLink("Añadir capitulo", "Create", "Capitulo", new { id = @Session["id_serie"] }, null)
+        </p>
+    }
+        <p class="admin btn btn-default">
+            @Html.ActionLink("Volver", "Details", "Serie", new { id = @Session["id_serie"] }, null)
+        </p>
+
+    </div>

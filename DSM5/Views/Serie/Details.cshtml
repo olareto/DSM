@@ -18,14 +18,14 @@
                 <h4><strong>Título: </strong>@Html.DisplayFor(model => model.Nombre)</h4>
                 <h4><strong>Género: </strong>@Html.DisplayFor(model => model.genero)</h4>
                 @if ((bool)@Model.finalizada == true)
-                {
-                    <h4>@Model.fecha - @Model.fechafin</h4>
-                }
-                else 
-                {
-                    <h4>@Model.fecha - en emisión</h4>
-                }
-               
+            {
+                <h4>@Model.fecha - @Model.fechafin</h4>
+        }
+        else
+        {
+            <h4>@Model.fecha - en emisión</h4>
+    }
+
                 <h>@Html.DisplayFor(model => model.descripcion)</h>
             </div>
             <div class="row">
@@ -34,20 +34,40 @@
             </div>
         </div>
 
+        @if (Session["log"] != null && (bool)Session["log"] == true)
+        {
         <div class="dropdown col-md-3 gerMargenLetras">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Opciones
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Vista</a>
-                <a class="dropdown-item admin" href='@Url.Action("Delete", "Serie", new { id = Model.id })'>Borrar</a>
-                <a class="dropdown-item admin" href='@Url.Action("Edit", "Serie", new { id = Model.id })'>Editar</a>
-                <a class="dropdown-item" href='@Url.Action("addlist", "Usuario", new { idus= @Session["correo"] as string, idpro=Model.id, lista="sig"  })'>siguiendo</a>
-                <a class="dropdown-item" href='@Url.Action("addlist", "Usuario", new { idus= @Session["correo"] as string, idpro=Model.id, lista="fav"  })'>favoritos</a>
-                <a class="dropdown-item" href='@Url.Action("addlist", "Usuario", new { idus= @Session["correo"] as string, idpro=Model.id, lista="visto"  })'>visto</a>
-            </div>
-        </div>
+                <div>
+                    <a class="dropdown-item" href='@Url.Action("addlist", "Usuario", new { idus = @Session["correo"] as string, idpro = Model.id, lista = "sig" })'>Añadir a siguiendo</a>
+                </div>
+                <div>
+                    <a class="dropdown-item" href='@Url.Action("addlist", "Usuario", new { idus = @Session["correo"] as string, idpro = Model.id, lista = "fav" })'>Añadir a favoritos</a>
+                </div>
+                <div>
+                    <a class="dropdown-item" href='@Url.Action("addlist", "Usuario", new { idus = @Session["correo"] as string, idpro = Model.id, lista = "visto" })'>Añadir a visto</a>
 
+                </div>
+
+                @if (Session["admin"] != null && (bool)Session["admin"] == true)
+    {
+            <div>
+                <a class="dropdown-item admin" href='@Url.Action("Edit", "Serie", new { id = Model.id })'>Editar</a>
+
+            </div>
+
+            <div>
+                <a class="dropdown-item admin" href='@Url.Action("Delete", "Serie", new { id = Model.id })'>Borrar</a>
+
+            </div>
+}
+            </div>
+            </div>
+        }
     </div>
-    
+        
+
 </div>

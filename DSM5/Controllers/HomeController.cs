@@ -14,15 +14,15 @@ namespace DSM5.Controllers
     {
         public ActionResult Index()
         {
-            if (System.Web.HttpContext.Current.Session["log"] != null && (bool)System.Web.HttpContext.Current.Session["log"]) {
+           // if (System.Web.HttpContext.Current.Session["log"] != null && (bool)System.Web.HttpContext.Current.Session["log"]) {
 
-                IList<Pelicula> resu = new List<Pelicula>();
-                ViewBag.peli = resu;
-                IList<Serie> resus = new List<Serie>();
-                ViewBag.serie = resus;
+               // IList<Pelicula> resu = new List<Pelicula>();
+              //  ViewBag.peli = resu;
+               // IList<Serie> resus = new List<Serie>();
+               // ViewBag.serie = resus;
 
-            }
-            else { 
+            //}
+          //  else { 
             PeliculaCEN cen = new PeliculaCEN();
             IList<PeliculaEN> enlinst = cen.ReadAll(0, int.MaxValue);
             AssemblerPelicula ass = new AssemblerPelicula();
@@ -79,7 +79,7 @@ namespace DSM5.Controllers
             ViewBag.serie = resus;
 
         
-            }
+          //  }
 
 
             return View();
