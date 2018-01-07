@@ -8,32 +8,36 @@
 
 <div class="container-fluid bg-2">
     <div class="row">
-        <div class="col-sm-4 text-justify">
+        <div class="col-sm-4 text-center">
             <h2>@Html.DisplayFor(model => model.Nombre)</h2>
             <img class="centrarResponsive img-responsive imagenesDetailsProductos" src="~/Images/Eventos/@Html.DisplayFor(model => model.Imagen)" />
         </div>
         <div class="col-sm-3">
-
             <p>
-
-            </p>
-            <p>
-                @Html.DisplayNameFor(model => model.Tipo): @Html.DisplayFor(model => model.Tipo)
+                <h4>
+                    @Html.DisplayNameFor(model => model.Tipo): @Html.DisplayFor(model => model.Tipo)
+                </h4>    
             </p>
             
 
             <p>
-                @Html.DisplayNameFor(model => model.Stock): @Html.DisplayFor(model => model.Stock)
+                <h4>
+                    @Html.DisplayNameFor(model => model.Stock): @Html.DisplayFor(model => model.Stock)
+                </h4>  
             </p>
             
 
             <p>
-                @Html.DisplayNameFor(model => model.Precio): @Html.DisplayFor(model => model.Precio)
+                <h4>
+                    @Html.DisplayNameFor(model => model.Precio): @Html.DisplayFor(model => model.Precio)
+                </h4>  
             </p>
            
 
             <p>
-                @Html.DisplayNameFor(model => model.Valoracion): @Html.DisplayFor(model => model.Valoracion)
+                <h4>
+                    @Html.DisplayNameFor(model => model.Valoracion): @Html.DisplayFor(model => model.Valoracion)
+                </h4>  
             </p>
             
        
@@ -50,10 +54,14 @@
         </div>
         <div class="col-sm-5">
             <p>
-                @Html.DisplayNameFor(model => model.Descripcion)
+                <h4>
+                    @Html.DisplayNameFor(model => model.Descripcion): 
+                </h4>  
             </p>
             <p>
-                @Html.DisplayFor(model => model.descriplarga)
+                <h4>
+                    @Html.DisplayNameFor(model => model.descriplarga)
+                </h4> 
             </p>
         </div>
     </div>
