@@ -42,8 +42,8 @@
             @Html.ActionLink("Añadir capitulo", "Create", "Capitulo", new { id = @Session["id_serie"] }, null)
         </p>
     }
-        <p class="btn btn-default">
-            @Html.ActionLink("Volver", "Details", "Serie", new { id = @Session["id_serie"] }, null)
-        </p>
+
+            <a class="btn btn-default" href='@Url.Action("Details", "Serie", new { id = @Session["id_serie"] })'><span class="glyphicon glyphicon-search"></span>Volver</a>
+
 
     </div>
