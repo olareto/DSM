@@ -26,9 +26,12 @@
                     @Html.DisplayFor(modelItem => item.descripcion)
                 </div>
                 <div class="col-md-1 margenDescripcionesEventos">
-                    @Html.ActionLink("Edit", "Edit", "Capitulo", new { id = item.id }, null)
+                    @if (Session["admin"] != null && (bool)Session["admin"] == true)
+                    {
+                        <p>@Html.ActionLink("Edit", "Edit", "Capitulo", new { id = item.id }, null)</p>
+                        <p>@Html.ActionLink("Delete", "Delete", "Capitulo", new { id = item.id }, null)</p>
+                    }
                     @Html.ActionLink("Reproducir", "Reproducir", "Capitulo", new { id = item.id }, null)
-                    @Html.ActionLink("Delete", "Delete", "Capitulo", new { id = item.id }, null)
                 </div>
             </div>
             <hr />
@@ -38,12 +41,10 @@
 
     @if (Session["admin"] != null && (bool)Session["admin"] == true)
     {
-        <p class="admin btn btn-default">
-            @Html.ActionLink("Añadir capitulo", "Create", "Capitulo", new { id = @Session["id_serie"] }, null)
-        </p>
+         <a class="btn btn-danger" href='@Url.Action("Create", "Capitulo", new { id = @Session["id_serie"] })'>Añadir capítulo</a>
     }
 
-            <a class="btn btn-default" href='@Url.Action("Details", "Serie", new { id = @Session["id_serie"] })'><span class="glyphicon glyphicon-search"></span>Volver</a>
+            <a class="btn btn-default" href='@Url.Action("Details", "Serie", new { id = @Session["id_serie"] })'>Volver</a>
 
 
     </div>

@@ -1,86 +1,73 @@
 ﻿@model DSM5.Models.FiltroPelicula
 
 @{
-    ViewBag.Title = "Filtrar";
+    ViewBag.Title = "Buscar película";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="container-fluid  text-center bg-2">
-    <h2 class="margin colorTituloProductos">Búsqueda</h2>
+    <h2 class="margin colorTituloProductos">Búsqueda de película</h2>
 
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
 
         <div class="form-horizontal">
-            <h4>Películas</h4>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.Nombrebol, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.Nombrebol)
-                        @Html.ValidationMessageFor(model => model.Nombrebol, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
+                @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-5" })
+                <div class="checkbox col-md-1">
+                    @Html.EditorFor(model => model.Nombrebol)
+                    @Html.ValidationMessageFor(model => model.Nombrebol, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-4">
                     @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Valoracionbol, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.Valoracionbol)
-                        @Html.ValidationMessageFor(model => model.Valoracionbol, "", new { @class = "text-danger" })
-                    </div>
+                @Html.LabelFor(model => model.Valoracion, htmlAttributes: new { @class = "control-label col-md-5" })
+                <div class="checkbox col-md-1">
+                    @Html.EditorFor(model => model.Valoracionbol)
+                    @Html.ValidationMessageFor(model => model.Valoracionbol, "", new { @class = "text-danger" })
                 </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Valoracion, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
+                <div class="col-md-4">
                     @Html.EditorFor(model => model.Valoracion, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Valoracion, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.anyobol, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.anyobol)
-                        @Html.ValidationMessageFor(model => model.anyobol, "", new { @class = "text-danger" })
-                    </div>
+                <div class="col-md-3"></div>
+                <p class="col-md-1">Filtrado desde el año</p>
+                @Html.LabelFor(model => model.anyomin, htmlAttributes: new { @class = "control-label col-md-1" })
+                <div class="checkbox col-md-1">
+                    @Html.EditorFor(model => model.anyobol)
+                    @Html.ValidationMessageFor(model => model.anyobol, "", new { @class = "text-danger" })
                 </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.anyomin, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
+                <div class="col-md-4">
                     @Html.EditorFor(model => model.anyomin, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.anyomin, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.anyomax, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
+                <div class="col-md-3"></div>
+                <p class="col-md-1">Filtrado hasta el año</p>
+                @Html.LabelFor(model => model.anyomax, htmlAttributes: new { @class = "control-label col-md-1" })
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
                     @Html.EditorFor(model => model.anyomax, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.anyomax, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Buscar" class="btn btn-default" />
+                <div class="col-md-offset-5 col-md-10">
+                    <input type="submit" value="Buscar" class="btn btn-default btn-block" />
                 </div>
             </div>
         </div>
