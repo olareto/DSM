@@ -6,8 +6,19 @@
 
 
 <div class="container-fluid bg-2 text-center">
-    <h2 class="margin">Lista</h2>
 
+    @if (Session["lista"].Equals("Seguidos"))
+    {
+        <h2 class="margin">Lista Seguidos</h2>
+    }
+    else if (Session["lista"].Equals("Vistos"))
+    {
+        <h2 class="margin">Lista Vistos</h2>
+    }
+    else
+    {
+        <h2 class="margin">Lista Favoritos</h2>
+    }
     <p>
         @Html.Partial("_Pelicula", (IEnumerable<DSM5.Models.Pelicula>)ViewBag.peli)
         @Html.Partial("_Serie", (IEnumerable<DSM5.Models.Serie>)ViewBag.serie)
@@ -20,7 +31,6 @@
     </div>
 
 
-<h2>@Session["lista"] </h2>
 
 </div>
 
