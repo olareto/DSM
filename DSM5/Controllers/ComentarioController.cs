@@ -106,7 +106,7 @@ namespace DSM5.Controllers
 
                 
                 DateTime fecha = DateTime.Today;
-                int e= cen.New_(collection.comentario, collection.autor, new DateTime(fecha.Year, fecha.Month,fecha.Day));
+                int e= cen.New_(collection.comentario, System.Web.HttpContext.Current.Session["nombre"] as string, new DateTime(fecha.Year, fecha.Month,fecha.Day));
                 
 
                 

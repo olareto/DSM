@@ -225,6 +225,7 @@ namespace DSM5.Controllers
             System.Web.HttpContext.Current.Session["log"] = false;
             System.Web.HttpContext.Current.Session["admin"] = false;
             System.Web.HttpContext.Current.Session["correo"] = null;
+            System.Web.HttpContext.Current.Session["nombre"] = null;
             return RedirectToAction("Index", "Usuario");
         }
 
@@ -495,8 +496,9 @@ namespace DSM5.Controllers
                     System.Web.HttpContext.Current.Session["log"] = true;
                     System.Web.HttpContext.Current.Session["admin"] = true;
                     System.Web.HttpContext.Current.Session["carrito"] = us.carrito;
+                        System.Web.HttpContext.Current.Session["nombre"] = us.Nombre;
 
-                    SessionClose();
+                        SessionClose();
 
                 }
                 else
@@ -508,7 +510,8 @@ namespace DSM5.Controllers
                     System.Web.HttpContext.Current.Session["log"] = true;
                     System.Web.HttpContext.Current.Session["admin"] = false;
                     System.Web.HttpContext.Current.Session["carrito"] = us.carrito;
-                    SessionClose();
+                        System.Web.HttpContext.Current.Session["nombre"] = us.Nombre;
+                        SessionClose();
                 }
                     return RedirectToAction("Details", "Usuario", new { id = collection.email });
                 }
