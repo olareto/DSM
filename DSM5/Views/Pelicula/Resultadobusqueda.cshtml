@@ -33,8 +33,7 @@
                         <td>@Html.DisplayFor(modelItem => item.fecha)</td>
                         <td>@Html.DisplayFor(modelItem => item.Valoracion)</td>
                         <td>
-
-                            <button type="button" class="btn btn-default">@Html.ActionLink("Detalles", "Details", new { id = item.id })</button>
+                            <a class="btn btn-default" href='@Url.Action("Details", new { id = item.id })'>Detalles</a>
                         </td>
                     </tr>
                 </tbody>
