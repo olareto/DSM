@@ -71,8 +71,7 @@
     @if (Session["log"] != null && (bool)Session["log"] == true)
     {
         <p>
-            
-            <a class="btn btn-default" href='@Html.Partial("_Comentario", (IEnumerable<DSM5.Models.Comentario>)ViewBag.coment)'>Comentar</a>
+            @Html.Partial("_Comentario", (IEnumerable<DSM5.Models.Comentario>)ViewBag.coment)
 
         </p>
     }
