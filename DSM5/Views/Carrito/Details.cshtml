@@ -15,7 +15,8 @@
     <p class="bg-2">
         <h3 class="text-center bg-2">
             Precio total: @Html.DisplayFor(model => model.Precio)
-            <button type="button" class="btn ">@Html.ActionLink("Comprar", "compra", "Carrito", new { id = Model.id }, null)</button>
+            <a class="btn btn-default" href='@Url.Action("compra", "Carrito", new { id = Model.id }, null)'>Comprar</a>
+
         </h3>
 
     </p>

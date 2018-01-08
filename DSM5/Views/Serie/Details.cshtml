@@ -31,6 +31,17 @@
             <div class="row">
                 <hr />
                 @Html.Partial("_Temporada", (IEnumerable<DSM5.Models.Temporada>)ViewBag.temp)
+                @if (Session["admin"] != null && (bool)Session["admin"] == true)
+                {
+                    <hr />
+                    <div class="container">
+                        <div class="col-md-9">
+                            <div class="col-md-10">
+                                <a class="btn btn-danger center-block" href='@Url.Action("Create", "Temporada", new { id = Model.id, tipo = @Session["controller"] },null)'>Añadir temporada</a>
+                            </div>
+                        </div>
+                    </div>
+                }
             </div>
         </div>
 
