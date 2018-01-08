@@ -34,7 +34,7 @@
                         <td>
                             <a class="btn btn-default" href='@Url.Action("Details", item.tipo, new { id = item.articulo },null)'>Detalles</a>
                             <a class="btn btn-default" href='@Url.Action("delllinea", "Carrito", new { id = @Session["carrito"], idpro = item.id }, null)'>Restar cantidad</a>
-                            <a class="btn btn-default" href='@Url.Action( "Delete", new { id = item.id })'>Eliminar</a>
+
                         </td>
                     </tr>
                 </tbody>
