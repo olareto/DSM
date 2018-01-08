@@ -41,7 +41,7 @@
             <div class="form-group">
                 <div class="col-md-8">
                     <input type="submit" value="Guardar cambios" class="btn btn-danger" />
-                    @Html.ActionLink("Cancelar", @Session["action"] as string, @Session["controller"] as string, @Session["arg"], null)
+                    <a class="btn btn-default" href='@Url.Action("Details", "Serie", new { id = @Session["id_serie"] })'>Cancelar</a>
                 </div>
             </div>
 

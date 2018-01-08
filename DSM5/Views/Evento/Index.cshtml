@@ -55,8 +55,8 @@
                             </div> 
                             <div>
                                 <p>
-                                    <button type="button" class="btn btn-mostaza">@Html.ActionLink("Añadir al carrito", "addcarr", "Usuario", new { idus = @Session["correo"] as string, idpro = item.id }, null)</button>
-                                    <button type="button" class="btn ">@Html.ActionLink("Detalles", "Details", new { id = item.id })</button>
+                                    <a class="btn btn-mostaza ne" href='@Url.Action("addcarr", "Usuario", new { idus = @Session["correo"] as string, idpro = item.id }, null)'>Añadir al carrito</a>
+                                    <a class="btn btn-default" href='@Url.Action("Details", new { id = item.id })'>Detalles</a>
                                 </p>
                             </div>
                         </div>

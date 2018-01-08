@@ -42,13 +42,15 @@
 
 
             <p>
-                <button type="button" class="btn ">@Html.ActionLink("Volver", @Session["action"] as string, @Session["controller"] as string, @Session["arg"], null)</button>
-                <button type="button" class="btn btn-mostaza">@Html.ActionLink("Añadir al carrito", "addcarr", "Usuario", new { idus = @Session["correo"] as string, idpro = Model.id }, null)</button>
+                <a class="btn btn-default" href='@Url.Action(@Session["action"] as string, @Session["controller"] as string, @Session["arg"], null)'>Volver</a>
+
+                <a class="btn btn-mostaza ne" href='@Url.Action("addcarr", "Usuario", new { idus = @Session["correo"] as string, idpro = Model.id }, null)'>Añadir al carrito</a>
+
                 @if (Session["admin"] != null && (bool)Session["admin"] == true)
-                {
-                    <button type="button" class="btn admin ">@Html.ActionLink("Editar", "Edit", new { id = Model.id }) </button>
-                    <button type="button" class="btn admin ">@Html.ActionLink("Borrar", "Delete", new { id = Model.id }) </button>
-                }
+    {
+            <a class="admin btn btn-danger" href='@Url.Action("Edit", new { id = Model.id })'>Editar</a>
+            <a class="admin btn btn-danger" href='@Url.Action("Delete", new { id = Model.id })'>Borrar</a>
+}
 
             </p>
         </div>
