@@ -232,6 +232,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Coke&amp;PopcornsYellow.png" />
     <Content Include="Images\Eventos\EstrenoStarWars.jpg" />
     <Content Include="Images\Eventos\HarryPotterParque.jpg" />
     <Content Include="Images\Eventos\ReyLeon.jpg" />
