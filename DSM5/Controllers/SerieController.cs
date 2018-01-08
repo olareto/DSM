@@ -81,7 +81,7 @@ namespace DSM5.Controllers
             ViewBag.serie = resu;
 
             System.Web.HttpContext.Current.Session["controller"] = "Serie";
-            System.Web.HttpContext.Current.Session["action"] = "Index";
+            System.Web.HttpContext.Current.Session["action"] = "Index_Usu";
             System.Web.HttpContext.Current.Session["arg"] = null;
             return View(listart);
 
