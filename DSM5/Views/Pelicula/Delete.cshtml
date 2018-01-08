@@ -5,25 +5,28 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
-    <h3 class="admin">¿Esta seguro de que desea borrar la película @Html.DisplayFor(model => model.Nombre)?</h3>
-    <hr />
-    <div class="row">
-        <img class="cartelera col-md-3 gerMargenLetras" src='~/Images/cartelera/@Html.DisplayFor(modelItem => modelItem.Imagen)' />
-        <div class="col-md-7 gerMargenLetras">
-            <h4><strong>Título: </strong>@Html.DisplayFor(model => model.Nombre)</h4>
-            <h4><strong>Género: </strong>@Html.DisplayFor(model => model.genero)</h4>
-            <h4><strong>Valoración: </strong>@Html.DisplayFor(model => model.Valoracion)</h4>
-            <hr />
-            @using (Html.BeginForm())
-            {
-                @Html.AntiForgeryToken()
+<div class="container-fluid bg-2 text-center">
+    <h2 class="margin">Borrar Pelicula</h2>
+    <div class="container">
+        <h3 class="admin">¿Esta seguro de que desea borrar la película @Html.DisplayFor(model => model.Nombre)?</h3>
+        <hr />
+        <div class="row">
+            <img class="cartelera col-md-3 gerMargenLetras" src='~/Images/cartelera/@Html.DisplayFor(modelItem => modelItem.Imagen)' />
+            <div class="col-md-7 gerMargenLetras">
+                <h4><strong>Título: </strong>@Html.DisplayFor(model => model.Nombre)</h4>
+                <h4><strong>Género: </strong>@Html.DisplayFor(model => model.genero)</h4>
+                <h4><strong>Valoración: </strong>@Html.DisplayFor(model => model.Valoracion)</h4>
+                <hr />
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
 
-                <div class="form-actions no-color">
-                    <input type="submit" value="Borrar" class="btn btn-danger" />
-                    @Html.ActionLink("Back", @Session["action"] as string, @Session["controller"] as string, @Session["arg"], null)
-                </div>
-            }
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Borrar" class="btn btn-danger" />
+                        <a class="btn btn-default" href='@Url.Action(@Session["action"] as string, @Session["controller"] as string, @Session["arg"], null)'>Cancelar</a>
+                    </div>
+                }
+            </div>
         </div>
     </div>
 </div>

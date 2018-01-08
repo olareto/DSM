@@ -5,25 +5,29 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
-    <h3 class="admin">¿Esta seguro de que desea borrar el capítulo: @Html.DisplayFor(model => model.Nombre)?</h3>
-    <hr />
-    <div class="row">
-        <img class="col-md-3 gerMargenLetras" src='~/Images/capitulos/@Html.DisplayFor(modelItem => modelItem.imagen)' />
-        <div class="col-md-7 gerMargenLetras">
-            <h4><strong>Título: </strong>@Html.DisplayFor(model => model.Nombre)</h4>
-            <h4><strong>Fecha: </strong>@Html.DisplayFor(model => model.fecha)</h4>
-            <h4><strong>Descripción: </strong>@Html.DisplayFor(model => model.descripcion)</h4>
-            <hr />
-            @using (Html.BeginForm())
-            {
-                @Html.AntiForgeryToken()
 
-                <div class="form-actions no-color">
-                    <input type="submit" value="Borrar" class="btn btn-danger" />
-                    @Html.ActionLink("Volver", @Session["action"] as string, @Session["controller"] as string, @Session["arg"], null)
-                </div>
-            }
+<div class="container-fluid bg-2 text-center">
+    <h2 class="margin">Borrar Capitulo</h2>
+    <div class="container">
+        <h3 class="admin">¿Esta seguro de que desea borrar el capítulo: @Html.DisplayFor(model => model.Nombre)?</h3>
+        <hr />
+        <div class="row">
+            <img class="col-md-3 gerMargenLetras" src='~/Images/capitulos/@Html.DisplayFor(modelItem => modelItem.imagen)' />
+            <div class="col-md-7 gerMargenLetras">
+                <h4><strong>Título: </strong>@Html.DisplayFor(model => model.Nombre)</h4>
+                <h4><strong>Fecha: </strong>@Html.DisplayFor(model => model.fecha)</h4>
+                <h4><strong>Descripción: </strong>@Html.DisplayFor(model => model.descripcion)</h4>
+                <hr />
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Borrar" class="btn btn-danger" />
+                        <a class="btn btn-default" href='@Url.Action("Details", "Serie", new { id = @Session["id_serie"] })'>Cancelar</a>
+                    </div>
+                }
+            </div>
         </div>
     </div>
 </div>

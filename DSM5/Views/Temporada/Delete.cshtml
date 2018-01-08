@@ -5,20 +5,23 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
-    <h3 class="admin">¿Esta seguro de que desea borrar la temporada @Html.DisplayFor(model => model.Nombre)?</h3>
-    <hr />
-    <div class="row">
-        <div class="col-md-7 gerMargenLetras">
-            @using (Html.BeginForm())
-            {
-                @Html.AntiForgeryToken()
+<div class="container-fluid bg-2 text-center">
+    <h2 class="margin">Borrar Temporada</h2>
+    <div class="container">
+        <h3 class="admin">¿Esta seguro de que desea borrar la @Html.DisplayFor(model => model.Nombre)?</h3>
+        <hr />
+        <div class="row">
+            <div class="col-md-7 gerMargenLetras">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
 
-                <div class="form-actions no-color">
-                    <input type="submit" value="Borrar" class="btn btn-danger" />
-                    @Html.ActionLink("Cancelar", "mostrar_temp", "Serie", @Session["idserie"], null)
-                </div>
-            }
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Borrar" class="btn btn-danger" />
+                        <a class="btn btn-default" href='@Url.Action("Details", "Serie", new { id = @Session["id_serie"] })'>Cancelar</a>
+                    </div>
+                }
+            </div>
         </div>
     </div>
 </div>
