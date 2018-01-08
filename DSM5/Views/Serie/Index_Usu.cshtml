@@ -10,20 +10,19 @@
         <div class="col-md-3"></div>
         <div class="col-md-6">
             <h2 class="margin">Series</h2>
-        </div>
-        <div class="col-md-3">
             <p>
                 <a class="btn btn-default center-block" href='@Url.Action("Filtrar", "Serie")'><span class="glyphicon glyphicon-search"></span>Busqueda</a>
             </p>
+            @if (Session["admin"] != null && (bool)Session["admin"] == true)
+            {
+                <a class="admin btn btn-danger" href='@Url.Action("Create", "Serie", new { id = @Session["id_serie"] })'>Añadir serie</a>
+            }
+
+        </div>
+        <div class="col-md-3">
+            
         </div>
     </div> 
-    
-        @if (Session["admin"] != null && (bool)Session["admin"] == true)
-        {
-        <p class="admin">
-            @Html.ActionLink("Añadir serie", "Create")
-        </p>
-        }
 
     @foreach (var item in Model)
     {
