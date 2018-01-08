@@ -3,7 +3,7 @@
 
 <div class="container">
     <p>
-        @Html.ActionLink("Comentar", "Create", "Comentario", new { id = @Session["id_cap"] }, null)
+        @Html.ActionLink("Comentar", "Create", "Comentario", new { id = @Session["comen"] }, null)
     </p>
     @foreach (var item in Model)
     {

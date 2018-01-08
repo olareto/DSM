@@ -26,7 +26,7 @@ namespace DSM5.Models
             if (en.Capitulo != null)
             {
                 art.idsup = en.Capitulo.Id;
-                art.tipo = "Serie";
+                art.tipo = "Capitulo";
 
             }
 
@@ -36,7 +36,7 @@ namespace DSM5.Models
                 art.idsup = en.Articulo.Id;
                 if (en.Articulo is ProductoEN)
                 {
-                    art.tipo = "Articulo";
+                    art.tipo = "Producto";
                 }
                 else
                 {

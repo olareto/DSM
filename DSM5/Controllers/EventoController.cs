@@ -51,11 +51,7 @@ namespace DSM5.Controllers
             // ViewData["action"] = "Details";
             ViewBag.coment = solc;
 
-            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
-            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
-            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
-            ViewData["id_serie"] = id;
-            ViewData["correo"] = System.Web.HttpContext.Current.Session["correo"] as String;
+            System.Web.HttpContext.Current.Session["comen"] = id;
 
 
             return View(sol);

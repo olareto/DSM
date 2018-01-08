@@ -35,7 +35,7 @@ namespace DSM5.Controllers
         {
 
 
-            System.Web.HttpContext.Current.Session["id_cap"] = id;
+            System.Web.HttpContext.Current.Session["comen"] = id;
 
             SessionInitialize();
             CapituloCAD cad = new CapituloCAD(session);

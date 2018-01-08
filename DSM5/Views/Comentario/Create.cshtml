@@ -44,7 +44,7 @@
 
 <div>
     
-    @Html.ActionLink("Back", @Session["action"] as string, @Session["controller"] as string, @Session["arg"], null)|
+    @Html.ActionLink("Back", "Details", Model.tipo,new {id=Model.idsup }, null)|
    
 
 
