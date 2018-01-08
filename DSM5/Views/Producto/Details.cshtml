@@ -68,76 +68,11 @@
 
         </div>
     </div>
-</div>
-
 @if (Session["log"] != null && (bool)Session["log"] == true)
 {
     <p>
         @Html.Partial("_Comentario", (IEnumerable<DSM5.Models.Comentario>)ViewBag.coment)
     </p>
 }
-    @*
-        <div>
-            <hr />
-            <dl class="dl-horizontal">
-                <dd>
-                    <img src="~/Images/@Html.DisplayFor(model => model.Imagen)" width="300px" height="300px" />
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.Stock)
-                </dt>
+</div>
 
-                <dd>
-                    @Html.DisplayFor(model => model.Stock)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Nombre)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Nombre)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Precio)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Precio)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Descripcion)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Descripcion)
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.Valoracion)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Valoracion)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Talla)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Talla)
-                </dd>
-
-            </dl>
-        </div>
-
-        <p>
-            @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-            @Html.ActionLink("Back", @ViewData["action"]as string, @ViewData["controller"] as string, @ViewData["arg"], null)|
-            @Html.ActionLink("add to cart", "addcarr", "Usuario", new {idus= @ViewData["correo"] as string,idpro=Model.id },null)|
-
-            @Html.Partial("_Comentario", (IEnumerable<DSM5.Models.Comentario>)ViewBag.coment)
-        </p>
-    *@
