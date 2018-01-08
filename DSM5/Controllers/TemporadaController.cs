@@ -36,7 +36,7 @@ namespace DSM5.Controllers
             TemporadaCEN cen = new TemporadaCEN();
 
             TemporadaEN en = new TemporadaEN();
-            
+            System.Web.HttpContext.Current.Session["idtemp"]=id;
             en = cen.ReadOID(id);
             AssemblerTemporada ass = new AssemblerTemporada();
             Temporada sol =ass.ConvertENToModelUI(en);
@@ -66,12 +66,12 @@ namespace DSM5.Controllers
                 TemporadaCEN cen = new TemporadaCEN();
                 
                 cen.New_(id, collection.Nombre);
-                string action = "mostrar_temp";
+                string action = "Details";
                 string controller = "Serie";
-                Object arg = System.Web.HttpContext.Current.Session["idserie"];
+                int arg = (int)System.Web.HttpContext.Current.Session["id_serie"];
 
 
-                return RedirectToAction(action, controller, arg);
+                return RedirectToAction(action, controller, new { id= arg });
             }
             catch
             {
@@ -118,12 +118,12 @@ namespace DSM5.Controllers
                 //cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock, collection.Talla);
                 //return RedirectToAction("Index");
 
-                string action = "mostrar_temp";
+                string action = "Details";
                 string controller = "Serie";
-                Object arg = System.Web.HttpContext.Current.Session["idserie"];
+                int arg = (int)System.Web.HttpContext.Current.Session["id_serie"];
 
 
-                return RedirectToAction(action, controller, arg);
+                return RedirectToAction(action, controller, new { id = arg });
 
             }
             catch
@@ -156,12 +156,12 @@ namespace DSM5.Controllers
                 TemporadaCEN cen = new TemporadaCEN();
                
                 cen.Destroy(id);
-                string action = "mostrar_temp";
+                string action = "Details";
                 string controller = "Serie";
-                Object arg = System.Web.HttpContext.Current.Session["idserie"];
+                int arg = (int)System.Web.HttpContext.Current.Session["id_serie"];
 
 
-                return RedirectToAction(action, controller, arg);
+                return RedirectToAction(action, controller, new { id = arg });
             }
             catch
             {

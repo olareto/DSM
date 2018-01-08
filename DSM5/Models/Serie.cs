@@ -48,17 +48,17 @@ namespace DSM5.Models
 
         [Display(Prompt = "fecha de la Comentario", Description = "fecha de la Comentario", Name = "fecha ")]
         [Required(ErrorMessage = "Debe indicar un fecha para la Comentario")]
-        [Range(minimum: 1, maximum: 5, ErrorMessage = "El valoración debe ser mayor que cero y menor de 5")]
+        [Range(minimum: 1900, maximum: 2020, ErrorMessage = "El valoración debe ser mayor que cero y menor de 5")]
         public int fecha { get; set; }
 
         [Display(Prompt = "fechafin de la Comentario", Description = "fecha de la Comentario", Name = "fechafin ")]
         [Required(ErrorMessage = "Debe indicar un fecha para la Comentario")]
-        [Range(minimum: 1, maximum: 5, ErrorMessage = "El valoración debe ser mayor que cero y menor de 5")]
+        [Range(minimum: 1900, maximum: 2020, ErrorMessage = "El valoración debe ser mayor que cero y menor de 5")]
         public int fechafin { get; set; }
 
 
         [Display(Prompt = "Nombre del producto", Description = "Nombre del producto", Name = "finalizada ")]
-        [StringLength(maximumLength: 200, ErrorMessage = "El nombre no puede tener más de 200 caracteres")]
+    
         public bool finalizada { get; set; }
 
 

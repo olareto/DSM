@@ -26,7 +26,6 @@ namespace DSM5.Models
 
         [Display(Prompt = "Nombre del Capitulo", Description = "Nombre del Capitulo", Name = "Nombre ")]
         [Required(ErrorMessage = "Debe indicar un nombre para el Capitulo")]
-        [StringLength(maximumLength: 200, ErrorMessage = "El nombre no puede tener más de 200 caracteres")]
         public string Nombre { get; set; }
 
         [Display(Prompt = "Nombre del Capitulo", Description = "Nombre del Capitulo", Name = "link ")]
@@ -43,7 +42,6 @@ namespace DSM5.Models
 
         [Display(Prompt = "descripcion del Capitulo", Description = "descripcion del Capitulo", Name = "descripcion ")]
         [Required(ErrorMessage = "Debe indicar una descripcion para el Capitulo")]
-        [StringLength(maximumLength: 200, ErrorMessage = "El nombre no puede tener más de 200 caracteres")]
         
         public string descripcion { get; set; }
 

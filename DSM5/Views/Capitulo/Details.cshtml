@@ -50,3 +50,10 @@
     @Html.ActionLink("Back", "mostrar_cap", "Temporada", new { id = @Session["idtemp"] }, null)|
     @Html.Partial("_Comentario", (IEnumerable<DSM5.Models.Comentario>)ViewBag.coment)
 </p>
+
+@if (Session["log"] != null && (bool)Session["log"] == true)
+{
+    <p>
+        @Html.Partial("_Comentario", (IEnumerable<DSM5.Models.Comentario>)ViewBag.coment)
+    </p>
+}

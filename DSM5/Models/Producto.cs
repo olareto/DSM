@@ -41,7 +41,6 @@ namespace DSM5.Models
 
         [Display(Prompt = "descricion larga del producto", Description = "descricion larga del producto", Name = "descricion larga ")]
         [Required(ErrorMessage = "Debe indicar un descricion larga para el producto")]
-        [StringLength(maximumLength: 200, ErrorMessage = "El descricion larga no puede tener más de 200 caracteres")]
         public string descriplarga { get; set; }
 
         
@@ -65,7 +64,6 @@ namespace DSM5.Models
 
         [Display(Prompt = "Descripción del producto", Description = "Descripción del producto", Name = "Descripción ")]
         [Required(ErrorMessage = "Debe indicar un nombre para el producto")]
-        [StringLength(maximumLength: 200, ErrorMessage = "El nombre no puede tener más de 200 caracteres")]
         public string Descripcion { get; set; }
 
 

@@ -84,9 +84,12 @@ namespace DSM5.Controllers
 
                 cen.New_(id, collection.Nombre,new DateTime (collection.fecha.Year, collection.fecha.Month, collection.fecha.Day), collection.descripcion, collection.imagen, collection.link);
 
+              
+
+
                 string action = "mostrar_cap";
                 string controller = "Temporada";
-                Object arg = System.Web.HttpContext.Current.Session["idtemp"];
+                Object arg = new {id= System.Web.HttpContext.Current.Session["idtemp"] };
 
 
                 return RedirectToAction(action, controller, arg);
@@ -129,16 +132,18 @@ namespace DSM5.Controllers
                 // TODO: Add update logic here
 
                 CapituloCEN cen = new CapituloCEN();
+                CapituloEN en = cen.ReadOID(id);
 
-            
-                cen.Modify(collection.id, collection.Nombre, new DateTime(collection.fecha.Year, collection.fecha.Month, collection.fecha.Day), collection.descripcion, collection.imagen, collection.link);
+                string link = en.Link; 
+
+                cen.Modify(collection.id, collection.Nombre, new DateTime(collection.fecha.Year, collection.fecha.Month, collection.fecha.Day), collection.descripcion, collection.imagen, link);
                 //cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock, collection.Talla);
                 //return RedirectToAction("Index");
 
 
                 string action = "mostrar_cap";
                 string controller = "Temporada";
-                Object arg = System.Web.HttpContext.Current.Session["idtemp"];
+                Object arg = new { id = System.Web.HttpContext.Current.Session["idtemp"] };
 
 
                 return RedirectToAction(action, controller, arg);
@@ -176,7 +181,7 @@ namespace DSM5.Controllers
                 cen.Destroy(id);
                 string action = "mostrar_cap";
                 string controller = "Temporada";
-                Object arg = System.Web.HttpContext.Current.Session["idtemp"];
+                Object arg = new { id = System.Web.HttpContext.Current.Session["idtemp"] };
 
 
                 return RedirectToAction(action, controller, arg);

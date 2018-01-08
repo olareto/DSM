@@ -54,7 +54,6 @@ namespace DSM5.Models
 
         [Display(Prompt = "Descripción del Evento", Description = "Descripción del Evento", Name = "Descripción ")]
         [Required(ErrorMessage = "Debe indicar un nombre para el Evento")]
-        [StringLength(maximumLength: 1000, ErrorMessage = "El nombre no puede tener más de 1000 caracteres")]
         public string Descripcion { get; set; }
 
 
