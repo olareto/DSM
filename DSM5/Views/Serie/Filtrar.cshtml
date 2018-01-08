@@ -17,7 +17,8 @@
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-5" })
+                <div class="col-md-3"></div>
+                <p class="col-md-1">Nombre</p>
                 <div class="checkbox col-md-1">
                     @Html.EditorFor(model => model.Nombrebol)
                     @Html.ValidationMessageFor(model => model.Nombrebol, "", new { @class = "text-danger" })
@@ -29,7 +30,8 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Valoracion, htmlAttributes: new { @class = "control-label col-md-5" })
+                <div class="col-md-3"></div>
+                <p class="col-md-1">Valoración</p>              
                 <div class="checkbox col-md-1">
                     @Html.EditorFor(model => model.Valoracionbol)
                     @Html.ValidationMessageFor(model => model.Valoracionbol, "", new { @class = "text-danger" })

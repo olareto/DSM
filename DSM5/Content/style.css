@@ -124,6 +124,9 @@ p, a, h2, h3, h4, th {
 .colorMostaza {
     color: #e09e04;
 }
+.colorBlack {
+    color: black;
+}
 
 .gercaja {
     float: left;
