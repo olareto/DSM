@@ -41,8 +41,8 @@
                         <p class="gerMargenLetras">
                         @Html.DisplayFor(modelItem => item.Precio)
                         </p>
-                        <p>                                                       
-                            <a class="btn btn-mostaza ne" href='@Html.ActionLink("Añadir al carrito", "addcarr", "Usuario", new { idus = @Session["correo"] as string, idpro = item.id }, null)'><i class="fas fa-shopping-cart"></i>Añadir al carrito-</a>
+                        <p>                         
+                            <button type="button" class="btn btn-mostaza ne">@Html.ActionLink("Añadir al carrito", "addcarr", "Usuario", new { idus = @Session["correo"] as string, idpro = item.id }, null)</button>  
                         </p>
                     </div>
                 </div>
