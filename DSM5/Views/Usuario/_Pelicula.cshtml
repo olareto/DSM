@@ -18,10 +18,8 @@
             {
                 <tbody>
                     <tr>
-                        <td>
-                            <a class="imagenesCarrito" href='@Url.Action("Detalles", "Details", new { id = item.id })'>
+                        <td>  
                                 <img class="imagenesCarrito" src='~/Images/cartelera/@Html.DisplayFor(modelItem => item.Imagen)' />
-                            </a>
 
                             @Html.DisplayFor(modelItem => item.Nombre)
                         </td>

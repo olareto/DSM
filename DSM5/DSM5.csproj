@@ -232,11 +232,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\Coke&amp;PopcornsYellow.png" />
     <Content Include="Images\Eventos\EstrenoStarWars.jpg" />
     <Content Include="Images\Eventos\HarryPotterParque.jpg" />
     <Content Include="Images\Eventos\ReyLeon.jpg" />
     <Content Include="Images\Eventos\UA.jpg" />
+    <Content Include="Images\L.png" />
+    <Content Include="Images\login.jpg" />
+    <Content Include="Images\LoginNegro.png" />
     <Content Include="Images\Productos\Balrog.jpg" />
     <Content Include="Images\Productos\Balrog.png" />
     <Content Include="Images\Productos\CamisetaLegolas.jpg" />
@@ -267,9 +269,11 @@
     <Content Include="Images\Productos\SudaderaHarleyQuinn.png" />
     <Content Include="Images\Productos\TazaJoker.jpg" />
     <Content Include="Images\Productos\VaritaSauco.png" />
+    <Content Include="Images\prueba.jpg" />
     <Content Include="Images\starwars.jpg" />
     <Content Include="Images\SuicideSquad.jpg" />
     <Content Include="Images\Titanic.jpg" />
+    <Content Include="Images\ToyStroyy.jpg" />
     <Content Include="Images\TrueDetective.jpg" />
     <Content Include="Images\Productos\VaritaSauco.jpg" />
     <Content Include="Images\WestWorld.jpg" />

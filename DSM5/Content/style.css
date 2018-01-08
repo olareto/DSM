@@ -118,7 +118,7 @@ p, a, h2, h3, h4, th {
 }
 .btn-mostaza {
     background: #e09e04;
-    color: #e09e04;
+    color: black;
 }
 .colorMostaza {
     color: #e09e04;
@@ -154,6 +154,14 @@ p, a, h2, h3, h4, th {
     width: 300px;
     height: 300px;
 }
+.imagenLogin {
+    width: 600px;
+    height: 600px;
+    
+}
+.imagenLoginBg {
+    background-image: url("~/Images/ToyStroyy.jpg");
+}
 .imagenesCarrito {
     width: 50px;
     height: 50px;
@@ -179,4 +187,7 @@ p, a, h2, h3, h4, th {
 .bg-black2 {
     background-color: #303030;
     padding:20px;
+}
+.margenPrueba {
+    margin-top: 100px;
 }
