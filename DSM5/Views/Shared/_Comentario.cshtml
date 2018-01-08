@@ -3,28 +3,26 @@
 
 <div class="container">
     <p>
-        @Html.ActionLink("Comentar", "Create", "Comentario", new { id = @Session["comen"] }, null)
+        <a class="btn btn-default" href='@Url.Action("Create", "Comentario", new { id = @Session["comen"] }, null)'>Comentar</a>
     </p>
     @foreach (var item in Model)
     {
         <hr />
         <div class="row">
             <div class="col-md-1">
-                <p>@Html.DisplayFor(model => item.autor)</p>
+                <p> @Html.DisplayFor(model => item.autor)</p>
             </div>
             <div class="col-md-9">
                 <p>@Html.DisplayFor(model => item.comentario)</p>
             </div>
             <div class="col-md-2">
-                @Html.ActionLink("Edit", "Edit", "Comentario", new { id = item.id, tipo = @Session["controller"] }, null)
-                @Html.ActionLink("Details", "Details", "Comentario", new { id = item.id, tipo = @Session["controller"] }, null)
-                @Html.ActionLink("Delete", "Delete", "Comentario", new { id = item.id, tipo = @Session["controller"] }, null)
+
+                @if (Session["admin"] != null && (bool)Session["admin"] == true)
+    {
+            <a class="btn btn-danger" href='@Url.Action("Delete", "Comentario", new { id = item.id, tipo = @Session["controller"] }, null)'>Borrar</a>
+}
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-3">
-                @Html.DisplayFor(model => item.fecha)
-            </div>
-        </div>    
+          
     }
 </div>
