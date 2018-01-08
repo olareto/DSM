@@ -55,8 +55,8 @@
 
                 @if (Session["admin"] != null && (bool)Session["admin"] == true)
                 {
-                    <button type="button" class="btn admin">@Html.ActionLink("Edit", "Edit", new { id = Model.id }) </button>
-                    <button type="button" class="btn admin">@Html.ActionLink("Delete", "Delete", new { id = Model.id }) </button>
+                    <button type="button" class="btn admin">@Html.ActionLink("Editar", "Edit", new { id = Model.id }) </button>
+                    <button type="button" class="btn admin">@Html.ActionLink("Borrar", "Delete", new { id = Model.id }) </button>
                 }
 
 
