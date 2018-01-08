@@ -15,7 +15,7 @@
 
             </thead>
 
-            <tbody >
+            <tbody>
                 <tr>
                     <td>Nombre</td>
                     <td class="perfilTabla">@Html.DisplayFor(modelItem => Model.Nombre)</td>
@@ -60,27 +60,16 @@
         </table>
 
 
-        <p class="admin btn btn-default">
-            @Html.ActionLink("Modificar datos", "Edit", new { id = Model.Email })
-        </p>
+        <a class="btn btn-default" href='@Url.Action("Edit", new { id = Model.Email })'>Modificar datos</a>
 
-        <p class="admin btn btn-default">
-            @Html.ActionLink("Ver carrito", "Details", "Carrito", new { id = Model.carrito }, null)
-        </p>
+        <a class="btn btn-default" href='@Url.Action("Details", "Carrito", new { id = Model.carrito }, null)'>Ver carrito</a>
 
-        <p class="admin btn btn-default">
-            @Html.ActionLink("Lista Siguiendo", "mostrarlista", "Usuario", new { idus = Model.Email, tipo = "sig" }, null)
-        </p>
+        <a class="btn btn-default" href='@Url.Action("mostrarlista", "Usuario", new { idus = Model.Email, tipo = "sig" }, null)'>Lista Siguiendo</a>
 
-        <p class="admin btn btn-default">
-            @Html.ActionLink("Lista Favoritos", "mostrarlista", "Usuario", new { idus = Model.Email, tipo = "fav" }, null)
-        </p>
+        <a class="btn btn-default" href='@Url.Action("mostrarlista", "Usuario", new { idus = Model.Email, tipo = "fav" }, null)'>Lista Favoritos</a>
 
-        <p class="admin btn btn-default">
-            @Html.ActionLink("Lista Vistos", "mostrarlista", "Usuario", new { idus = Model.Email, tipo = "visto" }, null)
-        </p>
-        <p class="admin btn btn-default">
-            @Html.ActionLink("Salir", "deslog", "Usuario", null, null)
-        </p>
+        <a class="btn btn-default" href='@Url.Action("mostrarlista", "Usuario", new { idus = Model.Email, tipo = "visto" }, null)'>Lista Vistos</a>
+
+        <a class="btn btn-default" href='@Url.Action("deslog", "Usuario", null, null)'>Salir</a>
     </div>
 </div>
