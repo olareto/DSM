@@ -43,11 +43,18 @@ namespace DSM5.Controllers
                 tres = aleatorio.Next(1, max);
             }
 
+            int cuatro = aleatorio.Next(1, max);
+            while (dos == cuatro || uno == cuatro || tres==cuatro)
+            {
+                cuatro = aleatorio.Next(1, max);
+            }
+
 
             IList<Pelicula> resu = new List<Pelicula>();
             resu.Add(listart.ElementAt(uno));
             resu.Add(listart.ElementAt(dos));
             resu.Add(listart.ElementAt(tres));
+            resu.Add(listart.ElementAt(cuatro));
             ViewBag.peli = resu;
 
 
@@ -70,12 +77,18 @@ namespace DSM5.Controllers
             {
                 tress = aleatorios.Next(1, maxs);
             }
+            int cuatross = aleatorios.Next(1, maxs);
+            while (doss == cuatross || unos == cuatross ||tress==cuatross)
+            {
+                cuatross = aleatorios.Next(1, maxs);
+            }
 
 
             IList<Serie> resus = new List<Serie>();
             resus.Add(listarts.ElementAt(unos));
             resus.Add(listarts.ElementAt(doss));
             resus.Add(listarts.ElementAt(tress));
+            resus.Add(listarts.ElementAt(cuatross));
             ViewBag.serie = resus;
 
         
