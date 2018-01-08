@@ -377,5 +377,36 @@ public void Addcarrito (string p_usuario_OID, int p_carrito_OID)
                 SessionClose ();
         }
 }
+
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.UsuarioEN> Filtronombre (string p_nombre)
+{
+        System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.UsuarioEN> result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM UsuarioEN self where FROM UsuarioEN art where art.Nombre like '%'+:p_nombre+'%'";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("UsuarioENfiltronombreHQL");
+                query.SetParameter ("p_nombre", p_nombre);
+
+                result = query.List<SMPGenNHibernate.EN.SMP.UsuarioEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is SMPGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new SMPGenNHibernate.Exceptions.DataLayerException ("Error in UsuarioCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
 }
 }

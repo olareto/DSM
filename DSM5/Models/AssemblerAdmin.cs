@@ -9,9 +9,9 @@ namespace DSM5.Models
     
     public class AssemblerAdmin
     {
-        public Admin ConvertENToModelUI(AdminEN en)
+        public Usuario ConvertENToModelUI(AdminEN en)
         {
-            Admin art = new Admin();
+            Usuario art = new Usuario();
             //art.id = en.;
 
 
@@ -41,9 +41,9 @@ namespace DSM5.Models
 
 
         }
-        public IList<Admin> ConvertListENToModel(IList<AdminEN> ens)
+        public IList<Usuario> ConvertListENToModel(IList<AdminEN> ens)
         {
-            IList<Admin> arts = new List<Admin>();
+            IList<Usuario> arts = new List<Usuario>();
             foreach (AdminEN en in ens)
             {
                 arts.Add(ConvertENToModelUI(en));

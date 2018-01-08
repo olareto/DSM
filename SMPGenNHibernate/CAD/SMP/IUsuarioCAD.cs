@@ -37,5 +37,7 @@ string New_CP (UsuarioEN usuario);
 void Addlista (string p_usuario_OID, System.Collections.Generic.IList<int> p_lista_OIDs);
 
 void Addcarrito (string p_usuario_OID, int p_carrito_OID);
+
+System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.UsuarioEN> Filtronombre (string p_nombre);
 }
 }

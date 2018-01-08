@@ -199,10 +199,22 @@ namespace DSM5.Controllers
             }
         }
         // GET: Articulo/Resultadobusqueda/5
-        public ActionResult Resultadobusqueda(IList<Usuario> res)
+        public ActionResult Resultadobusqueda()
         {
 
-      
+            System.Web.HttpContext.Current.Session["controller"] = "Evento";
+            System.Web.HttpContext.Current.Session["action"] = "Resultadobusqueda";
+            System.Web.HttpContext.Current.Session["arg"] = null;
+
+            IList<Usuario> res = System.Web.HttpContext.Current.Session["resu"] as IList<Usuario>;
+            if (res == null)
+            {
+                res = new List<Usuario>();
+            }
+            ViewData["controller"] = System.Web.HttpContext.Current.Session["controller"] as String;
+            ViewData["action"] = System.Web.HttpContext.Current.Session["action"] as String;
+            ViewData["arg"] = System.Web.HttpContext.Current.Session["arg"];
+
             return View(res);
         }
         // GET: Articulo/Filtrar/5
@@ -223,7 +235,9 @@ namespace DSM5.Controllers
         {
             try
             {
-                UsuarioCEN cen = new UsuarioCEN();
+                SessionInitialize();
+                UsuarioCAD cad = new UsuarioCAD(session);
+                UsuarioCEN cen = new UsuarioCEN(cad);
                 IList<UsuarioEN> res = null, aux = null;
                 // TODO: Add delete logic here
                 res = cen.ReadAll(0, int.MaxValue);
@@ -231,13 +245,35 @@ namespace DSM5.Controllers
                 
                 if (collection.Nombrebol == true && collection.Nombre != null)
                 {
-                    //aux = cen.Filtronombre(collection.Nombre);
-                    //res = res.Intersect(aux).ToList();
+                    
+
+                    aux = cen.Filtronombre(collection.Nombre);
+                    res = res.Intersect(aux).ToList();
                 }
                 
                 AssemblerUsuario ass = new AssemblerUsuario();
-                IList<Usuario> listart = ass.ConvertListENToModel(res);
-                return View("Resultadobusqueda", listart);
+                AssemblerAdmin assa = new AssemblerAdmin();
+                IList<Usuario> listart = new List<Usuario>();
+
+                for (int i = 0; i < res.Count; i++)
+                {
+                    if (res.ElementAt(i) is AdminEN)
+                    {
+                        AdminEN hola = (AdminEN)res.ElementAt(i);
+                        listart.Add(assa.ConvertENToModelUI(hola));
+                    }
+                    else
+                    {
+                        listart.Add(ass.ConvertENToModelUI(res.ElementAt(i)));
+                    }
+
+                }
+
+
+                //IList<Usuario> listart = ass.ConvertListENToModel(res);
+                SessionClose();
+                System.Web.HttpContext.Current.Session["resu"] = listart;
+                return RedirectToAction("Resultadobusqueda", "Usuario", null);
 
             }
             catch
