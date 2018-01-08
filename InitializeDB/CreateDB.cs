@@ -201,12 +201,12 @@ public static void InitializeData ()
 
                 //string idUsuario = usuarioCEN.New_("usuario", "apellidos", "contrasenya", "correo", "direcccion", "pago", "imagen");
                 //adminCEN.New_ ("usuario", "apellidos", "contrasenya", "correo", "direcccion", "pago", "imagen"));
-                int idevento = eventoCEN.New_ ("Musical Rey León", 70, "Musical del Rey León", "reyleon.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Musical");
-                int idevento2 = eventoCEN.New_ ("Entradas al parque de Harry Potter", 60, "Entrada del Parque Harry Potter", "HarryPotterParque.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Parque");
-                int idevento3 = eventoCEN.New_ ("Daniel Radcliffe visita la Ua", 5, "Visita guiada a la ua", "UA.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.dos, 8, "desclarga", "imagran", "Estudios");
-                int idevento4 = eventoCEN.New_ ("Estreno Star Wars L", 25, "Estreno Star Wars", "EstrenoStarWars.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Cine");
-                int idevento5 = eventoCEN.New_ ("Sinfonía Harry Potter", 60, "Sinfonia Harry Potter", "sinharry.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Musica Orquesta");
-                int idevento6 = eventoCEN.New_ ("Comic Con Madrid", 15, "Comic Con Madrid", "comic.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, 8, "desclarga", "imagran", "Evento");
+                int idevento = eventoCEN.New_ ("Musical Rey León", 70, "Musical del Rey León", "reyleon.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "El musical mas popular del momento, recuerda la experiencia disney a manos de esta gran experiencia.", "imagran", "Musical");
+                int idevento2 = eventoCEN.New_ ("Entradas al parque de Harry Potter", 60, "Entrada del Parque Harry Potter", "HarryPotterParque.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "Visita el parque de atracciones de Harry Potter, con todas la recreaciones y el mundo de los libros.", "imagran", "Parque");
+                int idevento3 = eventoCEN.New_ ("Daniel Radcliffe visita la Ua", 5, "Visita guiada a la ua", "UA.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.dos, 8, "Aprovecha la oportunidad de conocer a Daniel Radcliffe.", "imagran", "Estudios");
+                int idevento4 = eventoCEN.New_ ("Estreno Star Wars L", 25, "Estreno Star Wars", "EstrenoStarWars.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "Se el primero en ver la pelicula de Star Wars, que no te la cuenten.", "imagran", "Cine");
+                int idevento5 = eventoCEN.New_ ("Sinfonía Harry Potter", 60, "Sinfonia Harry Potter", "sinharry.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "Disfruta de todas las canciones de Harry Potter gracias a la film symphony orchestra.", "imagran", "Musica Orquesta");
+                int idevento6 = eventoCEN.New_ ("Comic Con Madrid", 15, "Comic Con Madrid", "comic.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, 8, "Despierta tu lado friki y visita la comic con de Madrid, donde podras ver todos tus animes, mangas y comics preferidos.", "imagran", "Evento");
 
                 int idCarrito = carritoCEN.New_ (idUsuario, 0);
                 int idCarrito2 = carritoCEN.New_ (idAdmin, 0);
