@@ -16,15 +16,15 @@
 
             <div class="col-md-6 gerMargenLetras">
                 <div class="row">
-                    <h4><strong>Título: </strong>@Html.DisplayFor(model => model.Nombre)</h4>
+                    <h4><strong>@Html.DisplayFor(model => model.Nombre)</strong></h4>
                     <h4><strong>Género: </strong>@Html.DisplayFor(model => model.genero)</h4>
                     @if ((bool)@Model.finalizada == true)
             {
-                        <h4>@Model.fecha - @Model.fechafin</h4>
+                        <h4><strong>Fecha: </strong>@Model.fecha - @Model.fechafin</h4>
                     }
                     else
                     {
-                        <h4>@Model.fecha - en emisión</h4>
+                        <h4><strong>Fecha: </strong>@Model.fecha - en emisión</h4>
                     }
 
                     <h>@Html.DisplayFor(model => model.descripcion)</h>
@@ -48,7 +48,7 @@
             @if (Session["log"] != null && (bool)Session["log"] == true)
             {
                 <div class="dropdown col-md-3 gerMargenLetras">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-secondary dropdown-toggle colorBlack" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Opciones
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

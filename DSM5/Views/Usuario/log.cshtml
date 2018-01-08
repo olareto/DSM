@@ -1,58 +1,109 @@
 ﻿@model DSM5.Models.Registro
 
+@*
+    <div class="container-fluid  text-center bg-2">
+        <img class="centrarResponsive img-responsive imagenLogin" src="~/Images/L.png" />
+        <h2 class="margin colorTituloProductos">Iniciar sesión</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal text-center">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group text-center">
+                            @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10 text-center">
+                                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group tex">
+                            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-8 text-right right">
+                                <input type="submit" value="Entrar" class="btn btn-default" />
+                            </div>
+                        </div>
+                    </div>
+                }
+                <div class="bg-2 text-center">
+                    ¿No tienes una cuenta? Regístrate
+                    @Html.ActionLink("aquí", "Create")
+                </div>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+
+        </div>
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
+*@
+
+
+
 
 <div class="container-fluid  text-center bg-2">
     <img class="centrarResponsive img-responsive imagenLogin" src="~/Images/L.png" />
+    <hr />
     <h2 class="margin colorTituloProductos">Iniciar sesión</h2>
-    <div class="row text-center">
-        <div class="col-md-4">
 
-        </div>
-        <div class="col-md-4">
-          
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-            @using (Html.BeginForm())
-            {
-                @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+            
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                <div class="form-horizontal text-center">
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-group text-center">
-                        @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10 text-center">
-                            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group tex">
-                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-8 text-right right">
-                            <input type="submit" value="Entrar" class="btn btn-default" />
-                        </div>
-                    </div>
+            <div class="form-group">
+                <div class="col-md-4"></div>
+                <p class="col-md-1">Email</p>         
+                <div class="col-md-4">
+                    @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
                 </div>
-            }
-            <div class="bg-2 text-center">
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-4"></div>
+                <p class="col-md-1">Contraseña</p>
+                <div class="col-md-4">
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-5 col-md-10">
+                    <input type="submit" value="Acceder" class="btn btn-default btn-block" />
+                </div>
+            </div>
+            <div class="bg-2">
                 ¿No tienes una cuenta? Regístrate
                 @Html.ActionLink("aquí", "Create")
             </div>
         </div>
-        <div class="col-md-4">
-
-        </div>
-
-    </div>
+    }
 </div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
-

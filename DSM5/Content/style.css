@@ -101,6 +101,7 @@ p, a, h2, h3, h4, th {
 }
 .cabecera {
     transform: scale(1.35,1.1);
+    margin-top:-40px;
 }
 .shadow {
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -122,6 +123,9 @@ p, a, h2, h3, h4, th {
 }
 .colorMostaza {
     color: #e09e04;
+}
+.colorBlack {
+    color: black;
 }
 
 .gercaja {
