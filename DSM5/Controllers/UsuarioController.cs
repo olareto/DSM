@@ -92,6 +92,36 @@ namespace DSM5.Controllers
             }
         }
 
+        public ActionResult Createadmin()
+        {
+
+            Usuario sol = new Usuario();
+            return View(sol);
+        }
+
+        // POST: Articulo/Create
+        [HttpPost]
+        public ActionResult Createadmin(Usuario collection)
+        {
+            try
+            {
+                // TODO: Add insert logic here
+                AdminCEN cen = new AdminCEN();
+                AdminCP cp = new AdminCP();
+                string id = cp.New_CP(collection.Nombre, collection.Apellidos, collection.Password, collection.Email, collection.Direccion, collection.Tarjeta, collection.Imagen).Email;
+
+
+                CarritoCEN CarritoCEN = new CarritoCEN();
+                int id4 = CarritoCEN.New_(id, 0);
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
         // GET: Articulo/Edit/5
         public ActionResult Edit(string id)
         {
@@ -249,7 +279,6 @@ namespace DSM5.Controllers
             //return View(sol);
         }
 
-       
 
         public ActionResult mostrarlista(string idus,string tipo)
         {
