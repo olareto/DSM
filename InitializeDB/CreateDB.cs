@@ -100,11 +100,11 @@ public static void InitializeData ()
 
                 //UsuarioEN usuarioEN = new UsuarioEN ();
                 UsuarioCEN usuarioCEN = new UsuarioCEN (_IUsuarioCAD);
-
                 UsuarioCP usuarioCP = new UsuarioCP ();
-                AdminCP adminCP = new AdminCP ();
 
+                AdminCP adminCP = new AdminCP ();
                 AdminEN adminEN = new AdminEN ();
+                AdminEN admin2EN = new AdminEN();
                 AdminCEN adminCEN = new AdminCEN (_IAdminCAD);
 
                 EventoEN eventoEN = new EventoEN ();
@@ -159,9 +159,11 @@ public static void InitializeData ()
 
                 string idUsuario = usuarioEN.Email;
 
+                admin2EN = adminCP.New_CP("David", "Melero Morant", "1111", "dmelero96", "direcccion", "pago", "imagen");
                 adminEN = adminCP.New_CP ("aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa");
 
                 string idAdmin = adminEN.Email;
+                string idAdmin2 = admin2EN.Email;
 
                 string dstw = "Treinta años despues de derrotar al Imperio Gal�ctico, Han Solo y sus aliados enfrentan una nueva amenaza del malvado Kylo Ren y su ej�rcito de Stormtroopers.";
                 string despider = "Tras los acontecimientos del Capit�n Am�rica: Guerra civil, Peter Parker, con la ayuda de su mentor Tony Stark, intenta equilibrar su vida como un estudiante normal de secundaria en Queens, Nueva York, con la lucha contra el crimen como su superh�roe alter ego Spider- El hombre como una nueva amenaza, el Buitre, emerge.";
@@ -210,7 +212,7 @@ public static void InitializeData ()
 
                 int idCarrito = carritoCEN.New_ (idUsuario, 0);
                 int idCarrito2 = carritoCEN.New_ (idAdmin, 0);
-
+                int idCarrito3 = carritoCEN.New_(idAdmin2, 0);
 
 
                 int idArticulo = articuloCEN.New_ ("articulo", 69, "descripcion", "imagen", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 999, "desclarga", "imagran");
