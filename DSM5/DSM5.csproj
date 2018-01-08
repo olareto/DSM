@@ -393,6 +393,7 @@
     <Content Include="Views\Evento\Resultadobusqueda.cshtml" />
     <Content Include="Views\Usuario\Createadmin.cshtml" />
     <Content Include="Views\Usuario\Filtrar.cshtml" />
+    <Content Include="Views\Usuario\Resultadobusqueda.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

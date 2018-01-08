@@ -65,5 +65,6 @@
 		 </class>	
 		  
 		  <query name="UsuarioENReadAllHQL">from UsuarioEN</query>
+		  <query name="UsuarioENfiltronombreHQL"><![CDATA[FROM UsuarioEN art where art.Nombre like '%'+:p_nombre+'%']]></query>
 		</hibernate-mapping>
 	

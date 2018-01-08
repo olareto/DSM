@@ -117,5 +117,9 @@ public void Addcarrito (string p_usuario_OID, int p_carrito_OID)
 
         _IUsuarioCAD.Addcarrito (p_usuario_OID, p_carrito_OID);
 }
+public System.Collections.Generic.IList<SMPGenNHibernate.EN.SMP.UsuarioEN> Filtronombre (string p_nombre)
+{
+        return _IUsuarioCAD.Filtronombre (p_nombre);
+}
 }
 }

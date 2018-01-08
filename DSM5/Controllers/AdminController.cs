@@ -44,7 +44,7 @@ namespace DSM5.Controllers
             //enc = en.Carrito;
 
             AssemblerAdmin ass = new AssemblerAdmin();
-            Admin sol = ass.ConvertENToModelUI(en);
+            Admin sol = null;
 
             SessionClose();
             return View(sol);
@@ -92,7 +92,7 @@ namespace DSM5.Controllers
             //enc = en.Carrito;
 
             AssemblerAdmin ass = new AssemblerAdmin();
-            Admin sol = ass.ConvertENToModelUI(en);
+            Admin sol = null;
 
             SessionClose();
             return View(sol);
@@ -134,7 +134,7 @@ namespace DSM5.Controllers
             //enc = en.Carrito;
 
             AssemblerAdmin ass = new AssemblerAdmin();
-            Admin sol = ass.ConvertENToModelUI(en);
+            Admin sol = null;
 
             SessionClose();
             return View(sol);
@@ -195,7 +195,7 @@ namespace DSM5.Controllers
                 }
 
                 AssemblerAdmin ass = new AssemblerAdmin();
-                IList<Admin> listart = ass.ConvertListENToModel(res);
+                IList<Admin> listart=null;
                 return View("Resultadobusqueda", listart);
 
             }
