@@ -60,6 +60,13 @@
         </table>
 
 
+        @if ((bool)Session["admin"])
+        {
+            <a class="btn btn-default" href='@Url.Action("Createadmin", "Usuario", null, null)'>Crear admin</a>
+            <a class="btn btn-default" href='@Url.Action("Filtrar", "Usuario", null, null)'>filtrar</a>
+        }
+        
+
         <a class="btn btn-default" href='@Url.Action("Edit", new { id = Model.Email })'>Modificar datos</a>
 
         <a class="btn btn-default" href='@Url.Action("Details", "Carrito", new { id = Model.carrito }, null)'>Ver carrito</a>
