@@ -15,7 +15,7 @@
             <img class="imagenDetails col-md-3 gerMargenLetras" src='~/Images/cartelera/@Html.DisplayFor(modelItem => modelItem.Imagen)' />
 
             <div class="col-md-6 gerMargenLetras">
-                <h4><strong>Título: </strong>@Html.DisplayFor(model => model.Nombre)</h4>
+                <h4><strong>@Html.DisplayFor(model => model.Nombre)</strong></h4>
                 <h4><strong>Género: </strong>@Html.DisplayFor(model => model.genero)</h4>
                 <h>@Html.DisplayFor(model => model.descripcion)</h>
                 <a class="btn btn-primary center-block" href='@Url.Action("Reproducir", "Pelicula", new { id = Model.id })'>Reproducir pelicula</a>
