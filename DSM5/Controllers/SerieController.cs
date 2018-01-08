@@ -171,7 +171,12 @@ namespace DSM5.Controllers
             {
                 // TODO: Add update logic here
                 SerieCEN cen = new SerieCEN();
-                cen.Modify(id,(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre, collection.Imagen, collection.desclar, collection.descripcion, collection.genero, collection.fecha, collection.imagran, collection.fechafin, collection.finalizada);
+                SerieEN en = cen.get_ISerieCAD().ReadOIDDefault(id);
+
+                string img = en.Imagen;
+
+
+                cen.Modify(id,(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre, img, en.Descriplarga, en.Descripcion, en.Genero, en.Anyo, en.Imagran, en.Anyofin, en.Finalizada);
 
                 //cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock, collection.Talla);
                 string action = System.Web.HttpContext.Current.Session["action"] as String;
