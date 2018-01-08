@@ -50,6 +50,7 @@
                 </h4>  
             </p>            
             <p>
+
                 <button type="button" class="btn ">@Html.ActionLink("Volver", @Session["action"] as string, @Session["controller"] as string, @Session["arg"], null)</button>
                 <button type="button" class="btn btn-mostaza">@Html.ActionLink("Añadir al carrito", "addcarr", "Usuario", new { idus = @Session["correo"] as string, idpro = Model.id }, null)</button>
 
