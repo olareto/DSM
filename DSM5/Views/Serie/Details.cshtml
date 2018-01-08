@@ -55,12 +55,12 @@
                 @if (Session["admin"] != null && (bool)Session["admin"] == true)
     {
             <div>
-                <a class="dropdown-item admin" href='@Url.Action("Edit", "Serie", new { id = Model.id })'>Editar</a>
+                <a class="dropdown-item admin" href='@Url.Action("Edit", "Serie", new { id = Model.id })'>Editar serie</a>
 
             </div>
 
             <div>
-                <a class="dropdown-item admin" href='@Url.Action("Delete", "Serie", new { id = Model.id })'>Borrar</a>
+                <a class="dropdown-item admin" href='@Url.Action("Delete", "Serie", new { id = Model.id })'>Borrar serie</a>
 
             </div>
 }

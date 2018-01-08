@@ -26,7 +26,7 @@
 }
 
 .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
-    color: #860D32;
+    color: #e09e04;
     background-color: transparent;
 }
 .margin {
@@ -118,6 +118,9 @@ p, a, h2, h3, h4, th {
 }
 .btn-mostaza {
     background: #e09e04;
+    color: #e09e04;
+}
+.colorMostaza {
     color: #e09e04;
 }
 

@@ -1,19 +1,24 @@
 ﻿@model IEnumerable<DSM5.Models.Temporada>
 
 
-@if (Session["admin"] != null && (bool)Session["admin"] == true)
-{
-    <p class="admin">
-        @Html.ActionLink("Añadir temporada", "Create", "Temporada", new { id = @Session["id_serie"] },null)
-    </p>
-}
+
+
     <div class="container">
         @foreach (var item in Model)
         {
 
         <div class="col-md-9">
             <div class="col-md-10">
+
                 <a class="btn btn-primary center-block" href='@Url.Action("mostrar_cap", "Temporada", new { id = item.id, tipo = @Session["controller"] },null)'>@item.Nombre</a>
+
+                
+                @if (Session["admin"] != null && (bool)Session["admin"] == true)
+                {
+                    <hr />
+                    <a class="btn btn-danger center-block" href='@Url.Action("Create", "Temporada", new { id = item.id, tipo = @Session["controller"] },null)'>Añadir temporada</a>
+                }
+
             </div>
             @if (Session["admin"] != null && (bool)Session["admin"] == true)
             {
