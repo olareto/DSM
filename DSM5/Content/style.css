@@ -117,13 +117,8 @@ p, a, h2, h3, h4, th {
     padding-left: 100px;
 }
 .btn-mostaza {
-<<<<<<< HEAD
-    background: #e09e04;
-    color: black;
-=======
     background: #e09e04 !important;
-    color: #e09e04 !important;
->>>>>>> 4816fb181b89123c449e7bfb9e0e90227f09fe47
+    color: black !important;
 }
 .colorMostaza {
     color: #e09e04;
