@@ -148,8 +148,18 @@ namespace DSM5.Controllers
             {
 
                 // TODO: Add update logic here
+
+
+                
+
+
                 PeliculaCEN cen = new PeliculaCEN();
-                cen.Modify(id, (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre, collection.Imagen, collection.desclar, collection.descripcion, collection.genero, collection.fecha, collection.imagran, collection.link);
+                PeliculaEN en= cen.get_IPeliculaCAD().ReadOIDDefault(id);
+
+                string img = en.Imagen;
+
+
+                cen.Modify(id, (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre, img, en.Descriplarga, en.Descripcion, en.Genero, en.Anyo, en.Imagran, en.Link);
 
 
                 string action = System.Web.HttpContext.Current.Session["action"] as String;
