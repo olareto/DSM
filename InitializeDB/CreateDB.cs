@@ -318,8 +318,16 @@ public static void InitializeData ()
                 int idtemporada31 = temporadaCEN.New_(idserie12, "Temporada 1");
                 int idtemporada32 = temporadaCEN.New_(idserie12, "Temporada 2");
                 int idtemporada33 = temporadaCEN.New_(idserie12, "Temporada 3");
-
-
+                int idtemporada34 = temporadaCEN.New_(idserie13, "Temporada 1");
+                int idtemporada35 = temporadaCEN.New_(idserie14, "Temporada 1");
+                int idtemporada36 = temporadaCEN.New_(idserie14, "Temporada 2");
+                int idtemporada37 = temporadaCEN.New_(idserie14, "Temporada 3");
+                int idtemporada38 = temporadaCEN.New_(idserie14, "Temporada 4");
+                int idtemporada39 = temporadaCEN.New_(idserie15, "Temporada 1");
+                int idtemporada40 = temporadaCEN.New_(idserie15, "Temporada 2");
+                int idtemporada41 = temporadaCEN.New_(idserie15, "Temporada 3");
+                int idtemporada42 = temporadaCEN.New_(idserie15, "Temporada 4");
+                int idtemporada43 = temporadaCEN.New_(idserie15, "Temporada 5");
 
                 string cveg1 = "El estreno de la serie presenta a la tripulación de la aerolínea de bajo presupuesto y sus pasajeros excéntricos que, cada fin de semana, toman el vuelo de ida y vuelta desde Los Ángeles a Las Vegas con un objetivo en mente: volver a ser un ganador. No será fácil, pero este improbable grupo de malhechores y soñadores eventualmente pasará de ser extraños en un avión a ser de apoyo, aunque no convencionales, en familia, bueno, al menos de viernes a domingo.";
                 string ch1 = "Un sicario debe asociarse con un caballo imaginario de alas azules para rescatar a un niño desaparecido";
@@ -388,6 +396,15 @@ public static void InitializeData ()
                 string crick6 = "La familia Smith trata de arreglárselas sin Rick, lo cual es bastante doloroso por sí mismo sin tener en cuenta las sofocantes reglas puestas en práctica por la Federación. Mientras tanto, el pasado de Rick finalmente se revela cuando intenta salir de su prisión.";
                 string crick7 = "Rick, Morty y Summer viajan a una dimensión post-apocalíptica y conocen a algunos enemigos peligrosos, al tiempo que evitan un desarrollo familiar reciente.";
                 string crick8 = "Rick se convierte en un pepinillo, el mismo día que Beth lleva a los niños a terapia familiar.";
+                string cyoung1 = "En el juego inaugural de la serie, Sheldon Cooper, de nueve años, es una mente única en generación que puede hacer matemáticas y ciencias avanzadas, pero aprende que no siempre es útil crecer en el este de Texas.";
+                string cyoung2 = "Para apaciguar a su madre preocupada, Sheldon emplea las técnicas de un libro de autoayuda para tratar de hacer un amigo.";
+                string cyoung3 = "Cuando George Sr. es llevado rápidamente a la sala de emergencias, Meemaw viene a cuidar a los niños, y los niños tienen la aventura de llegar solos al hospital.";
+                string cblack1 = "Una parábola retorcida para la era de Twitter, The National Anthem analiza cómo la vida es mucho más difícil para los ricos y supuestamente poderosos ahora que la información se difunde tan rápido y la opinión pública es tan fuerte, poderosa y rápida de cambiar. Es un thriller político en el que el primer ministro enfrenta un gran dilema, y ​​eso es todo lo que puede revelarse por ahora ";
+                string cblack2 = "Ambientado en una versión sarcástica de una realidad futura, 15 Million Merits es una sátira de espectáculos de entretenimiento y nuestra sed insaciable de distracción. En este mundo, todos están confinados a una vida de penosa fatiga física. La única forma de escapar de esta vida es ingresar al programa de talentos 'Hot Shot' y solo rezar para impresionar a los jueces.";
+                string cblack3 = "Situado en una realidad alternativa donde todos tienen acceso a un sistema que registra todo lo que hacen, ven u oyen. Nunca se debe olvidar una cara, unas vacaciones o una noche de nuevo ... ¿pero siempre es algo bueno?";
+                string cblack4 = "Martha y Ash son una joven pareja que se muda a una cabaña remota. El día después de la mudanza, Ash muere devolviendo la camioneta de alquiler. En el funeral, la amiga de Martha, Sarah, le cuenta acerca de un nuevo servicio que permite a las personas mantenerse en contacto con los fallecidos. Al usar todas sus comunicaciones en línea pasadas y perfiles de redes sociales, se puede crear un nuevo 'Ash'. Martha está disgustada con el concepto, pero luego, en un estado confuso y solitario, decide hablar con 'él' ";
+                string cblack5 = "Oficinista inseguro Lacie vive en un mundo de pesadillas feliz, sonriente y obsesionado con el estado. Su vieja amiga Naomi es una de las élites de la sociedad, y Lacie puede haber encontrado una manera de unirse a ella ";
+                string cblack6 = "El Capitán Robert Daly preside su equipo con sabiduría y coraje. Pero un nuevo recluta pronto descubrirá que nada en esta nave espacial es lo que parece.";
 
                 int idcapitulo = capituloCEN.New_ (idtemporada01, "Piloto", new DateTime (1993, 12, 3), cveg1, "cap1vegas.jpg", "https://www.youtube.com/embed/p4ijrL4zscE");
 
@@ -468,6 +485,18 @@ public static void InitializeData ()
                 int idcapitulo65 = capituloCEN.New_(idtemporada33, "1-The Rickshank Rickdemption", new DateTime(1993, 12, 3), crick6, "rick6.jpg", "https://www.youtube.com/embed/veoymnykMe0");
                 int idcapitulo66 = capituloCEN.New_(idtemporada33, "2-Rickmancing the Stone", new DateTime(1993, 12, 3), crick7, "rick7.jpg", "https://www.youtube.com/embed/3FcHfqDYJq4");
                 int idcapitulo67 = capituloCEN.New_(idtemporada33, "2-Pickle Rick", new DateTime(1993, 12, 3), crick8, "rick8.jpg", "https://www.youtube.com/embed/bXeRpoWJK_I");
+
+                int idcapitulo68 = capituloCEN.New_(idtemporada34, "Piloto", new DateTime(1993, 12, 3), cyoung1, "young1.jpg", "https://www.youtube.com/watch?v=ivtB0ucW1EQ");
+                int idcapitulo69 = capituloCEN.New_(idtemporada34, "2-Rockets, Communists, and the Dewey Decimal System", new DateTime(1993, 12, 3), cyoung2, "young2.jpg", "https://www.youtube.com/watch?v=ivtB0ucW1EQ");
+                int idcapitulo70 = capituloCEN.New_(idtemporada34, "3-Poker, Faith, and Eggs", new DateTime(1993, 12, 3), cyoung3, "young3.jpg", "https://www.youtube.com/watch?v=ivtB0ucW1EQ");
+
+                int idcapitulo71 = capituloCEN.New_(idtemporada35, "1-The National Anthem", new DateTime(1993, 12, 3), cblack1, "black1.jpg", "https://www.youtube.com/watch?v=eLrfW3a9cqg");
+                int idcapitulo72 = capituloCEN.New_(idtemporada35, "2-15 Million Merits", new DateTime(1993, 12, 3), cblack2, "black2.jpg", "https://www.youtube.com/watch?v=eLrfW3a9cqg");
+                int idcapitulo73 = capituloCEN.New_(idtemporada35, "3-The Entire History of You", new DateTime(1993, 12, 3), cblack3, "black3.jpg", "https://www.youtube.com/watch?v=eLrfW3a9cqg");
+                int idcapitulo74 = capituloCEN.New_(idtemporada36, "1-Be Right Back", new DateTime(1993, 12, 3), cblack4, "black4.jpg", "https://www.youtube.com/watch?v=eLrfW3a9cqg");
+                int idcapitulo75 = capituloCEN.New_(idtemporada37, "1-Nosedive", new DateTime(1993, 12, 3), cblack5, "black5.jpg", "https://www.youtube.com/watch?v=eLrfW3a9cqg");
+                int idcapitulo76 = capituloCEN.New_(idtemporada38, "1-USS Callister", new DateTime(1993, 12, 3), cblack6, "black6.jpg", "https://www.youtube.com/watch?v=eLrfW3a9cqg");
+
 
 
                 #endregion
