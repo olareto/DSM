@@ -1,20 +1,27 @@
 ﻿
-
-
-
-<p>
-
-  @{
-      ViewBag.Title = "mostrarlista";
-      Layout = "~/Views/Shared/_Layout.cshtml";
+@{
+    ViewBag.Title = "mostrarlista";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-    @Html.ActionLink("Back", "Details", "Usuario", new { id= (string)@Session["correo"] }, null)|
-    @Html.Partial("_Pelicula", (IEnumerable<DSM5.Models.Pelicula>)ViewBag.peli)
-    @Html.Partial("_Serie", (IEnumerable<DSM5.Models.Serie>)ViewBag.serie)
 
-    
-</p>
+<div class="container-fluid bg-2 text-center">
+    <h2 class="margin">Lista</h2>
+
+    <p>
+        @Html.Partial("_Pelicula", (IEnumerable<DSM5.Models.Pelicula>)ViewBag.peli)
+        @Html.Partial("_Serie", (IEnumerable<DSM5.Models.Serie>)ViewBag.serie)
+    </p>
+
+    <div class="form-group">
+        <div class="col-md-8">
+            @Html.ActionLink("Volver", "Details", "Usuario", new { id = (string)@Session["correo"] }, null)
+        </div>
+    </div>
+
 
 <h2>@Session["lista"] </h2>
+
+</div>
+
 
