@@ -149,10 +149,8 @@ namespace DSM5.Controllers
 
                 ProductoEN en = cen.get_IProductoCAD().ReadOIDDefault(id);
 
-                string img = en.Imagen;
 
-
-                cen.Modify(id,collection.Nombre, collection.Precio, collection.Descripcion, img, (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Stock, en.Descriplarga, en.Imagran, collection.Talla);
+                cen.Modify(id,collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Stock, en.Descriplarga, en.Imagran, collection.Talla);
 
                 //cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock, collection.Talla);
                 

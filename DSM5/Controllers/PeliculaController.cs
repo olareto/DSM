@@ -156,10 +156,9 @@ namespace DSM5.Controllers
                 PeliculaCEN cen = new PeliculaCEN();
                 PeliculaEN en= cen.get_IPeliculaCAD().ReadOIDDefault(id);
 
-                string img = en.Imagen;
 
 
-                cen.Modify(id, (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre, img, en.Descriplarga, en.Descripcion, en.Genero, en.Anyo, en.Imagran, en.Link);
+                cen.Modify(id, (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre, collection.Imagen, en.Descriplarga, en.Descripcion, en.Genero, en.Anyo, en.Imagran, en.Link);
 
 
                 string action = System.Web.HttpContext.Current.Session["action"] as String;
