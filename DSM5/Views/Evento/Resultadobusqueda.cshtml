@@ -1,17 +1,16 @@
 ﻿@model IEnumerable<DSM5.Models.Evento>
 
-@{
-    ViewBag.Title = "Resultadobusqueda";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-<h2>Resultadobusqueda</h2>
-
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.imagran)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descriplarga)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Stock)
         </th>
@@ -38,6 +37,12 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.imagran)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descriplarga)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Stock)
         </td>
