@@ -79,7 +79,7 @@
                             @Html.DisplayFor(modelItem => item.Nombre)
                         </p>                      
                     </div>
-                    <div class="panel-body bg-2">
+                    <div class="panel-body bg-2 bg-black" >
                         <a href='@Url.Action("Details", "Producto", new { id = item.id })'>                       
                             <img class="imagenesIndexProductos" src='~/Images/Productos/@Html.DisplayFor(modelItem => item.Imagen)' />
                         </a>

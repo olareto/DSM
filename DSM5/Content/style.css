@@ -170,3 +170,13 @@ p, a, h2, h3, h4, th {
 .perfilTabla {
     width: 50%;
 }
+
+.bg-black{
+
+    background-color: #303030;
+
+}
+.bg-black2 {
+    background-color: #303030;
+    padding:20px;
+}
