@@ -100,11 +100,11 @@ public static void InitializeData ()
 
                 //UsuarioEN usuarioEN = new UsuarioEN ();
                 UsuarioCEN usuarioCEN = new UsuarioCEN (_IUsuarioCAD);
-
                 UsuarioCP usuarioCP = new UsuarioCP ();
-                AdminCP adminCP = new AdminCP ();
 
+                AdminCP adminCP = new AdminCP ();
                 AdminEN adminEN = new AdminEN ();
+                AdminEN admin2EN = new AdminEN();
                 AdminCEN adminCEN = new AdminCEN (_IAdminCAD);
 
                 EventoEN eventoEN = new EventoEN ();
@@ -159,43 +159,44 @@ public static void InitializeData ()
 
                 string idUsuario = usuarioEN.Email;
 
+                admin2EN = adminCP.New_CP("David", "Melero Morant", "1111", "dmelero96", "direcccion", "pago", "imagen");
                 adminEN = adminCP.New_CP ("aaa", "aaa", "aaa", "aaa", "aaa", "aaa", "aaa");
 
                 string idAdmin = adminEN.Email;
+                string idAdmin2 = admin2EN.Email;
 
-                string dstw = "Treinta años despues de derrotar al Imperio Gal�ctico, Han Solo y sus aliados enfrentan una nueva amenaza del malvado Kylo Ren y su ej�rcito de Stormtroopers.";
-                string despider = "Tras los acontecimientos del Capit�n Am�rica: Guerra civil, Peter Parker, con la ayuda de su mentor Tony Stark, intenta equilibrar su vida como un estudiante normal de secundaria en Queens, Nueva York, con la lucha contra el crimen como su superh�roe alter ego Spider- El hombre como una nueva amenaza, el Buitre, emerge.";
-                string djumanji = "Las tornas se vuelven cuando cuatro adolescentes son absorbidos por el mundo de Jumanji: enfrentado a rinocerontes, mambas negras y una interminable variedad de trampas y acertijos de la jungla. Para sobrevivir, jugar�n como personajes del juego.";
-                string dc = "A pesar de la desconcertante prohibici�n de la generaci�n de m�sica de su familia, Miguel sue�a con convertirse en un m�sico consumado como su �dolo, Ernesto de la Cruz.";
-                string dperfdesc = "La historia se desarrolla a lo largo de una noche, durante un eclipse lunar, en el hogar de Alfonso y Eva, una pareja profesional bien curada preocupada por su hija adolescente y por la monoton�a de sus vidas.";
-                string ddandonota = "Despu�s de ganar los campeonatos del mundo, los Bellas se dividen y descubren que no hay perspectivas de trabajo para hacer m�sica con la boca. Pero cuando tengan la oportunidad de reunirse para una gira USO en el extranjero, este grupo de genios incre�bles se unir�n para hacer algo de m�sica, y algunas decisiones cuestionables, una �ltima vez.";
-                string dferdi = "Ferdinand, un peque�o toro, prefiere sentarse tranquilamente bajo un �rbol de corcho oliendo las flores, saltando, resoplando y golpe�ndose la cabeza con otros toros. A medida que Ferdinand crece grande y fuerte, su temperamento se mantiene suave, pero un d�a cinco hombres vienen a elegir el toro m�s grande, m�s r�pido y m�s rudo para las corridas de toros en Madrid y Fernando es elegido por error. Basado en el cl�sico libro infantil de 1936 de Munro Leaf.";
-                string dww = "La historia de cuatro personajes cuyas vidas se entrelazan en medio del ajetreo y el bullicio del parque de atracciones Coney Island en la d�cada de 1950: Ginny, una ex actriz emocionalmente vol�til que ahora trabaja como camarera en una casa de almejas; Humpty, el operador operador de carrusel de Ginny; Mickey, un joven y guapo socorrista que sue�a con convertirse en dramaturgo; y Carolina, la hija de Humpty que estuvo lejos, que ahora se esconde de los mafiosos en el departamento de su padre.";
-                string dit = "En una peque�a ciudad de Maine, siete ni�os conocidos como The Losers Club se enfrentan cara a cara con problemas de la vida, matones y un monstruo que toma la forma de un payaso llamado Pennywise.";
-                string dwoman = "Una princesa de Amazon llega al mundo del Hombre para convertirse en la m�s grande de los superh�roes femeninos.";
-                string dhday = "Una estudiante universitaria revive el d�a de su asesinato una y otra vez mientras trata de descubrir la identidad de su asesino. ";
-                string dgru = "Gru y su esposa Lucy deben evitar que la ex estrella infantil de los 80, Balthazar Bratt, alcance la dominaci�n mundial.";
-                string dhrr1 = "Harry, Ron y Hermione se alejan de su �ltimo a�o en Hogwarts para encontrar y destruir los Horcruxes restantes, poniendo fin a la apuesta de Voldemort por la inmortalidad. Pero con el amado Dumbledore de Harry muerto y los inescrupulosos Mort�fagos de Voldemort suelto, el mundo es m�s peligroso que nunca.";
-                string dhrr2 = "Harry, Ron y Hermione contin�an su b�squeda para vencer al malvado Voldemort de una vez por todas. Justo cuando las cosas comienzan a parecer desesperanzadas para los j�venes magos, Harry descubre un tr�o de objetos m�gicos que le otorgan poderes para competir con las formidables habilidades de Voldemort.";
-                string dblad = "Treinta a�os despu�s de los acontecimientos de la primera pel�cula, un nuevo corredor de cuchillas, el oficial K de LAPD, descubre un secreto oculto desde hace mucho tiempo que tiene el potencial de sumergir lo que queda de la sociedad en el caos. El descubrimiento de K lo lleva en una b�squeda para encontrar a Rick Deckard, un ex corredor de armas de LAPD que ha estado desaparecido durante 30 a�os.";
-                string dbay = "El salvavidas devoto, Mitch Buchannon, golpea la cabeza con un nuevo recluta temerario. Juntos, descubren un complot criminal local que amenaza el futuro de la Bah�a.";
+                string dstw = "Treinta años despues de derrotar al Imperio Galactico, Han Solo y sus aliados enfrentan una nueva amenaza del malvado Kylo Ren y su ejercito de Stormtroopers.";
+                string despider = "Tras los acontecimientos del Capitan America: Guerra civil, Peter Parker, con la ayuda de su mentor Tony Stark, intenta equilibrar su vida como un estudiante normal de secundaria en Queens, Nueva York, con la lucha contra el crimen como su superheroe alter ego Spider- El hombre como una nueva amenaza, el Buitre, emerge.";
+                string djumanji = "Las tornas se vuelven cuando cuatro adolescentes son absorbidos por el mundo de Jumanji: enfrentado a rinocerontes, mambas negras y una interminable variedad de trampas y acertijos de la jungla. Para sobrevivir, jugaran como personajes del juego.";
+                string dc = "A pesar de la desconcertante prohibicion de la generacion de musica de su familia, Miguel sueña con convertirse en un musico consumado como su idolo, Ernesto de la Cruz.";
+                string dperfdesc = "La historia se desarrolla a lo largo de una noche, durante un eclipse lunar, en el hogar de Alfonso y Eva, una pareja profesional bien curada preocupada por su hija adolescente y por la monotonia de sus vidas.";
+                string ddandonota = "Despues de ganar los campeonatos del mundo, los Bellas se dividen y descubren que no hay perspectivas de trabajo para hacer musica con la boca. Pero cuando tengan la oportunidad de reunirse para una gira USO en el extranjero, este grupo de genios increibles se uniran para hacer algo de musica, y algunas decisiones cuestionables, una ultima vez.";
+                string dferdi = "Ferdinand, un pequeño toro, prefiere sentarse tranquilamente bajo un arbol de corcho oliendo las flores, saltando, resoplando y golpeandose la cabeza con otros toros. A medida que Ferdinand crece grande y fuerte, su temperamento se mantiene suave, pero un dia cinco hombres vienen a elegir el toro mas grande, mas rapido y mas rudo para las corridas de toros en Madrid y Fernando es elegido por error. Basado en el clasico libro infantil de 1936 de Munro Leaf.";
+                string dww = "La historia de cuatro personajes cuyas vidas se entrelazan en medio del ajetreo y el bullicio del parque de atracciones Coney Island en la decada de 1950: Ginny, una ex actriz emocionalmente volatil que ahora trabaja como camarera en una casa de almejas; Humpty, el operador operador de carrusel de Ginny; Mickey, un joven y guapo socorrista que sueña con convertirse en dramaturgo; y Carolina, la hija de Humpty que estuvo lejos, que ahora se esconde de los mafiosos en el departamento de su padre.";
+                string dit = "En una pequeña ciudad de Maine, siete niños conocidos como The Losers Club se enfrentan cara a cara con problemas de la vida, matones y un monstruo que toma la forma de un payaso llamado Pennywise.";
+                string dwoman = "Una princesa de Amazon llega al mundo del Hombre para convertirse en la mas grande de los superheroes femeninos.";
+                string dhday = "Una estudiante universitaria revive el dia de su asesinato una y otra vez mientras trata de descubrir la identidad de su asesino. ";
+                string dgru = "Gru y su esposa Lucy deben evitar que la ex estrella infantil de los 80, Balthazar Bratt, alcance la dominacion mundial.";
+                string dhrr1 = "Harry, Ron y Hermione se alejan de su ultimo año en Hogwarts para encontrar y destruir los Horcruxes restantes, poniendo fin a la apuesta de Voldemort por la inmortalidad. Pero con el amado Dumbledore de Harry muerto y los inescrupulosos Mortifagos de Voldemort suelto, el mundo es mas peligroso que nunca.";
+                string dhrr2 = "Harry, Ron y Hermione continuan su busqueda para vencer al malvado Voldemort de una vez por todas. Justo cuando las cosas comienzan a parecer desesperanzadas para los jovenes magos, Harry descubre un trio de objetos magicos que le otorgan poderes para competir con las formidables habilidades de Voldemort.";
+                string dblad = "Treinta años despues de los acontecimientos de la primera pelicula, un nuevo corredor de cuchillas, el oficial K de LAPD, descubre un secreto oculto desde hace mucho tiempo que tiene el potencial de sumergir lo que queda de la sociedad en el caos. El descubrimiento de K lo lleva en una busqueda para encontrar a Rick Deckard, un ex corredor de armas de LAPD que ha estado desaparecido durante 30 años.";
+                string dbay = "El salvavidas devoto, Mitch Buchannon, golpea la cabeza con un nuevo recluta temerario. Juntos, descubren un complot criminal local que amenaza el futuro de la Bahia.";
 
 
-                string dluci = "Lucifer, el �ngel ca�do original, est� aburrido e infeliz en el infierno y decide retirarse a Los �ngeles y abrir una discoteca de lujo. Despu�s de que se produce un asesinato fuera de su club, conoce a una intrigante detective de homicidios llamada Chloe, y se asocia con ella para resolver casos.";
-
+                string dluci = "Lucifer, el angel caido original, esta aburrido e infeliz en el infierno y decide retirarse a Los angeles y abrir una discoteca de lujo. Despues de que se produce un asesinato fuera de su club, conoce a una intrigante detective de homicidios llamada Chloe, y se asocia con ella para resolver casos.";
                 string dvegas = "Situado en el vuelo de la noche del viernes desde LAX a Las Vegas y el vuelo de regreso el domingo, un grupo de marginados que intentan encontrar su lugar en el mundo, todos comparten el mismo objetivo: volver a ser un ganador en el casino de la vida. ";
-                string dhappy = "Nick Sax es un ex policia borracho y corrupto que se convierte en un sicario, y que esta a la deriva en un mundo de asesinatos casuales, sexo desalmado y traicion. Despues de que un trabajo falla, su vida ebria es cambiada para siempre por un caballo alado peque�o, implacablemente positivo e imaginario llamado Happy.";
-                string ddam = "Seth Davenport parece ser un peque�o predicador de la ciudad de Iowa, pero tiene ambiciones de comenzar una insurreccion en toda regla contra el status quo. Pero el no sabe que un magnate industrial ha contratado a un rompehuelgas profesional mortal llamado Creeley Turner para detener esa insurreccion por cualquier medio necesario. Y desconocido para quienes los rodean, estos dos hombres comparten un pasado sangriento secreto.";
-                string dvh = "Vanessa Helsing, pariente lejana del famoso cazador de vampiros Abraham Van Helsing, es resucitada solo para descubrir que los vampiros se han adue�ado del mundo.";
+                string dhappy = "Nick Sax es un ex policia borracho y corrupto que se convierte en un sicario, y que esta a la deriva en un mundo de asesinatos casuales, sexo desalmado y traicion. Despues de que un trabajo falla, su vida ebria es cambiada para siempre por un caballo alado pequeño, implacablemente positivo e imaginario llamado Happy.";
+                string ddam = "Seth Davenport parece ser un pequeño predicador de la ciudad de Iowa, pero tiene ambiciones de comenzar una insurreccion en toda regla contra el status quo. Pero el no sabe que un magnate industrial ha contratado a un rompehuelgas profesional mortal llamado Creeley Turner para detener esa insurreccion por cualquier medio necesario. Y desconocido para quienes los rodean, estos dos hombres comparten un pasado sangriento secreto.";
+                string dvh = "Vanessa Helsing, pariente lejana del famoso cazador de vampiros Abraham Van Helsing, es resucitada solo para descubrir que los vampiros se han adueñado del mundo.";
                 string drw = "Despues de descubrir que sus padres son super villanos disfrazados, un grupo de adolescentes se junta para huir de sus hogares a fin de expiar las acciones de sus padres y descubrir los secretos de sus origenes.";
                 string dgot = "Siete familias nobles luchan por el control de la tierra mitica de Poniente. La friccion entre las casas conduce a una guerra a gran escala. Todo mientras un mal muy antiguo despierta en el extremo norte. En medio de la guerra, una orden militar descuidada de inadaptados, la Guardia de la Noche, es todo lo que se interpone entre los reinos de los hombres y los helados horrores mas alla.";
-                string dbgbg = "�Que sucede cuando los compa�eros de cuarto hiperinteligentes Sheldon y Leonard conocen a Penny, una belleza de espiritu libre que se mueve en la casa de al lado, y se dan cuenta de que no saben casi nada sobre la vida fuera del laboratorio. Completan la tripulacion el fanatico Wolowitz, que piensa que es tan sexy como el, y Koothrappali, que no puede hablar en presencia de una mujer.";
-                string dhimym = "El a�o es 2030. Ted Mosby transmite la historia de como conocio a su esposa a su hija e hijo. La historia comienza en el a�o 2005, cuando el entonces arquitecto Ted, de veintisiete a�os, se anima a querer casarse despues de sus mejores amigos de Wesleyan, el abogado Marshall Eriksen, que era su compa�ero de habitacion en ese momento y maestro de jardin de infantes. Lily Aldrin, se comprometio despues de nueve a�os de salir juntos.";
-                string d13 = "Sigue al adolescente Clay Jensen, en su busqueda para descubrir la historia detras de su compa�era de clase y enamoramiento, Hannah, y su decision de poner fin a su vida.";
-                string dst = "Cuando un ni�o desaparece, su madre, un jefe de policia y sus amigos deben enfrentar fuerzas terrorificas para recuperarlo.";
-                string dRYM = "Una serie animada que sigue las haza�as de un super cientifico y su nieto no tan brillante. ";
-                string dysh = "La vida temprana del ni�o genio Sheldon Cooper, mas tarde visto en The Big Bang Theory (2007).";
-                string dbmir = "Una serie de antologic�a de television que muestra el lado oscuro de la vida y la tecnologia.";
+                string dbgbg = "Que sucede cuando los compañeros de cuarto hiperinteligentes Sheldon y Leonard conocen a Penny, una belleza de espiritu libre que se mueve en la casa de al lado, y se dan cuenta de que no saben casi nada sobre la vida fuera del laboratorio. Completan la tripulacion el fanatico Wolowitz, que piensa que es tan sexy como el, y Koothrappali, que no puede hablar en presencia de una mujer.";
+                string dhimym = "El año es 2030. Ted Mosby transmite la historia de como conocio a su esposa a su hija e hijo. La historia comienza en el año 2005, cuando el entonces arquitecto Ted, de veintisiete años, se anima a querer casarse despues de sus mejores amigos de Wesleyan, el abogado Marshall Eriksen, que era su compa�ero de habitacion en ese momento y maestro de jardin de infantes. Lily Aldrin, se comprometio despues de nueve años de salir juntos.";
+                string d13 = "Sigue al adolescente Clay Jensen, en su busqueda para descubrir la historia detras de su compañera de clase y enamoramiento, Hannah, y su decision de poner fin a su vida.";
+                string dst = "Cuando un niño desaparece, su madre, un jefe de policia y sus amigos deben enfrentar fuerzas terrorificas para recuperarlo.";
+                string dRYM = "Una serie animada que sigue las hazañas de un super cientifico y su nieto no tan brillante. ";
+                string dysh = "La vida temprana del niño genio Sheldon Cooper, mas tarde visto en The Big Bang Theory (2007).";
+                string dbmir = "Una serie de antologicia de television que muestra el lado oscuro de la vida y la tecnologia.";
                 string dvik = "Vikingos sigue las aventuras de Ragnar Lothbrok, el mas grande heroe de su edad. La serie cuenta las sagas de la banda de hermanos vikingos de Ragnar y su familia, mientras se eleva para convertirse en rey de las tribus vikingas. Ademas de ser un valiente guerrero, Ragnar encarna las tradiciones nordicas de devocion a los dioses, segun la leyenda, el era un descendiente directo de Odin, el dios de la guerra y los guerreros.";
                 string dmrr = "El Sr. Robot sigue a Elliot, un joven programador que trabaja de ingeniero de ciberseguridad de dia y un hacker vigilante por la noche. Elliot se encuentra en una encrucijada cuando el misterioso lider de un grupo clandestino de hackers lo recluta para destruir la corporacion a la que se le paga por proteger.";
 
@@ -210,7 +211,7 @@ public static void InitializeData ()
 
                 int idCarrito = carritoCEN.New_ (idUsuario, 0);
                 int idCarrito2 = carritoCEN.New_ (idAdmin, 0);
-
+                int idCarrito3 = carritoCEN.New_(idAdmin2, 0);
 
 
                 int idArticulo = articuloCEN.New_ ("articulo", 69, "descripcion", "imagen", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 999, "desclarga", "imagran");

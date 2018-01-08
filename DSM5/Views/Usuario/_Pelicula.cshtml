@@ -1,39 +1,41 @@
 ﻿@model IEnumerable<DSM5.Models.Pelicula>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Valoracion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Imagen)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Valoracion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Imagen)
-        </td>
-        <td>
-            
-            @Html.ActionLink("delete", "dellist", "Usuario", new { idus = (string)@Session["correo"], idpro = item.id, tipo = (string)@Session["type"], t = "peli" }, null)|
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-        </td>
-    </tr>
-}
+<div class="container-fluid bg-2">
+    <div class="container">
+        <h3 class="text-center">Películas</h3>
+        <table class="table table-bordered table-responsive">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Genero</th>
+                    <th>Fecha</th>
+                    <th>Valoración</th>
+                    <th></th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tbody>
+                    <tr>
+                        <td>
+                            <a class="imagenesCarrito" href='@Url.Action("Detalles", "Details", new { id = item.id })'>
+                                <img class="imagenesCarrito" src='~/Images/cartelera/@Html.DisplayFor(modelItem => item.Imagen)' />
+                            </a>
 
-</table>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.genero)</td>
+                        <td>@Html.DisplayFor(modelItem => item.fecha)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Valoracion)</td>
+                        <td>
+
+                            <a class="btn btn-default" href='@Url.Action("Details", "Pelicula", new { id = item.id })'>Detalles</a>
+                        </td>
+                    </tr>
+                </tbody>
+            }
+        </table>
+    </div>
+
+</div>
