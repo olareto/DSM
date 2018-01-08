@@ -13,11 +13,7 @@
                 <a class="btn btn-primary center-block" href='@Url.Action("mostrar_cap", "Temporada", new { id = item.id, tipo = @Session["controller"] },null)'>@item.Nombre</a>
 
                 
-                @if (Session["admin"] != null && (bool)Session["admin"] == true)
-                {
-                    <hr />
-                    <a class="btn btn-danger center-block" href='@Url.Action("Create", "Temporada", new { id = item.id, tipo = @Session["controller"] },null)'>Añadir temporada</a>
-                }
+                
 
             </div>
             @if (Session["admin"] != null && (bool)Session["admin"] == true)

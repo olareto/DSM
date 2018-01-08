@@ -117,8 +117,8 @@ p, a, h2, h3, h4, th {
     padding-left: 100px;
 }
 .btn-mostaza {
-    background: #e09e04;
-    color: #e09e04;
+    background: #e09e04 !important;
+    color: #e09e04 !important;
 }
 .colorMostaza {
     color: #e09e04;
