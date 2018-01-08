@@ -5,80 +5,82 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
-    <div class="row">
-        <img class="col-md-12 cabecera" src='~/Images/cabecera/@Html.DisplayFor(model => model.imagran)' />
-    </div>
-    <hr />
-    <div class="row shadow">
-        <img class="imagenDetails col-md-3 gerMargenLetras" src='~/Images/cartelera/@Html.DisplayFor(modelItem => modelItem.Imagen)' />
+<div class="container-fluid bg-2">
+    <div class="container">
+        <div class="row">
+            <img class="col-md-12 cabecera" src='~/Images/cabecera/@Html.DisplayFor(model => model.imagran)' />
+        </div>
+        <hr />
+        <div class="row shadow">
+            <img class="imagenDetails col-md-3 gerMargenLetras" src='~/Images/cartelera/@Html.DisplayFor(modelItem => modelItem.Imagen)' />
 
-        <div class="col-md-6 gerMargenLetras">
-            <div class="row">
-                <h4><strong>Título: </strong>@Html.DisplayFor(model => model.Nombre)</h4>
-                <h4><strong>Género: </strong>@Html.DisplayFor(model => model.genero)</h4>
-                @if ((bool)@Model.finalizada == true)
+            <div class="col-md-6 gerMargenLetras">
+                <div class="row">
+                    <h4><strong>Título: </strong>@Html.DisplayFor(model => model.Nombre)</h4>
+                    <h4><strong>Género: </strong>@Html.DisplayFor(model => model.genero)</h4>
+                    @if ((bool)@Model.finalizada == true)
             {
-                <h4>@Model.fecha - @Model.fechafin</h4>
-        }
-        else
-        {
-            <h4>@Model.fecha - en emisión</h4>
-    }
+                        <h4>@Model.fecha - @Model.fechafin</h4>
+                    }
+                    else
+                    {
+                        <h4>@Model.fecha - en emisión</h4>
+                    }
 
-                <h>@Html.DisplayFor(model => model.descripcion)</h>
-            </div>
-            <div class="row">
-                <hr />
-                @Html.Partial("_Temporada", (IEnumerable<DSM5.Models.Temporada>)ViewBag.temp)
-                @if (Session["admin"] != null && (bool)Session["admin"] == true)
-                {
+                    <h>@Html.DisplayFor(model => model.descripcion)</h>
+                </div>
+                <div class="row">
                     <hr />
-                    <div class="container">
-                        <div class="col-md-9">
-                            <div class="col-md-10">
-                                <a class="btn btn-danger center-block" href='@Url.Action("Create", "Temporada", new { id = Model.id, tipo = @Session["controller"] },null)'>Añadir temporada</a>
+                    @Html.Partial("_Temporada", (IEnumerable<DSM5.Models.Temporada>)ViewBag.temp)
+                    @if (Session["admin"] != null && (bool)Session["admin"] == true)
+                    {                     
+                        <div class="container">
+                            <div class="col-md-9">
+                                <div class="col-md-10">
+                                    <a class="btn btn-danger center-block" href='@Url.Action("Create", "Temporada", new { id = Model.id, tipo = @Session["controller"] },null)'>Añadir temporada</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                }
+                    }
+                </div>
             </div>
+
+            @if (Session["log"] != null && (bool)Session["log"] == true)
+            {
+                <div class="dropdown col-md-3 gerMargenLetras">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Opciones
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div>
+                            <a class="dropdown-item" href='@Url.Action("addlist", "Usuario", new { idus = @Session["correo"] as string, idpro = Model.id, lista = "sig" })'>Añadir a siguiendo</a>
+                        </div>
+                        <div>
+                            <a class="dropdown-item" href='@Url.Action("addlist", "Usuario", new { idus = @Session["correo"] as string, idpro = Model.id, lista = "fav" })'>Añadir a favoritos</a>
+                        </div>
+                        <div>
+                            <a class="dropdown-item" href='@Url.Action("addlist", "Usuario", new { idus = @Session["correo"] as string, idpro = Model.id, lista = "visto" })'>Añadir a visto</a>
+
+                        </div>
+
+                        @if (Session["admin"] != null && (bool)Session["admin"] == true)
+                        {
+                            <div>
+                                <a class="dropdown-item admin" href='@Url.Action("Edit", "Serie", new { id = Model.id })'>Editar serie</a>
+
+                            </div>
+
+                            <div>
+                                <a class="dropdown-item admin" href='@Url.Action("Delete", "Serie", new { id = Model.id })'>Borrar serie</a>
+
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
         </div>
 
-        @if (Session["log"] != null && (bool)Session["log"] == true)
-        {
-        <div class="dropdown col-md-3 gerMargenLetras">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Opciones
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <div>
-                    <a class="dropdown-item" href='@Url.Action("addlist", "Usuario", new { idus = @Session["correo"] as string, idpro = Model.id, lista = "sig" })'>Añadir a siguiendo</a>
-                </div>
-                <div>
-                    <a class="dropdown-item" href='@Url.Action("addlist", "Usuario", new { idus = @Session["correo"] as string, idpro = Model.id, lista = "fav" })'>Añadir a favoritos</a>
-                </div>
-                <div>
-                    <a class="dropdown-item" href='@Url.Action("addlist", "Usuario", new { idus = @Session["correo"] as string, idpro = Model.id, lista = "visto" })'>Añadir a visto</a>
 
-                </div>
-
-                @if (Session["admin"] != null && (bool)Session["admin"] == true)
-    {
-            <div>
-                <a class="dropdown-item admin" href='@Url.Action("Edit", "Serie", new { id = Model.id })'>Editar serie</a>
-
-            </div>
-
-            <div>
-                <a class="dropdown-item admin" href='@Url.Action("Delete", "Serie", new { id = Model.id })'>Borrar serie</a>
-
-            </div>
-}
-            </div>
-            </div>
-        }
     </div>
-        
-
 </div>
+
