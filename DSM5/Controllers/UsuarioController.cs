@@ -274,18 +274,21 @@ namespace DSM5.Controllers
             IList<SerieEN> listas = null;
             if (tipo == "sig")
             {
+                System.Web.HttpContext.Current.Session["lista"] = "Seguidos";
                 idlist = sol.siguiendo;
                 listap = en.Lista.ElementAt(0).Pelicula;
                 listas = en.Lista.ElementAt(0).Serie;
             }
             else if (tipo == "fav")
             {
+                System.Web.HttpContext.Current.Session["lista"] = "Favoritos";
                 idlist = sol.favorito;
                 listap = en.Lista.ElementAt(1).Pelicula;
                 listas = en.Lista.ElementAt(1).Serie;
             }
             else if (tipo == "visto")
             {
+                System.Web.HttpContext.Current.Session["lista"] = "Vistos";
                 idlist = sol.visto;
                 listap = en.Lista.ElementAt(2).Pelicula;
                 listas = en.Lista.ElementAt(2).Serie;
