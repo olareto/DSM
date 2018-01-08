@@ -26,7 +26,7 @@
 
     <div class="form-group">
         <div class="col-md-8">
-            @Html.ActionLink("Volver", "Details", "Usuario", new { id = (string)@Session["correo"] }, null)
+            <button type="button" class="btn btn-default">@Html.ActionLink("Volver", "Details", "Usuario", new { id = (string)@Session["correo"] }, null)</button>          
         </div>
     </div>
 
