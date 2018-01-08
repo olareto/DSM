@@ -28,8 +28,8 @@
                 <div class="col-md-1 margenDescripcionesEventos">
                     @if (Session["admin"] != null && (bool)Session["admin"] == true)
                     {
-                        <p>@Html.ActionLink("Edit", "Edit", "Capitulo", new { id = item.id }, null)</p>
-                        <p>@Html.ActionLink("Delete", "Delete", "Capitulo", new { id = item.id }, null)</p>
+                        <p class="admin">@Html.ActionLink("Editar", "Edit", "Capitulo", new { id = item.id }, null)</p>
+                        <p class="admin">@Html.ActionLink("Borrar  ", "Delete", "Capitulo", new { id = item.id }, null)</p>
                     }
                     @Html.ActionLink("Reproducir", "Reproducir", "Capitulo", new { id = item.id }, null)
                 </div>

@@ -201,12 +201,12 @@ public static void InitializeData ()
 
                 //string idUsuario = usuarioCEN.New_("usuario", "apellidos", "contrasenya", "correo", "direcccion", "pago", "imagen");
                 //adminCEN.New_ ("usuario", "apellidos", "contrasenya", "correo", "direcccion", "pago", "imagen"));
-                int idevento = eventoCEN.New_ ("Musical Rey León", 70, "Musical del Rey León", "reyleon.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Musical");
-                int idevento2 = eventoCEN.New_ ("Entradas al parque de Harry Potter", 60, "Entrada del Parque Harry Potter", "HarryPotterParque.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Parque");
-                int idevento3 = eventoCEN.New_ ("Daniel Radcliffe visita la Ua", 5, "Visita guiada a la ua", "UA.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.dos, 8, "desclarga", "imagran", "Estudios");
-                int idevento4 = eventoCEN.New_ ("Estreno Star Wars L", 25, "Estreno Star Wars", "EstrenoStarWars.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Cine");
-                int idevento5 = eventoCEN.New_ ("Sinfonía Harry Potter", 60, "Sinfonia Harry Potter", "sinharry.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "desclarga", "imagran", "Musica Orquesta");
-                int idevento6 = eventoCEN.New_ ("Comic Con Madrid", 15, "Comic Con Madrid", "comic.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, 8, "desclarga", "imagran", "Evento");
+                int idevento = eventoCEN.New_ ("Musical Rey León", 70, "Musical del Rey León", "reyleon.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "El musical mas popular del momento, recuerda la experiencia disney a manos de esta gran experiencia.", "imagran", "Musical");
+                int idevento2 = eventoCEN.New_ ("Entradas al parque de Harry Potter", 60, "Entrada del Parque Harry Potter", "HarryPotterParque.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "Visita el parque de atracciones de Harry Potter, con todas la recreaciones y el mundo de los libros.", "imagran", "Parque");
+                int idevento3 = eventoCEN.New_ ("Daniel Radcliffe visita la Ua", 5, "Visita guiada a la ua", "UA.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.dos, 8, "Aprovecha la oportunidad de conocer a Daniel Radcliffe.", "imagran", "Estudios");
+                int idevento4 = eventoCEN.New_ ("Estreno Star Wars L", 25, "Estreno Star Wars", "EstrenoStarWars.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "Se el primero en ver la pelicula de Star Wars, que no te la cuenten.", "imagran", "Cine");
+                int idevento5 = eventoCEN.New_ ("Sinfonía Harry Potter", 60, "Sinfonia Harry Potter", "sinharry.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cinco, 8, "Disfruta de todas las canciones de Harry Potter gracias a la film symphony orchestra.", "imagran", "Musica Orquesta");
+                int idevento6 = eventoCEN.New_ ("Comic Con Madrid", 15, "Comic Con Madrid", "comic.jpg", SMPGenNHibernate.Enumerated.SMP.ValoracionEnum.cuatro, 8, "Despierta tu lado friki y visita la comic con de Madrid, donde podras ver todos tus animes, mangas y comics preferidos.", "imagran", "Evento");
 
                 int idCarrito = carritoCEN.New_ (idUsuario, 0);
                 int idCarrito2 = carritoCEN.New_ (idAdmin, 0);
@@ -328,6 +328,10 @@ public static void InitializeData ()
                 int idtemporada41 = temporadaCEN.New_(idserie15, "Temporada 3");
                 int idtemporada42 = temporadaCEN.New_(idserie15, "Temporada 4");
                 int idtemporada43 = temporadaCEN.New_(idserie15, "Temporada 5");
+                int idtemporada44 = temporadaCEN.New_(idserie16, "Temporada 1");
+                int idtemporada45 = temporadaCEN.New_(idserie16, "Temporada 2");
+                int idtemporada46 = temporadaCEN.New_(idserie16, "Temporada 3");
+               
 
                 string cveg1 = "El estreno de la serie presenta a la tripulación de la aerolínea de bajo presupuesto y sus pasajeros excéntricos que, cada fin de semana, toman el vuelo de ida y vuelta desde Los Ángeles a Las Vegas con un objetivo en mente: volver a ser un ganador. No será fácil, pero este improbable grupo de malhechores y soñadores eventualmente pasará de ser extraños en un avión a ser de apoyo, aunque no convencionales, en familia, bueno, al menos de viernes a domingo.";
                 string ch1 = "Un sicario debe asociarse con un caballo imaginario de alas azules para rescatar a un niño desaparecido";
@@ -405,6 +409,18 @@ public static void InitializeData ()
                 string cblack4 = "Martha y Ash son una joven pareja que se muda a una cabaña remota. El día después de la mudanza, Ash muere devolviendo la camioneta de alquiler. En el funeral, la amiga de Martha, Sarah, le cuenta acerca de un nuevo servicio que permite a las personas mantenerse en contacto con los fallecidos. Al usar todas sus comunicaciones en línea pasadas y perfiles de redes sociales, se puede crear un nuevo 'Ash'. Martha está disgustada con el concepto, pero luego, en un estado confuso y solitario, decide hablar con 'él' ";
                 string cblack5 = "Oficinista inseguro Lacie vive en un mundo de pesadillas feliz, sonriente y obsesionado con el estado. Su vieja amiga Naomi es una de las élites de la sociedad, y Lacie puede haber encontrado una manera de unirse a ella ";
                 string cblack6 = "El Capitán Robert Daly preside su equipo con sabiduría y coraje. Pero un nuevo recluta pronto descubrirá que nada en esta nave espacial es lo que parece.";
+                string cvik1 = "En el siglo octavo de Escandinavia, Ragnar Lothbrok es un guerrero y un granjero que sueña con encontrar riquezas al contradecir la tradición de incursionar en el este. Ragnar ha estado trabajando en secreto en un proyecto que pondrá el mundo Viking en su cabeza. Pero primero Ragnar debe convencer al líder de su comunidad, el poderoso Earl Haraldson, que no está muy feliz de compartir el renombre que este viaje podría traer a Ragnar si es exitoso.";
+                string cvik2 = "El escenario está listo para el primer viaje al oeste de Ragnar Lothbrok, ya que reúne a un equipo dispuesto a arriesgar sus vidas para viajar a lo desconocido. La paranoia de Earl Haraldson alcanza nuevas alturas, ya que es evidente que la confianza es difícil de conseguir en esta era oscura.";
+                string cvik3 = "La batalla comienza entre Ragnar y las fuerzas del Rey Horik contra Jarl Borg. Borg se une a Rollo, y este enfrentamiento vikingo enfrenta al hermano contra el hermano. Solo puede haber un vencedor. Mientras tanto, la Princesa Aslaug hace su camino hacia Kattegat y trae consigo una sorpresa que deja a Ragnar en una difícil situación.";
+                string cvik4 = "Las flotas de Ragnar y Lagertha parten de Kattegat una vez más hacia Wessex, pero esta vez traen colonos. El rey Ecbert recibe a los vikingos y propone un trato. A pesar de las dudas de algunos de los otros líderes, Ragnar lleva sus fuerzas a la batalla una vez más, pero esta vez como aliados de Wessex.";
+                string cvik5 = "La entrada a Valhalla elude a Ragnar, pero mientras yace en su lecho de enfermo en Kattegat, los acontecimientos se desarrollan fuera de su control. Bjorn ordena el arresto de Floki por el asesinato de Athelstan mientras está en París, Rollo traiciona al último de sus seguidores vikingos para fortalecer su posición en la corte francesa. En Hedeby, Kalf anuncia el condado conjunto con Lagertha, pero ¿está el poder compartiendo la verdadera intención de Kalf y está Lagertha realmente dispuesto a compartir lo que una vez fue suyo?";
+                string cvik6 = "Las tensiones se acumulan entre los hijos de Ragnar Lothbrok mientras los vikingos continúan amenazando el corazón de Inglaterra.";
+                string cvik7 = "Mientras el ejército se mueve para tomar York, con el rey Aethelwulf y su familia aún escondidos, Heahmund, el obispo guerrero, debe reunir a los sajones para defender el reino.";
+                string cmr1 = "Elliot, un ingeniero de seguridad cibernética de día y hacker vigilante por la noche, es reclutado por un misterioso grupo clandestino para destruir la empresa que le pagaron para proteger. Elliot debe decidir qué tan lejos irá para exponer las fuerzas que él cree que están corriendo (y arruinando) al mundo.";
+                string cmr2 = "Elliot se debate entre aceptar una oferta de trabajo de Evil Corp y unirse al grupo de hackers de la sociedad. Al mismo tiempo, Elliot necesita tomar una decisión que pueda dañar a las personas que le rodean.";
+                string cmr3 = "Un mes después y omfg, cinco / nueve ha cambiado el mundo; Elliot está en reclusión; Angela encuentra felicidad en Evil Corp .; fsociety entrega una carga maliciosa; ¿TANGO CAÍDO?";
+                string cmr4 = "Elliot se da cuenta de su misión y necesita ayuda de Angela; Darlene se preocupa por que salgan limpios.";
+
 
                 int idcapitulo = capituloCEN.New_ (idtemporada01, "Piloto", new DateTime (1993, 12, 3), cveg1, "cap1vegas.jpg", "https://www.youtube.com/embed/p4ijrL4zscE");
 
@@ -486,18 +502,30 @@ public static void InitializeData ()
                 int idcapitulo66 = capituloCEN.New_(idtemporada33, "2-Rickmancing the Stone", new DateTime(1993, 12, 3), crick7, "rick7.jpg", "https://www.youtube.com/embed/3FcHfqDYJq4");
                 int idcapitulo67 = capituloCEN.New_(idtemporada33, "2-Pickle Rick", new DateTime(1993, 12, 3), crick8, "rick8.jpg", "https://www.youtube.com/embed/bXeRpoWJK_I");
 
-                int idcapitulo68 = capituloCEN.New_(idtemporada34, "Piloto", new DateTime(1993, 12, 3), cyoung1, "young1.jpg", "https://www.youtube.com/watch?v=ivtB0ucW1EQ");
-                int idcapitulo69 = capituloCEN.New_(idtemporada34, "2-Rockets, Communists, and the Dewey Decimal System", new DateTime(1993, 12, 3), cyoung2, "young2.jpg", "https://www.youtube.com/watch?v=ivtB0ucW1EQ");
-                int idcapitulo70 = capituloCEN.New_(idtemporada34, "3-Poker, Faith, and Eggs", new DateTime(1993, 12, 3), cyoung3, "young3.jpg", "https://www.youtube.com/watch?v=ivtB0ucW1EQ");
+                int idcapitulo68 = capituloCEN.New_(idtemporada34, "Piloto", new DateTime(1993, 12, 3), cyoung1, "young1.jpg", "https://www.youtube.com/embed/ivtB0ucW1EQ");
+                int idcapitulo69 = capituloCEN.New_(idtemporada34, "2-Rockets, Communists, and the Dewey Decimal System", new DateTime(1993, 12, 3), cyoung2, "young2.jpg", "https://www.youtube.com/embed/ivtB0ucW1EQ");
+                int idcapitulo70 = capituloCEN.New_(idtemporada34, "3-Poker, Faith, and Eggs", new DateTime(1993, 12, 3), cyoung3, "young3.jpg", "https://www.youtube.com/embed/ivtB0ucW1EQ");
 
-                int idcapitulo71 = capituloCEN.New_(idtemporada35, "1-The National Anthem", new DateTime(1993, 12, 3), cblack1, "black1.jpg", "https://www.youtube.com/watch?v=eLrfW3a9cqg");
-                int idcapitulo72 = capituloCEN.New_(idtemporada35, "2-15 Million Merits", new DateTime(1993, 12, 3), cblack2, "black2.jpg", "https://www.youtube.com/watch?v=eLrfW3a9cqg");
-                int idcapitulo73 = capituloCEN.New_(idtemporada35, "3-The Entire History of You", new DateTime(1993, 12, 3), cblack3, "black3.jpg", "https://www.youtube.com/watch?v=eLrfW3a9cqg");
-                int idcapitulo74 = capituloCEN.New_(idtemporada36, "1-Be Right Back", new DateTime(1993, 12, 3), cblack4, "black4.jpg", "https://www.youtube.com/watch?v=eLrfW3a9cqg");
-                int idcapitulo75 = capituloCEN.New_(idtemporada37, "1-Nosedive", new DateTime(1993, 12, 3), cblack5, "black5.jpg", "https://www.youtube.com/watch?v=eLrfW3a9cqg");
-                int idcapitulo76 = capituloCEN.New_(idtemporada38, "1-USS Callister", new DateTime(1993, 12, 3), cblack6, "black6.jpg", "https://www.youtube.com/watch?v=eLrfW3a9cqg");
+                int idcapitulo71 = capituloCEN.New_(idtemporada35, "1-The National Anthem", new DateTime(1993, 12, 3), cblack1, "black1.jpg", "https://www.youtube.com/embed/eLrfW3a9cqg");
+                int idcapitulo72 = capituloCEN.New_(idtemporada35, "2-15 Million Merits", new DateTime(1993, 12, 3), cblack2, "black2.jpg", "https://www.youtube.com/embed/eLrfW3a9cqg");
+                int idcapitulo73 = capituloCEN.New_(idtemporada35, "3-The Entire History of You", new DateTime(1993, 12, 3), cblack3, "black3.jpg", "https://www.youtube.com/embed/eLrfW3a9cqg");
+                int idcapitulo74 = capituloCEN.New_(idtemporada36, "1-Be Right Back", new DateTime(1993, 12, 3), cblack4, "black4.jpg", "https://www.youtube.com/embed/eLrfW3a9cqg");
+                int idcapitulo75 = capituloCEN.New_(idtemporada37, "1-Nosedive", new DateTime(1993, 12, 3), cblack5, "black5.jpg", "https://www.youtube.com/embed/eLrfW3a9cqg");
+                int idcapitulo76 = capituloCEN.New_(idtemporada38, "1-USS Callister", new DateTime(1993, 12, 3), cblack6, "black6.jpg", "https://www.youtube.com/embed/eLrfW3a9cqg");
 
+                int idcapitulo77 = capituloCEN.New_(idtemporada39, "1-Rites of Passage", new DateTime(1993, 12, 3), cvik1, "vik1.jpg", "https://www.youtube.com/embed/5aASH8HMJbo");
+                int idcapitulo78 = capituloCEN.New_(idtemporada39, "2-Wrath of the Northmen", new DateTime(1993, 12, 3), cvik2, "vik2.jpg", "https://www.youtube.com/embed/5aASH8HMJbo");
+                int idcapitulo79 = capituloCEN.New_(idtemporada40, "1-Brother's War", new DateTime(1993, 12, 3), cvik3, "vik3.jpg", "https://www.youtube.com/embed/5aASH8HMJbo");
+                int idcapitulo80 = capituloCEN.New_(idtemporada41, "1-Mercenary", new DateTime(1993, 12, 3), cvik4, "vik4.jpg", "https://www.youtube.com/embed/5aASH8HMJbo");
+                int idcapitulo81 = capituloCEN.New_(idtemporada42, "1-A Good Treason", new DateTime(1993, 12, 3), cvik5, "vik5.jpg", "https://www.youtube.com/embed/5aASH8HMJbo");
+                int idcapitulo82 = capituloCEN.New_(idtemporada43, "1-The Departed (Part 1)", new DateTime(1993, 12, 3), cvik6, "vik6.jpg", "https://www.youtube.com/embed/5aASH8HMJbo");
+                int idcapitulo83 = capituloCEN.New_(idtemporada43, "2-The Departed (Part 2)", new DateTime(1993, 12, 3), cvik7, "vik7.jpg", "https://www.youtube.com/embed/5aASH8HMJbo");
 
+                int idcapitulo84 = capituloCEN.New_(idtemporada44, "1-eps1.0_hellofriend.mov", new DateTime(1993, 12, 3), cmr1, "mr1.jpg", "https://www.youtube.com/embed/nejl8EUqf5M");
+                int idcapitulo85 = capituloCEN.New_(idtemporada44, "2-eps1.1_ones-and-zer0es.mpeg", new DateTime(1993, 12, 3), cmr2, "mr2.jpg", "https://www.youtube.com/embed/nejl8EUqf5M");
+                int idcapitulo86 = capituloCEN.New_(idtemporada45, "1-eps2.0_unm4sk-pt1.tc", new DateTime(1993, 12, 3), cmr3, "mr3.jpg", "https://www.youtube.com/embed/nejl8EUqf5M");
+                int idcapitulo87 = capituloCEN.New_(idtemporada46, "1-eps3.0_power-saver-mode.h", new DateTime(1993, 12, 3), cmr4, "mr4.jpg", "https://www.youtube.com/embed/nejl8EUqf5M");
+                
 
                 #endregion
 
