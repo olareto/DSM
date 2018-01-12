@@ -42,7 +42,7 @@
 
         @if (Session["admin"] != null && (bool)Session["admin"] == true)
         {
-            <a class="btn btn-danger" href='@Url.Action("Create", "Capitulo", new { id = @Session["id_serie"] })'>Añadir capítulo</a>
+            <a class="btn btn-danger" href='@Url.Action("Create", "Capitulo", new { id = @Session["idtemp"] })'>Añadir capítulo</a>
         }
 
         <a class="btn btn-default" href='@Url.Action("Details", "Serie", new { id = @Session["id_serie"] })'>Volver</a>
