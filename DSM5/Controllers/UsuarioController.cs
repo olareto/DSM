@@ -188,9 +188,19 @@ namespace DSM5.Controllers
             try
             {
                 // TODO: Add delete logic here
+                AdminCEN cena = new AdminCEN();
                 UsuarioCEN cen = new UsuarioCEN();
-
-                cen.Destroy(id);
+                UsuarioEN en = new UsuarioEN();
+                en = cen.ReadOID(id);
+                if (en is AdminEN)
+                {
+                    cena.Destroy(id);
+                }
+                else
+                {
+                    cen.Destroy(id);
+                }
+                
                 return RedirectToAction("Index");
             }
             catch
