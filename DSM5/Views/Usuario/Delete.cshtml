@@ -5,77 +5,31 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete</h2>
+<div class="container-fluid bg-2 text-center">
+    <h2 class="margin">Borrar Usuario</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Usuario</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
+    <div class="container">
+        <h3 class="admin">¿Esta seguro de que desea borrar la serie @Html.DisplayFor(model => model.Nombre)?</h3>
+        <hr />
+        <div class="row">
+            <img class="cartelera col-md-3 gerMargenLetras" src='~/Images/cartelera/@Html.DisplayFor(modelItem => modelItem.Imagen)' />
+            <div class="col-md-7 gerMargenLetras">
+                <h4><strong>Nombre: </strong>@Html.DisplayFor(model => model.Nombre)</h4>
+                <h4><strong>Apellidos: </strong>@Html.DisplayFor(model => model.Apellidos)</h4>
+                <h4><strong>Email: </strong>@Html.DisplayFor(model => model.Email)</h4>
+                <h4><strong>Dirección: </strong>@Html.DisplayFor(model => model.Direccion)</h4>
+                <h4><strong>Tarjeta: </strong>@Html.DisplayFor(model => model.Tarjeta)</h4>
+                <hr />
+                @using (Html.BeginForm())
+    {
+            @Html.AntiForgeryToken()
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Apellidos)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Apellidos)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Password)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Password)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Direccion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Direccion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Tarjeta)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Tarjeta)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Imagen)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Imagen)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <div class="form-actions no-color">
+                <input type="submit" value="Borrar" class="btn btn-danger" />
+                <a class="btn btn-default" href='@Url.Action("Details", "Usuario", new { id = @Session["correo"] })'>Cancelar</a>
+            </div>
+}
+            </div>
         </div>
-    }
+    </div>
 </div>
