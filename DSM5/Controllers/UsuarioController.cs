@@ -187,20 +187,41 @@ namespace DSM5.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
-                AdminCEN cena = new AdminCEN();
+
                 UsuarioCEN cen = new UsuarioCEN();
+                cen.Destroy(id);
+               
+                // TODO: Add delete logic here
+                /**
+                SessionInitialize();
+                UsuarioCEN cen = new UsuarioCEN();
+
                 UsuarioEN en = new UsuarioEN();
                 en = cen.ReadOID(id);
+                bool si = false;
                 if (en is AdminEN)
                 {
+                    si=true;
+                    
+                }
+            
+                SessionClose();
+                if (si==true)
+                {
+                    SessionInitialize();
+                    AdminCAD cad = new AdminCAD();
+                    AdminCEN cena = new AdminCEN(cad);
+                    
                     cena.Destroy(id);
+                    SessionClose();
                 }
                 else
                 {
-                    cen.Destroy(id);
+                    //UsuarioCEN cenn = new UsuarioCEN();
+                    UsuarioCEN cenn = new UsuarioCEN();
+                    cenn.Destroy(id);
                 }
-                
+    */
                 return RedirectToAction("Index");
             }
             catch

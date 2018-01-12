@@ -229,7 +229,10 @@ namespace DSM5.Controllers
             try
             {
                 // TODO: Add delete logic here
-                ComentarioCEN cen = new ComentarioCEN();
+                SessionInitialize();
+                ComentarioCAD cad = new ComentarioCAD(session);
+
+                ComentarioCEN cen = new ComentarioCEN(cad);
 
 
                 ComentarioEN en = new ComentarioEN();
@@ -237,14 +240,45 @@ namespace DSM5.Controllers
 
 
                 AssemblerComentario ass = new AssemblerComentario();
-                Comentario sol = ass.ConvertENToModelUI(en);
-
                 
-                cen.Destroy(id);
+                Comentario sol = ass.ConvertENToModelUI(en);
+                string tipo = null;
+
+
+               ProductoCAD cadp = new ProductoCAD(session);
+                ProductoCEN cenp = new ProductoCEN(cadp);
+                ProductoEN enp = cenp.ReadOID(sol.idsup);
+
+
+               EventoCAD cade = new EventoCAD(session);
+                EventoCEN cene = new EventoCEN(cade);
+                EventoEN ene = cene.ReadOID(sol.idsup);
 
 
 
-                return RedirectToAction("Details", sol.tipo, new { id = sol.idsup });
+
+                if (ene!=null )
+                {
+                    tipo = "Evento";
+                }
+                else if(enp!=null)
+                {
+                    tipo = "Producto";
+                }
+                else
+                {
+                    tipo = sol.tipo;
+                }
+                
+                SessionClose();
+                ComentarioCEN cenn= new ComentarioCEN();
+
+
+                cenn.Destroy(id);
+
+
+
+                return RedirectToAction("Details", tipo, new { id = sol.idsup });
             }
             catch
             {
