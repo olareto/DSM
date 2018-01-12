@@ -130,14 +130,12 @@ namespace DSM5.Controllers
                 EventoCEN cen = new EventoCEN();
 
                 EventoEN en = cen.get_IEventoCAD().ReadOIDDefault(id);
-                string imagen = collection.Imagen;
+                string img = collection.Imagen;
 
-                if (imagen == null)
-                {
-                    imagen = en.Imagen;
-                }
+                if (collection.Imagen == null)
+                    img = en.Imagen;
 
-                cen.Modify(id,collection.Nombre, collection.Precio, collection.Descripcion, imagen, (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Stock, collection.descriplarga, collection.imagran, collection.Tipo);
+                cen.Modify(id,collection.Nombre, collection.Precio, collection.Descripcion, img, (SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Stock, collection.descriplarga, collection.imagran, collection.Tipo);
 
                 //cen.New_(collection.Nombre, collection.Precio, collection.Descripcion, collection.Imagen, collection.Valor, collection.Stock, collection.Talla);
                 string action = System.Web.HttpContext.Current.Session["action"] as String;

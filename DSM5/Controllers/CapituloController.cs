@@ -78,9 +78,8 @@ namespace DSM5.Controllers
             {
                 // TODO: Add insert logic here
                 CapituloCEN cen = new CapituloCEN();
-                
+                CapituloEN en = cen.get_ICapituloCAD().ReadOIDDefault(id);
 
-        
 
                 cen.New_(id, collection.Nombre,new DateTime (collection.fecha.Year, collection.fecha.Month, collection.fecha.Day), collection.descripcion, collection.imagen, collection.link);
 
