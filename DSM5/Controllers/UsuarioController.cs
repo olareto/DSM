@@ -198,6 +198,7 @@ namespace DSM5.Controllers
                 UsuarioCEN cen = new UsuarioCEN();
 
                 UsuarioEN en = new UsuarioEN();
+
                 en = cen.ReadOID(id);
                 bool si = false;
                 if (en is AdminEN)
