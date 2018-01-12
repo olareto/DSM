@@ -228,7 +228,10 @@ namespace DSM5.Controllers
         public ActionResult borraradmin(String id)
         {
             AdminCEN cena = new AdminCEN();
+            CarritoCEN carr = new CarritoCEN();
 
+            int carrito = cena.ReadOID(id).Carrito.Id;
+            carr.Destroy(carrito);
             cena.Destroy(id);
 
 
@@ -238,6 +241,12 @@ namespace DSM5.Controllers
         public ActionResult borrarusu(String id)
         {
             UsuarioCEN cenn = new UsuarioCEN();
+
+            CarritoCEN carr = new CarritoCEN();
+
+            int carrito = cenn.ReadOID(id).Carrito.Id;
+            carr.Destroy(carrito);
+
             cenn.Destroy(id);
 
 
