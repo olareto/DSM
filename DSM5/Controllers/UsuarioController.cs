@@ -187,13 +187,14 @@ namespace DSM5.Controllers
         {
             try
             {
-
+                /**
                 UsuarioCEN cen = new UsuarioCEN();
                 cen.Destroy(id);
-               
+               **/
                 // TODO: Add delete logic here
-                /**
+                
                 SessionInitialize();
+                //UsuarioCAD cad = new UsuarioCAD(session);
                 UsuarioCEN cen = new UsuarioCEN();
 
                 UsuarioEN en = new UsuarioEN();
@@ -208,20 +209,13 @@ namespace DSM5.Controllers
                 SessionClose();
                 if (si==true)
                 {
-                    SessionInitialize();
-                    AdminCAD cad = new AdminCAD();
-                    AdminCEN cena = new AdminCEN(cad);
-                    
-                    cena.Destroy(id);
-                    SessionClose();
+                    return RedirectToAction("borraradmin", "Usuario", new { id = id });
                 }
                 else
                 {
-                    //UsuarioCEN cenn = new UsuarioCEN();
-                    UsuarioCEN cenn = new UsuarioCEN();
-                    cenn.Destroy(id);
+                    return RedirectToAction("borrarusu", "Usuario",new { id=id});
                 }
-    */
+    
                 return RedirectToAction("Index");
             }
             catch
@@ -230,6 +224,24 @@ namespace DSM5.Controllers
             }
         }
         // GET: Articulo/Resultadobusqueda/5
+        public ActionResult borraradmin(String id)
+        {
+            AdminCEN cena = new AdminCEN();
+
+            cena.Destroy(id);
+
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult borrarusu(String id)
+        {
+            UsuarioCEN cenn = new UsuarioCEN();
+            cenn.Destroy(id);
+
+
+            return RedirectToAction("Index");
+        }
         public ActionResult Resultadobusqueda()
         {
 
