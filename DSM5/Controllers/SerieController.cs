@@ -173,7 +173,11 @@ namespace DSM5.Controllers
                 SerieCEN cen = new SerieCEN();
                 SerieEN en = cen.get_ISerieCAD().ReadOIDDefault(id);
 
-                string img = en.Imagen;
+
+                string img =collection.Imagen;
+
+                if (collection.Imagen==null)
+                    img = en.Imagen;
 
 
                 cen.Modify(id,(SMPGenNHibernate.Enumerated.SMP.ValoracionEnum)collection.Valoracion, collection.Nombre, img, en.Descriplarga, en.Descripcion, en.Genero, en.Anyo, en.Imagran, en.Anyofin, en.Finalizada);
