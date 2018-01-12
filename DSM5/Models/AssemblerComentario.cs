@@ -38,7 +38,7 @@ namespace DSM5.Models
                 {
                     art.tipo = "Producto";
                 }
-                else
+                else if (en.Articulo is EventoEN)
                 {
                     art.tipo = "Evento";
                 }
